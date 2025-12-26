@@ -38,6 +38,7 @@
 
         html, body {
             overscroll-behavior-y: none;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -1140,61 +1141,86 @@
             });
         }
 
-        // Scroll snap helper - ensure smooth scrolling between sections
+        // Smooth scroll snap implementation
         let isScrolling = false;
-        let lastScrollTime = 0;
-        const scrollThreshold = 50; // minimum scroll distance to trigger snap
+        let scrollTimeout;
 
         function handleWheel(e) {
-            if (isScrolling) return;
-
-            const currentTime = Date.now();
-            if (currentTime - lastScrollTime < 800) return; // Prevent rapid scrolling
+            // If already scrolling, ignore
+            if (isScrolling) {
+                e.preventDefault();
+                return;
+            }
 
             const sections = Array.from(document.querySelectorAll('section'));
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-            // Find current section index
+            // Find current section
             let currentIndex = sections.findIndex(section => {
                 const rect = section.getBoundingClientRect();
-                return rect.top >= -window.innerHeight / 2 && rect.top < window.innerHeight / 2;
+                return rect.top >= -window.innerHeight / 3 && rect.top <= window.innerHeight / 3;
             });
 
-            // Determine scroll direction and target section
-            if (e.deltaY > 0 && currentIndex < sections.length - 1) {
-                // Scroll down - go to next section
-                isScrolling = true;
-                sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
-            } else if (e.deltaY < 0 && currentIndex > 0) {
-                // Scroll up - go to previous section
-                isScrolling = true;
-                sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+            // If no section found, use the closest one
+            if (currentIndex === -1) {
+                let minDistance = Infinity;
+                sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        currentIndex = index;
+                    }
+                });
             }
 
-            lastScrollTime = currentTime;
+            // Determine direction and scroll
+            if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+                e.preventDefault();
+                isScrolling = true;
+                sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
 
-            // Reset scroll lock after animation
-            setTimeout(() => {
-                isScrolling = false;
-            }, 800);
+                // Reset after animation completes
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            } else if (e.deltaY < 0 && currentIndex > 0) {
+                e.preventDefault();
+                isScrolling = true;
+                sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
         }
 
         // Handle keyboard navigation
         function handleKeydown(e) {
             const sections = Array.from(document.querySelectorAll('section'));
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-            let currentIndex = sections.findIndex(section => {
-                const rect = section.getBoundingClientRect();
-                return rect.top >= -window.innerHeight / 2 && rect.top < window.innerHeight / 2;
-            });
+            if ((e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown')) {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                let currentIndex = sections.findIndex(section => {
+                    const rect = section.getBoundingClientRect();
+                    return rect.top >= -window.innerHeight / 2 && rect.top < window.innerHeight / 2;
+                });
 
-            if ((e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') && currentIndex < sections.length - 1) {
-                e.preventDefault();
-                sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                if (currentIndex < sections.length - 1) {
+                    e.preventDefault();
+                    sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                }
             } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                e.preventDefault();
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                let currentIndex = sections.findIndex(section => {
+                    const rect = section.getBoundingClientRect();
+                    return rect.top >= -window.innerHeight / 2 && rect.top < window.innerHeight / 2;
+                });
+
                 if (currentIndex > 0) {
+                    e.preventDefault();
                     sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
                 }
             } else if (e.key === 'Home') {
