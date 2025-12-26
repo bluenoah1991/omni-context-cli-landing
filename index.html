@@ -168,6 +168,12 @@
             position: relative;
         }
 
+        .badges {
+            display: inline-flex;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
         .badge {
             display: inline-flex;
             align-items: center;
@@ -179,7 +185,6 @@
             font-size: 13px;
             font-weight: 500;
             color: var(--text-secondary);
-            margin-bottom: 32px;
         }
 
         .badge-dot {
@@ -677,6 +682,11 @@
         }
 
         @media (max-width: 768px) {
+            .badges {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             .hero {
                 padding: 100px 0 60px;
             }
@@ -730,7 +740,7 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
     <div class="bg-gradient"></div>
     <div class="grid-pattern"></div>
 
@@ -744,9 +754,23 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="badge reveal">
-                    <span class="badge-dot"></span>
-                    Zero Telemetry
+                <div class="badges reveal">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Zero Telemetry
+                    </div>
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Agentic
+                    </div>
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        CLI
+                    </div>
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Multi Provider
+                    </div>
                 </div>
 
                 <h1 class="reveal" style="transition-delay: 0.1s;">
@@ -1079,10 +1103,10 @@
                         <i data-lucide="download"></i>
                         npm install -g omni-context-cli
                     </a>
-                    <a href="https://github.com/bluenoah1991/omni-context-cli" class="btn-secondary" target="_blank">
-                        <i data-lucide="github"></i>
-                        View on GitHub
-                    </a>
+                    <button class="btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i data-lucide="arrow-up"></i>
+                        Back to Top
+                    </button>
                 </div>
             </div>
         </div>
