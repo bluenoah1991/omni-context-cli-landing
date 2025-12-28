@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniContext CLI</title>
-    <link href="assets/fonts/inter.css" rel="stylesheet">
-    <script src="assets/js/lucide.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link href="../assets/fonts/inter.css" rel="stylesheet">
+    <script src="../assets/js/lucide.js"></script>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body id="top">
@@ -18,8 +18,8 @@
         <div class="container nav-content">
             <div class="logo">OmniContext CLI</div>
             <div class="nav-right">
-                <a href="/zh/" class="nav-lang">中文</a>
-                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">Install</a>
+                <a href="/" class="nav-lang">English</a>
+                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">安装</a>
             </div>
         </div>
     </nav>
@@ -28,13 +28,12 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="reveal" style="transition-delay: 0.1s;">
-                    <span class="gradient">Agentic Tools</span><br>
-                    <span class="highlight">for Developers</span>
+                    <span class="gradient">智能体式工具</span><br>
+                    <span class="highlight">为开发者打造</span>
                 </h1>
 
                 <p class="hero-description reveal" style="transition-delay: 0.2s;">
-                    Stop orchestrating basic tools manually. <strong>Agentic tools</strong> handle complex tasks
-                    autonomously—<strong>reducing context consumption</strong> and keeping your conversation clean.
+                    停止手动编排基础工具。<strong>智能体式工具</strong>自主处理复杂任务——<strong>减少上下文消耗</strong>，保持对话清爽。
                 </p>
 
                 <div class="install-wrapper reveal" style="transition-delay: 0.3s;">
@@ -42,7 +41,7 @@
                         <code><span class="install-prompt">$</span> npm install -g omni-context-cli && omx</code>
                         <button class="copy-button" id="copyBtn" onclick="copyInstallCommand()">
                             <i data-lucide="copy"></i>
-                            <span>Copy</span>
+                            <span>复制</span>
                         </button>
                     </div>
                 </div>
@@ -54,35 +53,34 @@
     <section class="section">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">The Problem</span>
-                <h2 class="section-title">Context pollution kills productivity</h2>
-                <p class="section-subtitle">Basic tools flood your conversation with intermediate results. Agentic tools
-                    work silently and return only what matters.</p>
+                <span class="section-label">问题所在</span>
+                <h2 class="section-title">上下文污染降低效率</h2>
+                <p class="section-subtitle">基础工具用中间结果淹没你的对话。智能体式工具静默工作，只返回重要内容。</p>
             </div>
 
             <div class="comparison-wrapper reveal" style="transition-delay: 0.2s;">
                 <div class="comparison-container">
                     <div class="comparison-panel">
                         <div class="comparison-header">
-                            <h3>Basic Tools</h3>
-                            <p>Manual orchestration, noisy context</p>
+                            <h3>基础工具</h3>
+                            <p>手动编排，嘈杂的上下文</p>
                         </div>
 
                         <div class="conversation-stack">
                             <div class="stack-message user" style="--index: 0">
-                                <span class="msg-type">User</span>
-                                <span class="msg-text">Find AuthService implementation</span>
+                                <span class="msg-type">user</span>
+                                <span class="msg-text">查找 AuthService 实现</span>
                             </div>
 
                             <div class="stack-message tool" style="--index: 1">
                                 <span class="msg-type">glob</span>
-                                <span class="msg-text">Found 47 matching files</span>
+                                <span class="msg-text">找到 47 个匹配文件</span>
                                 <span class="msg-meta">2.3 KB</span>
                             </div>
 
                             <div class="stack-message tool" style="--index: 2">
                                 <span class="msg-type">grep</span>
-                                <span class="msg-text">237 lines containing "AuthService"</span>
+                                <span class="msg-text">237 行包含 "AuthService"</span>
                                 <span class="msg-meta">8.1 KB</span>
                             </div>
 
@@ -99,43 +97,43 @@
                             </div>
 
                             <div class="stack-message assistant" style="--index: 5">
-                                <span class="msg-type">Assistant</span>
-                                <span class="msg-text">Found AuthService class</span>
+                                <span class="msg-type">assistant</span>
+                                <span class="msg-text">找到 AuthService 类</span>
                             </div>
 
                             <div class="context-summary">
-                                <div class="highlight-text">6 messages · 15.7 KB</div>
-                                <div class="meta-text">80% noise in context</div>
+                                <div class="highlight-text">6 条消息 · 15.7 KB</div>
+                                <div class="meta-text">80% 上下文噪音</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="comparison-panel agentic">
                         <div class="comparison-header">
-                            <h3>Agentic Tools</h3>
-                            <p>Autonomous execution, clean context</p>
+                            <h3>智能体式工具</h3>
+                            <p>自主执行，清爽上下文</p>
                         </div>
 
                         <div class="conversation-stack">
                             <div class="stack-message user" style="--index: 0">
-                                <span class="msg-type">User</span>
-                                <span class="msg-text">Find AuthService implementation</span>
+                                <span class="msg-type">user</span>
+                                <span class="msg-text">查找 AuthService 实现</span>
                             </div>
 
                             <div class="stack-message tool" style="--index: 1">
                                 <span class="msg-type">agent_pluck</span>
-                                <span class="msg-text">Extracted AuthService class (45 lines)</span>
+                                <span class="msg-text">提取了 AuthService 类（45 行）</span>
                                 <span class="msg-meta">1.8 KB</span>
                             </div>
 
                             <div class="stack-message assistant" style="--index: 2">
-                                <span class="msg-type">Assistant</span>
-                                <span class="msg-text">Found AuthService with login, logout, refreshToken methods</span>
+                                <span class="msg-type">assistant</span>
+                                <span class="msg-text">找到包含 login、logout、refreshToken 方法的 AuthService</span>
                             </div>
 
                             <div class="context-summary">
-                                <div class="highlight-text">3 messages · 1.8 KB</div>
-                                <div class="meta-text">Clean context, zero noise</div>
+                                <div class="highlight-text">3 条消息 · 1.8 KB</div>
+                                <div class="meta-text">清爽上下文，零噪音</div>
                             </div>
                         </div>
                     </div>
@@ -148,30 +146,28 @@
         <div class="container">
             <div class="showcase">
                 <div class="reveal">
-                    <span class="section-label">Specialist Mode</span>
-                    <h2 class="section-title">High-dimensional tools</h2>
+                    <span class="section-label">专家模式</span>
+                    <h2 class="section-title">高维度工具</h2>
                     <p class="section-subtitle">
-                        Enable Specialist Mode to use 10 agentic tools instead of basic tools. Each agent thinks
-                        independently and returns precise results. Agents hide intermediate steps from your
-                        conversation.
+                        启用专家模式使用 10 个智能体式工具替代基础工具。每个代理独立思考并返回精确结果。代理隐藏中间步骤。
                     </p>
 
                     <div class="feature-list">
                         <div class="feature-list-item">
                             <span class="feature-list-check">✓</span>
-                            No basic tools, only agentic tools
+                            无基础工具，只有智能体式工具
                         </div>
                         <div class="feature-list-item">
                             <span class="feature-list-check">✓</span>
-                            Agents operate autonomously
+                            代理自主运行
                         </div>
                         <div class="feature-list-item">
                             <span class="feature-list-check">✓</span>
-                            Clean context, zero noise
+                            清爽上下文，零噪音
                         </div>
                         <div class="feature-list-item">
                             <span class="feature-list-check">✓</span>
-                            Precise results
+                            精确结果
                         </div>
                     </div>
                 </div>
@@ -185,7 +181,7 @@
                     <div class="terminal-body">
                         <div class="term-line" style="animation-delay: 0s;">
                             <span class="term-prompt">❯</span>
-                            <span class="term-cmd">Refactor auth to use dependency injection</span>
+                            <span class="term-cmd">重构认证代码以使用依赖注入</span>
                         </div>
                         <div class="term-loading" style="animation-delay: 0.5s;">
                             <span class="term-loading-dot"></span>
@@ -194,35 +190,35 @@
                         </div>
                         <div class="term-line" style="animation-delay: 1s;">
                             <span class="term-tool">[sweep]</span>
-                            <span class="term-output">Finding auth-related files...</span>
+                            <span class="term-output">查找认证相关文件...</span>
                         </div>
                         <div class="term-line" style="animation-delay: 1.5s;">
                             <span class="term-tool"></span>
-                            <span class="term-output">Found 3 auth files in src/services/auth/</span>
+                            <span class="term-output">在 src/services/auth/ 找到 3 个认证文件</span>
                         </div>
                         <div class="term-line" style="animation-delay: 2s;">
                             <span class="term-tool">[pluck]</span>
-                            <span class="term-output">Extracting AuthService...</span>
+                            <span class="term-output">提取 AuthService...</span>
                         </div>
                         <div class="term-line" style="animation-delay: 2.5s;">
                             <span class="term-tool"></span>
-                            <span class="term-output">Retrieved AuthService class (45 lines)</span>
+                            <span class="term-output">已检索 AuthService 类（45 行）</span>
                         </div>
                         <div class="term-line" style="animation-delay: 3s;">
                             <span class="term-tool">[sculpt]</span>
-                            <span class="term-output">Refactoring AuthService...</span>
+                            <span class="term-output">重构 AuthService...</span>
                         </div>
                         <div class="term-line" style="animation-delay: 3.5s;">
                             <span class="term-tool"></span>
-                            <span class="term-output">Extracting ITokenManager interface...</span>
+                            <span class="term-output">提取 ITokenManager 接口...</span>
                         </div>
                         <div class="term-line" style="animation-delay: 4s;">
                             <span class="term-tool"></span>
-                            <span class="term-output">Injecting dependencies via constructor...</span>
+                            <span class="term-output">通过构造函数注入依赖...</span>
                         </div>
                         <div class="term-line" style="animation-delay: 4.5s;">
                             <span class="term-tool"></span>
-                            <span class="term-output">✨ Refactoring complete! 3 files modified.</span>
+                            <span class="term-output">✨ 重构完成！修改了 3 个文件</span>
                         </div>
                     </div>
                 </div>
@@ -233,9 +229,9 @@
     <section class="section">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">Agentic Tools</span>
-                <h2 class="section-title">10 intelligent agents</h2>
-                <p class="section-subtitle">Each agent masters a specific development domain</p>
+                <span class="section-label">智能体式工具</span>
+                <h2 class="section-title">10 个智能代理</h2>
+                <p class="section-subtitle">每个代理精通特定开发领域</p>
             </div>
 
             <div class="tools-grid reveal" style="transition-delay: 0.2s;">
@@ -244,70 +240,70 @@
                         <i data-lucide="map"></i>
                     </div>
                     <h4>Explore</h4>
-                    <p>Survey architecture</p>
+                    <p>架构概览</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="hammer"></i>
                     </div>
                     <h4>Craft</h4>
-                    <p>Execute bash with auto-fix</p>
+                    <p>执行 bash 并自动修复</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="pencil"></i>
                     </div>
                     <h4>Sculpt</h4>
-                    <p>Edit files with auto-fix</p>
+                    <p>编辑文件并自动修复</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="search"></i>
                     </div>
                     <h4>Sweep</h4>
-                    <p>Find matching files</p>
+                    <p>查找匹配文件</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="clipboard-list"></i>
                     </div>
                     <h4>Pluck</h4>
-                    <p>Extract code segments</p>
+                    <p>提取代码片段</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="file-text"></i>
                     </div>
                     <h4>Weave</h4>
-                    <p>Write files with auto-fix</p>
+                    <p>写入文件并自动修复</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="waves"></i>
                     </div>
                     <h4>Ripple</h4>
-                    <p>Find symbol references</p>
+                    <p>查找符号引用</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="unlink"></i>
                     </div>
                     <h4>Unravel</h4>
-                    <p>Trace function calls</p>
+                    <p>追踪函数调用</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="book-open"></i>
                     </div>
                     <h4>Quest</h4>
-                    <p>Research via web search</p>
+                    <p>通过网页搜索研究</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i data-lucide="bar-chart-3"></i>
                     </div>
                     <h4>Graphic</h4>
-                    <p>Generate Mermaid diagrams</p>
+                    <p>生成 Mermaid 图表</p>
                 </div>
             </div>
         </div>
@@ -316,8 +312,8 @@
     <section class="section">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">Features</span>
-                <h2 class="section-title">Everything you need</h2>
+                <span class="section-label">特性</span>
+                <h2 class="section-title">应有尽有</h2>
             </div>
 
             <div class="features-grid reveal" style="transition-delay: 0.2s;">
@@ -325,57 +321,57 @@
                     <div class="feature-icon">
                         <i data-lucide="crosshair"></i>
                     </div>
-                    <h3>Specialist Mode</h3>
-                    <p>10 agentic tools with clean context</p>
+                    <h3>专家模式</h3>
+                    <p>10 个智能体式工具，清爽上下文</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="shield"></i>
                     </div>
-                    <h3>Zero Telemetry</h3>
-                    <p>No data collection, ever</p>
+                    <h3>零遥测</h3>
+                    <p>永不收集数据</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="globe"></i>
                     </div>
-                    <h3>Multi-Model</h3>
-                    <p>Compatible with Anthropic, OpenAI</p>
+                    <h3>多模型支持</h3>
+                    <p>兼容 Anthropic、OpenAI</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="save"></i>
                     </div>
-                    <h3>Session Management</h3>
-                    <p>Resume where you left off</p>
+                    <h3>会话管理</h3>
+                    <p>从中断处继续</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="plug"></i>
                     </div>
-                    <h3>MCP Compatible</h3>
-                    <p>Model Context Protocol support</p>
+                    <h3>MCP 兼容</h3>
+                    <p>模型上下文协议支持</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="zap"></i>
                     </div>
-                    <h3>Auto-Fix</h3>
-                    <p>Commands and edits auto-retry on errors</p>
+                    <h3>自动修复</h3>
+                    <p>命令和编辑出错时自动重试</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="palette"></i>
                     </div>
-                    <h3>Beautiful UI</h3>
-                    <p>React-powered terminal interface</p>
+                    <h3>精美界面</h3>
+                    <p>React 驱动的终端界面</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i data-lucide="sliders"></i>
                     </div>
-                    <h3>Customizable</h3>
-                    <p>Customize agentic tools and system prompts</p>
+                    <h3>可定制</h3>
+                    <p>自定义智能体式工具和系统提示</p>
                 </div>
             </div>
         </div>
@@ -384,8 +380,8 @@
     <section class="section">
         <div class="container">
             <div class="cta-section reveal">
-                <h2>Ready to level up?</h2>
-                <p>Install OmniContext CLI and experience agentic tools today</p>
+                <h2>准备升级了吗？</h2>
+                <p>立即安装 OmniContext CLI，体验智能体式工具</p>
                 <div class="cta-buttons">
                     <a href="https://www.npmjs.com/package/omni-context-cli" class="btn-primary" target="_blank">
                         <i data-lucide="download"></i>
@@ -393,7 +389,7 @@
                     </a>
                     <button class="btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                         <i data-lucide="arrow-up"></i>
-                        Back to Top
+                        返回顶部
                     </button>
                 </div>
             </div>
@@ -402,11 +398,11 @@
 
     <footer>
         <div class="container">
-            <p>OmniContext CLI — Zero telemetry coding assistant</p>
+            <p>OmniContext CLI — 零遥测编程助手</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
