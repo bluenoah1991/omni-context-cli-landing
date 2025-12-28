@@ -39,7 +39,6 @@ body {
     font-size: 16px;
 }
 
-/* Animated Background */
 .bg-gradient {
     position: fixed;
     inset: 0;
@@ -75,7 +74,6 @@ body {
     }
 }
 
-/* Grid Pattern */
 .grid-pattern {
     position: fixed;
     inset: 0;
@@ -97,7 +95,6 @@ body {
     z-index: 10;
 }
 
-/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -146,7 +143,6 @@ nav.scrolled {
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -230,7 +226,6 @@ nav.scrolled {
     max-width: 600px;
 }
 
-/* Enhanced Install Command */
 .install-wrapper {
     position: relative;
     display: inline-block;
@@ -304,7 +299,6 @@ nav.scrolled {
     height: 14px;
 }
 
-/* Sections */
 .section {
     min-height: 100vh;
     display: flex;
@@ -339,7 +333,47 @@ nav.scrolled {
     line-height: 1.6;
 }
 
-/* Conversation Stack Comparison */
+.stats-box {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.stats-box-title {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.stats-box-highlight {
+    color: var(--accent);
+}
+
+.stats-box-desc {
+    font-size: 13px;
+    color: var(--text-tertiary);
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+}
+
+.feature-list-check {
+    color: var(--accent);
+}
+
 .comparison-wrapper {
     margin-top: 64px;
 }
@@ -388,7 +422,6 @@ nav.scrolled {
     color: var(--accent);
 }
 
-/* Stack Visualization */
 .conversation-stack {
     display: flex;
     flex-direction: column;
@@ -476,7 +509,6 @@ nav.scrolled {
     color: var(--accent);
 }
 
-/* Terminal Showcase */
 .showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -616,7 +648,6 @@ nav.scrolled {
     }
 }
 
-/* Tools Grid */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -667,7 +698,6 @@ nav.scrolled {
     color: var(--text-tertiary);
 }
 
-/* Features */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -715,7 +745,6 @@ nav.scrolled {
     line-height: 1.6;
 }
 
-/* CTA Section */
 .cta-section {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
@@ -785,7 +814,6 @@ nav.scrolled {
     border-color: var(--border-hover);
 }
 
-/* Footer */
 footer {
     padding: 40px 0;
     border-top: 1px solid var(--border);
@@ -797,7 +825,6 @@ footer p {
     color: var(--text-tertiary);
 }
 
-/* Animations */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -809,7 +836,6 @@ footer p {
     transform: translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
 
     .comparison-container,
@@ -875,7 +901,6 @@ footer p {
     }
 }
 
-/* Smooth Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
