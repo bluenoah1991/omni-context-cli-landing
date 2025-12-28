@@ -899,6 +899,10 @@ footer p {
     .comparison-panel {
         padding: 24px;
     }
+
+    .scroll-indicator {
+        display: none;
+    }
 }
 
 .scroll-indicator {
