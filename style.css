@@ -147,7 +147,7 @@ nav.scrolled {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 0 80px;
+    padding: 80px 0 60px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
@@ -155,45 +155,6 @@ nav.scrolled {
 .hero-content {
     max-width: 800px;
     position: relative;
-}
-
-.badges {
-    display: inline-flex;
-    gap: 12px;
-    margin-bottom: 32px;
-}
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent-glow);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
-.badge-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
 }
 
 .hero h1 {
@@ -303,7 +264,7 @@ nav.scrolled {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 0;
+    padding: 80px 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
 }
@@ -315,14 +276,14 @@ nav.scrolled {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text-tertiary);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .section-title {
     font-size: clamp(36px, 5vw, 56px);
     font-weight: 700;
     letter-spacing: -0.03em;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     line-height: 1.1;
 }
 
@@ -331,30 +292,6 @@ nav.scrolled {
     color: var(--text-secondary);
     max-width: 600px;
     line-height: 1.6;
-}
-
-.stats-box {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background: var(--bg-secondary);
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
-
-.stats-box-title {
-    font-size: 16px;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-}
-
-.stats-box-highlight {
-    color: var(--accent);
-}
-
-.stats-box-desc {
-    font-size: 13px;
-    color: var(--text-tertiary);
 }
 
 .feature-list {
@@ -375,21 +312,21 @@ nav.scrolled {
 }
 
 .comparison-wrapper {
-    margin-top: 64px;
+    margin-top: 40px;
 }
 
 .comparison-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    margin-top: 48px;
+    margin-top: 32px;
 }
 
 .comparison-panel {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 32px;
+    padding: 24px;
     transition: all 0.3s ease;
 }
 
@@ -403,7 +340,7 @@ nav.scrolled {
 }
 
 .comparison-header {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .comparison-header h3 {
@@ -429,7 +366,7 @@ nav.scrolled {
 }
 
 .stack-message {
-    padding: 12px 16px;
+    padding: 8px 12px;
     border-radius: 8px;
     font-size: 13px;
     display: flex;
@@ -487,8 +424,8 @@ nav.scrolled {
 }
 
 .context-summary {
-    margin-top: 24px;
-    padding-top: 20px;
+    margin-top: 16px;
+    padding-top: 16px;
     border-top: 1px solid var(--border);
     text-align: center;
 }
@@ -836,46 +773,6 @@ footer p {
     transform: translateY(0);
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-tertiary);
-    font-size: 12px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-}
-
-.scroll-indicator::after {
-    content: '';
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--text-tertiary), transparent);
-}
-
 @media (max-width: 1024px) {
 
     .comparison-container,
@@ -893,13 +790,8 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .badges {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .hero {
-        padding: 100px 0 60px;
+        padding: 60px 0 40px;
     }
 
     .tools-grid,
@@ -938,9 +830,5 @@ footer p {
 
     .comparison-panel {
         padding: 24px;
-    }
-
-    .scroll-indicator {
-        display: none;
     }
 }
