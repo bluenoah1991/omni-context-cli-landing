@@ -1,0 +1,2 @@
+- All English copy in the project should be natural, casual, and idiomatic to native English speakers.
+- Do not add any code comments or documentation.

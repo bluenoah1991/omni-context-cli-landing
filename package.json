@@ -1,0 +1,21 @@
+{
+  "name": "omni-context-cli-landing",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js",
+    "docs": "docusaurus build --out-dir docs",
+    "docs:watch": "docusaurus build --out-dir docs && chokidar \"markdown/**/*.md\" \"markdown/**/*.mdx\" -c \"docusaurus build --out-dir docs\""
+  },
+  "dependencies": {
+    "@docusaurus/core": "latest",
+    "@docusaurus/preset-classic": "latest",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
+  }
+}
