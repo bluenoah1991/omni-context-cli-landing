@@ -10,6 +10,10 @@ const config = {
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
+  markdown: {
+    format: 'md',
+  },
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans'],

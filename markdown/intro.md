@@ -5,34 +5,75 @@ sidebar_label: Getting Started
 sidebar_position: 1
 ---
 
-# Getting Started with OmniContext CLI
+# Getting Started
 
-OmniContext CLI is a powerful agentic tool for developers that helps you manage complex development tasks autonomously.
+Omx is a small, helpful, zero-telemetry coding assistant that runs in your terminal.
 
 ## Installation
 
 ```bash
-npm install -g omni-context-cli && omx
+npm install -g omni-context-cli
 ```
 
 ## Quick Start
 
-After installation, simply run:
+Navigate to your project directory and run:
 
 ```bash
 omx
 ```
 
-This will start the interactive agentic interface.
+Omx supports any OpenAI-compatible or Anthropic-compatible API.
 
-## Features
+### Adding Your First Model
 
-- **Specialist Mode**: Focused agents for specific tasks
-- **Zero Telemetry**: Privacy-first design with no data collection
-- **ACE**: Agentic Context Engineering
-- **Multi-Model**: Support for multiple LLM providers
-- **Agent Skills**: Extensible agentic capabilities
+On first run, you'll need to add a model before you can start chatting:
 
-## Next Steps
+1. Press `Escape` to open the menu
+2. Select **Manage your model list**
+3. Select **Add a new model**
+4. Fill in the form:
+   - **API Type**: Choose `Anthropic` or `OpenAI`
+   - **Model Name**: The model identifier (e.g. `claude-sonnet-4-20250514`, `gpt-4o`)
+   - **API Key**: Your API key
+   - **API URL**: The API endpoint (e.g. `https://api.anthropic.com`, `https://api.openai.com/v1`)
+   - **Context Size (K)**: Max context window in thousands (e.g. `200` for 200K)
+   - **Nickname**: A friendly name to display in the UI
 
-Check out our [Tutorial](./tutorial/intro) to learn more about using OmniContext CLI.
+Press `Enter` after each field, and `Escape` to go back.
+
+## Command Line Options
+
+| Option | Description |
+|--------|-------------|
+| `-c, --continue` | Continue from your last session |
+| `-d, --diagnostic` | Enable diagnostic mode to save request/response JSON |
+| `-a, --cost-analysis` | Record token usage to CSV for cost analysis |
+
+Examples:
+
+```bash
+# Start a new session
+omx
+
+# Resume where you left off
+omx -c
+
+# Debug API calls
+omx --diagnostic
+
+# Track token costs
+omx --cost-analysis
+```
+
+## Documentation
+
+- [Basic Usage](./basic-usage) - Shortcuts, commands, and menu options
+- [Specialist Mode](./specialist-mode) - High-level agentic tools
+- [MCP Configuration](./mcp) - Connect external tools via Model Context Protocol
+- [Custom SubAgents](./subagents) - Create your own agents
+- [Custom Slash Commands](./slash) - Add custom commands
+- [Custom Skills](./skills) - Reusable instruction sets
+- [Playbook (ACE)](./playbook) - Persistent memory across sessions
+- [Model Management](./models) - Configure multiple LLM providers
+- [Session Management](./sessions) - Save and restore conversations
