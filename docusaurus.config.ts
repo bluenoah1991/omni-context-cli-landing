@@ -26,7 +26,7 @@ const config = {
         docs: {
           path: 'markdown',
           routeBasePath: '/',
-          editUrl: 'https://github.com/bluenoah1991/omni-context-cli-landing/tree/main/markdown/',
+          editUrl: 'https://github.com/bluenoah1991/omni-context-cli-landing/tree/main/',
         },
         theme: {
           customCss: './assets/css/docs.css',
