@@ -31,6 +31,45 @@ APIs following the Anthropic messages format:
 - Anthropic (Claude 3, Claude 3.5, Claude 4, etc.)
 - AWS Bedrock (via Anthropic format)
 
+### Google Gemini
+
+Google's Gemini API with native streaming support:
+
+- Gemini 2.0 Flash
+- Gemini 1.5 Pro
+- Gemini 1.5 Flash
+
+### Responses API
+
+Anthropic's newer Responses API format with enhanced reasoning support:
+
+- Supports advanced reasoning and thought blocks
+- Different streaming format than standard messages API
+
+### Zenmux Auto-Routing
+
+A dynamic routing model that automatically selects the best model based on your configuration:
+
+- Use `zenmux/auto` as the model name
+- Configure routing rules in `~/.omx/zenmux.json`
+- The `model_routing_config` is automatically merged into requests
+- Allows cost-effective routing while maintaining quality
+
+Example `zenmux.json`:
+
+```json
+{
+  "model_routing_config": {
+    "available_models": [
+      "deepseek/deepseek-reasoner",
+      "anthropic/claude-sonnet-4.5",
+      "minimax/minimax-m2"
+    ],
+    "preference": "balanced"
+  }
+}
+```
+
 ## Adding a Model
 
 On first run, Omx prompts you to add a model. You can also add models later through the configuration menu.
@@ -39,9 +78,9 @@ On first run, Omx prompts you to add a model. You can also add models later thro
 
 | Field | Description |
 |-------|-------------|
-| **Name** | Model identifier sent to the API (e.g., `gpt-4o`, `claude-sonnet-4-20250514`) |
+| **Name** | Model identifier sent to the API (e.g., `gpt-4o`, `claude-sonnet-4-20250514`, `gemini-2.0-flash-exp`) |
 | **Nickname** | Display name in Omx UI |
-| **Provider** | `openai` or `anthropic` |
+| **Provider** | `openai`, `anthropic`, `gemini`, `responses`, or `zenmux` |
 | **API Key** | Your API key |
 | **API URL** | Base URL for the API |
 | **Context Size** | Maximum context window in thousands of tokens |
@@ -91,6 +130,41 @@ API Key: your-azure-key
 API URL: https://your-resource.openai.azure.com/openai/deployments/your-deployment
 Context Size: 128
 ```
+
+#### Google Gemini
+
+```
+Name: gemini-2.0-flash-exp
+Nickname: Gemini 2.0 Flash
+Provider: gemini
+API Key: AIza...
+API URL: https://generativelanguage.googleapis.com/v1beta
+Context Size: 128
+```
+
+#### Responses API
+
+```
+Name: claude-sonnet-4-20250514
+Nickname: Claude Sonnet 4
+Provider: responses
+API Key: sk-ant-...
+API URL: https://api.anthropic.com
+Context Size: 200
+```
+
+#### Zenmux Auto-Routing
+
+```
+Name: zenmux/auto
+Nickname: Zenmux Auto
+Provider: zenmux
+API Key: your-zenmux-key
+API URL: https://zenmux.ai/api/v1
+Context Size: 200
+```
+
+See [Zenmux Auto-Routing](#zenmux-auto-routing) for configuration details.
 
 ## Model Settings
 
@@ -146,6 +220,8 @@ Remove models through the configuration menu. If you delete the default model, y
 Verify the API URL is correct:
 - OpenAI: `https://api.openai.com/v1`
 - Anthropic: `https://api.anthropic.com`
+- Google Gemini: `https://generativelanguage.googleapis.com/v1beta`
+- Responses API: `https://api.anthropic.com`
 - Local: `http://localhost:PORT/v1`
 
 ### Authentication Errors

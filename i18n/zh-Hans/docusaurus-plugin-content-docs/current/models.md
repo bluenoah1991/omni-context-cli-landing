@@ -31,6 +31,45 @@ Omx 支持多个 LLM 提供商，允许你轻松配置、切换和管理模型�
 - Anthropic (Claude 3, Claude 3.5, Claude 4 等)
 - AWS Bedrock（通过 Anthropic 格式）
 
+### Google Gemini
+
+Google 的 Gemini API，原生流式支持：
+
+- Gemini 2.0 Flash
+- Gemini 1.5 Pro
+- Gemini 1.5 Flash
+
+### Responses API
+
+Anthropic 较新的 Responses API 格式，支持增强的 reasoning：
+
+- 支持高级 reasoning 和 thought blocks
+- 与标准 messages API 不同的流式格式
+
+### Zenmux 自动路由
+
+基于配置自动选择最佳模型的动态路由：
+
+- 使用 `zenmux/auto` 作为模型名称
+- 在 `~/.omx/zenmux.json` 中配置路由规则
+- `model_routing_config` 会自动合并到请求中
+- 可在保证质量的同时实现成本优化路由
+
+示例 `zenmux.json`：
+
+```json
+{
+  "model_routing_config": {
+    "available_models": [
+      "deepseek/deepseek-reasoner",
+      "anthropic/claude-sonnet-4.5",
+      "minimax/minimax-m2"
+    ],
+    "preference": "balanced"
+  }
+}
+```
+
 ## 添加模型
 
 首次运行时，Omx 会提示你添加模型。你也可以稍后通过配置菜单添加模型。
@@ -39,9 +78,9 @@ Omx 支持多个 LLM 提供商，允许你轻松配置、切换和管理模型�
 
 | 字段 | 描述 |
 |-------|-------------|
-| **Name** | 发送给 API 的模型标识符（如 `gpt-4o`、`claude-sonnet-4-20250514`） |
+| **Name** | 发送给 API 的模型标识符（如 `gpt-4o`、`claude-sonnet-4-20250514`、`gemini-2.0-flash-exp`） |
 | **Nickname** | 在 Omx UI 中显示的名称 |
-| **Provider** | `openai` 或 `anthropic` |
+| **Provider** | `openai`、`anthropic`、`gemini`、`responses` 或 `zenmux` |
 | **API Key** | 你的 API 密钥 |
 | **API URL** | API 的基础 URL |
 | **Context Size** | 最大上下文窗口（以千 token 为单位） |
@@ -91,6 +130,41 @@ API Key: your-azure-key
 API URL: https://your-resource.openai.azure.com/openai/deployments/your-deployment
 Context Size: 128
 ```
+
+#### Google Gemini
+
+```
+Name: gemini-2.0-flash-exp
+Nickname: Gemini 2.0 Flash
+Provider: gemini
+API Key: AIza...
+API URL: https://generativelanguage.googleapis.com/v1beta
+Context Size: 128
+```
+
+#### Responses API
+
+```
+Name: claude-sonnet-4-20250514
+Nickname: Claude Sonnet 4
+Provider: responses
+API Key: sk-ant-...
+API URL: https://api.anthropic.com
+Context Size: 200
+```
+
+#### Zenmux 自动路由
+
+```
+Name: zenmux/auto
+Nickname: Zenmux Auto
+Provider: zenmux
+API Key: your-zenmux-key
+API URL: https://zenmux.ai/api/v1
+Context Size: 200
+```
+
+详情请参阅 [Zenmux 自动路由](#zenmux-自动路由)。
 
 ## 模型设置
 
@@ -147,6 +221,8 @@ Context Size: 128
 验证 API URL 是否正确：
 - OpenAI: `https://api.openai.com/v1`
 - Anthropic: `https://api.anthropic.com`
+- Google Gemini: `https://generativelanguage.googleapis.com/v1beta`
+- Responses API: `https://api.anthropic.com`
 - 本地: `http://localhost:PORT/v1`
 
 ### 认证错误
