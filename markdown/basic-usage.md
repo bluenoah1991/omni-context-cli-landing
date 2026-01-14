@@ -17,6 +17,7 @@ This guide covers the essential shortcuts, commands, and menu options for workin
 | Ctrl+C | Press twice to exit |
 | Ctrl+A | Move cursor to line start |
 | Ctrl+E | Move cursor to line end |
+| Ctrl+L | Clear input box |
 | Shift+Enter | Insert newline (multi-line input) |
 | Up/Down | Navigate cursor in multi-line input / Browse message history |
 

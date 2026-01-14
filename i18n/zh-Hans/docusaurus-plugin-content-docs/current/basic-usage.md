@@ -17,6 +17,7 @@ sidebar_position: 2
 | Ctrl+C | 按两次退出 |
 | Ctrl+A | 将光标移到行首 |
 | Ctrl+E | 将光标移到行尾 |
+| Ctrl+L | 清空输入框 |
 | Shift+Enter | 插入换行（多行输入）|
 | Up/Down | 在多行输入中移动光标 / 浏览消息历史 |
 
