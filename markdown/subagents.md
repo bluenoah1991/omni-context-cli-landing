@@ -28,7 +28,7 @@ Create `~/.omx/agents/review.md`:
 ---
 name: review
 description: Review code changes and provide feedback on quality, bugs, and improvements.
-allowedTools: [bash, read, grep]
+allowedTools: [Bash, Read, Grep]
 parameters:
   properties:
     target:
@@ -73,13 +73,13 @@ Brief description shown when listing available tools.
 
 Array of tools the agent can use:
 
-- `bash` - Execute shell commands
-- `bashOutput` - Stream bash output
-- `read` - Read file contents
-- `write` - Write file contents
-- `edit` - Edit files
-- `glob` - Find files by pattern
-- `grep` - Search file contents
+- `Bash` - Execute shell commands
+- `BashOutput` - Stream bash output
+- `Read` - Read file contents
+- `Write` - Write file contents
+- `Edit` - Edit files
+- `Glob` - Find files by pattern
+- `Grep` - Search file contents
 
 ### parameters
 

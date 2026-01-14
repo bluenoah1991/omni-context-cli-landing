@@ -27,7 +27,9 @@ Create `~/.omx/mcp.json` to configure MCP servers:
   "mcpServers": {
     "web-search": {
       "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
-      "key": "<YOUR_ZAI_API_KEY>"
+      "headers": {
+        "Authorization": "Bearer <YOUR_ZAI_API_KEY>"
+      }
     },
     "context7": {
       "command": "npx",
@@ -63,13 +65,13 @@ Remote HTTP servers using Streamable HTTP transport:
   "mcpServers": {
     "web-search": {
       "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
-      "key": "<YOUR_ZAI_API_KEY>"
+      "headers": {
+        "Authorization": "Bearer <YOUR_ZAI_API_KEY>"
+      }
     }
   }
 }
 ```
-
-The `key` field is optional. When provided, it's sent as a Bearer token in the Authorization header.
 
 ## Examples
 
@@ -97,7 +99,9 @@ Search the web using Z.ai:
   "mcpServers": {
     "web-search": {
       "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
-      "key": "<YOUR_ZAI_API_KEY>"
+      "headers": {
+        "Authorization": "Bearer <YOUR_ZAI_API_KEY>"
+      }
     }
   }
 }

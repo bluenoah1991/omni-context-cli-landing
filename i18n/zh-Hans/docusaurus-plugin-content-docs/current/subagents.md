@@ -28,7 +28,7 @@ sidebar_position: 5
 ---
 name: review
 description: 审查代码变更并提供关于质量、bug 和改进的反馈。
-allowedTools: [bash, read, grep]
+allowedTools: [Bash, Read, Grep]
 parameters:
   properties:
     target:
@@ -73,13 +73,13 @@ parameters:
 
 智能体可以使用的工具数组：
 
-- `bash` - 执行 shell 命令
-- `bashOutput` - 流式 bash 输出
-- `read` - 读取文件内容
-- `write` - 写入文件内容
-- `edit` - 编辑文件
-- `glob` - 按模式查找文件
-- `grep` - 搜索文件内容
+- `Bash` - 执行 shell 命令
+- `BashOutput` - 流式 bash 输出
+- `Read` - 读取文件内容
+- `Write` - 写入文件内容
+- `Edit` - 编辑文件
+- `Glob` - 按模式查找文件
+- `Grep` - 搜索文件内容
 
 ### parameters
 

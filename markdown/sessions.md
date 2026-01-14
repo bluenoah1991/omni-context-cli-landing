@@ -59,6 +59,12 @@ This is useful when:
 - The conversation has accumulated irrelevant content
 - You're approaching the context limit
 
+### Compaction Configuration
+
+Omx supports context editing to optimize compaction. You can enable or disable this feature through the `contextEditing` setting.
+
+By default, Omx preserves all tool call results when compacting conversations. If you want to remove tool results during compaction to reduce token usage, you can manually adjust the relevant parameter in your settings file.
+
 ## Starting Fresh
 
 Use `/clear` to start a completely new session:

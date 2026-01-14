@@ -27,7 +27,9 @@ MCP 是一个开放协议，允许 AI 助手连接外部数据源和工具。通
   "mcpServers": {
     "web-search": {
       "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
-      "key": "<YOUR_ZHIPU_API_KEY>"
+      "headers": {
+        "Authorization": "Bearer <YOUR_ZHIPU_API_KEY>"
+      }
     },
     "context7": {
       "command": "npx",
@@ -63,13 +65,13 @@ MCP 是一个开放协议，允许 AI 助手连接外部数据源和工具。通
   "mcpServers": {
     "web-search": {
       "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
-      "key": "<YOUR_ZHIPU_API_KEY>"
+      "headers": {
+        "Authorization": "Bearer <YOUR_ZHIPU_API_KEY>"
+      }
     }
   }
 }
 ```
-
-`key` 字段是可选的。如果提供，将作为 Bearer 令牌发送在 Authorization 头中。
 
 ## 示例
 
@@ -97,7 +99,9 @@ MCP 是一个开放协议，允许 AI 助手连接外部数据源和工具。通
   "mcpServers": {
     "web-search": {
       "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
-      "key": "<YOUR_ZHIPU_API_KEY>"
+      "headers": {
+        "Authorization": "Bearer <YOUR_ZHIPU_API_KEY>"
+      }
     }
   }
 }
