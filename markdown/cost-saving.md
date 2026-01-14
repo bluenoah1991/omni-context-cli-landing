@@ -99,6 +99,5 @@ This design philosophy ensures that your tokens are used for your actual work, n
 2. **Use high-end main models** with cost-effective agent models
 3. **Set cache to 1-hour** for extended problem-solving sessions
 4. **Let Omx trim thinking blocks** automatically
-5. **Monitor your token usage** with `/status` to track costs
 
 These techniques work together to maximize value while minimizing unnecessary expenses.
