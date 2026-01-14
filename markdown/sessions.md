@@ -2,7 +2,7 @@
 slug: /tutorial/sessions
 title: Session Management
 sidebar_label: Session Management
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 # Session Management

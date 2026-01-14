@@ -2,7 +2,7 @@
 slug: /tutorial/playbook
 title: Playbook (ACE)
 sidebar_label: Playbook (ACE)
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Playbook (ACE)
