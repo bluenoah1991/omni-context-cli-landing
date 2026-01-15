@@ -28,12 +28,12 @@ Specialist mode introduces **Agentic Tools** - high-level tools that encapsulate
 | **sculpt** | Edit files with automatic error correction |
 | **weave** | Write files with auto-fix capabilities |
 | **sweep** | Find files matching semantic criteria |
-| **pluck** | Extract specific code segments |
+| **pluck** | Extract specific code segments from a file |
 | **explore** | Survey project structure and architecture |
 | **ripple** | Find all references to a symbol |
-| **unravel** | Trace function call dependencies |
+| **slice** | Extract code snippets relevant to answering specific questions |
+| **morph** | Refactor code across multiple files |
 | **quest** | Research topics via web search |
-| **graphic** | Generate Mermaid diagrams |
 
 ## Enabling Specialist Mode
 
