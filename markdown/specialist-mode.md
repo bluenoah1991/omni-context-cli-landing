@@ -24,7 +24,7 @@ Specialist mode introduces **Agentic Tools** - high-level tools that encapsulate
 
 | Tool | Purpose |
 |-------|---------:|
-| **craft** | Execute bash commands with auto-retry on failure |
+| **spark** | Execute bash commands with auto-retry on failure |
 | **sculpt** | Edit files with automatic error correction |
 | **weave** | Write files with auto-fix capabilities |
 | **sweep** | Find files matching semantic criteria |
@@ -32,7 +32,7 @@ Specialist mode introduces **Agentic Tools** - high-level tools that encapsulate
 | **explore** | Survey project structure and architecture |
 | **ripple** | Find all references to a symbol |
 | **slice** | Extract code snippets relevant to answering specific questions |
-| **morph** | Refactor code across multiple files |
+| **glance** | Preview multiple files at once with brief summaries |
 | **quest** | Research topics via web search |
 
 ## Enabling Specialist Mode
