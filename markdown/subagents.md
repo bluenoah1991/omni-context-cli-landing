@@ -122,6 +122,31 @@ The prompt template uses [Handlebars](https://handlebarsjs.com/) syntax.
 {{/if}}
 ```
 
+## Agent Instructions
+
+You can provide global instructions for all agents via an `OMX-AGENTS.md` file. This works similarly to project instructions (`OMX.md`) but applies specifically to agent execution.
+
+### File Location
+
+The file is searched in order:
+
+1. `./OMX-AGENTS.md` - Project-specific agent instructions
+2. `~/.omx/OMX-AGENTS.md` - User-wide agent instructions
+
+The first file found is used. Instructions are injected into agent sessions before task execution.
+
+### Example
+
+Create `OMX-AGENTS.md` in your project:
+
+```markdown
+# Agent Instructions
+
+- Always use verbose output for debugging
+- Prefer git commands over direct file operations
+- Check for .env files before running any commands
+```
+
 ## Using Custom Agents
 
 Once created, your agent appears as `agent_name` in the available tools. The model can call it like any built-in agent.
