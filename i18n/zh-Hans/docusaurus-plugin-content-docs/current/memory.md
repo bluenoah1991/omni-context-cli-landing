@@ -1,19 +1,19 @@
 ---
-slug: /tutorial/playbook
-title: Playbook (ACE)
-sidebar_label: Playbook (ACE)
+slug: /tutorial/memory
+title: 跨会话记忆
+sidebar_label: 跨会话记忆
 sidebar_position: 9
 ---
 
-# Playbook (ACE)
+# 跨会话记忆
 
-Playbook 是 Omx 对 **Agentic Context Engineering (ACE)** 的实现 - 一个随时间改进响应的持久记忆系统。
+Memory 是 Omx 对 **Agentic Context Engineering (ACE)** 的实现 - 一个随时间改进响应的持久记忆系统。
 
 ## 工作原理
 
 传统的 AI 助手每次会话都从头开始。它们不记得你的编码风格偏好、项目特定的模式、之前会话中犯的错误或成功的方法。
 
-Playbook 维护一组持久的 **Key Points** - 从你的对话中提取的简洁学习成果。这些关键点会在未来的对话中自动注入，帮助 Omx 更好地理解和适应你的工作方式。
+Memory 维护一组持久的 **Key Points** - 从你的对话中提取的简洁学习成果。这些关键点会在未来的对话中自动注入，帮助 Omx 更好地理解和适应你的工作方式。
 
 ## 反思与压缩
 
@@ -35,20 +35,20 @@ Playbook 维护一组持久的 **Key Points** - 从你的对话中提取的简�
 
 未使用的关键点会随时间自然衰减。
 
-**移除**：分数低于 -5 的关键点会被自动移除，确保 playbook 保持相关性。
+**移除**：分数低于 -5 的关键点会被自动移除，确保 Memory 保持相关性。
 
-## 启用 Playbook
+## 启用 Memory
 
-Playbook 默认禁用。通过以下方式启用：
+Memory 默认禁用。通过以下方式启用：
 
 1. 启动时的配置菜单
 2. `/status` 命令切换设置
 
-启用后，你会在状态输出中看到 `Playbook memory: √`。
+启用后，你会在状态输出中看到 `Memory: √`。
 
 ## 学习内容
 
-Playbook 会捕获：
+Memory 会捕获：
 - 项目结构
 - 编码偏好
 - 常见模式
@@ -57,7 +57,7 @@ Playbook 会捕获：
 
 ## 数据存储
 
-Playbook 按项目存储，路径为 `~/.omx/projects/<encoded-path>/playbook.json`，其中 `<encoded-path>` 是当前工作目录的 base64url 编码：
+Memory 按项目存储，路径为 `~/.omx/projects/<encoded-path>/memory.json`，其中 `<encoded-path>` 是当前工作目录的 base64url 编码：
 
 ```json
 {
@@ -74,4 +74,4 @@ Playbook 按项目存储，路径为 `~/.omx/projects/<encoded-path>/playbook.js
 
 ## 手动管理
 
-你可以手动编辑 `playbook.json` 来删除不需要的关键点、调整分数或直接添加已知信息。
+你可以手动编辑 `memory.json` 来删除不需要的关键点、调整分数或直接添加已知信息。

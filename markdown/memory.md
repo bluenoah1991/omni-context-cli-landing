@@ -1,19 +1,19 @@
 ---
-slug: /tutorial/playbook
-title: Playbook (ACE)
-sidebar_label: Playbook (ACE)
+slug: /tutorial/memory
+title: Cross-Session Memory
+sidebar_label: Cross-Session Memory
 sidebar_position: 9
 ---
 
-# Playbook (ACE)
+# Cross-Session Memory
 
-Playbook is Omx's implementation of **Agentic Context Engineering (ACE)** - a system for persistent memory that improves responses over time.
+Memory is Omx's implementation of **Agentic Context Engineering (ACE)** - a system for persistent memory that improves responses over time.
 
 ## How It Works
 
 Traditional AI assistants start fresh every session. They don't remember your coding style preferences, project-specific patterns, mistakes made in previous sessions, or successful approaches that worked.
 
-Playbook maintains a persistent set of **Key Points** - concise learnings extracted from your conversations. These key points are automatically injected into future conversations, helping Omx better understand and adapt to your workflow.
+Memory maintains a persistent set of **Key Points** - concise learnings extracted from your conversations. These key points are automatically injected into future conversations, helping Omx better understand and adapt to your workflow.
 
 ## Reflection and Compaction
 
@@ -35,20 +35,20 @@ At the end of each conversation (whether through automatic compaction or manual 
 
 Unused key points naturally decay over time.
 
-**Removal**: Key points with scores below -5 are automatically removed, ensuring the playbook stays relevant.
+**Removal**: Key points with scores below -5 are automatically removed, ensuring memory stays relevant.
 
-## Enabling Playbook
+## Enabling Memory
 
-Playbook is disabled by default. Enable it via:
+Memory is disabled by default. Enable it via:
 
 1. Configuration menu on startup
 2. `/status` command to toggle settings
 
-When enabled, you'll see `Playbook memory: √` in the status output.
+When enabled, you'll see `Memory: √` in the status output.
 
 ## What Gets Learned
 
-Playbook captures:
+Memory captures:
 - Project structure
 - Coding preferences
 - Common patterns
@@ -57,7 +57,7 @@ Playbook captures:
 
 ## Data Storage
 
-Playbook is stored per-project at `~/.omx/projects/<encoded-path>/playbook.json`, where `<encoded-path>` is the base64url encoding of the current working directory:
+Memory is stored per-project at `~/.omx/projects/<encoded-path>/memory.json`, where `<encoded-path>` is the base64url encoding of the current working directory:
 
 ```json
 {
@@ -74,4 +74,4 @@ Playbook is stored per-project at `~/.omx/projects/<encoded-path>/playbook.json`
 
 ## Manual Management
 
-You can manually edit `playbook.json` to remove unwanted key points, adjust scores, or add known information directly.
+You can manually edit `memory.json` to remove unwanted key points, adjust scores, or add known information directly.

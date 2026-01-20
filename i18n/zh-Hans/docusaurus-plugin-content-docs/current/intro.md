@@ -72,12 +72,12 @@ omx --cost-analysis
 
 ## 文档
 
-- [基本操作](./basic-usage) - 快捷键、命令和菜单选项
-- [专家模式](./specialist-mode) - 高级智能体工具
-- [MCP 配置](./mcp) - 通过 Model Context Protocol 连接外部工具
-- [自定义 SubAgents](./subagents) - 创建自己的智能体
-- [自定义 Slash 命令](./slash) - 添加自定义命令
-- [自定义 Skills](./skills) - 可重用的指令集
-- [Playbook (ACE)](./playbook) - 跨会话的持久记忆
-- [模型管理](./models) - 配置多个 LLM 提供商
-- [会话管理](./sessions) - 保存和恢复对话
+- [基本操作](./tutorial/basic-usage) - 快捷键、命令和菜单选项
+- [专家模式](./tutorial/specialist-mode) - 高级智能体工具
+- [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具
+- [自定义 SubAgents](./tutorial/subagents) - 创建自己的智能体
+- [自定义 Slash 命令](./tutorial/slash) - 添加自定义命令
+- [自定义 Skills](./tutorial/skills) - 可重用的指令集
+- [跨会话记忆](./tutorial/memory) - 跨会话的持久记忆
+- [模型管理](./tutorial/models) - 配置多个 LLM 提供商
+- [会话管理](./tutorial/sessions) - 保存和恢复对话

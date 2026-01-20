@@ -72,12 +72,12 @@ omx --cost-analysis
 
 ## Documentation
 
-- [Basic Usage](./basic-usage) - Shortcuts, commands, and menu options
-- [Specialist Mode](./specialist-mode) - High-level agentic tools
-- [MCP Configuration](./mcp) - Connect external tools via Model Context Protocol
-- [Custom SubAgents](./subagents) - Create your own agents
-- [Custom Slash Commands](./slash) - Add custom commands
-- [Custom Skills](./skills) - Reusable instruction sets
-- [Playbook (ACE)](./playbook) - Persistent memory across sessions
-- [Model Management](./models) - Configure multiple LLM providers
-- [Session Management](./sessions) - Save and restore conversations
+- [Basic Usage](./tutorial/basic-usage) - Shortcuts, commands, and menu options
+- [Specialist Mode](./tutorial/specialist-mode) - High-level agentic tools
+- [MCP Configuration](./tutorial/mcp) - Connect external tools via Model Context Protocol
+- [Custom SubAgents](./tutorial/subagents) - Create your own agents
+- [Custom Slash Commands](./tutorial/slash) - Add custom commands
+- [Custom Skills](./tutorial/skills) - Reusable instruction sets
+- [Cross-Session Memory](./tutorial/memory) - Persistent memory across sessions
+- [Model Management](./tutorial/models) - Configure multiple LLM providers
+- [Session Management](./tutorial/sessions) - Save and restore conversations
