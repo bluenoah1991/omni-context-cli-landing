@@ -49,6 +49,10 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 | `-c, --continue` | 继续上一次会话 |
 | `-d, --diagnostic` | 启用诊断模式，保存请求/响应的 JSON 数据 |
 | `-a, --cost-analysis` | 记录 token 用量到 CSV 文件，用于成本分析 |
+| `--list-providers` | 列出可用的模型提供商 |
+| `--add-provider <id>` | 添加提供商的所有模型（需要 `--api-key`） |
+| `--remove-provider <id>` | 移除提供商的所有模型 |
+| `--api-key <key>` | 用于 `--add-provider` 的 API 密钥 |
 
 示例：
 

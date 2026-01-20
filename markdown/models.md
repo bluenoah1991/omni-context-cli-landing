@@ -70,7 +70,37 @@ Example `zenmux.json`:
 }
 ```
 
-## Adding a Model
+## Quick Add with Model Providers
+
+Omx includes built-in support for popular model providers. You can quickly add all models from a provider with a single command:
+
+```bash
+omx --list-providers
+```
+
+This shows all available providers:
+
+| Provider | Models |
+|----------|--------|
+| **deepseek** | DeepSeek Chat, DeepSeek Reasoner |
+| **minimax** | MiniMax M2.1 |
+| **openrouter** | Multiple models from various providers |
+| **zhipu** | GLM-4.7, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
+| **zenmux** | Dynamic model list from Zenmux.ai |
+
+To add all models from a provider:
+
+```bash
+omx --add-provider deepseek --api-key sk-...
+```
+
+To remove all models from a provider:
+
+```bash
+omx --remove-provider deepseek
+```
+
+## Adding a Model Manually
 
 On first run, Omx prompts you to add a model. You can also add models later through the configuration menu.
 

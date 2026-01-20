@@ -70,7 +70,37 @@ Anthropic 较新的 Responses API 格式，支持增强的 reasoning：
 }
 ```
 
-## 添加模型
+## 快速添加模型提供商
+
+Omx 内置支持多个热门模型提供商。你可以通过一条命令快速添加提供商的所有模型：
+
+```bash
+omx --list-providers
+```
+
+这会显示所有可用的提供商：
+
+| 提供商 | 模型 |
+|----------|--------|
+| **deepseek** | DeepSeek Chat, DeepSeek Reasoner |
+| **minimax** | MiniMax M2.1 |
+| **openrouter** | 来自多个提供商的模型 |
+| **zhipu** | GLM-4.7, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
+| **zenmux** | 来自 Zenmux.ai 的动态模型列表 |
+
+添加某个提供商的所有模型：
+
+```bash
+omx --add-provider deepseek --api-key sk-...
+```
+
+移除某个提供商的所有模型：
+
+```bash
+omx --remove-provider deepseek
+```
+
+## 手动添加模型
 
 首次运行时，Omx 会提示你添加模型。你也可以稍后通过配置菜单添加模型。
 

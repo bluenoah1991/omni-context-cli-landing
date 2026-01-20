@@ -49,6 +49,10 @@ Press `Enter` after each field, and `Escape` to go back.
 | `-c, --continue` | Continue from your last session |
 | `-d, --diagnostic` | Enable diagnostic mode to save request/response JSON |
 | `-a, --cost-analysis` | Record token usage to CSV for cost analysis |
+| `--list-providers` | List available model providers |
+| `--add-provider <id>` | Add models from a provider (requires `--api-key`) |
+| `--remove-provider <id>` | Remove all models from a provider |
+| `--api-key <key>` | API key for `--add-provider` |
 
 Examples:
 
