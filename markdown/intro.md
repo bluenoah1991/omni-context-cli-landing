@@ -49,6 +49,10 @@ Press `Enter` after each field, and `Escape` to go back.
 | `-c, --continue` | Continue from your last session |
 | `-d, --diagnostic` | Enable diagnostic mode to save request/response JSON |
 | `-a, --cost-analysis` | Record token usage to CSV for cost analysis |
+| `-s, --serve` | Start as HTTP server instead of TUI |
+| `-w, --web` | Open web UI in browser (requires `--serve`) |
+| `-p, --port <port>` | Port for server mode (default: 5281) |
+| `--install-vscode-extension` | Install the VS Code extension |
 | `--list-providers` | List available model providers |
 | `--add-provider <id>` | Add models from a provider (requires `--api-key`) |
 | `--remove-provider <id>` | Remove all models from a provider |
@@ -61,18 +65,25 @@ Examples:
 omx
 
 # Resume where you left off
-omx -c
+omx --continue
 
 # Debug API calls
 omx --diagnostic
 
 # Track token costs
 omx --cost-analysis
+
+# Start web UI in browser
+omx --serve --web
+
+# Install VS Code extension
+omx --install-vscode-extension
 ```
 
 ## Documentation
 
 - [Basic Usage](./tutorial/basic-usage) - Shortcuts, commands, and menu options
+- [Web Client](./tutorial/web-client) - Browser UI and VS Code extension
 - [Specialist Mode](./tutorial/specialist-mode) - High-level agentic tools
 - [MCP Configuration](./tutorial/mcp) - Connect external tools via Model Context Protocol
 - [Custom SubAgents](./tutorial/subagents) - Create your own agents

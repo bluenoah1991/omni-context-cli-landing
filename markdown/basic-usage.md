@@ -19,7 +19,7 @@ This guide covers the essential shortcuts, commands, and menu options for workin
 | Ctrl+E | Move cursor to line end |
 | Ctrl+L | Clear input box |
 | Shift+Enter | Insert newline (multi-line input) |
-| Up/Down | Navigate cursor in multi-line input / Browse message history |
+| Up/Down | Navigate cursor in multi-line input / Browse input history |
 
 ## Slash Commands
 
@@ -53,10 +53,12 @@ Press Escape to open the menu. From here you can:
 
 The preferences submenu lets you toggle:
 
+- **Cache duration** - How long Anthropic caches your prompts (5 minutes or 1 hour)
+- **Completion notification** - Notify when response takes over a minute
+- **Context editing** - Slim down context during compaction
+- **Cross-session memory** - Remember key points across sessions
 - **Extended thinking** - Enable deeper reasoning for complex tasks
-- **Streaming output** - Show responses as they generate
 - **IDE context** - Include context from your IDE
-- **Playbook memory** - Remember key points across sessions
-- **Anthropic cache TTL** - Set how long Anthropic caches your prompts (5 minutes or 1 hour)
+- **Streaming output** - Show responses as they generate
 
 Use arrow keys to navigate, Enter to select, and Escape to go back.

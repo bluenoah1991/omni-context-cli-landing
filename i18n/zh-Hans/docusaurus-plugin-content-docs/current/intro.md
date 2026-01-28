@@ -49,6 +49,10 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 | `-c, --continue` | 继续上一次会话 |
 | `-d, --diagnostic` | 启用诊断模式，保存请求/响应的 JSON 数据 |
 | `-a, --cost-analysis` | 记录 token 用量到 CSV 文件，用于成本分析 |
+| `-s, --serve` | 以 HTTP 服务器模式启动（而非终端界面） |
+| `-w, --web` | 在浏览器中打开 Web UI（需要 `--serve`） |
+| `-p, --port <port>` | 服务器模式的端口（默认: 5281） |
+| `--install-vscode-extension` | 安装 VS Code 扩展 |
 | `--list-providers` | 列出可用的模型提供商 |
 | `--add-provider <id>` | 添加提供商的所有模型（需要 `--api-key`） |
 | `--remove-provider <id>` | 移除提供商的所有模型 |
@@ -61,18 +65,25 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 omx
 
 # 继续上次的对话
-omx -c
+omx --continue
 
 # 调试 API 调用
 omx --diagnostic
 
 # 追踪 token 成本
 omx --cost-analysis
+
+# 在浏览器中启动 Web UI
+omx --serve --web
+
+# 安装 VS Code 扩展
+omx --install-vscode-extension
 ```
 
 ## 文档
 
 - [基本操作](./tutorial/basic-usage) - 快捷键、命令和菜单选项
+- [Web 客户端](./tutorial/web-client) - 浏览器界面和 VS Code 扩展
 - [专家模式](./tutorial/specialist-mode) - 高级智能体工具
 - [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具
 - [自定义 SubAgents](./tutorial/subagents) - 创建自己的智能体
