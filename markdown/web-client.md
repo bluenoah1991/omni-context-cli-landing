@@ -27,6 +27,16 @@ Use a different port with the `--port` flag:
 omx --serve --web --port 8080
 ```
 
+### Custom Host
+
+Bind to a specific network interface with the `--host` flag:
+
+```bash
+omx --serve --web --host 0.0.0.0
+```
+
+This is useful when you want to access the web client from other devices on your network.
+
 ### Server Mode Only
 
 Start the server without opening a browser:
@@ -45,6 +55,8 @@ The web client provides a graphical interface with:
 - **LaTeX Rendering** - Mathematical equations render properly
 - **Mermaid Diagrams** - Flowcharts, sequence diagrams, and more
 - **Image Paste Support** - Paste images directly into the chat
+- **Diff Panel** - View file changes side-by-side when edits are made
+- **Token Usage** - Track input and output token consumption
 
 ## VS Code Extension
 
@@ -69,8 +81,15 @@ After installation:
 
 The server runs in the background and stops when VS Code closes.
 
+You can also open OmniContext in a full editor panel using the command palette:
+
+1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+2. Search for "OmniContext: Open in Editor"
+3. The chat opens as a full editor tab instead of the sidebar
+
 ### Benefits
 
 - Chat without leaving your editor
 - Context stays visible alongside your code
 - Automatic server management
+- Diff panel shows file changes inline
