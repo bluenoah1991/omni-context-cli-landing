@@ -16,6 +16,7 @@ Omx supports multiple LLM providers and allows you to configure, switch, and man
 Any API following the OpenAI chat completions format:
 
 - OpenAI (GPT-4, GPT-4o, etc.)
+- xAI (Grok)
 - Azure OpenAI
 - Ollama
 - LM Studio

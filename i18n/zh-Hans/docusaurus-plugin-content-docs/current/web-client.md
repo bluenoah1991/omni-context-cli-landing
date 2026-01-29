@@ -93,3 +93,26 @@ omx --install-vscode-extension
 - 上下文与代码并排显示
 - 自动管理服务器
 - Diff 面板内联显示文件更改
+
+### MCP 集成
+
+VS Code 扩展通过 Model Context Protocol (MCP) 暴露 IDE 特定的工具：
+
+- **打开文件** 在编辑器中
+- **查看差异** 对比新旧内容
+- **获取诊断信息** 来自 VS Code 的错误和警告
+- **列出打开的编辑器** 当前工作区中
+- **获取工作区文件夹** 用于项目上下文
+
+使用扩展时这些工具会自动出现，让 Omx 可以直接与你的 VS Code 环境交互。
+
+### 远程开发
+
+VS Code 扩展支持远程开发场景：
+
+- **Remote SSH** 连接
+- **Dev Containers** 开发容器
+- **GitHub Codespaces**
+- **WSL**（Windows 子系统 Linux）
+
+扩展会自动处理外部 URI，无论你的开发环境如何，Omx 都能正确打开文件和链接。

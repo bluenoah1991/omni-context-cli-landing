@@ -16,6 +16,7 @@ Omx 支持多个 LLM 提供商，允许你轻松配置、切换和管理模型�
 任何遵循 OpenAI chat completions 格式的 API：
 
 - OpenAI (GPT-4, GPT-4o 等)
+- xAI (Grok)
 - Azure OpenAI
 - Ollama
 - LM Studio

@@ -93,3 +93,26 @@ You can also open OmniContext in a full editor panel using the command palette:
 - Context stays visible alongside your code
 - Automatic server management
 - Diff panel shows file changes inline
+
+### MCP Integration
+
+The VS Code extension exposes IDE-specific tools via the Model Context Protocol (MCP):
+
+- **Open files** in the editor
+- **View diffs** between old and new content
+- **Get diagnostics** (errors and warnings) from VS Code
+- **List open editors** in the current workspace
+- **Get workspace folders** for project context
+
+These tools appear automatically when using the extension and allow Omx to interact directly with your VS Code environment.
+
+### Remote Development
+
+The VS Code extension supports remote development scenarios:
+
+- **Remote SSH** connections
+- **Dev Containers**
+- **GitHub Codespaces**
+- **WSL** (Windows Subsystem for Linux)
+
+The extension automatically handles external URIs, so Omx can open files and links correctly regardless of your development environment.

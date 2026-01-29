@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">模型管理 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="模型管理 | OmniContext CLI"><meta data-rh="true" name="description" content="Omx 支持多个 LLM 提供商，允许你轻松配置、切换和管理模型。"><meta data-rh="true" property="og:description" content="Omx 支持多个 LLM 提供商，允许你轻松配置、切换和管理模型。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"模型管理","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.ccf9780e.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.0e62400a.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.eb3278f7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,6 +18,7 @@
 <p>任何遵循 OpenAI chat completions 格式的 API：</p>
 <ul>
 <li class="">OpenAI (GPT-4, GPT-4o 等)</li>
+<li class="">xAI (Grok)</li>
 <li class="">Azure OpenAI</li>
 <li class="">Ollama</li>
 <li class="">LM Studio</li>
@@ -158,7 +159,7 @@
 </ul>
 <p>如果未设置，智能体使用默认模型。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="切换模型">切换模型<a href="#切换模型" class="hash-link" aria-label="切换模型的直接链接" title="切换模型的直接链接" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="会话期间">会话期间<a href="#会话期间" class="hash-link" aria-label="会话期间的直接链接" title="会话期间的直接链接" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="会话期间">会  话期间<a href="#会话期间" class="hash-link" aria-label="会话期间的直接链接" title="会话期间的直接链接" translate="no">​</a></h3>
 <p>使用 <code>/model</code> 命令在对话中切换模型：</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/model</span><br></span></code></pre></div></div>
 <p>这会显示已配置模型的列表。选择一个进行切换。</p>
@@ -173,7 +174,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="编辑模型">编辑模型<a href="#编辑模型" class="hash-link" aria-label="编辑模型的直接链接" title="编辑模型的直接链接" translate="no">​</a></h3>
 <p>访问配置菜单并选择要编辑的模型。你可以更新任何字段。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="删除模型">删除模型<a href="#删除模型" class="hash-link" aria-label="删除模型的直接链接" title="删除模型的直接链接" translate="no">​</a></h3>
-<p>通过配置菜单删除模型。如果你删除了默认模型， 会提示你选择新的默认模型。</p>
+<p>通过配置菜单删除模型。如果你删除了默认模型，会提示你选择新的默认模型。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="故障排除">故障排除<a href="#故障排除" class="hash-link" aria-label="故障排除的直接链接" title="故障排除的直接链接" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="连接错误">连接错误<a href="#连接错误" class="hash-link" aria-label="连接错误的直接链接" title="连接错误的直接链接" translate="no">​</a></h3>
 <p>验证 API URL 是否正确：</p>
