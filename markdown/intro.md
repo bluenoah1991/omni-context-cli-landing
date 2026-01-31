@@ -52,6 +52,8 @@ Press `Enter` after each field, and `Escape` to go back.
 | `-s, --serve` | Start as HTTP server instead of TUI |
 | `-w, --web` | Open web UI in browser (requires `--serve`) |
 | `-p, --port <port>` | Port for server mode (default: 5281) |
+| `--approve-write` | Require approval before write tools (Bash, Edit, Write) |
+| `--approve-all` | Require approval before all tools |
 | `--install-vscode-extension` | Install the VS Code extension |
 | `--list-providers` | List available model providers |
 | `--add-provider <id>` | Add models from a provider (requires `--api-key`) |
@@ -78,6 +80,12 @@ omx --serve --web
 
 # Install VS Code extension
 omx --install-vscode-extension
+
+# Require approval for file-modifying tools
+omx --approve-write
+
+# Require approval for all tools
+omx --approve-all
 ```
 
 ## Documentation

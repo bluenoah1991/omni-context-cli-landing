@@ -54,9 +54,11 @@ The web client provides a graphical interface with:
 - **Light and Dark Themes** - Automatically follows your system preference
 - **LaTeX Rendering** - Mathematical equations render properly
 - **Mermaid Diagrams** - Flowcharts, sequence diagrams, and more
-- **Image Paste Support** - Paste images directly into the chat
+- **File Attachments** - Attach images and documents (PDF) to your messages
+- **Drag and Drop** - Drop files directly into the input box to attach them
 - **Diff Panel** - View file changes side-by-side when edits are made
 - **Token Usage** - Track input and output token consumption
+- **Tool Approval** - Confirm or deny tool executions when approval mode is enabled
 
 ## VS Code Extension
 

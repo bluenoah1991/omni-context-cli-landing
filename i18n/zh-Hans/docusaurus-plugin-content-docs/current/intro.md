@@ -52,6 +52,8 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 | `-s, --serve` | 以 HTTP 服务器模式启动（而非终端界面） |
 | `-w, --web` | 在浏览器中打开 Web UI（需要 `--serve`） |
 | `-p, --port <port>` | 服务器模式的端口（默认: 5281） |
+| `--approve-write` | 执行写入工具（Bash、Edit、Write）前需要确认 |
+| `--approve-all` | 执行所有工具前需要确认 |
 | `--install-vscode-extension` | 安装 VS Code 扩展 |
 | `--list-providers` | 列出可用的模型提供商 |
 | `--add-provider <id>` | 添加提供商的所有模型（需要 `--api-key`） |
@@ -78,6 +80,12 @@ omx --serve --web
 
 # 安装 VS Code 扩展
 omx --install-vscode-extension
+
+# 执行文件修改工具前需要确认
+omx --approve-write
+
+# 执行所有工具前需要确认
+omx --approve-all
 ```
 
 ## 文档
