@@ -19,6 +19,7 @@ This guide covers the essential shortcuts, commands, and menu options for workin
 | Ctrl+E | Move cursor to line end |
 | Ctrl+L | Clear input box |
 | Shift+Enter | Insert newline (multi-line input) |
+| Ctrl+J | Insert newline (TUI) |
 | Up/Down | Navigate cursor in multi-line input / Browse input history |
 
 ## Slash Commands
@@ -45,9 +46,17 @@ Press Escape to open the menu. From here you can:
 - Switch to a different model
 - Load a previous session
 - Rewind to a previous message
-- Toggle specialist mode
+- Switch workflow preset
 - Manage your model list
 - Change preferences
+
+### Workflow Presets
+
+Omx supports three workflow presets:
+
+- **Normal** - Basic tools with manual orchestration
+- **Specialist** (default) - Agentic tools that work autonomously. See [Specialist Mode](/tutorial/specialist-mode)
+- **Artist** - Responds primarily with images for visual design. See [Artist Mode](/tutorial/artist-mode)
 
 ### Preferences
 

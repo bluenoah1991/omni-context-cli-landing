@@ -19,6 +19,7 @@ sidebar_position: 2
 | Ctrl+E | 将光标移到行尾 |
 | Ctrl+L | 清空输入框 |
 | Shift+Enter | 插入换行（多行输入）|
+| Ctrl+J | 插入换行（TUI）|
 | Up/Down | 在多行输入中移动光标 / 浏览输入历史 |
 
 ## Slash 命令
@@ -45,9 +46,17 @@ sidebar_position: 2
 - 切换到不同的模型
 - 加载之前的会话
 - 回退到之前的消息
-- 切换专家模式
+- 切换工作流预设
 - 管理你的模型列表
 - 更改偏好设置
+
+### 工作流预设
+
+Omx 支持三种工作流预设：
+
+- **Normal** - 基础工具，需要手动协调
+- **Specialist**（默认）- 自主运行的智能体工具。参见[专家模式](/tutorial/specialist-mode)
+- **Artist** - 主要以图像响应，适合视觉设计。参见[艺术家模式](/tutorial/artist-mode)
 
 ### 偏好设置
 

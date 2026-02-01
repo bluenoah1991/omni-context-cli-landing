@@ -93,6 +93,7 @@ omx --approve-all
 - [Basic Usage](./tutorial/basic-usage) - Shortcuts, commands, and menu options
 - [Web Client](./tutorial/web-client) - Browser UI and VS Code extension
 - [Specialist Mode](./tutorial/specialist-mode) - High-level agentic tools
+- [Artist Mode](./tutorial/artist-mode) - Visual-first responses with image generation
 - [MCP Configuration](./tutorial/mcp) - Connect external tools via Model Context Protocol
 - [Custom SubAgents](./tutorial/subagents) - Create your own agents
 - [Custom Slash Commands](./tutorial/slash) - Add custom commands

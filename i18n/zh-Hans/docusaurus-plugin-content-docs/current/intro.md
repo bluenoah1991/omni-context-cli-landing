@@ -93,6 +93,7 @@ omx --approve-all
 - [基本操作](./tutorial/basic-usage) - 快捷键、命令和菜单选项
 - [Web 客户端](./tutorial/web-client) - 浏览器界面和 VS Code 扩展
 - [专家模式](./tutorial/specialist-mode) - 高级智能体工具
+- [艺术家模式](./tutorial/artist-mode) - 以图像生成为主的视觉响应
 - [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具
 - [自定义 SubAgents](./tutorial/subagents) - 创建自己的智能体
 - [自定义 Slash 命令](./tutorial/slash) - 添加自定义命令
