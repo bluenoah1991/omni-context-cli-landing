@@ -2,7 +2,7 @@
 slug: /tutorial/subagents
 title: Custom SubAgents
 sidebar_label: Custom SubAgents
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Custom SubAgents

@@ -2,7 +2,7 @@
 slug: /tutorial/memory
 title: Cross-Session Memory
 sidebar_label: Cross-Session Memory
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 # Cross-Session Memory

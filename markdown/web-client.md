@@ -2,7 +2,7 @@
 slug: /tutorial/web-client
 title: Web Client
 sidebar_label: Web Client
-sidebar_position: 12
+sidebar_position: 13
 ---
 
 # Web Client
@@ -56,9 +56,12 @@ The web client provides a graphical interface with:
 - **Mermaid Diagrams** - Flowcharts, sequence diagrams, and more
 - **File Attachments** - Attach images and documents (PDF) to your messages
 - **Drag and Drop** - Drop files directly into the input box to attach them
+- **Image Downloads** - Click to download AI-generated images
 - **Diff Panel** - View file changes side-by-side when edits are made
 - **Token Usage** - Track input and output token consumption
 - **Tool Approval** - Confirm or deny tool executions when approval mode is enabled
+- **Mobile Support** - Responsive design works on phones and tablets
+- **PWA Ready** - Install as a progressive web app for quick access
 
 ## VS Code Extension
 

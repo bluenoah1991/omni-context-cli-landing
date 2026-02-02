@@ -2,7 +2,7 @@
 slug: /tutorial/models
 title: Model Management
 sidebar_label: Model Management
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 # Model Management

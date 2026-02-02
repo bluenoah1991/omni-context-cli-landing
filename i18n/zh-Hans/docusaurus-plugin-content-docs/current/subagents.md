@@ -2,7 +2,7 @@
 slug: /tutorial/subagents
 title: 自定义子智能体
 sidebar_label: 自定义子智能体
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # 自定义子智能体

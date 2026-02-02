@@ -2,7 +2,7 @@
 slug: /tutorial/ide-context
 title: IDE Context Awareness
 sidebar_label: IDE Context
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # IDE Context Awareness

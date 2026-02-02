@@ -2,7 +2,7 @@
 slug: /tutorial/memory
 title: 跨会话记忆
 sidebar_label: 跨会话记忆
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 # 跨会话记忆

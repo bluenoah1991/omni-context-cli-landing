@@ -2,7 +2,7 @@
 slug: /tutorial/sessions
 title: 会话管理
 sidebar_label: 会话管理
-sidebar_position: 11
+sidebar_position: 12
 ---
 
 # 会话管理
