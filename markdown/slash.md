@@ -2,7 +2,7 @@
 slug: /tutorial/slash
 title: Custom Slash Commands
 sidebar_label: Custom Slash Commands
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Custom Slash Commands

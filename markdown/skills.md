@@ -2,7 +2,7 @@
 slug: /tutorial/skills
 title: Custom Skills
 sidebar_label: Custom Skills
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Custom Skills

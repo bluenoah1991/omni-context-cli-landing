@@ -2,7 +2,7 @@
 slug: /tutorial/mcp
 title: MCP 配置
 sidebar_label: MCP 配置
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # MCP 配置

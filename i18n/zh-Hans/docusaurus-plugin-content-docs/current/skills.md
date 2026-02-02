@@ -2,7 +2,7 @@
 slug: /tutorial/skills
 title: 自定义 Skills
 sidebar_label: 自定义 Skills
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # 自定义 Skills

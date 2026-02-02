@@ -2,7 +2,7 @@
 slug: /tutorial/web-client
 title: Web Client
 sidebar_label: Web Client
-sidebar_position: 13
+sidebar_position: 14
 ---
 
 # Web Client

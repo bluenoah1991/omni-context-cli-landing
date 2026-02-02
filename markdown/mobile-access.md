@@ -2,7 +2,7 @@
 slug: /tutorial/mobile-access
 title: Mobile Access
 sidebar_label: Mobile Access
-sidebar_position: 14
+sidebar_position: 15
 ---
 
 # Mobile Access

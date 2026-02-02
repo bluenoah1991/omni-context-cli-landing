@@ -2,7 +2,7 @@
 slug: /tutorial/ide-context
 title: IDE 上下文感知
 sidebar_label: IDE 上下文
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 # IDE 上下文感知

@@ -2,7 +2,7 @@
 slug: /tutorial/slash
 title: 自定义 Slash 命令
 sidebar_label: 自定义 Slash 命令
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # 自定义 Slash 命令
