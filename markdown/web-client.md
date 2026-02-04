@@ -121,3 +121,35 @@ The VS Code extension supports remote development scenarios:
 - **WSL** (Windows Subsystem for Linux)
 
 The extension automatically handles external URIs, so Omx can open files and links correctly regardless of your development environment.
+
+## Desktop Client
+
+The desktop client is a standalone application that bundles everything you need to run Omx without installing Node.js or managing dependencies.
+
+### Download
+
+Download the latest release for your platform:
+
+- [Windows Installer (.exe)](https://github.com/bluenoah1991/omni-context-cli-landing/releases)
+- [macOS App Bundle (.dmg)](https://github.com/bluenoah1991/omni-context-cli-landing/releases)
+
+### Features
+
+- **Zero Setup** - No Node.js installation required
+- **Configuration Portal** - Graphical interface for providers, permissions, and settings
+- **Custom Prompts** - Customize system prompts for specialist, artist, and explorer modes
+- **Auto Workspace** - Opens your default workspace (Documents/OmniContext) on launch
+- **Dynamic Port** - Automatically finds an available port for the local server
+
+### Configuration Portal
+
+The desktop client includes a configuration portal where you can:
+
+1. **Manage Providers** - Add and configure API keys for different LLM providers
+2. **Set Permissions** - Control which tools require approval before execution
+3. **Custom Prompts** - Write custom system prompts for each workflow mode:
+   - **Specialist Prompt** - Customizes how the assistant approaches agentic coding tasks
+   - **Artist Prompt** - Customizes visual-first image generation behavior
+   - **Explorer Prompt** - Customizes research and web search behavior
+
+Custom prompts are saved to `~/.omx/` as text files (`specialist.txt`, `artist.txt`, `explorer.txt`) and persist across sessions.
