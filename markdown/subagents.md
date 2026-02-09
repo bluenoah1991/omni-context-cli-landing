@@ -17,8 +17,8 @@ Custom agents are stored in `~/.omx/agents/`. Each agent is defined in a single 
 
 An agent file consists of two parts:
 
-1. **Frontmatter** - YAML metadata defining the agent&#x27;s interface
-2. **Prompt Template** - Handlebars template for the agent&#x27;s instructions
+1. **Frontmatter** - YAML metadata defining the agent's interface
+2. **Prompt Template** - Handlebars template for the agent's instructions
 
 ### Example: Code Review Agent
 
@@ -33,7 +33,7 @@ parameters:
   properties:
     target:
       type: string
-      description: File or directory to review, or &#x27;staged&#x27; for git staged changes
+      description: File or directory to review, or 'staged' for git staged changes
     focus:
       type: string
       description: What to focus on - security, performance, style, or all
@@ -63,7 +63,7 @@ Format your response as a structured review with sections for each category.
 
 ### name
 
-The agent&#x27;s identifier. Used as `agent_name` in tool calls.
+The agent's identifier. Used as `agent_name` in tool calls.
 
 ### description
 
@@ -83,7 +83,7 @@ Array of tools the agent can use:
 
 ### parameters
 
-JSON Schema defining the agent&#x27;s input parameters:
+JSON Schema defining the agent's input parameters:
 
 ```yaml
 parameters:

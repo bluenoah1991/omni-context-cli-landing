@@ -33,7 +33,7 @@ parameters:
   properties:
     target:
       type: string
-      description: 要审查的文件或目录，或 &#x27;staged&#x27; 表示 git 暂存的更改
+      description: 要审查的文件或目录，或 'staged' 表示 git 暂存的更改
     focus:
       type: string
       description: 关注点 - security、performance、style 或 all
@@ -43,7 +43,7 @@ parameters:
 审查目标：{{target}}
 关注领域：{{#if focus}}{{focus}}{{else}}all{{/if}}
 
-{{#if (eq target &quot;staged&quot;)}}
+{{#if (eq target "staged")}}
 首先，运行 `git diff --cached` 获取暂存的更改。
 {{else}}
 读取指定的文件或目录以理解代码。
@@ -117,8 +117,8 @@ parameters:
 ### 相等检查
 
 ```handlebars
-{{#if (eq variable &quot;value&quot;)}}
-  variable 等于 &quot;value&quot; 时的内容
+{{#if (eq variable "value")}}
+  variable 等于 "value" 时的内容
 {{/if}}
 ```
 

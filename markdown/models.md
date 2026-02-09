@@ -230,7 +230,7 @@ This shows a list of configured models. Select one to switch.
 When switching models:
 - Switching between models with the same API type preserves conversation history
 - Switching to a model with a different API type resets the session
-- Token counts reset for the new model&#x27;s context window
+- Token counts reset for the new model's context window
 
 
 ## Managing Models
@@ -241,7 +241,7 @@ Access the configuration menu and select the model to edit. You can update any f
 
 ### Delete a Model
 
-Remove models through the configuration menu. If you delete the default model, you&#x27;ll be prompted to select a new default.
+Remove models through the configuration menu. If you delete the default model, you'll be prompted to select a new default.
 
 
 ## Troubleshooting
