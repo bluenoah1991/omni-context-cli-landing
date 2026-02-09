@@ -151,5 +151,6 @@ The desktop client includes a configuration portal where you can:
    - **Specialist Prompt** - Customizes how the assistant approaches agentic coding tasks
    - **Artist Prompt** - Customizes visual-first image generation behavior
    - **Explorer Prompt** - Customizes research and web search behavior
+   - **Assistant Prompt** - Customizes how the assistant interacts with your apps
 
-Custom prompts are saved to `~/.omx/` as text files (`specialist.txt`, `artist.txt`, `explorer.txt`) and persist across sessions.
+Custom prompts are saved to `~/.omx/` as text files (`specialist.txt`, `artist.txt`, `explorer.txt`, `assistant.txt`) and persist across sessions.

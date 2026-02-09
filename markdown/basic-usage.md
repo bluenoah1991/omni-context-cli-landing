@@ -52,11 +52,13 @@ Press Escape to open the menu. From here you can:
 
 ### Workflow Presets
 
-Omx supports three workflow presets:
+Omx supports five workflow presets:
 
 - **Normal** - Basic tools with manual orchestration
 - **Specialist** (default) - Agentic tools that work autonomously. See [Specialist Mode](/tutorial/specialist-mode)
 - **Artist** - Responds primarily with images for visual design. See [Artist Mode](/tutorial/artist-mode)
+- **Explorer** - Research-first web search before answering. See [Explorer Mode](/tutorial/explorer-mode)
+- **Assistant** - A personal assistant connected to your apps (browser, Office, etc.) that reads, edits, and creates content directly
 
 ### Preferences
 
@@ -69,6 +71,7 @@ The preferences submenu lets you toggle:
 - **Cross-session memory** - Remember key points across sessions
 - **Extended thinking** - Enable deeper reasoning for complex tasks
 - **IDE context** - Include context from your IDE
+- **Server compaction** - Let the server handle context compaction instead of the client
 - **Streaming output** - Show responses as they generate
 - **Thinking block expansion** - Start thinking blocks expanded or collapsed
 

@@ -52,6 +52,9 @@ Press `Enter` after each field, and `Escape` to go back.
 | `-s, --serve` | Start as HTTP server instead of TUI |
 | `-w, --web` | Open web UI in browser (requires `--serve`) |
 | `-p, --port <port>` | Port for server mode (default: 5281) |
+| `-H, --host <host>` | Host for server mode (default: localhost) |
+| `--workflow <preset>` | Override workflow preset (normal, specialist, artist, explorer, assistant) |
+| `--scope <scope>` | Where to save config changes: global (default), project, or memory |
 | `--approve-write` | Require approval before write tools (Bash, Edit, Write) |
 | `--approve-all` | Require approval before all tools |
 | `--install-vscode-extension` | Install the VS Code extension |
@@ -86,12 +89,39 @@ omx --approve-write
 
 # Require approval for all tools
 omx --approve-all
+
+# Start in assistant mode
+omx --workflow assistant
+
+# Save config changes only to the current project
+omx --scope project
+
+# Bind to all network interfaces
+omx --serve --host 0.0.0.0
+```
+
+## Proxy Configuration
+
+Omx supports HTTP, HTTPS, and SOCKS proxies. You can set a proxy in two ways:
+
+**Via the menu:** Press `Escape` > **Change preferences** > **Proxy** and enter your proxy URL.
+
+**Via environment variables:** Omx automatically picks up `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables when no proxy is configured in the menu.
+
+Supported URL formats:
+
+```
+http://proxy.example.com:8080
+https://proxy.example.com:8443
+socks5://proxy.example.com:1080
 ```
 
 ## Documentation
 
 - [Basic Usage](./tutorial/basic-usage) - Shortcuts, commands, and menu options
 - [Web Client](./tutorial/web-client) - Browser UI and VS Code extension
+- [Browser Extension](./tutorial/browser-extension) - Control your browser from Omx
+- [Office Add-in](./tutorial/office-addin) - Work with Excel, Word, and PowerPoint
 - [Specialist Mode](./tutorial/specialist-mode) - High-level agentic tools
 - [Artist Mode](./tutorial/artist-mode) - Visual-first responses with image generation
 - [MCP Configuration](./tutorial/mcp) - Connect external tools via Model Context Protocol

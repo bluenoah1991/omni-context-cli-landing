@@ -52,6 +52,9 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 | `-s, --serve` | 以 HTTP 服务器模式启动（而非终端界面） |
 | `-w, --web` | 在浏览器中打开 Web UI（需要 `--serve`） |
 | `-p, --port <port>` | 服务器模式的端口（默认: 5281） |
+| `-H, --host <host>` | 服务器模式绑定的主机地址（默认: localhost） |
+| `--workflow <preset>` | 覆盖工作流预设（normal、specialist、artist、explorer、assistant） |
+| `--scope <scope>` | 配置保存位置：global（默认）、project 或 memory |
 | `--approve-write` | 执行写入工具（Bash、Edit、Write）前需要确认 |
 | `--approve-all` | 执行所有工具前需要确认 |
 | `--install-vscode-extension` | 安装 VS Code 扩展 |
@@ -86,12 +89,39 @@ omx --approve-write
 
 # 执行所有工具前需要确认
 omx --approve-all
+
+# 以助手模式启动
+omx --workflow assistant
+
+# 仅将配置更改保存到当前项目
+omx --scope project
+
+# 绑定到所有网络接口
+omx --serve --host 0.0.0.0
+```
+
+## 代理配置
+
+Omx 支持 HTTP、HTTPS 和 SOCKS 代理。你可以通过以下两种方式设置代理：
+
+**通过菜单：** 按 `Escape` > **更改偏好设置** > **Proxy**，然后输入代理 URL。
+
+**通过环境变量：** 当菜单中未配置代理时，Omx 会自动读取 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NO_PROXY` 环境变量。
+
+支持的 URL 格式：
+
+```
+http://proxy.example.com:8080
+https://proxy.example.com:8443
+socks5://proxy.example.com:1080
 ```
 
 ## 文档
 
 - [基本操作](./tutorial/basic-usage) - 快捷键、命令和菜单选项
 - [Web 客户端](./tutorial/web-client) - 浏览器界面和 VS Code 扩展
+- [浏览器扩展](./tutorial/browser-extension) - 从 Omx 控制你的浏览器
+- [Office 扩展](./tutorial/office-addin) - 操作 Excel、Word 和 PowerPoint
 - [专家模式](./tutorial/specialist-mode) - 高级智能体工具
 - [艺术家模式](./tutorial/artist-mode) - 以图像生成为主的视觉响应
 - [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具
