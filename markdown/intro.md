@@ -33,7 +33,7 @@ On first run, you'll need to add a model before you can start chatting:
 2. Select **Manage your model list**
 3. Select **Add a new model**
 4. Fill in the form:
-   - **API Type**: Choose `Anthropic` or `OpenAI`
+   - **API Type**: Choose `Anthropic`, `OpenAI`, `Gemini`, or `OpenAI Responses API`
    - **Model Name**: The model identifier (e.g. `claude-sonnet-4-20250514`, `gpt-4o`)
    - **API Key**: Your API key
    - **API URL**: The API endpoint (e.g. `https://api.anthropic.com`, `https://api.openai.com/v1`)
@@ -102,18 +102,23 @@ omx --serve --host 0.0.0.0
 
 ## Proxy Configuration
 
-Omx supports HTTP, HTTPS, and SOCKS proxies. You can set a proxy in two ways:
+Omx supports HTTP and HTTPS proxies. You can set a proxy in two ways:
 
-**Via the menu:** Press `Escape` > **Change preferences** > **Proxy** and enter your proxy URL.
+**Via the config file:** Set the `proxy` field in `~/.omx/config.json`:
 
-**Via environment variables:** Omx automatically picks up `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables when no proxy is configured in the menu.
+```json
+{
+  "proxy": "http://proxy.example.com:8080"
+}
+```
+
+**Via environment variables:** Omx automatically picks up `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables when no proxy is configured in the config file.
 
 Supported URL formats:
 
 ```
 http://proxy.example.com:8080
 https://proxy.example.com:8443
-socks5://proxy.example.com:1080
 ```
 
 ## Documentation

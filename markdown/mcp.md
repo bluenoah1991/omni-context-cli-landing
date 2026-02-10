@@ -20,7 +20,7 @@ MCP is an open protocol that allows AI assistants to connect with external data 
 
 ## Configuration File
 
-Create `~/.omx/mcp.json` to configure MCP servers:
+Create `~/.omx/mcp.json` (user-wide) or `.omx/mcp.json` in your project root (project-specific) to configure MCP servers. If both exist, they are merged, with the project-level config taking priority:
 
 ```json
 {
@@ -129,7 +129,7 @@ npx -y @modelcontextprotocol/server-filesystem --help
 
 ### Tools Not Appearing
 
-Restart Omx after modifying `mcp.json`. MCP servers are initialized on startup.
+Restart Omx after modifying `mcp.json`. MCP servers are initialized on startup. Both `~/.omx/mcp.json` and `.omx/mcp.json` are loaded.
 
 ### Connection Errors
 

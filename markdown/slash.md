@@ -24,7 +24,7 @@ Slash commands provide quick access to common prompts and actions. You can creat
 
 ## Creating Custom Commands
 
-Custom slash commands are stored in `~/.omx/slash/`. Each command is a `.md` file.
+Custom slash commands are stored in `~/.omx/slash/` (user-wide) or `.omx/slash/` in your project root (project-specific). Each command is a `.md` file. Project-level commands take priority over user-level commands with the same name.
 
 ### Command Structure
 
@@ -103,4 +103,4 @@ Slash command files are just markdown. You can:
 - Share them with your team via Git
 - Copy them between machines
 
-All custom commands live in `~/.omx/slash/`.
+Custom commands live in `~/.omx/slash/` or `.omx/slash/` in your project root.

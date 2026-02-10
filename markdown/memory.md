@@ -35,16 +35,18 @@ At the end of each conversation (whether through automatic compaction or manual 
 
 Unused key points naturally decay over time.
 
-**Removal**: Key points with scores below -5 are automatically removed, ensuring memory stays relevant.
+**Removal**: Key points with scores at -5 or below are automatically removed, ensuring memory stays relevant.
 
 ## Enabling Memory
 
-Memory is disabled by default. Enable it via:
+Memory is disabled by default. Enable it through the menu:
 
-1. Configuration menu on startup
-2. `/status` command to toggle settings
+1. Press `Escape` to open the menu
+2. Select **Change your preferences**
+3. Select **Cross-session memory**
+4. Choose **Enable**
 
-When enabled, you'll see `Memory: √` in the status output.
+You can verify it's on with `/status` -- look for `Cross-session memory: √`.
 
 ## What Gets Learned
 
@@ -57,7 +59,7 @@ Memory captures:
 
 ## Data Storage
 
-Memory is stored per-project at `~/.omx/projects/<encoded-path>/memory.json`, where `<encoded-path>` is the base64url encoding of the current working directory:
+Memory is stored per-project at `~/.omx/projects/<encoded-path>/memory.json`, where `<encoded-path>` is the base64url encoding of the lowercased current working directory:
 
 ```json
 {

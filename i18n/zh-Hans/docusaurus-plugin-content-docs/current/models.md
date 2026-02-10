@@ -40,12 +40,12 @@ Google 的 Gemini API，原生流式支持：
 - Gemini 1.5 Pro
 - Gemini 1.5 Flash
 
-### Responses API
+### OpenAI Responses API
 
-Anthropic 较新的 Responses API 格式，支持增强的 reasoning：
+OpenAI 的 Responses API 格式，支持增强的 reasoning：
 
 - 支持高级 reasoning 和 thought blocks
-- 与标准 messages API 不同的流式格式
+- 与标准 chat completions API 不同的流式格式
 
 ### Zenmux 自动路由
 
@@ -111,7 +111,7 @@ omx --remove-provider deepseek
 |-------|-------------|
 | **Name** | 发送给 API 的模型标识符（如 `gpt-4o`、`claude-sonnet-4-20250514`、`gemini-2.0-flash-exp`） |
 | **Nickname** | 在 Omx UI 中显示的名称 |
-| **Provider** | `openai`、`anthropic`、`gemini`、`responses` 或 `zenmux` |
+| **Provider** | `openai`、`anthropic`、`gemini` 或 `responses` |
 | **API Key** | 你的 API 密钥 |
 | **API URL** | API 的基础 URL |
 | **Context Size** | 最大上下文窗口（以千 token 为单位） |
@@ -173,15 +173,15 @@ API URL: https://generativelanguage.googleapis.com/v1beta
 Context Size: 128
 ```
 
-#### Responses API
+#### OpenAI Responses API
 
 ```
-Name: claude-sonnet-4-20250514
-Nickname: Claude Sonnet 4
+Name: gpt-4o
+Nickname: GPT-4o
 Provider: responses
-API Key: sk-ant-...
-API URL: https://api.anthropic.com
-Context Size: 200
+API Key: sk-...
+API URL: https://api.openai.com/v1
+Context Size: 128
 ```
 
 #### Zenmux 自动路由
@@ -189,7 +189,7 @@ Context Size: 200
 ```
 Name: zenmux/auto
 Nickname: Zenmux Auto
-Provider: zenmux
+Provider: openai
 API Key: your-zenmux-key
 API URL: https://zenmux.ai/api/v1
 Context Size: 200
@@ -253,7 +253,7 @@ Context Size: 200
 - OpenAI: `https://api.openai.com/v1`
 - Anthropic: `https://api.anthropic.com`
 - Google Gemini: `https://generativelanguage.googleapis.com/v1beta`
-- Responses API: `https://api.anthropic.com`
+- OpenAI Responses API: `https://api.openai.com/v1`
 - 本地: `http://localhost:PORT/v1`
 
 ### 认证错误

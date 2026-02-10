@@ -64,7 +64,6 @@ Omx supports five workflow presets:
 
 The preferences submenu lets you toggle:
 
-- **Auto-open diff panel** - Automatically show file changes in the diff panel (Web/VS Code)
 - **Cache duration** - How long Anthropic caches your prompts (5 minutes or 1 hour)
 - **Completion notification** - Notify when response takes over a minute
 - **Context editing** - Slim down context during compaction
@@ -73,6 +72,5 @@ The preferences submenu lets you toggle:
 - **IDE context** - Include context from your IDE
 - **Server compaction** - Let the server handle context compaction instead of the client
 - **Streaming output** - Show responses as they generate
-- **Thinking block expansion** - Start thinking blocks expanded or collapsed
 
 Use arrow keys to navigate, Enter to select, and Escape to go back.

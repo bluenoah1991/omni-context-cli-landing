@@ -11,7 +11,7 @@ You can create your own SubAgents to extend Omx with specialized capabilities.
 
 ## Agent Location
 
-Custom agents are stored in `~/.omx/agents/`. Each agent is defined in a single `.md` file.
+Custom agents are stored in `~/.omx/agents/` (user-wide) or `.omx/agents/` in your project root (project-specific). Each agent is defined in a single `.md` file. Project-level agents take priority over user-level agents with the same name.
 
 ## Agent Structure
 

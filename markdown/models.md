@@ -40,12 +40,12 @@ Google's Gemini API with native streaming support:
 - Gemini 1.5 Pro
 - Gemini 1.5 Flash
 
-### Responses API
+### OpenAI Responses API
 
-Anthropic's newer Responses API format with enhanced reasoning support:
+OpenAI's Responses API format with enhanced reasoning support:
 
 - Supports advanced reasoning and thought blocks
-- Different streaming format than standard messages API
+- Different streaming format than standard chat completions API
 
 ### Zenmux Auto-Routing
 
@@ -111,7 +111,7 @@ On first run, Omx prompts you to add a model. You can also add models later thro
 |-------|-------------|
 | **Name** | Model identifier sent to the API (e.g., `gpt-4o`, `claude-sonnet-4-20250514`, `gemini-2.0-flash-exp`) |
 | **Nickname** | Display name in Omx UI |
-| **Provider** | `openai`, `anthropic`, `gemini`, `responses`, or `zenmux` |
+| **Provider** | `openai`, `anthropic`, `gemini`, or `responses` |
 | **API Key** | Your API key |
 | **API URL** | Base URL for the API |
 | **Context Size** | Maximum context window in thousands of tokens |
@@ -173,15 +173,15 @@ API URL: https://generativelanguage.googleapis.com/v1beta
 Context Size: 128
 ```
 
-#### Responses API
+#### OpenAI Responses API
 
 ```
-Name: claude-sonnet-4-20250514
-Nickname: Claude Sonnet 4
+Name: gpt-4o
+Nickname: GPT-4o
 Provider: responses
-API Key: sk-ant-...
-API URL: https://api.anthropic.com
-Context Size: 200
+API Key: sk-...
+API URL: https://api.openai.com/v1
+Context Size: 128
 ```
 
 #### Zenmux Auto-Routing
@@ -189,7 +189,7 @@ Context Size: 200
 ```
 Name: zenmux/auto
 Nickname: Zenmux Auto
-Provider: zenmux
+Provider: openai
 API Key: your-zenmux-key
 API URL: https://zenmux.ai/api/v1
 Context Size: 200
@@ -252,7 +252,7 @@ Verify the API URL is correct:
 - OpenAI: `https://api.openai.com/v1`
 - Anthropic: `https://api.anthropic.com`
 - Google Gemini: `https://generativelanguage.googleapis.com/v1beta`
-- Responses API: `https://api.anthropic.com`
+- OpenAI Responses API: `https://api.openai.com/v1`
 - Local: `http://localhost:PORT/v1`
 
 ### Authentication Errors

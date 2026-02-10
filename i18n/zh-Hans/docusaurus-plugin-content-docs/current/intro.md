@@ -33,7 +33,7 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 2. 选择 **Manage your model list**
 3. 选择 **Add a new model**
 4. 填写表单：
-   - **API Type**: 选择 `Anthropic` 或 `OpenAI`
+   - **API Type**: 选择 `Anthropic`、`OpenAI`、`Gemini` 或 `OpenAI Responses API`
    - **Model Name**: 模型标识符（如 `claude-sonnet-4-20250514`、`gpt-4o`）
    - **API Key**: 你的 API 密钥
    - **API URL**: API 端点（如 `https://api.anthropic.com`、`https://api.openai.com/v1`）
@@ -102,18 +102,23 @@ omx --serve --host 0.0.0.0
 
 ## 代理配置
 
-Omx 支持 HTTP、HTTPS 和 SOCKS 代理。你可以通过以下两种方式设置代理：
+Omx 支持 HTTP 和 HTTPS 代理。你可以通过以下两种方式设置代理：
 
-**通过菜单：** 按 `Escape` > **更改偏好设置** > **Proxy**，然后输入代理 URL。
+**通过配置文件：** 在 `~/.omx/config.json` 中设置 `proxy` 字段：
 
-**通过环境变量：** 当菜单中未配置代理时，Omx 会自动读取 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NO_PROXY` 环境变量。
+```json
+{
+  "proxy": "http://proxy.example.com:8080"
+}
+```
+
+**通过环境变量：** 当配置文件中未设置代理时，Omx 会自动读取 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NO_PROXY` 环境变量。
 
 支持的 URL 格式：
 
 ```
 http://proxy.example.com:8080
 https://proxy.example.com:8443
-socks5://proxy.example.com:1080
 ```
 
 ## 文档

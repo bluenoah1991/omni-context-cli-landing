@@ -35,16 +35,18 @@ Memory 维护一组持久的 **Key Points** - 从你的对话中提取的简洁�
 
 未使用的关键点会随时间自然衰减。
 
-**移除**：分数低于 -5 的关键点会被自动移除，确保 Memory 保持相关性。
+**移除**：分数达到 -5 或更低的关键点会被自动移除，确保 Memory 保持相关性。
 
 ## 启用 Memory
 
-Memory 默认禁用。通过以下方式启用：
+Memory 默认禁用。通过菜单启用：
 
-1. 启动时的配置菜单
-2. `/status` 命令切换设置
+1. 按 `Escape` 打开菜单
+2. 选择 **Change your preferences**
+3. 选择 **Cross-session memory**
+4. 选择 **Enable**
 
-启用后，你会在状态输出中看到 `Memory: √`。
+你可以通过 `/status` 命令确认是否启用 -- 看是否有 `Cross-session memory: √`。
 
 ## 学习内容
 
@@ -57,7 +59,7 @@ Memory 会捕获：
 
 ## 数据存储
 
-Memory 按项目存储，路径为 `~/.omx/projects/<encoded-path>/memory.json`，其中 `<encoded-path>` 是当前工作目录的 base64url 编码：
+Memory 按项目存储，路径为 `~/.omx/projects/<encoded-path>/memory.json`，其中 `<encoded-path>` 是当前工作目录小写后的 base64url 编码：
 
 ```json
 {

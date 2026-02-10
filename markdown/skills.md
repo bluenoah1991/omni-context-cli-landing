@@ -20,7 +20,7 @@ Skills are a way to teach Omx how to handle specific tasks. When you load a skil
 
 ## Skill Location
 
-Skills are stored in `~/.omx/skills/`. Each skill lives in its own directory:
+Skills are stored in `~/.omx/skills/` (user-wide) or `.omx/skills/` in your project root (project-specific). Each skill lives in its own directory. Project-level skills take priority over user-level skills with the same name.
 
 ```
 ~/.omx/skills/

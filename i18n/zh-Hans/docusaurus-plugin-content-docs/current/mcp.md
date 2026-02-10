@@ -20,7 +20,7 @@ MCP 是一个开放协议，允许 AI 助手连接外部数据源和工具。通
 
 ## 配置文件
 
-创建 `~/.omx/mcp.json` 来配置 MCP 服务器：
+创建 `~/.omx/mcp.json`（用户级）或项目根目录下的 `.omx/mcp.json`（项目级）来配置 MCP 服务器。如果两者都存在，会合并配置，项目级配置优先：
 
 ```json
 {
@@ -129,7 +129,7 @@ npx -y @modelcontextprotocol/server-filesystem --help
 
 ### 工具未显示
 
-修改 `mcp.json` 后重启 Omx。MCP 服务器在启动时初始化。
+修改 `mcp.json` 后重启 Omx。MCP 服务器在启动时初始化。`~/.omx/mcp.json` 和 `.omx/mcp.json` 都会被加载。
 
 ### 连接错误
 
