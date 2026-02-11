@@ -638,6 +638,10 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .nav-cta {
+        display: none;
+    }
+
     .hero {
         padding: 60px 0 40px;
     }
