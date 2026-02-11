@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <mask id="cutout">
+      <rect width="128" height="128" fill="white"/>
+      <polygon points="64,20 34,100 94,100" fill="black"/>
+    </mask>
+  </defs>
+  <circle cx="64" cy="64" r="64" fill="#FFFFFF" mask="url(#cutout)"/>
+</svg>

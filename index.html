@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniContext CLI</title>
+    <title>OmniContext - AI That Works Where You Work</title>
     <link href="assets/fonts/inter.css" rel="stylesheet">
     <script src="assets/js/lucide.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -16,11 +16,12 @@
 
     <nav id="navbar">
         <div class="container nav-content">
-            <div class="logo">OmniContext CLI</div>
+            <div class="logo"><img src="assets/img/logo.svg" alt="" class="logo-icon">OmniContext</div>
             <div class="nav-right">
                 <a href="docs/" class="nav-link">Documentation</a>
                 <a href="zh-Hans/" class="nav-lang">中文</a>
-                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">Install</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta"
+                    target="_blank">Download Desktop</a>
             </div>
         </div>
     </nav>
@@ -29,16 +30,27 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="reveal" style="transition-delay: 0.1s;">
-                    <span class="gradient">Agentic Tools</span><br>
-                    <span class="highlight">for Developers</span>
+                    <span class="gradient">One AI Assistant</span><br>
+                    <span class="highlight">Everywhere You Work</span>
                 </h1>
 
                 <p class="hero-description reveal" style="transition-delay: 0.2s;">
-                    Stop orchestrating basic tools manually. <strong>Agentic tools</strong> handle complex tasks
-                    autonomously—<strong>reducing context consumption</strong> and keeping your conversation clean.
+                    Not another app to switch to. OmniContext lives inside your terminal, editor,
+                    browser, and documents. Zero telemetry. Fully local.
                 </p>
 
-                <div class="install-wrapper reveal" style="transition-delay: 0.3s;">
+                <div class="platform-strip reveal" style="transition-delay: 0.3s;">
+                    <span class="platform-tag">Terminal</span>
+                    <span class="platform-tag">VS Code</span>
+                    <span class="platform-tag">Desktop</span>
+                    <span class="platform-tag">Word</span>
+                    <span class="platform-tag">Excel</span>
+                    <span class="platform-tag">PowerPoint</span>
+                    <span class="platform-tag">Chrome</span>
+                    <span class="platform-tag">Figma</span>
+                </div>
+
+                <div class="install-wrapper reveal" style="transition-delay: 0.4s;">
                     <div class="install-command" id="installCmd">
                         <code><span class="install-prompt">$</span> npm install -g omni-context-cli && omx</code>
                         <button class="copy-button" id="copyBtn" onclick="copyInstallCommand()">
@@ -49,97 +61,40 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <section class="section">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">The Problem</span>
-                <h2 class="section-title">Context pollution kills productivity</h2>
-                <p class="section-subtitle">Basic tools flood your conversation with intermediate results. Agentic tools
-                    work silently and return only what matters.</p>
+                <span class="section-label">Office Integration</span>
+                <h2 class="section-title">AI in Word, Excel, and PowerPoint</h2>
+                <p class="section-subtitle">
+                    The OmniContext panel sits right inside Office. Create budgets, format documents,
+                    and design presentations through natural conversation.
+                </p>
             </div>
 
-            <div class="comparison-wrapper reveal" style="transition-delay: 0.2s;">
-                <div class="comparison-container">
-                    <div class="comparison-panel">
-                        <div class="comparison-header">
-                            <h3>Basic Tools</h3>
-                            <p>Manual orchestration, noisy context</p>
-                        </div>
-
-                        <div class="conversation-stack">
-                            <div class="stack-message user" style="--index: 0">
-                                <span class="msg-type">User</span>
-                                <span class="msg-text">Find AuthService implementation</span>
-                            </div>
-
-                            <div class="stack-message tool" style="--index: 1">
-                                <span class="msg-type">glob</span>
-                                <span class="msg-text">Found 47 matching files</span>
-                                <span class="msg-meta">2.3 KB</span>
-                            </div>
-
-                            <div class="stack-message tool" style="--index: 2">
-                                <span class="msg-type">grep</span>
-                                <span class="msg-text">237 lines containing "AuthService"</span>
-                                <span class="msg-meta">8.1 KB</span>
-                            </div>
-
-                            <div class="stack-message tool" style="--index: 3">
-                                <span class="msg-type">read</span>
-                                <span class="msg-text">src/services/auth/service.ts</span>
-                                <span class="msg-meta">4.2 KB</span>
-                            </div>
-
-                            <div class="stack-message tool" style="--index: 4">
-                                <span class="msg-type">read</span>
-                                <span class="msg-text">src/services/auth/types.ts</span>
-                                <span class="msg-meta">1.1 KB</span>
-                            </div>
-
-                            <div class="stack-message assistant" style="--index: 5">
-                                <span class="msg-type">Assistant</span>
-                                <span class="msg-text">Found AuthService class</span>
-                            </div>
-
-                            <div class="context-summary">
-                                <div class="highlight-text">6 messages · 15.7 KB</div>
-                                <div class="meta-text">80% noise in context</div>
-                            </div>
-                        </div>
+            <div class="showcase-grid reveal" style="transition-delay: 0.2s;">
+                <div class="screenshot-card">
+                    <div class="screenshot-image">
+                        <img src="static/img/office-addin/excel-budget-demo.png"
+                            alt="AI creating a budget spreadsheet in Excel" loading="lazy">
                     </div>
-
-                    <div class="comparison-panel agentic">
-                        <div class="comparison-header">
-                            <h3>Agentic Tools</h3>
-                            <p>Autonomous execution, clean context</p>
-                        </div>
-
-                        <div class="conversation-stack">
-                            <div class="stack-message user" style="--index: 0">
-                                <span class="msg-type">User</span>
-                                <span class="msg-text">Find AuthService implementation</span>
-                            </div>
-
-                            <div class="stack-message tool" style="--index: 1">
-                                <span class="msg-type">agent_pluck</span>
-                                <span class="msg-text">Extracted AuthService class (45 lines)</span>
-                                <span class="msg-meta">1.8 KB</span>
-                            </div>
-
-                            <div class="stack-message assistant" style="--index: 2">
-                                <span class="msg-type">Assistant</span>
-                                <span class="msg-text">Found AuthService with login, logout, refreshToken methods</span>
-                            </div>
-
-                            <div class="context-summary">
-                                <div class="highlight-text">3 messages · 1.8 KB</div>
-                                <div class="meta-text">Clean context, zero noise</div>
-                            </div>
-                        </div>
+                    <div class="screenshot-label">Excel</div>
+                </div>
+                <div class="screenshot-card">
+                    <div class="screenshot-image">
+                        <img src="static/img/office-addin/word-formatting-demo.png" alt="AI formatting a resume in Word"
+                            loading="lazy">
                     </div>
+                    <div class="screenshot-label">Word</div>
+                </div>
+                <div class="screenshot-card">
+                    <div class="screenshot-image">
+                        <img src="static/img/office-addin/powerpoint-slides-demo.png"
+                            alt="AI designing slides in PowerPoint" loading="lazy">
+                    </div>
+                    <div class="screenshot-label">PowerPoint</div>
                 </div>
             </div>
         </div>
@@ -147,85 +102,73 @@
 
     <section class="section">
         <div class="container">
-            <div class="showcase">
-                <div class="reveal">
-                    <span class="section-label">Specialist Mode</span>
-                    <h2 class="section-title">High-dimensional tools</h2>
+            <div class="split-layout reveal">
+                <div class="split-content">
+                    <span class="section-label">Browser Extension</span>
+                    <h2 class="section-title">AI on Every Webpage</h2>
                     <p class="section-subtitle">
-                        Enable Specialist Mode to use 10 agentic tools instead of basic tools. Each agent thinks
-                        independently and returns precise results. Agents hide intermediate steps from your
-                        conversation.
+                        Summarize articles, extract data, and automate browser tasks from a sidebar
+                        that works on any page.
                     </p>
-
                     <div class="feature-list">
                         <div class="feature-list-item">
-                            <span class="feature-list-check">✓</span>
-                            No basic tools, only agentic tools
+                            <span class="feature-list-check">&#10003;</span>
+                            Summarize and translate any page
                         </div>
                         <div class="feature-list-item">
-                            <span class="feature-list-check">✓</span>
-                            Agents operate autonomously
+                            <span class="feature-list-check">&#10003;</span>
+                            Access tabs, bookmarks, and history
                         </div>
                         <div class="feature-list-item">
-                            <span class="feature-list-check">✓</span>
-                            Clean context, zero noise
+                            <span class="feature-list-check">&#10003;</span>
+                            Execute scripts and automate tasks
                         </div>
                         <div class="feature-list-item">
-                            <span class="feature-list-check">✓</span>
-                            Precise results
+                            <span class="feature-list-check">&#10003;</span>
+                            Screenshot and inspect via DevTools
                         </div>
                     </div>
                 </div>
+                <div class="split-image">
+                    <img src="static/img/browser-extension/chat-summarize-page.png"
+                        alt="Browser sidebar summarizing an article" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="terminal-window reveal" style="transition-delay: 0.2s;">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="term-line" style="animation-delay: 0s;">
-                            <span class="term-prompt">❯</span>
-                            <span class="term-cmd">Refactor auth to use dependency injection</span>
+    <section class="section">
+        <div class="container">
+            <div class="split-layout reverse reveal">
+                <div class="split-content">
+                    <span class="section-label">Desktop App</span>
+                    <h2 class="section-title">CLI Power, Desktop Simplicity</h2>
+                    <p class="section-subtitle">
+                        OmniContext Desktop gives you a full GUI for the CLI and acts as the local hub
+                        that connects Office, browser, and Figma integrations.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <span class="feature-list-check">&#10003;</span>
+                            Desktop GUI with all CLI capabilities
                         </div>
-                        <div class="term-loading" style="animation-delay: 0.5s;">
-                            <span class="term-loading-dot"></span>
-                            <span class="term-loading-dot"></span>
-                            <span class="term-loading-dot"></span>
+                        <div class="feature-list-item">
+                            <span class="feature-list-check">&#10003;</span>
+                            Connects Office, browser, and Figma in one place
                         </div>
-                        <div class="term-line" style="animation-delay: 1s;">
-                            <span class="term-tool">[sweep]</span>
-                            <span class="term-output">Finding auth-related files...</span>
+                        <div class="feature-list-item">
+                            <span class="feature-list-check">&#10003;</span>
+                            Serve-only mode for Office and browser
                         </div>
-                        <div class="term-line" style="animation-delay: 1.5s;">
-                            <span class="term-tool"></span>
-                            <span class="term-output">Found 3 auth files in src/services/auth/</span>
-                        </div>
-                        <div class="term-line" style="animation-delay: 2s;">
-                            <span class="term-tool">[pluck]</span>
-                            <span class="term-output">Extracting AuthService...</span>
-                        </div>
-                        <div class="term-line" style="animation-delay: 2.5s;">
-                            <span class="term-tool"></span>
-                            <span class="term-output">Retrieved AuthService class (45 lines)</span>
-                        </div>
-                        <div class="term-line" style="animation-delay: 3s;">
-                            <span class="term-tool">[sculpt]</span>
-                            <span class="term-output">Refactoring AuthService...</span>
-                        </div>
-                        <div class="term-line" style="animation-delay: 3.5s;">
-                            <span class="term-tool"></span>
-                            <span class="term-output">Extracting ITokenManager interface...</span>
-                        </div>
-                        <div class="term-line" style="animation-delay: 4s;">
-                            <span class="term-tool"></span>
-                            <span class="term-output">Injecting dependencies via constructor...</span>
-                        </div>
-                        <div class="term-line" style="animation-delay: 4.5s;">
-                            <span class="term-tool"></span>
-                            <span class="term-output">✨ Refactoring complete! 3 files modified.</span>
+                        <div class="feature-list-item">
+                            <span class="feature-list-check">&#10003;</span>
+                            Workspace and model management
                         </div>
                     </div>
+                </div>
+                <div class="split-image">
+                    <img src="static/img/desktop-app/serve-running.png" alt="OmniContext Desktop serving connections"
+                        loading="lazy">
                 </div>
             </div>
         </div>
@@ -234,81 +177,62 @@
     <section class="section">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">Agentic Tools</span>
-                <h2 class="section-title">10 intelligent agents</h2>
-                <p class="section-subtitle">Each agent masters a specific development domain</p>
+                <span class="section-label">For Developers</span>
+                <h2 class="section-title">10 agentic tools that think for themselves</h2>
+                <p class="section-subtitle">Each agent handles complex tasks autonomously, keeping intermediate
+                    steps out of your conversation.</p>
             </div>
 
             <div class="tools-grid reveal" style="transition-delay: 0.2s;">
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="map"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="map"></i></div>
                     <h4>Explore</h4>
                     <p>Survey architecture</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="hammer"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="hammer"></i></div>
                     <h4>Spark</h4>
                     <p>Execute bash with auto-fix</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="pencil"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <h4>Sculpt</h4>
                     <p>Edit files with auto-fix</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="search"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="search"></i></div>
                     <h4>Sweep</h4>
                     <p>Find matching files</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="clipboard-list"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="clipboard-list"></i></div>
                     <h4>Pluck</h4>
                     <p>Extract code segments</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="file-text"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
                     <h4>Weave</h4>
                     <p>Write files with auto-fix</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="waves"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="waves"></i></div>
                     <h4>Ripple</h4>
                     <p>Find symbol references</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="scissors"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="scissors"></i></div>
                     <h4>Slice</h4>
                     <p>Answer code questions</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="book-open"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="book-open"></i></div>
                     <h4>Quest</h4>
                     <p>Research via web search</p>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i data-lucide="eye"></i>
-                    </div>
+                    <div class="tool-icon"><i data-lucide="eye"></i></div>
                     <h4>Glance</h4>
-                    <p>Preview multiple files at once</p>
+                    <p>Preview multiple files</p>
                 </div>
             </div>
         </div>
@@ -323,95 +247,64 @@
 
             <div class="features-grid reveal" style="transition-delay: 0.2s;">
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="crosshair"></i>
-                    </div>
-                    <h3>Specialist Mode</h3>
-                    <p>10 agentic tools with clean context</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="shield"></i>
-                    </div>
+                    <div class="feature-icon"><i data-lucide="shield"></i></div>
                     <h3>Zero Telemetry</h3>
                     <p>No data collection, ever</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="cpu"></i>
-                    </div>
-                    <h3>ACE</h3>
-                    <p>Agentic Context Engineering</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="zap"></i>
-                    </div>
-                    <h3>Agent Skills</h3>
-                    <p>Extensible agentic capabilities</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="palette"></i>
-                    </div>
-                    <h3>Artist Mode</h3>
-                    <p>Visual-first image generation</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="compass"></i>
-                    </div>
-                    <h3>Explorer Mode</h3>
-                    <p>Research-first web search</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="globe"></i>
-                    </div>
+                    <div class="feature-icon"><i data-lucide="globe"></i></div>
                     <h3>Multi-Model</h3>
-                    <p>Anthropic, OpenAI, Gemini, DeepSeek and more</p>
+                    <p>Anthropic, OpenAI, Gemini, DeepSeek, and more</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="save"></i>
-                    </div>
-                    <h3>Session Management</h3>
-                    <p>Resume where you left off</p>
+                    <div class="feature-icon"><i data-lucide="layout-grid"></i></div>
+                    <h3>VS Code Extension</h3>
+                    <p>AI integrated into your editor</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="plug"></i>
-                    </div>
+                    <div class="feature-icon"><i data-lucide="plug"></i></div>
                     <h3>MCP Compatible</h3>
                     <p>Model Context Protocol support</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="layout-grid"></i>
-                    </div>
-                    <h3>Web Client</h3>
-                    <p>Browser UI and VS Code extension</p>
+                    <div class="feature-icon"><i data-lucide="cpu"></i></div>
+                    <h3>Cross-Session Memory</h3>
+                    <p>Remembers across conversations</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="monitor"></i>
-                    </div>
-                    <h3>Desktop App</h3>
-                    <p>Standalone app for Windows and macOS</p>
+                    <div class="feature-icon"><i data-lucide="zap"></i></div>
+                    <h3>Agent Skills</h3>
+                    <p>Extensible agentic capabilities</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="chrome"></i>
-                    </div>
-                    <h3>Browser Extension</h3>
-                    <p>Control your browser tabs, bookmarks, and page content</p>
+                    <div class="feature-icon"><i data-lucide="monitor"></i></div>
+                    <h3>Multi-Platform</h3>
+                    <p>Windows, macOS, and Linux</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">
-                        <i data-lucide="file-spreadsheet"></i>
-                    </div>
-                    <h3>Office Add-in</h3>
-                    <p>Work with Excel, Word, and PowerPoint directly</p>
+                    <div class="feature-icon"><i data-lucide="crosshair"></i></div>
+                    <h3>Specialist Mode</h3>
+                    <p>Agentic tools with clean context</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="palette"></i></div>
+                    <h3>App Integrations</h3>
+                    <p>Office, Chrome, and Figma via Desktop hub</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="save"></i></div>
+                    <h3>Session Management</h3>
+                    <p>Resume where you left off</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="clipboard-list"></i></div>
+                    <h3>Project Instructions</h3>
+                    <p>Customizable via OMX.md</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i data-lucide="compass"></i></div>
+                    <h3>Web Search</h3>
+                    <p>Built-in research tools</p>
                 </div>
             </div>
         </div>
@@ -420,8 +313,8 @@
     <section class="section">
         <div class="container">
             <div class="cta-section reveal">
-                <h2>Ready to level up?</h2>
-                <p>Install OmniContext CLI and experience agentic tools today</p>
+                <h2>Ready to try it?</h2>
+                <p>Install OmniContext and bring AI to every app you use</p>
                 <div class="cta-buttons">
                     <a href="https://www.npmjs.com/package/omni-context-cli" class="btn-primary" target="_blank">
                         <i data-lucide="download"></i>
@@ -438,7 +331,7 @@
 
     <footer>
         <div class="container">
-            <p>OmniContext CLI — Zero telemetry coding assistant</p>
+            <p>OmniContext -- Zero telemetry AI assistant</p>
         </div>
     </footer>
 
