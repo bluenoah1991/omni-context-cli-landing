@@ -105,8 +105,6 @@ Design an API for user authentication
 
 The model will follow the conventions defined in your skill.
 
-The model will autonomously load relevant skills as needed during the conversation.
-
 ## Skills vs Agents vs Slash Commands
 
 | Feature | Purpose | Execution |
@@ -128,6 +126,8 @@ Choose agents when you want to:
 ## Progressive Context
 
 Skills use progressive disclosure. Only skill names and descriptions appear in the system prompt. When the model calls the skill tool, Omx returns the full instructions along with the skill's base directory path.
+
+Skills are available when the workflow preset is **Normal**. Other presets focus on agent workflows and do not include skills in the system prompt.
 
 Your skill can then reference additional files in its directory:
 

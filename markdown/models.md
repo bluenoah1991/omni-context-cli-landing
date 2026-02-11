@@ -11,65 +11,9 @@ Omx supports multiple LLM providers and allows you to configure, switch, and man
 
 ## Supported Providers
 
-### OpenAI-Compatible APIs
+Omx supports OpenAI, Anthropic, Gemini, and OpenAI Responses API formats. You can point it at any API that matches those formats.
 
-Any API following the OpenAI chat completions format:
-
-- OpenAI (GPT-4, GPT-4o, etc.)
-- xAI (Grok)
-- Azure OpenAI
-- Ollama
-- LM Studio
-- vLLM
-- Together AI
-- Groq
-- And many more...
-
-### Anthropic-Compatible APIs
-
-APIs following the Anthropic messages format:
-
-- Anthropic (Claude 3, Claude 3.5, Claude 4, etc.)
-- AWS Bedrock (via Anthropic format)
-
-### Google Gemini
-
-Google's Gemini API with native streaming support:
-
-- Gemini 2.0 Flash
-- Gemini 1.5 Pro
-- Gemini 1.5 Flash
-
-### OpenAI Responses API
-
-OpenAI's Responses API format with enhanced reasoning support:
-
-- Supports advanced reasoning and thought blocks
-- Different streaming format than standard chat completions API
-
-### Zenmux Auto-Routing
-
-A dynamic routing model that automatically selects the best model based on your configuration:
-
-- Use `zenmux/auto` as the model name
-- Configure routing rules in `~/.omx/zenmux.json`
-- The `model_routing_config` is automatically merged into requests
-- Allows cost-effective routing while maintaining quality
-
-Example `zenmux.json`:
-
-```json
-{
-  "model_routing_config": {
-    "available_models": [
-      "deepseek/deepseek-reasoner",
-      "anthropic/claude-sonnet-4.5",
-      "minimax/minimax-m2"
-    ],
-    "preference": "balanced"
-  }
-}
-```
+Omx also includes provider shortcuts that pull model lists from a few services, shown below in "Quick Add with Model Providers".
 
 ## Quick Add with Model Providers
 
@@ -85,9 +29,9 @@ This shows all available providers:
 |----------|--------|
 | **deepseek** | DeepSeek Chat, DeepSeek Reasoner |
 | **minimax** | MiniMax M2.1 |
-| **openrouter** | Multiple models from various providers |
+| **openrouter** | OpenRouter model list (OpenAI and Anthropic formats) |
 | **zhipu** | GLM-4.7, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
-| **zenmux** | Dynamic model list from Zenmux.ai |
+| **zenmux** | Zenmux model list (Anthropic, Responses, Gemini, OpenAI formats) |
 
 To add all models from a provider:
 
@@ -113,7 +57,7 @@ On first run, Omx prompts you to add a model. You can also add models later thro
 | **Nickname** | Display name in Omx UI |
 | **Provider** | `openai`, `anthropic`, `gemini`, or `responses` |
 | **API Key** | Your API key |
-| **API URL** | Base URL for the API |
+| **API URL** | Base URL for the API (Omx fills in the full endpoint, except Gemini) |
 | **Context Size** | Maximum context window in thousands of tokens |
 
 ### Example Configurations
@@ -195,9 +139,11 @@ API URL: https://zenmux.ai/api/v1
 Context Size: 200
 ```
 
-See [Zenmux Auto-Routing](#zenmux-auto-routing) for configuration details.
+Create `~/.omx/zenmux.json` to configure routing rules. Omx merges `model_routing_config` into requests for `zenmux/auto`.
 
 ## Model Settings
+
+Omx lets you set a default model and an agent model from the menu.
 
 ### Default Model
 
@@ -205,13 +151,12 @@ The model used when starting a new session. Set via configuration menu or by sel
 
 ### Agent Model
 
-A separate model specifically for SubAgent operations. Useful for:
+A secondary model used for background tasks: sub-agents, web search, and git commit generation. Useful for:
 
-- Using a faster/cheaper model for agents
-- Using a more capable model for complex agent tasks
-- Keeping main conversation on one model while agents use another
+- Using a faster/cheaper model for background work
+- Keeping main conversation on one model while background tasks use another
 
-If not set, agents use the default model.
+If not set, the default model is used.
 
 ## Switching Models
 
@@ -223,21 +168,14 @@ Use the `/model` command to switch models mid-conversation:
 /model
 ```
 
-This shows a list of configured models. Select one to switch.
-
-### Automatic Context Handling
-
-When switching models:
-- Switching between models with the same API type preserves conversation history
-- Switching to a model with a different API type resets the session
-- Token counts reset for the new model's context window
+This shows a list of configured models. Select one to switch. Switching between different API types resets the session.
 
 
 ## Managing Models
 
 ### Edit a Model
 
-Access the configuration menu and select the model to edit. You can update any field.
+You can add, remove, or change models from the menu. Editing an existing model is not currently supported.
 
 ### Delete a Model
 
@@ -248,12 +186,12 @@ Remove models through the configuration menu. If you delete the default model, y
 
 ### Connection Errors
 
-Verify the API URL is correct:
-- OpenAI: `https://api.openai.com/v1`
-- Anthropic: `https://api.anthropic.com`
-- Google Gemini: `https://generativelanguage.googleapis.com/v1beta`
-- OpenAI Responses API: `https://api.openai.com/v1`
-- Local: `http://localhost:PORT/v1`
+Verify the API URL is correct. Omx will append the provider-specific path automatically:
+- OpenAI base URL: `https://api.openai.com/v1`
+- Anthropic base URL: `https://api.anthropic.com`
+- Google Gemini base URL: `https://generativelanguage.googleapis.com/v1beta`
+- OpenAI Responses base URL: `https://api.openai.com/v1`
+- Local base URL: `http://localhost:PORT/v1`
 
 ### Authentication Errors
 

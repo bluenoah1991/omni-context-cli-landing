@@ -39,14 +39,13 @@ Memory 维护一组持久的 **Key Points** - 从你的对话中提取的简洁�
 
 ## 启用 Memory
 
-Memory 默认禁用。通过菜单启用：
+Memory 默认启用。你可以通过菜单切换：
 
 1. 按 `Escape` 打开菜单
 2. 选择 **Change your preferences**
 3. 选择 **Cross-session memory**
-4. 选择 **Enable**
 
-你可以通过 `/status` 命令确认是否启用 -- 看是否有 `Cross-session memory: √`。
+通过 `/status` 确认状态 -- 看 `Cross-session memory: √`。
 
 ## 学习内容
 

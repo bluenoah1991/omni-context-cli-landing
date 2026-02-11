@@ -39,14 +39,13 @@ Unused key points naturally decay over time.
 
 ## Enabling Memory
 
-Memory is disabled by default. Enable it through the menu:
+Memory is enabled by default. You can toggle it through the menu:
 
 1. Press `Escape` to open the menu
 2. Select **Change your preferences**
 3. Select **Cross-session memory**
-4. Choose **Enable**
 
-You can verify it's on with `/status` -- look for `Cross-session memory: √`.
+Check with `/status` -- look for `Cross-session memory: √`.
 
 ## What Gets Learned
 
@@ -59,7 +58,7 @@ Memory captures:
 
 ## Data Storage
 
-Memory is stored per-project at `~/.omx/projects/<encoded-path>/memory.json`, where `<encoded-path>` is the base64url encoding of the lowercased current working directory:
+Memory is stored per-project at `~/.omx/projects/<encoded-path>/memory.json`, where `<encoded-path>` is the base64url encoding of the lowercased current working directory.
 
 ```json
 {

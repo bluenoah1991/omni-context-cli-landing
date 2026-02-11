@@ -117,6 +117,8 @@ mcp_serverid_toolname
 
 例如，如果你有一个名为 `github` 的服务器，其中有 `search_repositories` 工具，它会变成 `mcp_github_search_repositories`。
 
+部分集成（如浏览器或 Office 客户端）会以 `remote_` 工具出现。
+
 ## 故障排除
 
 ### 服务器无法启动

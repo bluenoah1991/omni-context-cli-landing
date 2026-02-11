@@ -80,6 +80,16 @@ Array of tools the agent can use:
 - `Edit` - Edit files
 - `Glob` - Find files by pattern
 - `Grep` - Search file contents
+- `WebSearch` - Search the web (Anthropic models only)
+- `SaveArtifact` - Save a generated image or file to disk
+
+### model
+
+Override which model runs this agent. The value is matched against model names, so a partial match like `deepseek` works. If omitted, the agent model (or default model) is used.
+
+```yaml
+model: deepseek-chat
+```
 
 ### parameters
 
@@ -134,6 +144,8 @@ The file is searched in order:
 2. `~/.omx/OMX-AGENTS.md` - User-wide agent instructions
 
 The first file found is used. Instructions are injected into agent sessions before task execution.
+
+Skills are not available inside agent runs.
 
 ### Example
 

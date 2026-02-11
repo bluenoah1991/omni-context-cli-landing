@@ -80,6 +80,16 @@ parameters:
 - `Edit` - 编辑文件
 - `Glob` - 按模式查找文件
 - `Grep` - 搜索文件内容
+- `WebSearch` - 网络搜索（仅 Anthropic 模型）
+- `SaveArtifact` - 将生成的图片或文件保存到磁盘
+
+### model
+
+指定运行此智能体的模型。值会按模型名称模糊匹配，比如写 `deepseek` 就能匹配到。如果不指定，使用智能体模型（或默认模型）。
+
+```yaml
+model: deepseek-chat
+```
 
 ### parameters
 
@@ -134,6 +144,8 @@ parameters:
 2. `~/.omx/OMX-AGENTS.md` - 用户全局智能体指令
 
 使用找到的第一个文件。指令会在任务执行前注入到智能体会话中。
+
+子智能体执行时不会加载 skills。
 
 ### 示例
 

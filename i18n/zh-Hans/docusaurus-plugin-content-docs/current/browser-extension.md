@@ -115,7 +115,7 @@ OmniContext Connect 是一个 Chrome 扩展，让 Omx 可以操控你的浏览�
 
 ![侧边面板中 Omx 正在总结网页文章，网页在左侧打开](/img/browser-extension/chat-summarize-page.png)
 
-为了获得最佳体验，建议在 Omx 菜单中切换到 **Assistant** 工作流预设。这个模式专门为与浏览器、Office 等应用交互而设计。
+为了获得最佳体验，建议在 Omx 菜单中切换到 **Assistant** 工作流预设。这个模式专门为与浏览器、Office、Figma 等应用交互而设计。
 
 ## 可用工具
 

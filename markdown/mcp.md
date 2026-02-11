@@ -117,6 +117,8 @@ mcp_serverid_toolname
 
 For example, if you have a server named `github` with a tool `search_repositories`, it becomes `mcp_github_search_repositories`.
 
+Some integrations (like browser or Office clients) show up as `remote_` tools when connected.
+
 ## Troubleshooting
 
 ### Server Not Starting

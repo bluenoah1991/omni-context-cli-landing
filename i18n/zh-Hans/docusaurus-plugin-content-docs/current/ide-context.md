@@ -44,6 +44,7 @@ OmniContext 扩展提供以下 MCP 工具：
 | `mcp_ide_visual_studio_code_openDiff` | 查看新旧内容的差异 |
 | `mcp_ide_visual_studio_code_getDiagnostics` | 获取 VS Code 的错误和警告 |
 | `mcp_ide_visual_studio_code_getOpenEditors` | 列出当前打开的编辑器标签页 |
+| `mcp_ide_visual_studio_code_closeAllDiffTabs` | 关闭所有 diff 编辑器标签页 |
 | `mcp_ide_visual_studio_code_getWorkspaceFolders` | 获取工作区文件夹路径 |
 
 ## 配置

@@ -57,7 +57,7 @@ The web client will load with full functionality.
 
 ## Adding to Home Screen
 
-For the best experience, add Omx to your home screen as a PWA (Progressive Web App):
+For quick access, add Omx to your home screen:
 
 ### iOS (Safari)
 

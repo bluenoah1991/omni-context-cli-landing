@@ -17,10 +17,10 @@ sidebar_position: 2
 | Ctrl+C | 按两次退出 |
 | Ctrl+A | 将光标移到行首 |
 | Ctrl+E | 将光标移到行尾 |
-| Ctrl+L | 清空输入框 |
-| Shift+Enter | 插入换行（多行输入）|
-| Ctrl+J | 插入换行（TUI）|
-| Up/Down | 在多行输入中移动光标 / 浏览输入历史 |
+| Ctrl+L | 清空输入和附件 |
+| Shift+Enter | 插入换行 |
+| Ctrl+J | 插入换行 |
+| Up/Down | 在多行输入中移动光标或浏览输入历史 |
 
 ## Slash 命令
 
@@ -56,17 +56,17 @@ Omx 支持五种工作流预设：
 
 - **Normal** - 基础工具，需要手动协调
 - **Specialist**（默认）- 自主运行的智能体工具。参见[专家模式](/tutorial/specialist-mode)
-- **Artist** - 主要以图像响应，适合视觉设计。参见[艺术家模式](/tutorial/artist-mode)
+- **Artist** - 在支持的场景下优先用图像响应。参见[艺术家模式](/tutorial/artist-mode)
 - **Explorer** - 先联网搜索再回答问题。参见[探索者模式](/tutorial/explorer-mode)
-- **Assistant** - 连接你的应用（浏览器、Office 等）的个人助手，直接读取、编辑和创建内容
+- **Assistant** - 面向浏览器、Office、Figma 等应用的助理模式
 
 ### 偏好设置
 
 偏好设置子菜单让你切换：
 
-- **缓存时长** - Anthropic 缓存提示的时间（5 分钟或 1 小时）
+- **缓存时长** - 提示缓存的时间（5 分钟或 1 小时）
 - **完成通知** - 响应超过一分钟时发送通知
-- **上下文编辑** - 压缩时精简上下文
+- **上下文编辑** - 裁剪旧的工具调用和思考块以节省 token
 - **跨会话记忆** - 跨会话记住关键点
 - **扩展思考** - 为复杂任务启用更深入的推理
 - **IDE 上下文** - 包含来自你 IDE 的上下文

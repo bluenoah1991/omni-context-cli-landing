@@ -23,7 +23,7 @@ npm install -g omni-context-cli
 omx
 ```
 
-Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
+Omx 支持 OpenAI、Anthropic、Gemini 和 OpenAI Responses API 格式。
 
 ### 添加第一个模型
 
@@ -36,7 +36,7 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
    - **API Type**: 选择 `Anthropic`、`OpenAI`、`Gemini` 或 `OpenAI Responses API`
    - **Model Name**: 模型标识符（如 `claude-sonnet-4-20250514`、`gpt-4o`）
    - **API Key**: 你的 API 密钥
-   - **API URL**: API 端点（如 `https://api.anthropic.com`、`https://api.openai.com/v1`）
+   - **API URL**: API 基础地址（如 `https://api.anthropic.com`、`https://api.openai.com/v1`）
    - **Context Size (K)**: 最大上下文窗口，以千为单位（如 `200` 表示 200K）
    - **Nickname**: 在界面中显示的友好名称
 
@@ -62,6 +62,10 @@ Omx 支持任何兼容 OpenAI 或 Anthropic 的 API。
 | `--add-provider <id>` | 添加提供商的所有模型（需要 `--api-key`） |
 | `--remove-provider <id>` | 移除提供商的所有模型 |
 | `--api-key <key>` | 用于 `--add-provider` 的 API 密钥 |
+| `--parent-pid <pid>` | 父进程退出时自动结束（需要 `--serve`） |
+| `--tls` | 为服务器模式启用 HTTPS |
+| `--tls-cert <path>` | TLS 证书文件路径 |
+| `--tls-key <path>` | TLS 私钥文件路径 |
 
 示例：
 
@@ -104,7 +108,7 @@ omx --serve --host 0.0.0.0
 
 Omx 支持 HTTP 和 HTTPS 代理。你可以通过以下两种方式设置代理：
 
-**通过配置文件：** 在 `~/.omx/config.json` 中设置 `proxy` 字段：
+**通过配置文件：** 在 `~/.omx/omx.json` 中设置 `proxy` 字段：
 
 ```json
 {
@@ -121,12 +125,31 @@ http://proxy.example.com:8080
 https://proxy.example.com:8443
 ```
 
+## 项目指令
+
+Omx 会在每次对话开始时自动加载项目指令。按以下顺序查找文件：
+
+1. 当前目录下的 `OMX.md`
+2. 当前目录下的 `CLAUDE.md`
+3. `~/.omx/OMX.md`（用户级兜底）
+
+找到的第一个文件会被使用。你可以在里面写任何希望 Omx 了解的项目信息，比如编码规范、架构说明、常用工具或仓库特定规则。
+
+```markdown
+# 项目指令
+
+- 使用 TypeScript 严格模式
+- 优先使用函数式组件和 hooks
+- 提交前运行 `npm test`
+```
+
 ## 文档
 
 - [基本操作](./tutorial/basic-usage) - 快捷键、命令和菜单选项
 - [Web 客户端](./tutorial/web-client) - 浏览器界面和 VS Code 扩展
 - [浏览器扩展](./tutorial/browser-extension) - 从 Omx 控制你的浏览器
 - [Office 扩展](./tutorial/office-addin) - 操作 Excel、Word 和 PowerPoint
+- [Figma 扩展](./tutorial/figma-plugin) - 在 Figma 中用 AI 设计
 - [专家模式](./tutorial/specialist-mode) - 高级智能体工具
 - [艺术家模式](./tutorial/artist-mode) - 以图像生成为主的视觉响应
 - [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具

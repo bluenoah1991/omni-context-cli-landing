@@ -44,6 +44,7 @@ The OmniContext extension provides these MCP tools:
 | `mcp_ide_visual_studio_code_openDiff` | View diffs between old and new content |
 | `mcp_ide_visual_studio_code_getDiagnostics` | Get errors and warnings from VS Code |
 | `mcp_ide_visual_studio_code_getOpenEditors` | List currently open editor tabs |
+| `mcp_ide_visual_studio_code_closeAllDiffTabs` | Close all diff editor tabs |
 | `mcp_ide_visual_studio_code_getWorkspaceFolders` | Get workspace folder paths |
 
 ## Configuration

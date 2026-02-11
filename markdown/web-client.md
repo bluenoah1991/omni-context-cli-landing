@@ -51,7 +51,7 @@ Then open `http://localhost:5281` manually.
 
 The web client provides a graphical interface with:
 
-- **Light and Dark Themes** - Automatically follows your system preference
+- **Light and Dark Themes** - Follow your system preference
 - **LaTeX Rendering** - Mathematical equations render properly
 - **Mermaid Diagrams** - Flowcharts, sequence diagrams, and more
 - **File Attachments** - Attach images and documents (PDF) to your messages
@@ -61,7 +61,7 @@ The web client provides a graphical interface with:
 - **Token Usage** - Track input and output token consumption
 - **Tool Approval** - Confirm or deny tool executions when approval mode is enabled
 - **Mobile Support** - Responsive design works on phones and tablets
-- **PWA Ready** - Install as a progressive web app for quick access
+- **Appearance Settings** - Theme preferences saved to your config
 
 ## VS Code Extension
 
@@ -137,7 +137,8 @@ Download the latest release for your platform:
 
 - **Zero Setup** - No Node.js installation required
 - **Configuration Portal** - Graphical interface for providers, permissions, and settings
-- **Custom Prompts** - Customize system prompts for specialist, artist, and explorer modes
+- **App Integrations** - Connect Office, browser, and Figma through dedicated setup tabs
+- **Custom Prompts** - Customize system prompts for specialist, artist, explorer, and assistant modes
 - **Auto Workspace** - Opens your default workspace (Documents/OmniContext) on launch
 - **Dynamic Port** - Automatically finds an available port for the local server
 

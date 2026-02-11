@@ -11,65 +11,9 @@ Omx 支持多个 LLM 提供商，允许你轻松配置、切换和管理模型�
 
 ## 支持的提供商
 
-### OpenAI 兼容 API
+Omx 支持 OpenAI、Anthropic、Gemini 和 OpenAI Responses API 格式。你可以连接任何兼容这些格式的 API。
 
-任何遵循 OpenAI chat completions 格式的 API：
-
-- OpenAI (GPT-4, GPT-4o 等)
-- xAI (Grok)
-- Azure OpenAI
-- Ollama
-- LM Studio
-- vLLM
-- Together AI
-- Groq
-- 以及更多...
-
-### Anthropic 兼容 API
-
-遵循 Anthropic messages 格式的 API：
-
-- Anthropic (Claude 3, Claude 3.5, Claude 4 等)
-- AWS Bedrock（通过 Anthropic 格式）
-
-### Google Gemini
-
-Google 的 Gemini API，原生流式支持：
-
-- Gemini 2.0 Flash
-- Gemini 1.5 Pro
-- Gemini 1.5 Flash
-
-### OpenAI Responses API
-
-OpenAI 的 Responses API 格式，支持增强的 reasoning：
-
-- 支持高级 reasoning 和 thought blocks
-- 与标准 chat completions API 不同的流式格式
-
-### Zenmux 自动路由
-
-基于配置自动选择最佳模型的动态路由：
-
-- 使用 `zenmux/auto` 作为模型名称
-- 在 `~/.omx/zenmux.json` 中配置路由规则
-- `model_routing_config` 会自动合并到请求中
-- 可在保证质量的同时实现成本优化路由
-
-示例 `zenmux.json`：
-
-```json
-{
-  "model_routing_config": {
-    "available_models": [
-      "deepseek/deepseek-reasoner",
-      "anthropic/claude-sonnet-4.5",
-      "minimax/minimax-m2"
-    ],
-    "preference": "balanced"
-  }
-}
-```
+同时也提供少量内置提供商快捷方式，下面的“快速添加模型提供商”里有列表。
 
 ## 快速添加模型提供商
 
@@ -85,9 +29,9 @@ omx --list-providers
 |----------|--------|
 | **deepseek** | DeepSeek Chat, DeepSeek Reasoner |
 | **minimax** | MiniMax M2.1 |
-| **openrouter** | 来自多个提供商的模型 |
+| **openrouter** | OpenRouter 模型列表（OpenAI/Anthropic 格式） |
 | **zhipu** | GLM-4.7, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
-| **zenmux** | 来自 Zenmux.ai 的动态模型列表 |
+| **zenmux** | Zenmux 模型列表（Anthropic/Responses/Gemini/OpenAI 格式） |
 
 添加某个提供商的所有模型：
 
@@ -113,7 +57,7 @@ omx --remove-provider deepseek
 | **Nickname** | 在 Omx UI 中显示的名称 |
 | **Provider** | `openai`、`anthropic`、`gemini` 或 `responses` |
 | **API Key** | 你的 API 密钥 |
-| **API URL** | API 的基础 URL |
+| **API URL** | API 的基础 URL（Omx 会补全路径，Gemini 例外） |
 | **Context Size** | 最大上下文窗口（以千 token 为单位） |
 
 ### 示例配置
@@ -195,23 +139,19 @@ API URL: https://zenmux.ai/api/v1
 Context Size: 200
 ```
 
-详情请参阅 [Zenmux 自动路由](#zenmux-自动路由)。
+创建 `~/.omx/zenmux.json` 配置路由规则。Omx 会把 `model_routing_config` 合并到 `zenmux/auto` 请求中。
 
 ## 模型设置
 
+Omx 允许你在菜单里设置默认模型和智能体模型。
+
 ### 默认模型
 
-启动新会话时使用的模型。通过配置菜单或在存在多个模型时选择来设置。
+启动新会话时使用的模型，通过菜单设置。
 
 ### 智能体模型
 
-专门用于 SubAgent 操作的独立模型。适用于：
-
-- 为智能体使用更快/更便宜的模型
-- 为复杂智能体任务使用更强大的模型
-- 主对话使用一个模型，智能体使用另一个
-
-如果未设置，智能体使用默认模型。
+用于后台任务的辅助模型，包括子智能体、网络搜索和 git 提交消息生成。未设置时使用默认模型。
 
 ## 切换模型
 
@@ -223,22 +163,14 @@ Context Size: 200
 /model
 ```
 
-这会显示已配置模型的列表。选择一个进行切换。
-
-### 上下文处理
-
-切换模型时：
-- 在相同 API 类型的模型之间切换会保留对话历史
-- 切换到不同 API 类型的模型会重置会话
-- Token 计数为新模型的上下文窗口重置
-
+这会显示已配置模型的列表。选择一个进行切换。不同 API 类型之间切换会重置会话。
 
 
 ## 管理模型
 
 ### 编辑模型
 
-访问配置菜单并选择要编辑的模型。你可以更新任何字段。
+可以在菜单中添加、删除或更换模型。目前不支持编辑已有模型。
 
 ### 删除模型
 
@@ -249,12 +181,12 @@ Context Size: 200
 
 ### 连接错误
 
-验证 API URL 是否正确：
-- OpenAI: `https://api.openai.com/v1`
-- Anthropic: `https://api.anthropic.com`
-- Google Gemini: `https://generativelanguage.googleapis.com/v1beta`
-- OpenAI Responses API: `https://api.openai.com/v1`
-- 本地: `http://localhost:PORT/v1`
+确认 API URL 是否正确。Omx 会自动补全提供商路径：
+- OpenAI 基础地址: `https://api.openai.com/v1`
+- Anthropic 基础地址: `https://api.anthropic.com`
+- Google Gemini 基础地址: `https://generativelanguage.googleapis.com/v1beta`
+- OpenAI Responses 基础地址: `https://api.openai.com/v1`
+- 本地基础地址: `http://localhost:PORT/v1`
 
 ### 认证错误
 

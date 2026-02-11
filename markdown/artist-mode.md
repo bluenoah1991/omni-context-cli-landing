@@ -7,13 +7,11 @@ sidebar_position: 4
 
 # Artist Mode
 
-Artist mode transforms Omx into a visual-first assistant. Instead of responding with text, it generates images to answer your questions and explore ideas.
+Artist mode transforms Omx into a visual-first assistant. It prioritizes image responses when the model supports them.
 
 ## How It Works
 
-When artist mode is active, Omx interprets requests visually. Ask a question, and it responds with an image. Describe something, and it shows you. Want to explore ideas? It visualizes them.
-
-Text responses are minimal - just enough to clarify what's being created or ask for details when the request is ambiguous.
+When artist mode is active, Omx interprets requests visually and uses image outputs when available. Text responses stay minimal unless it needs clarification.
 
 ## When to Use It
 

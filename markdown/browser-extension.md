@@ -115,7 +115,7 @@ Here are some things you can try:
 
 ![The side panel showing Omx summarizing a web article while the page is open on the left](/img/browser-extension/chat-summarize-page.png)
 
-For the best experience, switch to the **Assistant** workflow preset in the Omx menu. This mode is designed for interacting with apps like the browser and Office.
+For the best experience, switch to the **Assistant** workflow preset in the Omx menu. This mode is designed for interacting with apps like the browser, Office, and Figma.
 
 ## Available Tools
 

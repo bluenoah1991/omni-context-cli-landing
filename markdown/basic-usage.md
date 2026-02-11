@@ -17,10 +17,10 @@ This guide covers the essential shortcuts, commands, and menu options for workin
 | Ctrl+C | Press twice to exit |
 | Ctrl+A | Move cursor to line start |
 | Ctrl+E | Move cursor to line end |
-| Ctrl+L | Clear input box |
-| Shift+Enter | Insert newline (multi-line input) |
-| Ctrl+J | Insert newline (TUI) |
-| Up/Down | Navigate cursor in multi-line input / Browse input history |
+| Ctrl+L | Clear input and attachments |
+| Shift+Enter | Insert newline |
+| Ctrl+J | Insert newline |
+| Up/Down | Move cursor in multi-line input or browse input history |
 
 ## Slash Commands
 
@@ -56,17 +56,17 @@ Omx supports five workflow presets:
 
 - **Normal** - Basic tools with manual orchestration
 - **Specialist** (default) - Agentic tools that work autonomously. See [Specialist Mode](/tutorial/specialist-mode)
-- **Artist** - Responds primarily with images for visual design. See [Artist Mode](/tutorial/artist-mode)
+- **Artist** - Visual-first responses with images when supported. See [Artist Mode](/tutorial/artist-mode)
 - **Explorer** - Research-first web search before answering. See [Explorer Mode](/tutorial/explorer-mode)
-- **Assistant** - A personal assistant connected to your apps (browser, Office, etc.) that reads, edits, and creates content directly
+- **Assistant** - A personal assistant for app integrations like browser, Office, and Figma
 
 ### Preferences
 
 The preferences submenu lets you toggle:
 
-- **Cache duration** - How long Anthropic caches your prompts (5 minutes or 1 hour)
+- **Cache duration** - How long prompt caching lasts (5 minutes or 1 hour)
 - **Completion notification** - Notify when response takes over a minute
-- **Context editing** - Slim down context during compaction
+- **Context editing** - Trim old tool calls and thinking blocks to save tokens
 - **Cross-session memory** - Remember key points across sessions
 - **Extended thinking** - Enable deeper reasoning for complex tasks
 - **IDE context** - Include context from your IDE

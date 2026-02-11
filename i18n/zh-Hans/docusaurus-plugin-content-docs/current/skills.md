@@ -105,8 +105,6 @@ description: 项目特定的编码约定
 
 模型会遵循你的 skill 中定义的约定。
 
-大模型会根据对话需要自主选择加载相关的 skill。
-
 ## Skills vs 智能体 vs Slash 命令
 
 | 功能 | 用途 | 执行方式 |
@@ -128,6 +126,8 @@ description: 项目特定的编码约定
 ## 渐进式上下文
 
 Skills 采用渐进式披露。系统提示中只显示 skill 名称和描述。当模型调用 skill 工具时，Omx 返回完整指令以及 skill 的基础目录路径。
+
+Skills 只在 **Normal** 预设下可用，其他预设不会把 skills 加入系统提示。
 
 你的 skill 可以引用其目录中的额外文件：
 

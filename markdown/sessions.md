@@ -11,7 +11,7 @@ Omx automatically saves your conversations and provides tools to navigate and re
 
 ## Automatic Saving
 
-Every conversation is automatically saved. Sessions are organized by project based on your current working directory or git repository root.
+Every conversation is automatically saved. Sessions are organized by project based on your current working directory.
 
 ## Loading Previous Sessions
 
@@ -44,7 +44,7 @@ When the context window fills up, Omx can compress the conversation history.
 
 ### Automatic Compaction
 
-When token usage exceeds 80% of the model's context size, Omx prompts for compaction. This summarizes the conversation while preserving key context.
+When token usage exceeds 80% of the model's context size, Omx compacts the conversation and starts a fresh session with a summary.
 
 ### Manual Compaction
 
@@ -61,9 +61,7 @@ This is useful when:
 
 ### Compaction Configuration
 
-Omx supports context editing to optimize compaction. You can enable or disable this feature through the `contextEditing` setting.
-
-By default, Omx preserves all tool call results when compacting conversations. If you want to remove tool results during compaction to reduce token usage, you can manually adjust the relevant parameter in your settings file.
+Omx supports context editing to reduce token usage. When enabled, it automatically trims tool call payloads and thinking blocks in older messages on every request. Toggle it through the `contextEditing` setting.
 
 ## Starting Fresh
 

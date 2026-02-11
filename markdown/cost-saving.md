@@ -38,8 +38,8 @@ Specialist mode is one of the most effective cost-saving features in Omx. It use
 ### Recommended Configuration
 
 ```
-Main Model: Opus 4.5 (or similar high-end model)
-Agent Model: GLM-4.7 (or similar cost-effective model)
+Main Model: A strong reasoning model
+Agent Model: A faster, cheaper model from the same provider
 ```
 
 This combination gives you the best of both worlds: powerful reasoning for complex tasks with economical execution of routine operations.
@@ -71,17 +71,17 @@ While 1-hour caches have higher creation costs, they eliminate repeated cache re
 
 ## Trim Thinking Blocks
 
-Advanced models like Opus 4.5 include detailed thinking blocks that show their reasoning process. While valuable for transparency, they significantly increase context size.
+Some models include detailed thinking blocks that show their reasoning process. While valuable for transparency, they increase context size.
 
 ### The Impact
 
-Thinking blocks can consume 30-50% of your context in extended conversations. Trimming them:
+Thinking blocks can consume a large chunk of your context in extended conversations. Trimming them:
 
 - Reduces token consumption per request
 - Keeps your conversation focused on results
 - Maintains context for more messages before compression is needed
 
-Omx automatically handles thinking block optimization so you get the benefits without manual management.
+Omx automatically trims older thinking blocks when context editing is enabled.
 
 ## Optimized System Design
 
