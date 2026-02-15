@@ -36,6 +36,10 @@ body {
     overscroll-behavior-y: none;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
@@ -93,6 +97,7 @@ body {
     padding: 0 24px;
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
 }
 
 /* ===== NAV ===== */
@@ -1779,6 +1784,27 @@ footer {
 
     .hero-terminal {
         max-width: 100%;
+    }
+
+    .tui-banner {
+        font-size: 10px;
+    }
+
+    .tui {
+        overflow-x: auto;
+    }
+
+    .install-command code {
+        white-space: normal;
+        word-break: break-all;
+    }
+
+    .comparison-wide {
+        overflow-x: auto;
+    }
+
+    .cost-chart {
+        overflow-x: auto;
     }
 
     .tui-statusbar {
