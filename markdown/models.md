@@ -28,9 +28,9 @@ This shows all available providers:
 | Provider | Models |
 |----------|--------|
 | **deepseek** | DeepSeek Chat, DeepSeek Reasoner |
-| **minimax** | MiniMax M2.1 |
+| **minimax** | MiniMax M2.5 |
 | **openrouter** | OpenRouter model list (OpenAI and Anthropic formats) |
-| **zhipu** | GLM-4.7, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
+| **zhipu** | GLM-5, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
 | **zenmux** | Zenmux model list (Anthropic, Responses, Gemini, OpenAI formats) |
 
 To add all models from a provider:

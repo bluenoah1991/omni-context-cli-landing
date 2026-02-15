@@ -28,9 +28,9 @@ omx --list-providers
 | 提供商 | 模型 |
 |----------|--------|
 | **deepseek** | DeepSeek Chat, DeepSeek Reasoner |
-| **minimax** | MiniMax M2.1 |
+| **minimax** | MiniMax M2.5 |
 | **openrouter** | OpenRouter 模型列表（OpenAI/Anthropic 格式） |
-| **zhipu** | GLM-4.7, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
+| **zhipu** | GLM-5, GLM-4.6V, GLM-4.7-Flash, GLM-4.7-FlashX |
 | **zenmux** | Zenmux 模型列表（Anthropic/Responses/Gemini/OpenAI 格式） |
 
 添加某个提供商的所有模型：
