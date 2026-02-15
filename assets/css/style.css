@@ -68,10 +68,23 @@ body {
 }
 
 @keyframes gradientDrift {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(20px, -15px); }
-    50% { transform: translate(-10px, 20px); }
-    75% { transform: translate(15px, 10px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(20px, -15px);
+    }
+
+    50% {
+        transform: translate(-10px, 20px);
+    }
+
+    75% {
+        transform: translate(15px, 10px);
+    }
 }
 
 .grid-pattern {
@@ -448,9 +461,17 @@ nav.scrolled {
     border: 1px solid var(--border-hover);
 }
 
-.terminal-dots span:nth-child(1):hover { background: #ef4444; }
-.terminal-dots span:nth-child(2):hover { background: #eab308; }
-.terminal-dots span:nth-child(3):hover { background: #22c55e; }
+.terminal-dots span:nth-child(1):hover {
+    background: #ef4444;
+}
+
+.terminal-dots span:nth-child(2):hover {
+    background: #eab308;
+}
+
+.terminal-dots span:nth-child(3):hover {
+    background: #22c55e;
+}
 
 .terminal-title {
     font-size: 12px;
@@ -565,8 +586,15 @@ nav.scrolled {
 }
 
 @keyframes tuiCursorBlink {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 /* ===== METRICS STRIP ===== */
@@ -981,6 +1009,10 @@ nav.scrolled {
     align-items: center;
 }
 
+.split-visual {
+    min-width: 0;
+}
+
 .split-layout.reverse .split-visual {
     order: -1;
 }
@@ -1005,8 +1037,8 @@ nav.scrolled {
     gap: 14px;
 }
 
-.feature-list-item > svg,
-.feature-list-item > i {
+.feature-list-item>svg,
+.feature-list-item>i {
     width: 20px;
     height: 20px;
     min-width: 20px;
@@ -1372,8 +1404,8 @@ nav.scrolled {
     border-color: var(--border-hover);
 }
 
-.detail-item > svg,
-.detail-item > i {
+.detail-item>svg,
+.detail-item>i {
     width: 24px;
     height: 24px;
     color: var(--accent-light);
@@ -1425,7 +1457,7 @@ nav.scrolled {
     position: relative;
 }
 
-.cta-section > p {
+.cta-section>p {
     font-size: 17px;
     color: var(--text-secondary);
     margin-bottom: 36px;
@@ -1572,7 +1604,7 @@ footer {
 
 .cost-how {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 

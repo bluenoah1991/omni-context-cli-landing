@@ -92,7 +92,8 @@
                     <span class="terminal-title">Terminal</span>
                 </div>
                 <div class="tui">
-                    <pre class="tui-banner"><span class="tui-blue-text">╔═╗┌┬┐┌┐┌┬  </span><span class="tui-white-text">╔═╗┌─┐┌┐┌┌┬┐┌─┐─┐ ┬┌┬┐  ╔═╗╦  ╦</span>
+                    <pre
+                        class="tui-banner"><span class="tui-blue-text">╔═╗┌┬┐┌┐┌┬  </span><span class="tui-white-text">╔═╗┌─┐┌┐┌┌┬┐┌─┐─┐ ┬┌┬┐  ╔═╗╦  ╦</span>
 <span class="tui-blue-text">║ ║│││││││  </span><span class="tui-white-text">║  │ ││││ │ ├┤ ┌┴┬┘ │   ║  ║  ║</span>
 <span class="tui-blue-text">╚═╝┴ ┴┘└┘┴  </span><span class="tui-white-text">╚═╝└─┘┘└┘ ┴ └─┘┴ └─ ┴   ╚═╝╩═╝╩</span></pre>
                     <div class="tui-meta">
@@ -101,7 +102,8 @@
                         <span>&#9656; Session: 1771152411043-cipsnmcqu</span>
                     </div>
                     <div class="tui-rule"></div>
-                    <p class="tui-welcome">Omni Context CLI. Tell Omx <span class="tui-blue-text">what you want to do.</span></p>
+                    <p class="tui-welcome">Omni Context CLI. Tell Omx <span class="tui-blue-text">what you want to
+                            do.</span></p>
                     <div class="tui-spacer"></div>
                     <div class="tui-statusbar">
                         <span>Anthropic: Claude Opus 4.6 (Thinking) | 0.0% (⇈ 0 ⇊ 0 ↺ 0)</span>
@@ -168,23 +170,28 @@
                         <div class="cw-col-header bad"><i data-lucide="x-circle"></i> Traditional</div>
                         <div class="cw-steps">
                             <div class="cw-round">
-                                <div class="cw-step"><span class="cw-label">R1</span> <code>glob("src/**/*.ts")</code></div>
+                                <div class="cw-step"><span class="cw-label">R1</span> <code>glob("src/**/*.ts")</code>
+                                </div>
                                 <div class="cw-result">43 files returned</div>
                             </div>
                             <div class="cw-round">
-                                <div class="cw-step"><span class="cw-label">R2</span> <code>grep("handleAuth", ...)</code></div>
+                                <div class="cw-step"><span class="cw-label">R2</span>
+                                    <code>grep("handleAuth", ...)</code></div>
                                 <div class="cw-result">7 matches in 4 files</div>
                             </div>
                             <div class="cw-round">
-                                <div class="cw-step"><span class="cw-label">R3</span> <code>read("src/middleware/auth.ts")</code></div>
+                                <div class="cw-step"><span class="cw-label">R3</span>
+                                    <code>read("src/middleware/auth.ts")</code></div>
                                 <div class="cw-result">186 lines -- wrong file</div>
                             </div>
                             <div class="cw-round">
-                                <div class="cw-step"><span class="cw-label">R4</span> <code>read("src/routes/login.ts")</code></div>
+                                <div class="cw-step"><span class="cw-label">R4</span>
+                                    <code>read("src/routes/login.ts")</code></div>
                                 <div class="cw-result">124 lines -- still looking</div>
                             </div>
                             <div class="cw-round">
-                                <div class="cw-step"><span class="cw-label">R5</span> <code>read("src/services/auth.ts", 40-90)</code></div>
+                                <div class="cw-step"><span class="cw-label">R5</span>
+                                    <code>read("src/services/auth.ts", 40-90)</code></div>
                                 <div class="cw-result ok">Found it -- 50 more lines</div>
                             </div>
                         </div>
@@ -195,7 +202,8 @@
                         <div class="cw-col-header good"><i data-lucide="check-circle-2"></i> Specialist Mode</div>
                         <div class="cw-steps">
                             <div class="cw-round">
-                                <div class="cw-step accent"><span class="cw-label">R1</span> <code>pluck("handleAuth definition")</code></div>
+                                <div class="cw-step accent"><span class="cw-label">R1</span>
+                                    <code>pluck("handleAuth definition")</code></div>
                                 <div class="cw-agent">
                                     <span class="cw-agent-label">Sub-agent (cheap model):</span>
                                     <div class="cw-agent-steps">
@@ -226,6 +234,8 @@
                     Each tool runs as an autonomous sub-agent on a cheaper model. It handles
                     file I/O, error recovery, and retries internally -- keeping intermediate
                     output out of your main context and your token bill down.
+                    Tip: start with glance and slice when exploring a codebase -- they're faster than
+                    hunting file by file.
                 </p>
             </div>
 
@@ -234,70 +244,80 @@
                     <div class="tool-icon"><i data-lucide="map"></i></div>
                     <div class="tool-info">
                         <h4>explore</h4>
-                        <p>Survey project architecture. Understands directory layout, key files, and how the codebase is organized.</p>
+                        <p>Survey project architecture. Understands directory layout, key files, and how the codebase is
+                            organized.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="terminal"></i></div>
                     <div class="tool-info">
                         <h4>spark</h4>
-                        <p>Run shell commands with automatic error detection and retry. Handles build failures and install issues.</p>
+                        <p>Run shell commands with automatic error detection and retry. Handles build failures and
+                            install issues.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <div class="tool-info">
                         <h4>sculpt</h4>
-                        <p>Edit files with surgical precision. Finds the right location, makes the change, and validates the result.</p>
+                        <p>Edit files with surgical precision. Finds the right location, makes the change, and validates
+                            the result.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="file-text"></i></div>
                     <div class="tool-info">
                         <h4>weave</h4>
-                        <p>Write entire files from scratch with auto-validation. Handles formatting and structure automatically.</p>
+                        <p>Write entire files from scratch with auto-validation. Handles formatting and structure
+                            automatically.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="search"></i></div>
                     <div class="tool-info">
                         <h4>sweep</h4>
-                        <p>Find files matching complex criteria. Searches by name, content, or structure across your project.</p>
+                        <p>Find files matching complex criteria. Searches by name, content, or structure across your
+                            project.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="clipboard-list"></i></div>
                     <div class="tool-info">
                         <h4>pluck</h4>
-                        <p>Extract specific code segments from any file. Pulls functions, classes, or blocks you need.</p>
+                        <p>Extract specific code segments from any file. Pulls functions, classes, or blocks you need.
+                        </p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="waves"></i></div>
                     <div class="tool-info">
                         <h4>ripple</h4>
-                        <p>Trace symbol references across your codebase. Finds every usage of a function, variable, or type.</p>
+                        <p>Trace symbol references across your codebase. Finds every usage of a function, variable, or
+                            type.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="scissors"></i></div>
                     <div class="tool-info">
                         <h4>slice</h4>
-                        <p>Answer targeted code questions. Reads only the relevant parts to give you focused answers.</p>
+                        <p>Answer targeted code questions. Reads only the relevant parts to give you focused answers.
+                        </p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
                     <div class="tool-info">
                         <h4>quest</h4>
-                        <p>Research any topic via web search. Finds documentation, examples, and solutions from across the internet.</p>
+                        <p>Research any topic via web search. Finds documentation, examples, and solutions from across
+                            the internet.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="eye"></i></div>
                     <div class="tool-info">
                         <h4>glance</h4>
-                        <p>Preview multiple files at once with brief summaries. Quickly understand what you are working with.</p>
+                        <p>Preview multiple files at once with brief summaries. Quickly understand what you are working
+                            with.</p>
                     </div>
                 </div>
             </div>
@@ -321,27 +341,32 @@
                     <div class="preset-icon"><i data-lucide="cpu"></i></div>
                     <h3>Specialist</h3>
                     <span class="preset-badge">Default</span>
-                    <p>Agentic tools that work autonomously. The main model plans, sub-agents execute. Fewer rounds, cleaner context, lower cost.</p>
+                    <p>Your main model reasons, a cheaper agent model executes. Agentic tools keep the cheap model out
+                        of decisions. Fewer rounds, cleaner context, lower cost.</p>
                 </div>
                 <div class="preset-card" data-preset="explorer">
                     <div class="preset-icon"><i data-lucide="compass"></i></div>
                     <h3>Explorer</h3>
-                    <p>Research-first mode. Launches multiple web searches before answering. Great for current events, docs, and fact-checking.</p>
+                    <p>Research-first mode. Launches multiple web searches before answering. Great for current events,
+                        docs, and fact-checking.</p>
                 </div>
                 <div class="preset-card" data-preset="artist">
                     <div class="preset-icon"><i data-lucide="palette"></i></div>
                     <h3>Artist</h3>
-                    <p>Visual-first responses. Prioritizes image generation when the model supports it. Ideal for design exploration and mockups.</p>
+                    <p>Visual-first responses. Prioritizes image generation when the model supports it. Ideal for design
+                        exploration and mockups.</p>
                 </div>
                 <div class="preset-card" data-preset="assistant">
                     <div class="preset-icon"><i data-lucide="layout-grid"></i></div>
                     <h3>Assistant</h3>
-                    <p>Personal assistant for app integrations. Controls browser tabs, Office documents, and Figma designs through natural language.</p>
+                    <p>Personal assistant for app integrations. Controls browser tabs, Office documents, and Figma
+                        designs through natural language.</p>
                 </div>
                 <div class="preset-card" data-preset="normal">
                     <div class="preset-icon"><i data-lucide="code"></i></div>
                     <h3>Normal</h3>
-                    <p>Basic tools with manual orchestration. Direct read, write, edit, and bash access. Full control, no abstraction.</p>
+                    <p>Basic tools with manual orchestration. Direct read, write, edit, and bash access. Full control,
+                        no abstraction.</p>
                 </div>
             </div>
         </div>
@@ -364,22 +389,26 @@
             <div class="protocols-grid">
                 <div class="protocol-card">
                     <div class="protocol-name">Anthropic</div>
-                    <div class="protocol-desc">Native Messages API with prompt caching, extended thinking, and streaming. Token-level cache control via custom TTL.</div>
+                    <div class="protocol-desc">Native Messages API with prompt caching, extended thinking, and
+                        streaming. Token-level cache control via custom TTL.</div>
                     <div class="protocol-tag">Claude Opus 4.6 / Claude Sonnet 4.6 / DeepSeek V3.2</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">OpenAI</div>
-                    <div class="protocol-desc">Native Chat Completions API. Compatible with any endpoint that speaks the OpenAI format -- Zhipu, MiniMax, local models, and more.</div>
+                    <div class="protocol-desc">Native Chat Completions API. Compatible with any endpoint that speaks the
+                        OpenAI format -- Zhipu, MiniMax, local models, and more.</div>
                     <div class="protocol-tag">GLM-5 / Minimax 2.5</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">Gemini / Vertex</div>
-                    <div class="protocol-desc">Native generateContent API with Gemini-specific streaming. No OpenAI shim -- tools and function calling use Gemini's own schema.</div>
+                    <div class="protocol-desc">Native generateContent API with Gemini-specific streaming. No OpenAI shim
+                        -- tools and function calling use Gemini's own schema.</div>
                     <div class="protocol-tag">Gemini 3 Pro / Gemini 3 Pro Image</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">Responses API</div>
-                    <div class="protocol-desc">OpenAI's newer Responses API with built-in tool orchestration. Separate path from Chat Completions, not a compatibility wrapper.</div>
+                    <div class="protocol-desc">OpenAI's newer Responses API with built-in tool orchestration. Separate
+                        path from Chat Completions, not a compatibility wrapper.</div>
                     <div class="protocol-tag">GPT-5.2 / GPT-5.2-Codex</div>
                 </div>
             </div>
@@ -412,8 +441,9 @@
                         <div class="cost-how-icon"><i data-lucide="minimize-2"></i></div>
                         <h3>Smaller context growth</h3>
                         <p>Basic tools dump ~10KB of intermediate output into your conversation.
-                            Agentic tools return only the final result. Less context means less
-                            cache write cost and slower context window exhaustion.</p>
+                            Agentic tools return only the final result. Context editing
+                            automatically trims old tool payloads and thinking blocks,
+                            keeping growth in check even over long sessions.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="split"></i></div>
@@ -421,6 +451,13 @@
                         <p>Sub-agents run on a low-cost model (e.g. GLM-5) while your main model
                             (e.g. Claude Opus 4.6) handles only planning and decisions.
                             The expensive model never does file I/O.</p>
+                    </div>
+                    <div class="cost-how-item">
+                        <div class="cost-how-icon"><i data-lucide="clock"></i></div>
+                        <h3>1-hour cache for deep work</h3>
+                        <p>The default 5-minute prompt cache expires if you pause to think.
+                            Switch to 1-hour in preferences for debugging, refactoring, or research --
+                            it eliminates repeated cache rebuilds across a session.</p>
                     </div>
                 </div>
 
@@ -468,8 +505,11 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p class="cost-chart-note">Based on a 20K-token conversation finding a function across a TypeScript project. Actual savings depend on project size and model pricing.</p>
+                    <p class="cost-chart-note">Based on a 20K-token conversation finding a function across a TypeScript
+                        project. Actual savings depend on project size and model pricing.</p>
                 </div>
+
+
             </div>
         </div>
     </section>
@@ -535,21 +575,24 @@
                             <i data-lucide="brain"></i>
                             <div>
                                 <strong>Agentic Context Engineering</strong>
-                                <span>Extracts key points from every conversation and injects them into future sessions</span>
+                                <span>Extracts key points from every conversation and injects them into future
+                                    sessions</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="trending-up"></i>
                             <div>
                                 <strong>Scored Memory</strong>
-                                <span>Helpful points gain score (+1), harmful ones drop fast (-3), unused ones decay naturally</span>
+                                <span>Helpful points gain score (+1), harmful ones drop fast (-3), unused ones decay
+                                    naturally</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="folder-open"></i>
                             <div>
                                 <strong>Per-Project Storage</strong>
-                                <span>Each project has its own memory file. Edit it directly if you want full control.</span>
+                                <span>Each project has its own memory file. Edit it directly if you want full
+                                    control.</span>
                             </div>
                         </div>
                     </div>
@@ -602,7 +645,8 @@
                         <div class="integration-icon"><i data-lucide="monitor"></i></div>
                         <div>
                             <h3>VS Code Extension</h3>
-                            <p>Full IDE integration with file context, diagnostics, and diff views. OmniContext CLI sees what you see in the editor.</p>
+                            <p>Full IDE integration with file context, diagnostics, and diff views. OmniContext CLI sees
+                                what you see in the editor.</p>
                         </div>
                     </div>
                     <div class="integration-features">
@@ -618,7 +662,8 @@
                         <div class="integration-icon"><i data-lucide="app-window"></i></div>
                         <div>
                             <h3>Desktop App</h3>
-                            <p>GUI for the CLI. Acts as the local hub connecting Office, browser, and Figma extensions.</p>
+                            <p>GUI for the CLI. Acts as the local hub connecting Office, browser, and Figma extensions.
+                            </p>
                         </div>
                     </div>
                     <div class="integration-features">
@@ -634,7 +679,8 @@
                         <div class="integration-icon"><i data-lucide="chrome"></i></div>
                         <div>
                             <h3>Chrome Extension</h3>
-                            <p>Sidebar on any webpage. Summarize, extract data, run scripts, and automate browser tasks.</p>
+                            <p>Sidebar on any webpage. Summarize, extract data, run scripts, and automate browser tasks.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -644,7 +690,8 @@
                         <div class="integration-icon"><i data-lucide="file-spreadsheet"></i></div>
                         <div>
                             <h3>Office Add-in</h3>
-                            <p>AI panel inside Word, Excel, and PowerPoint. Create budgets, format docs, and design slides.</p>
+                            <p>AI panel inside Word, Excel, and PowerPoint. Create budgets, format docs, and design
+                                slides.</p>
                         </div>
                     </div>
                 </div>
@@ -654,7 +701,8 @@
                         <div class="integration-icon"><i data-lucide="figma"></i></div>
                         <div>
                             <h3>Figma Plugin</h3>
-                            <p>Inspect layouts, create shapes, modify nodes, and export assets through the chat panel.</p>
+                            <p>Inspect layouts, create shapes, modify nodes, and export assets through the chat panel.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -664,7 +712,8 @@
                         <div class="integration-icon"><i data-lucide="code"></i></div>
                         <div>
                             <h3>Zed Editor</h3>
-                            <p>Works as an external agent via Agent Client Protocol. Full tool access inside Zed's agent panel.</p>
+                            <p>Works as an external agent via Agent Client Protocol. Full tool access inside Zed's agent
+                                panel.</p>
                         </div>
                     </div>
                 </div>
@@ -684,7 +733,8 @@
                         <div class="integration-icon"><i data-lucide="smartphone"></i></div>
                         <div>
                             <h3>Mobile Access</h3>
-                            <p>Run <code>omx --serve</code> and connect from your phone. Code reviews from the couch.</p>
+                            <p>Run <code>omx --serve</code> and connect from your phone. Code reviews from the couch.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -708,25 +758,29 @@
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="bot"></i></div>
                     <h3>Custom SubAgents</h3>
-                    <p>Write a markdown file with a prompt template and tool permissions. It becomes a new agentic tool instantly.</p>
+                    <p>Write a markdown file with a prompt template and tool permissions. It becomes a new agentic tool
+                        instantly. Add OMX-AGENTS.md for global agent instructions.</p>
                     <div class="extend-path">~/.omx/agents/review.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="book-open"></i></div>
                     <h3>Custom Skills</h3>
-                    <p>Teach OmniContext CLI domain-specific knowledge and workflows. Skills inject instructions into the current conversation.</p>
+                    <p>Teach OmniContext CLI domain-specific knowledge and workflows. Skills inject instructions into
+                        the current conversation.</p>
                     <div class="extend-path">~/.omx/skills/code-style/SKILL.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="slash"></i></div>
                     <h3>Slash Commands</h3>
-                    <p>Create shortcuts for common prompts. Type /review and your custom prompt fires with Handlebars templating.</p>
+                    <p>Create shortcuts for common prompts. Type /review and your custom prompt fires with Handlebars
+                        templating.</p>
                     <div class="extend-path">~/.omx/slash/review.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="plug"></i></div>
                     <h3>MCP Servers</h3>
-                    <p>Connect external tools and data sources via Model Context Protocol. Stdio and HTTP transports supported.</p>
+                    <p>Connect external tools and data sources via Model Context Protocol. Stdio and HTTP transports
+                        supported.</p>
                     <div class="extend-path">~/.omx/mcp.json</div>
                 </div>
             </div>
@@ -745,42 +799,50 @@
                 <div class="detail-item">
                     <i data-lucide="feather"></i>
                     <h3>Lean System Prompts</h3>
-                    <p>Minimal, focused instructions and concise tool descriptions. Your tokens go toward actual work, not bloated framework overhead.</p>
+                    <p>Minimal, focused instructions and concise tool descriptions. Your tokens go toward actual work,
+                        not bloated framework overhead.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="shield"></i>
                     <h3>Zero Telemetry</h3>
-                    <p>No usage tracking, no analytics, no data collection. Your code and conversations never leave your machine.</p>
+                    <p>No usage tracking, no analytics, no data collection. Your code and conversations never leave your
+                        machine.</p>
                 </div>
                 <div class="detail-item">
-                    <i data-lucide="database"></i>
-                    <h3>Native Prompt Caching</h3>
-                    <p>Automatic cache control for Anthropic and Gemini. Custom TTL settings keep frequently used context cached and your costs down.</p>
+                    <i data-lucide="scissors"></i>
+                    <h3>Context Editing</h3>
+                    <p>Automatically trims old tool call payloads and thinking blocks from your conversation history.
+                        Keeps token usage lean in long sessions.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="sparkles"></i>
                     <h3>Extended Thinking</h3>
-                    <p>Enable deeper reasoning for complex tasks. The model thinks step by step before responding, with configurable budget limits.</p>
+                    <p>Enable deeper reasoning for complex tasks. The model thinks step by step before responding, with
+                        configurable budget limits.</p>
                 </div>
                 <div class="detail-item">
-                    <i data-lucide="brain"></i>
-                    <h3>Cross-Session Memory</h3>
-                    <p>Learns your patterns, preferences, and project details. Key points persist across sessions and improve over time.</p>
+                    <i data-lucide="file-check"></i>
+                    <h3>CLAUDE.md Compatible</h3>
+                    <p>Already have a CLAUDE.md in your repo? OmniContext CLI reads it automatically, right alongside
+                        OMX.md. Zero-friction migration.</p>
                 </div>
                 <div class="detail-item">
-                    <i data-lucide="plug-zap"></i>
-                    <h3>Native Multi-Protocol</h3>
-                    <p>Dedicated request builders for Anthropic, OpenAI, Gemini, and Responses API. No lossy format translation in between.</p>
+                    <i data-lucide="archive"></i>
+                    <h3>Auto-Compaction</h3>
+                    <p>When context hits 80% capacity, the conversation is compacted, key memories are extracted, and a
+                        fresh session picks up where you left off.</p>
                 </div>
                 <div class="detail-item">
-                    <i data-lucide="image"></i>
-                    <h3>Image Understanding</h3>
-                    <p>Paste screenshots, drag in mockups, or reference image files. Vision-capable models see what you see.</p>
+                    <i data-lucide="database"></i>
+                    <h3>Native Prompt Caching</h3>
+                    <p>Automatic cache control for Anthropic and Gemini. Custom TTL settings (5 min or 1 hour) keep
+                        frequently used context cached and costs down.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="file-cog"></i>
                     <h3>Project Instructions</h3>
-                    <p>Drop an OMX.md in your repo root. Everyone on the team gets the same coding conventions and context.</p>
+                    <p>Drop an OMX.md in your repo root. Everyone on the team gets the same conventions and context.
+                        Also reads CLAUDE.md for easy migration.</p>
                 </div>
             </div>
         </div>
