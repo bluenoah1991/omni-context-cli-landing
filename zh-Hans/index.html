@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniContext - AI 融入你的每个工具</title>
+    <title>OmniContext CLI - 终端原生 AI 编程助手</title>
+    <meta name="description"
+        content="零遥测 AI 编程助手，内置 10 个智能体工具、跨会话记忆，支持终端、编辑器、浏览器和办公文档。">
     <link rel="icon" href="../favicon.ico">
     <link href="../assets/fonts/inter.css" rel="stylesheet">
     <script src="../assets/js/lucide.js"></script>
@@ -17,315 +19,814 @@
 
     <nav id="navbar">
         <div class="container nav-content">
-            <div class="logo"><img src="../assets/img/logo.svg" alt="" class="logo-icon">OmniContext</div>
-            <div class="nav-right">
+            <a href="#top" class="logo"><img src="../assets/img/logo.svg" alt="" class="logo-icon">OmniContext</a>
+            <div class="nav-links">
+                <a href="#how-it-works" class="nav-link">工作原理</a>
+                <a href="#cost-optimization" class="nav-link">成本优化</a>
+                <a href="#integrations" class="nav-link">集成</a>
                 <a href="../docs/zh-Hans/" class="nav-link">文档</a>
-                <a href="../" class="nav-lang">English</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta"
-                    target="_blank">下载桌面版</a>
             </div>
+            <div class="nav-right">
+                <a href="../" class="nav-lang">English</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank"
+                    aria-label="GitHub">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta"
+                    target="_blank">下载</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#how-it-works" class="mobile-menu-link">工作原理</a>
+            <a href="#cost-optimization" class="mobile-menu-link">成本优化</a>
+            <a href="#integrations" class="mobile-menu-link">集成</a>
+            <a href="../docs/zh-Hans/" class="mobile-menu-link">文档</a>
+            <a href="../" class="mobile-menu-link">English</a>
+            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link"
+                target="_blank">下载</a>
         </div>
     </nav>
 
+    <!-- ========== HERO ========== -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>
-                    <span class="gradient">一个 AI 助手</span><br>
-                    <span class="highlight">融入每个工具</span>
-                </h1>
-
-                <p class="hero-description">
-                    无需切换应用。OmniContext 直接嵌入你的终端、编辑器、浏览器和办公文档。零遥测，完全本地运行。
-                </p>
-
-                <div class="platform-strip">
-                    <span class="platform-tag">终端</span>
-                    <span class="platform-tag">VS Code</span>
-                    <span class="platform-tag">桌面端</span>
-                    <span class="platform-tag">Word</span>
-                    <span class="platform-tag">Excel</span>
-                    <span class="platform-tag">PowerPoint</span>
-                    <span class="platform-tag">Chrome</span>
-                    <span class="platform-tag">Figma</span>
+            <div class="hero-tags">
+                <span class="hero-tag"><i data-lucide="feather"></i> 精简系统提示词</span>
+                <span class="hero-tag"><i data-lucide="coins"></i> 成本优化架构</span>
+                <span class="hero-tag"><i data-lucide="shield-off"></i> 零遥测</span>
+                <span class="hero-tag"><i data-lucide="file-spreadsheet"></i> Office 集成</span>
+                <span class="hero-tag"><i data-lucide="layers"></i> 专家委派</span>
+                <span class="hero-tag"><i data-lucide="brain"></i> 跨会话记忆</span>
+                <span class="hero-tag"><i data-lucide="plug-zap"></i> 原生多协议</span>
+            </div>
+            <h1>
+                <span class="gradient-text">精准上下文。</span><br>
+                极致低开销。
+            </h1>
+            <p class="hero-description">
+                OmniContext CLI 是一个把上下文当作一等资源来管理的终端原生编程助手。
+                精简系统提示词把开销降到最低。专家委派将苦力活路由给廉价模型，保持主上下文干净。
+                零遥测意味着你的代码永远不会离开你的机器。
+                还能扩展到 VS Code、Office、浏览器和 Figma。
+            </p>
+            <div class="hero-actions">
+                <div class="install-command" id="installCmd">
+                    <code><span class="prompt">$</span> npm install -g omni-context-cli && omx</code>
+                    <button class="copy-btn" id="copyBtn" onclick="copyInstallCommand()">
+                        <i data-lucide="copy"></i>
+                    </button>
                 </div>
-
-                <div class="install-wrapper">
-                    <div class="install-command" id="installCmd">
-                        <code><span class="install-prompt">$</span> npm install -g omni-context-cli && omx</code>
-                        <button class="copy-button" id="copyBtn" onclick="copyInstallCommand()">
-                            <i data-lucide="copy"></i>
-                            <span>复制</span>
-                        </button>
+                <a href="../docs/zh-Hans/" class="btn-secondary">
+                    阅读文档
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-terminal">
+                <div class="terminal-chrome">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
                     </div>
+                    <span class="terminal-title">Terminal</span>
+                </div>
+                <div class="tui">
+                    <pre class="tui-banner"><span class="tui-blue-text">╔═╗┌┬┐┌┐┌┬  </span><span class="tui-white-text">╔═╗┌─┐┌┐┌┌┬┐┌─┐─┐ ┬┌┬┐  ╔═╗╦  ╦</span>
+<span class="tui-blue-text">║ ║│││││││  </span><span class="tui-white-text">║  │ ││││ │ ├┤ ┌┴┬┘ │   ║  ║  ║</span>
+<span class="tui-blue-text">╚═╝┴ ┴┘└┘┴  </span><span class="tui-white-text">╚═╝└─┘┘└┘ ┴ └─┘┴ └─ ┴   ╚═╝╩═╝╩</span></pre>
+                    <div class="tui-meta">
+                        <span>▸ Version: 0.0.58</span>
+                        <span>▸ Project: my-project</span>
+                        <span>▸ Session: 1771152411043-cipsnmcqu</span>
+                    </div>
+                    <div class="tui-rule"></div>
+                    <p class="tui-welcome">Omni Context CLI. Tell Omx <span class="tui-blue-text">what you want to do.</span></p>
+                    <div class="tui-spacer"></div>
+                    <div class="tui-statusbar">
+                        <span>Anthropic: Claude Opus 4.6 (Thinking) | 0.0% (⇈ 0 ⇊ 0 ↺ 0)</span>
+                        <span>(Press ESC to enter the menu)</span>
+                    </div>
+                    <div class="tui-border-line"></div>
+                    <div class="tui-input">
+                        <span class="tui-caret">❯</span>
+                        <span class="tui-placeholder">Type your message...</span>
+                        <span class="tui-cursor"></span>
+                    </div>
+                    <div class="tui-border-line"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- ========== METRICS STRIP ========== -->
+    <section class="metrics">
         <div class="container">
-            <div>
-                <span class="section-label">Office 集成</span>
-                <h2 class="section-title">AI 融入 Word、Excel 和 PowerPoint</h2>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <span class="metric-value">10</span>
+                    <span class="metric-label">智能体工具</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-value">5</span>
+                    <span class="metric-label">工作流预设</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-value">4</span>
+                    <span class="metric-label">支持的API协议</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-value">0</span>
+                    <span class="metric-label">遥测数据</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">工作原理</span>
+                <h2 class="section-title">专家委派工作流：<br>更少轮次，更低成本</h2>
                 <p class="section-subtitle">
-                    OmniContext 面板直接嵌入 Office 应用。通过自然对话创建预算表、格式化文档、设计演示文稿。
+                    传统助手逐步调用基础工具，每一轮都重发完整上下文。
+                    OmniContext CLI 将多步操作委托给运行在更便宜模型上的智能体子任务 --
+                    你的昂贵模型专注于推理，不做文件读写。
                 </p>
             </div>
 
-            <div class="showcase-grid">
-                <div class="screenshot-card">
-                    <div class="screenshot-image">
-                        <img src="../static/img/office-addin/excel-budget-demo.png" alt="AI 在 Excel 中创建预算表"
-                            loading="lazy">
-                    </div>
-                    <div class="screenshot-label">Excel</div>
+            <div class="comparison-wide">
+                <div class="cw-task">
+                    任务: "找到 <code>handleAuth</code> 的函数定义"
                 </div>
-                <div class="screenshot-card">
-                    <div class="screenshot-image">
-                        <img src="../static/img/office-addin/word-formatting-demo.png" alt="AI 在 Word 中格式化简历"
-                            loading="lazy">
+                <div class="cw-columns">
+                    <div class="cw-col">
+                        <div class="cw-col-header bad"><i data-lucide="x-circle"></i> 传统方式</div>
+                        <div class="cw-steps">
+                            <div class="cw-round">
+                                <div class="cw-step"><span class="cw-label">R1</span> <code>glob("src/**/*.ts")</code></div>
+                                <div class="cw-result">返回 43 个文件</div>
+                            </div>
+                            <div class="cw-round">
+                                <div class="cw-step"><span class="cw-label">R2</span> <code>grep("handleAuth", ...)</code></div>
+                                <div class="cw-result">4 个文件中 7 处匹配</div>
+                            </div>
+                            <div class="cw-round">
+                                <div class="cw-step"><span class="cw-label">R3</span> <code>read("src/middleware/auth.ts")</code></div>
+                                <div class="cw-result">186 行 -- 找错文件</div>
+                            </div>
+                            <div class="cw-round">
+                                <div class="cw-step"><span class="cw-label">R4</span> <code>read("src/routes/login.ts")</code></div>
+                                <div class="cw-result">124 行 -- 还在找</div>
+                            </div>
+                            <div class="cw-round">
+                                <div class="cw-step"><span class="cw-label">R5</span> <code>read("src/services/auth.ts", 40-90)</code></div>
+                                <div class="cw-result ok">找到了 -- 又 50 行</div>
+                            </div>
+                        </div>
+                        <div class="cw-summary bad">5 轮, ~12K 上下文新增, 全部由主模型执行</div>
                     </div>
-                    <div class="screenshot-label">Word</div>
-                </div>
-                <div class="screenshot-card">
-                    <div class="screenshot-image">
-                        <img src="../static/img/office-addin/powerpoint-slides-demo.png" alt="AI 在 PowerPoint 中设计幻灯片"
-                            loading="lazy">
+                    <div class="cw-divider"></div>
+                    <div class="cw-col">
+                        <div class="cw-col-header good"><i data-lucide="check-circle-2"></i> 专家模式</div>
+                        <div class="cw-steps">
+                            <div class="cw-round">
+                                <div class="cw-step accent"><span class="cw-label">R1</span> <code>pluck("handleAuth 函数定义")</code></div>
+                                <div class="cw-agent">
+                                    <span class="cw-agent-label">子智能体 (廉价模型):</span>
+                                    <div class="cw-agent-steps">
+                                        <span>glob</span>
+                                        <span>grep</span>
+                                        <span>read</span>
+                                        <span>定位</span>
+                                        <span>提取</span>
+                                    </div>
+                                </div>
+                                <div class="cw-result ok">auth.ts:42-78 -- 完整函数体</div>
+                            </div>
+                        </div>
+                        <div class="cw-summary good">1 轮, ~1K 上下文新增, 苦力活由廉价模型完成</div>
                     </div>
-                    <div class="screenshot-label">PowerPoint</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- ========== AGENTIC TOOLS ========== -->
+    <section class="section section-alt" id="agentic-tools">
         <div class="container">
-            <div class="split-layout">
-                <div class="split-content">
-                    <span class="section-label">浏览器扩展</span>
-                    <h2 class="section-title">AI 覆盖每个网页</h2>
-                    <p class="section-subtitle">
-                        在任意页面的侧边栏中，总结文章、提取数据、自动化浏览器操作。
-                    </p>
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            总结和翻译任意页面
-                        </div>
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            访问标签页、书签和历史记录
-                        </div>
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            执行脚本和自动化任务
-                        </div>
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            截图和 DevTools 检查
-                        </div>
-                    </div>
-                </div>
-                <div class="split-image">
-                    <img src="../static/img/browser-extension/chat-summarize-page.png" alt="浏览器侧边栏总结文章" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="split-layout reverse">
-                <div class="split-content">
-                    <span class="section-label">桌面应用</span>
-                    <h2 class="section-title">CLI 的能力，桌面的体验</h2>
-                    <p class="section-subtitle">
-                        OmniContext 桌面版为 CLI 提供完整的图形界面，同时作为本地中枢连接 Office、浏览器和 Figma。
-                    </p>
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            具备完整 CLI 能力的桌面界面
-                        </div>
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            一处连接 Office、浏览器和 Figma
-                        </div>
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            纯服务模式，专为 Office 和浏览器供电
-                        </div>
-                        <div class="feature-list-item">
-                            <span class="feature-list-check">&#10003;</span>
-                            工作区和模型管理
-                        </div>
-                    </div>
-                </div>
-                <div class="split-image">
-                    <img src="../static/img/desktop-app/serve-running.png" alt="OmniContext 桌面应用服务连接" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div>
-                <span class="section-label">为开发者打造</span>
-                <h2 class="section-title">10 个自主思考的智能体工具</h2>
-                <p class="section-subtitle">每个智能体独立处理复杂任务，将中间步骤隐藏在对话之外，保持上下文整洁。</p>
+            <div class="section-header center">
+                <span class="section-label">智能体工具</span>
+                <h2 class="section-title">10 个自主思考的工具</h2>
+                <p class="section-subtitle">
+                    每个工具作为独立的子智能体在更便宜的模型上运行。它在内部处理
+                    文件读写、错误恢复和重试 -- 中间输出不进入主上下文，token 账单也更低。
+                </p>
             </div>
 
             <div class="tools-grid">
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="map"></i></div>
-                    <h4>Explore</h4>
-                    <p>勘查项目架构</p>
+                    <div class="tool-info">
+                        <h4>explore</h4>
+                        <p>勘查项目架构。理解目录布局、关键文件和代码组织方式。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="hammer"></i></div>
-                    <h4>Spark</h4>
-                    <p>执行命令并自动修复</p>
+                    <div class="tool-icon"><i data-lucide="terminal"></i></div>
+                    <div class="tool-info">
+                        <h4>spark</h4>
+                        <p>执行 shell 命令，自动检测错误并重试。处理构建失败和安装问题。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
-                    <h4>Sculpt</h4>
-                    <p>编辑文件并自动修复</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="search"></i></div>
-                    <h4>Sweep</h4>
-                    <p>查找匹配文件</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="clipboard-list"></i></div>
-                    <h4>Pluck</h4>
-                    <p>提取代码片段</p>
+                    <div class="tool-info">
+                        <h4>sculpt</h4>
+                        <p>精准编辑文件。定位正确位置，执行修改，验证结果。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="file-text"></i></div>
-                    <h4>Weave</h4>
-                    <p>写入文件并自动修复</p>
+                    <div class="tool-info">
+                        <h4>weave</h4>
+                        <p>从头创建完整文件并自动验证。自动处理格式和结构。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="search"></i></div>
+                    <div class="tool-info">
+                        <h4>sweep</h4>
+                        <p>按复杂条件查找文件。支持按名称、内容或结构在项目中搜索。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="clipboard-list"></i></div>
+                    <div class="tool-info">
+                        <h4>pluck</h4>
+                        <p>从任何文件中提取特定代码段。拉取你需要的函数、类或代码块。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="waves"></i></div>
-                    <h4>Ripple</h4>
-                    <p>查找符号引用</p>
+                    <div class="tool-info">
+                        <h4>ripple</h4>
+                        <p>在代码库中追踪符号引用。找到函数、变量或类型的每一处使用。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="scissors"></i></div>
-                    <h4>Slice</h4>
-                    <p>回答代码问题</p>
+                    <div class="tool-info">
+                        <h4>slice</h4>
+                        <p>回答有针对性的代码问题。只读取相关部分，给出精准回答。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="book-open"></i></div>
-                    <h4>Quest</h4>
-                    <p>网络搜索研究</p>
+                    <div class="tool-icon"><i data-lucide="globe"></i></div>
+                    <div class="tool-info">
+                        <h4>quest</h4>
+                        <p>通过网络搜索研究任何主题。从互联网上查找文档、示例和解决方案。</p>
+                    </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="eye"></i></div>
-                    <h4>Glance</h4>
-                    <p>预览多个文件</p>
+                    <div class="tool-info">
+                        <h4>glance</h4>
+                        <p>同时预览多个文件并生成简要摘要。快速了解你的工作内容。</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ========== WORKFLOW PRESETS ========== -->
     <section class="section">
         <div class="container">
-            <div>
-                <span class="section-label">功能特性</span>
-                <h2 class="section-title">你需要的一切</h2>
+            <div class="section-header center">
+                <span class="section-label">工作流预设</span>
+                <h2 class="section-title">一个助手，多种模式</h2>
+                <p class="section-subtitle">
+                    一条命令切换 OmniContext CLI 的行为方式。每个预设会改变可用工具、系统提示和响应风格。
+                </p>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="shield"></i></div>
-                    <h3>零遥测</h3>
-                    <p>绝不收集任何数据</p>
+            <div class="presets-grid">
+                <div class="preset-card active" data-preset="specialist">
+                    <div class="preset-icon"><i data-lucide="cpu"></i></div>
+                    <h3>专家</h3>
+                    <span class="preset-badge">默认</span>
+                    <p>智能体工具自主工作。主模型规划，子智能体执行。更少轮次，更干净的上下文，更低的成本。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="globe"></i></div>
-                    <h3>多模型</h3>
-                    <p>Anthropic、OpenAI、Gemini、DeepSeek 等</p>
+                <div class="preset-card" data-preset="explorer">
+                    <div class="preset-icon"><i data-lucide="compass"></i></div>
+                    <h3>探索者</h3>
+                    <p>研究优先模式。回答前先进行多次网络搜索。适合时事、文档和事实核查。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="layout-grid"></i></div>
-                    <h3>VS Code 扩展</h3>
-                    <p>AI 集成到你的编辑器</p>
+                <div class="preset-card" data-preset="artist">
+                    <div class="preset-icon"><i data-lucide="palette"></i></div>
+                    <h3>艺术家</h3>
+                    <p>视觉优先响应。当模型支持时优先生成图像。适合设计探索和原型制作。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="plug"></i></div>
-                    <h3>MCP 兼容</h3>
-                    <p>支持 Model Context Protocol</p>
+                <div class="preset-card" data-preset="assistant">
+                    <div class="preset-icon"><i data-lucide="layout-grid"></i></div>
+                    <h3>助手</h3>
+                    <p>应用集成的个人助手。通过自然语言控制浏览器标签、Office 文档和 Figma 设计。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="cpu"></i></div>
-                    <h3>跨会话记忆</h3>
-                    <p>跨对话持久记忆</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="zap"></i></div>
-                    <h3>智能体技能</h3>
-                    <p>可扩展的智能体能力</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="monitor"></i></div>
-                    <h3>多平台</h3>
-                    <p>Windows、macOS 和 Linux</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="crosshair"></i></div>
-                    <h3>专家模式</h3>
-                    <p>智能体工具，整洁上下文</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="palette"></i></div>
-                    <h3>应用集成</h3>
-                    <p>通过桌面中枢连接 Office、Chrome 和 Figma</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="save"></i></div>
-                    <h3>会话管理</h3>
-                    <p>随时恢复之前的对话</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="clipboard-list"></i></div>
-                    <h3>项目指令</h3>
-                    <p>通过 OMX.md 自定义</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i data-lucide="compass"></i></div>
-                    <h3>网络搜索</h3>
-                    <p>内置研究工具</p>
+                <div class="preset-card" data-preset="normal">
+                    <div class="preset-icon"><i data-lucide="code"></i></div>
+                    <h3>普通</h3>
+                    <p>基本工具手动编排。直接使用 read、write、edit 和 bash。完全控制，无抽象层。</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ========== NATIVE PROTOCOLS ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">原生多协议</span>
+                <h2 class="section-title">四种 API 协议<br>零格式转换损失</h2>
+                <p class="section-subtitle">
+                    大多数工具把所有请求塞进同一种 API 格式，然后祈祷不出问题。
+                    OmniContext CLI 为每种协议单独实现了请求构建器和流式处理器。
+                    提示词缓存、深度思考、供应商特有功能全部按原始协议工作 --
+                    中间没有任何有损的格式转换层。
+                </p>
+            </div>
+
+            <div class="protocols-grid">
+                <div class="protocol-card">
+                    <div class="protocol-name">Anthropic</div>
+                    <div class="protocol-desc">原生 Messages API，支持提示词缓存、深度思考和流式传输。通过自定义 TTL 实现 token 级缓存控制。</div>
+                    <div class="protocol-tag">Claude Opus 4.6 / Claude Sonnet 4.6 / DeepSeek V3.2</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">OpenAI</div>
+                    <div class="protocol-desc">原生 Chat Completions API。兼容任何 OpenAI 格式的端点 -- 智谱、MiniMax、本地模型均可直接使用。</div>
+                    <div class="protocol-tag">GLM-5 / Minimax 2.5</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">Gemini / Vertex</div>
+                    <div class="protocol-desc">原生 generateContent API，Gemini 专用流式处理。工具调用和函数声明使用 Gemini 自己的 schema，不经过 OpenAI 转换。</div>
+                    <div class="protocol-tag">Gemini 3 Pro / Gemini 3 Pro Image</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">Responses API</div>
+                    <div class="protocol-desc">OpenAI 新一代 Responses API，内置工具编排。与 Chat Completions 完全独立的处理路径，不是兼容性包装。</div>
+                    <div class="protocol-tag">GPT-5.2 / GPT-5.2-Codex</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COST OPTIMIZATION ========== -->
+    <section class="section" id="cost-optimization">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">成本优化</span>
+                <h2 class="section-title">专家模式实打实地省钱</h2>
+                <p class="section-subtitle">
+                    每次 API 调用都会重发完整的对话历史。更少的轮次意味着更少的缓存读取。
+                    更干净的上下文意味着更少的 token 写入。专家模式两头都省 --
+                    还把苦力活交给更便宜的模型。
+                </p>
+            </div>
+
+            <div class="cost-explainer">
+                <div class="cost-how">
+                    <div class="cost-how-item">
+                        <div class="cost-how-icon"><i data-lucide="repeat"></i></div>
+                        <h3>更少的 API 轮次</h3>
+                        <p>传统工具需要 5 轮才能找到一个函数定义。
+                            专家模式 1 轮搞定。少了 4 次完整上下文重发 --
+                            每省一轮都在节省缓存读取费用。</p>
+                    </div>
+                    <div class="cost-how-item">
+                        <div class="cost-how-icon"><i data-lucide="minimize-2"></i></div>
+                        <h3>更小的上下文增长</h3>
+                        <p>基础工具把约 10KB 的中间输出灌入对话。
+                            智能体工具只返回最终结果。更少的上下文意味着更少的
+                            缓存写入费用，上下文窗口也消耗得更慢。</p>
+                    </div>
+                    <div class="cost-how-item">
+                        <div class="cost-how-icon"><i data-lucide="split"></i></div>
+                        <h3>便宜模型做执行</h3>
+                        <p>子智能体跑在低成本模型上 (如 GLM-5)，你的主模型
+                            (如 Claude Opus 4.6) 只负责规划和决策。
+                            昂贵模型永远不做文件读写。</p>
+                    </div>
+                </div>
+
+                <div class="cost-chart">
+                    <div class="cost-chart-header">模拟成本对比: "找到 handleAuth 的函数定义"</div>
+                    <table class="cost-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>传统方式</th>
+                                <th>专家模式</th>
+                                <th>节省</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>API 轮次</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td class="saved">-4 轮</td>
+                            </tr>
+                            <tr>
+                                <td>每轮缓存读取</td>
+                                <td>~20K tokens x 5</td>
+                                <td>~20K tokens x 1</td>
+                                <td class="saved">-80K tokens</td>
+                            </tr>
+                            <tr>
+                                <td>新增上下文</td>
+                                <td>~10KB</td>
+                                <td>~3KB</td>
+                                <td class="saved">-70%</td>
+                            </tr>
+                            <tr>
+                                <td>缓存写入 (新增 token)</td>
+                                <td>~2.5K tokens</td>
+                                <td>~1K tokens</td>
+                                <td class="saved">-60%</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>执行模型</td>
+                                <td>仅 Opus 4.6</td>
+                                <td>Opus 4.6 + GLM-5</td>
+                                <td class="saved">约省 30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="cost-chart-note">基于 20K token 对话中在 TypeScript 项目中查找函数的场景。实际节省取决于项目规模和模型定价。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MULTI-MODEL ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="split-layout reverse">
+                <div class="split-content">
+                    <span class="section-label">模型供应商</span>
+                    <h2 class="section-title">一条命令<br>添加所有模型</h2>
+                    <p class="section-subtitle">
+                        OmniContext CLI 内置了供应商预设。选择一个，粘贴 API Key，
+                        该服务的所有模型立即可用。
+                    </p>
+                    <div class="provider-grid">
+                        <div class="provider-tag">Zenmux</div>
+                        <div class="provider-tag">DeepSeek</div>
+                        <div class="provider-tag">OpenRouter</div>
+                        <div class="provider-tag">Zhipu (GLM)</div>
+                        <div class="provider-tag">MiniMax</div>
+
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>以 Zenmux 为例快速配置</span>
+                        </div>
+                        <pre><code><span class="t-comment"># 列出可用的供应商</span>
+<span class="t-prompt">$</span> omx --list-providers
+
+<span class="t-comment"># 一条命令添加 Zenmux 的所有模型</span>
+<span class="t-prompt">$</span> omx --add-provider zenmux --api-key zmx-...
+<span class="t-output">Added: Zenmux Anthropic (Claude Sonnet 4)</span>
+<span class="t-output">Added: Zenmux Anthropic (Claude Haiku)</span>
+<span class="t-output">Added: Zenmux Gemini (Gemini 2.5 Flash)</span>
+<span class="t-output">Added: Zenmux OpenAI (GPT-4o)</span>
+<span class="t-output">...</span>
+
+<span class="t-comment"># 移除供应商同样简单</span>
+<span class="t-prompt">$</span> omx --remove-provider zenmux</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MEMORY ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-content">
+                    <span class="section-label">跨会话记忆</span>
+                    <h2 class="section-title">它会在工作中学习</h2>
+                    <p class="section-subtitle">
+                        OmniContext CLI 会记住你的编码风格、项目模式和过去的错误。
+                        关键要点会随时间评分 -- 有用的洞察会保留，无关的会自然衰减。
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <i data-lucide="brain"></i>
+                            <div>
+                                <strong>智能体上下文工程</strong>
+                                <span>从每次对话中提取关键要点，并注入到未来的会话中</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="trending-up"></i>
+                            <div>
+                                <strong>评分记忆</strong>
+                                <span>有用的要点加分 (+1)，有害的快速扣分 (-3)，未使用的自然衰减</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="folder-open"></i>
+                            <div>
+                                <strong>按项目存储</strong>
+                                <span>每个项目有独立的记忆文件。你可以直接编辑它来完全控制。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="memory-demo">
+                        <div class="memory-card">
+                            <div class="memory-header">
+                                <span class="memory-label">memory.json</span>
+                                <span class="memory-score positive">+3</span>
+                            </div>
+                            <code>"该项目使用 TypeScript 严格模式，tsconfig 中配置了路径别名"</code>
+                        </div>
+                        <div class="memory-card">
+                            <div class="memory-header">
+                                <span class="memory-label">memory.json</span>
+                                <span class="memory-score positive">+2</span>
+                            </div>
+                            <code>"API 路由在 src/routes/ 中遵循 REST 规范，使用 Zod 验证"</code>
+                        </div>
+                        <div class="memory-card fading">
+                            <div class="memory-header">
+                                <span class="memory-label">memory.json</span>
+                                <span class="memory-score negative">-4</span>
+                            </div>
+                            <code>"使用 Webpack 进行打包"</code>
+                            <span class="memory-status">正在衰减 -- 到 -5 时将被移除</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTEGRATIONS ========== -->
+    <section class="section section-alt" id="integrations">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">集成</span>
+                <h2 class="section-title">跟随你的工作无处不在</h2>
+                <p class="section-subtitle">
+                    终端是大本营，但 OmniContext CLI 延伸到你使用的每个工具。
+                    一个 AI，一致的上下文，零切换成本。
+                </p>
+            </div>
+
+            <div class="integration-grid">
+                <div class="integration-card large">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="monitor"></i></div>
+                        <div>
+                            <h3>VS Code 扩展</h3>
+                            <p>完整的 IDE 集成，包含文件上下文、诊断和差异视图。OmniContext CLI 看到你在编辑器中看到的一切。</p>
+                        </div>
+                    </div>
+                    <div class="integration-features">
+                        <span>当前文件感知</span>
+                        <span>选中文本上下文</span>
+                        <span>错误诊断</span>
+                        <span>内联差异</span>
+                    </div>
+                </div>
+
+                <div class="integration-card large">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="app-window"></i></div>
+                        <div>
+                            <h3>桌面应用</h3>
+                            <p>CLI 的图形界面。作为本地中枢连接 Office、浏览器和 Figma 扩展。</p>
+                        </div>
+                    </div>
+                    <div class="integration-features">
+                        <span>完整 CLI 功能</span>
+                        <span>模型管理</span>
+                        <span>服务模式</span>
+                        <span>连接中枢</span>
+                    </div>
+                </div>
+
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="chrome"></i></div>
+                        <div>
+                            <h3>Chrome 扩展</h3>
+                            <p>任意网页侧边栏。总结、提取数据、运行脚本、自动化浏览器任务。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="file-spreadsheet"></i></div>
+                        <div>
+                            <h3>Office 加载项</h3>
+                            <p>Word、Excel 和 PowerPoint 内的 AI 面板。创建预算、格式化文档、设计幻灯片。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="figma"></i></div>
+                        <div>
+                            <h3>Figma 插件</h3>
+                            <p>在聊天面板中检查布局、创建图形、修改节点和导出资产。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="code"></i></div>
+                        <div>
+                            <h3>Zed 编辑器</h3>
+                            <p>通过 Agent Client Protocol 作为外部智能体工作。在 Zed 智能体面板中拥有完整工具访问权限。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="globe"></i></div>
+                        <div>
+                            <h3>Web 客户端</h3>
+                            <p>浏览器 UI，支持 LaTeX、Mermaid 图表、文件附件和拖放操作。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon"><i data-lucide="smartphone"></i></div>
+                        <div>
+                            <h3>移动端访问</h3>
+                            <p>运行 omx --serve，从手机连接。在沙发上也能做代码审查。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXTENSIBILITY ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">可扩展性</span>
+                <h2 class="section-title">在 OmniContext CLI 之上构建</h2>
+                <p class="section-subtitle">
+                    自定义智能体、技能、斜杠命令和 MCP 服务器。
+                    一切都是 Markdown 文件或 JSON 配置。
+                </p>
+            </div>
+
+            <div class="extend-grid">
+                <div class="extend-card">
+                    <div class="extend-icon"><i data-lucide="bot"></i></div>
+                    <h3>自定义子智能体</h3>
+                    <p>写一个包含提示模板和工具权限的 Markdown 文件，它会立即成为一个新的智能体工具。</p>
+                    <div class="extend-path">~/.omx/agents/review.md</div>
+                </div>
+                <div class="extend-card">
+                    <div class="extend-icon"><i data-lucide="book-open"></i></div>
+                    <h3>自定义技能</h3>
+                    <p>教 OmniContext CLI 领域特定的知识和工作流。技能会将指令注入当前对话。</p>
+                    <div class="extend-path">~/.omx/skills/code-style/SKILL.md</div>
+                </div>
+                <div class="extend-card">
+                    <div class="extend-icon"><i data-lucide="slash"></i></div>
+                    <h3>斜杠命令</h3>
+                    <p>为常用提示创建快捷方式。输入 /review，你的自定义提示就会通过 Handlebars 模板执行。</p>
+                    <div class="extend-path">~/.omx/slash/review.md</div>
+                </div>
+                <div class="extend-card">
+                    <div class="extend-icon"><i data-lucide="plug"></i></div>
+                    <h3>MCP 服务器</h3>
+                    <p>通过 Model Context Protocol 连接外部工具和数据源。支持 stdio 和 HTTP 传输。</p>
+                    <div class="extend-path">~/.omx/mcp.json</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES GRID ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">精心打造</span>
+                <h2 class="section-title">细节决定一切</h2>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <i data-lucide="feather"></i>
+                    <h3>精简系统提示词</h3>
+                    <p>极简的指令和精炼的工具描述。你的 token 用在真正的工作上，而不是臃肿的框架开销。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="shield"></i>
+                    <h3>零遥测</h3>
+                    <p>不追踪使用情况，不收集分析数据。你的代码和对话永远不会离开你的机器。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="database"></i>
+                    <h3>原生提示词缓存</h3>
+                    <p>Anthropic 和 Gemini 的自动缓存控制。自定义 TTL 设置让常用上下文保持缓存，降低成本。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="sparkles"></i>
+                    <h3>深度思考</h3>
+                    <p>为复杂任务启用深度推理。模型在响应前逐步思考，可配置预算上限。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="brain"></i>
+                    <h3>跨会话记忆</h3>
+                    <p>学习你的模式、偏好和项目细节。关键要点跨会话持久化，随时间不断改进。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="plug-zap"></i>
+                    <h3>原生多协议</h3>
+                    <p>为 Anthropic、OpenAI、Gemini 和 Responses API 分别实现请求构建器。中间没有有损格式转换。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="image"></i>
+                    <h3>图像理解</h3>
+                    <p>粘贴截图、拖入设计稿或引用图片文件。视觉模型看到你看到的一切。</p>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="file-cog"></i>
+                    <h3>项目指令</h3>
+                    <p>在仓库根目录放置 OMX.md。团队中的每个人都能获得相同的编码规范和上下文。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
     <section class="section">
         <div class="container">
             <div class="cta-section">
-                <h2>准备好了吗？</h2>
-                <p>安装 OmniContext，将 AI 带入你使用的每一个应用</p>
-                <div class="cta-buttons">
-                    <a href="https://www.npmjs.com/package/omni-context-cli" class="btn-primary" target="_blank">
+                <div class="cta-glow"></div>
+                <h2>开始使用 OmniContext CLI</h2>
+                <p>一条命令。零配置。使用你自己的 API Key。</p>
+                <div class="cta-install">
+                    <div class="install-command cta-cmd" id="installCmd2">
+                        <code><span class="prompt">$</span> npm install -g omni-context-cli && omx</code>
+                        <button class="copy-btn" id="copyBtn2" onclick="copyInstallCommand2()">
+                            <i data-lucide="copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="cta-links">
+                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" target="_blank">
                         <i data-lucide="download"></i>
-                        npm install -g omni-context-cli
+                        下载桌面版
                     </a>
-                    <button class="btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                        <i data-lucide="arrow-up"></i>
-                        回到顶部
-                    </button>
+                    <a href="../docs/zh-Hans/">
+                        <i data-lucide="book-open"></i>
+                        文档
+                    </a>
+                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">
+                        <i data-lucide="github"></i>
+                        GitHub
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>OmniContext -- 零遥测 AI 助手</p>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span class="logo"><img src="../assets/img/logo.svg" alt="" class="logo-icon">OmniContext</span>
+                <span class="footer-tagline">零遥测 AI 编程助手</span>
+            </div>
+            <div class="footer-links">
+                <a href="../docs/zh-Hans/">文档</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">GitHub</a>
+                <a href="https://www.npmjs.com/package/omni-context-cli" target="_blank">npm</a>
+            </div>
         </div>
     </footer>
 
