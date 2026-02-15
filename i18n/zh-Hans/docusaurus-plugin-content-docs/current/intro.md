@@ -64,6 +64,7 @@ Omx 支持 OpenAI、Anthropic、Gemini 和 OpenAI Responses API 格式。
 | `--api-key <key>` | 用于 `--add-provider` 的 API 密钥 |
 | `--parent-pid <pid>` | 父进程退出时自动结束（需要 `--serve`） |
 | `--tls` | 为服务器模式启用 HTTPS |
+| `--acp` | 以 ACP 代理模式通过 stdio 运行（用于 Zed 等编辑器集成） |
 | `--tls-cert <path>` | TLS 证书文件路径 |
 | `--tls-key <path>` | TLS 私钥文件路径 |
 
@@ -96,6 +97,9 @@ omx --approve-all
 
 # 以助手模式启动
 omx --workflow assistant
+
+# 以 ACP 代理模式运行（用于 Zed 编辑器集成）
+omx --acp
 
 # 仅将配置更改保存到当前项目
 omx --scope project
@@ -150,6 +154,7 @@ Omx 会在每次对话开始时自动加载项目指令。按以下顺序查找�
 - [浏览器扩展](./tutorial/browser-extension) - 从 Omx 控制你的浏览器
 - [Office 扩展](./tutorial/office-addin) - 操作 Excel、Word 和 PowerPoint
 - [Figma 扩展](./tutorial/figma-plugin) - 在 Figma 中用 AI 设计
+- [Zed 编辑器](./tutorial/zed-editor) - 通过 ACP 在 Zed 中使用 Omx
 - [专家模式](./tutorial/specialist-mode) - 高级智能体工具
 - [艺术家模式](./tutorial/artist-mode) - 以图像生成为主的视觉响应
 - [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具

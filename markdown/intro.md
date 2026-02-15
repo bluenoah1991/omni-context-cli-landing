@@ -64,6 +64,7 @@ Press `Enter` after each field, and `Escape` to go back.
 | `--api-key <key>` | API key for `--add-provider` |
 | `--parent-pid <pid>` | Exit when the parent process dies (requires `--serve`) |
 | `--tls` | Enable HTTPS for server mode |
+| `--acp` | Run as ACP agent over stdio (for editor integrations like Zed) |
 | `--tls-cert <path>` | Path to TLS certificate file |
 | `--tls-key <path>` | Path to TLS private key file |
 
@@ -96,6 +97,9 @@ omx --approve-all
 
 # Start in assistant mode
 omx --workflow assistant
+
+# Run as ACP agent (for Zed editor integration)
+omx --acp
 
 # Save config changes only to the current project
 omx --scope project
@@ -150,6 +154,7 @@ The first file found is used. Write anything you want Omx to know about your pro
 - [Browser Extension](./tutorial/browser-extension) - Control your browser from Omx
 - [Office Add-in](./tutorial/office-addin) - Work with Excel, Word, and PowerPoint
 - [Figma Plugin](./tutorial/figma-plugin) - Design with AI in Figma
+- [Zed Editor](./tutorial/zed-editor) - Use Omx as an agent in Zed via ACP
 - [Specialist Mode](./tutorial/specialist-mode) - High-level agentic tools
 - [Artist Mode](./tutorial/artist-mode) - Visual-first responses with image generation
 - [MCP Configuration](./tutorial/mcp) - Connect external tools via Model Context Protocol
