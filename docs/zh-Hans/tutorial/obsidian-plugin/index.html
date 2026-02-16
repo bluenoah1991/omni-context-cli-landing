@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-obsidian-plugin" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Obsidian 插件 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/obsidian-plugin"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Obsidian 插件 | OmniContext CLI"><meta data-rh="true" name="description" content="OmniContext Obsidian 插件将 Omx 带入你的知识库。启用后，Obsidian 内会打开一个聊天面板，你可以让 Omx 阅读、创建、整理和搜索笔记，它能完整访问你的仓库结构、标签、反向链接和元数据。"><meta data-rh="true" property="og:description" content="OmniContext Obsidian 插件将 Omx 带入你的知识库。启用后，Obsidian 内会打开一个聊天面板，你可以让 Omx 阅读、创建、整理和搜索笔记，它能完整访问你的仓库结构、标签、反向链接和元数据。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/obsidian-plugin"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/obsidian-plugin" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/obsidian-plugin" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/obsidian-plugin" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Obsidian 插件","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/obsidian-plugin"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.5f689edf.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.5430c8c6.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/omni-context-cli-landing/docs/zh-Hans/"><b class="navbar__title text--truncate">OmniContext CLI</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/omni-context-cli-landing/docs/zh-Hans/">Documentation</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/omni-context-cli-landing/docs/tutorial/obsidian-plugin" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li><li><a href="/omni-context-cli-landing/docs/zh-Hans/tutorial/obsidian-plugin" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li></ul></div><a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/"><span title="快速开始" class="linkLabel_WmDU">快速开始</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/basic-usage"><span title="基本使用" class="linkLabel_WmDU">基本使用</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/specialist-mode"><span title="专家模式" class="linkLabel_WmDU">专家模式</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/artist-mode"><span title="艺术家模式" class="linkLabel_WmDU">艺术家模式</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/explorer-mode"><span title="探索者模式" class="linkLabel_WmDU">探索者模式</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/mcp"><span title="MCP 配置" class="linkLabel_WmDU">MCP 配置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/subagents"><span title="自定义子智能体" class="linkLabel_WmDU">自定义子智能体</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/slash"><span title="自定义 Slash 命令" class="linkLabel_WmDU">自定义 Slash 命令</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/skills"><span title="自定义 Skills" class="linkLabel_WmDU">自定义 Skills</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/ide-context"><span title="IDE 上  下文" class="linkLabel_WmDU">IDE 上下文</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/memory"><span title="跨会话记忆" class="linkLabel_WmDU">跨会话记忆</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><span title="模型管理" class="linkLabel_WmDU">模型管理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/sessions"><span title="会话管理" class="linkLabel_WmDU">会话管理</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/web-client"><span title="Web 客户端" class="linkLabel_WmDU">Web 客户端</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/mobile-access"><span title="移动端访问" class="linkLabel_WmDU">移动端访问</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/cost-saving"><span title="大模型省钱指南" class="linkLabel_WmDU">大模型省钱指南</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/browser-extension"><span title="浏览器扩展" class="linkLabel_WmDU">浏览器扩展</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/office-addin"><span title="Office 扩展" class="linkLabel_WmDU">Office 扩展</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/obsidian-plugin"><span title="Obsidian 插件" class="linkLabel_WmDU">Obsidian 插件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/figma-plugin"><span title="Figma 扩展" class="linkLabel_WmDU">Figma 扩展</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/zed-editor"><span title="Zed 编辑器" class="linkLabel_WmDU">Zed 编辑器</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/omni-context-cli-landing/docs/zh-Hans/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Obsidian 插件</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Obsidian 插  件</h1></header>
+<p>OmniContext Obsidian 插件将 Omx 带入你的知识库。启用后，Obsidian 内会打开一个聊天面板，你可以让 Omx 阅读、创建、整理和搜索笔记，它能完整访问你的仓库结构、标签、反向链接和元数据。</p>
+<p>与浏览器或 Office 集成不同，Obsidian 插件是独立运行的。它会自动启动 OmniContext 服务器并在后台完成所有连接，无需桌面应用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-1安装-omnicontext-cli">步骤 1：安装 OmniContext CLI<a href="#步骤-1安装-omnicontext-cli" class="hash-link" aria-label="步骤 1：安装 OmniContext CLI的直接链接" title="步骤 1：安装 OmniContext CLI的直接链接" translate="no">​</a></h2>
+<p>如果你还没有安装，请全局安装 CLI：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm install -g omni-context-cli &amp;&amp; omx</span><br></span></code></pre></div></div>
+<p>运行一次 <code>omx</code> 完成初始设置（配置模型服务商等），然后退出即可。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-2安装插件">步骤 2：安装插件<a href="#步骤-2安装插件" class="hash-link" aria-label="步骤 2：安装插件的直接链接" title="步骤 2：安装插件的直接链接" translate="no">​</a></h2>
+<ol>
+<li class="">从 <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" target="_blank" rel="noopener noreferrer" class="">发布页面</a> 下载最新的 <strong>OmniContext Obsidian</strong> 插件包（.zip）</li>
+<li class="">解压文件，你会得到一个名为 <strong>omni-context</strong> 的文件夹，包含 <code>main.js</code>、<code>manifest.json</code> 和 <code>styles.css</code></li>
+<li class="">将 <strong>omni-context</strong> 文件夹移动到你仓库的插件目录：<code>&lt;vault&gt;/.obsidian/plugins/omni-context/</code></li>
+</ol>
+<p>如果 <code>plugins</code> 文件夹不存在，请先创建它。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-3启用插件">步骤 3：启用插件<a href="#步骤-3启用插件" class="hash-link" aria-label="步骤 3：启用插件的直接链接" title="步骤 3：启用插件的直接链接" translate="no">​</a></h2>
+<ol>
+<li class="">打开 Obsidian</li>
+<li class="">前往 <strong>Settings &gt; Community plugins</strong></li>
+<li class="">在列表中找到 <strong>OmniContext</strong>，将其开关打开</li>
+</ol>
+<p>你会看到左侧功能栏出现一个聊天图标。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-4打开面板">步骤 4：打开面板<a href="#步骤-4打开面板" class="hash-link" aria-label="步骤 4：打开面板的直接链接" title="步骤 4：打开面板的直接链接" translate="no">​</a></h2>
+<p>点击功能栏中的聊天图标（或使用命令面板搜索 <strong>Open OmniContext</strong>）。插件会启动一个本地服务器，并在侧边面板中加载聊天界面。</p>
+<p>首次启动需要几秒钟等待服务器就绪。之后再打开就是瞬间完成。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-5选择模型">步骤 5：选择模型<a href="#步骤-5选择模型" class="hash-link" aria-label="步骤 5：选择模型的直接链接" title="步骤 5：选择模型的直接链接" translate="no">​</a></h2>
+<p>点击面板右上角的齿轮图标打开 <strong>Settings</strong>。</p>
+<p>在 <strong>Models</strong> 标签页中配置：</p>
+<ul>
+<li class=""><strong>Current Model</strong> -- 当前会话使用的模型</li>
+<li class=""><strong>Default Model</strong> -- 新会话默认使用的模型</li>
+<li class=""><strong>Agent Model</strong> -- 后台智能体任务使用的模型</li>
+</ul>
+<p>完成后点击 <strong>Save</strong>。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="使用方法">使用方法<a href="#使用方法" class="hash-link" aria-label="使用方法的直接链接" title="使用方法的直接链接" translate="no">​</a></h2>
+<p>面板打开后，直接输入你的问题。Omx 可以看到你的仓库并直接操作。</p>
+<p>以下是一些你可以尝试的操作：</p>
+<p><strong>查找和阅读笔记：</strong></p>
+<blockquote>
+<p>我的&quot;项目路线图&quot;笔记写了什么？</p>
+</blockquote>
+<p><strong>创建新笔记：</strong></p>
+<blockquote>
+<p>创建一个名为 &quot;Meeting Notes/2026-02-16&quot; 的新笔记，写上今天站会的总结。</p>
+</blockquote>
+<p><strong>整理仓库：</strong></p>
+<blockquote>
+<p>把 &quot;old-ideas.md&quot; 重命名为 &quot;archive/Old Ideas.md&quot;。</p>
+</blockquote>
+<p><strong>探索关联：</strong></p>
+<blockquote>
+<p>有哪些笔记链接到了我的&quot;架构设计&quot;页面？</p>
+</blockquote>
+<p><strong>使用标签：</strong></p>
+<blockquote>
+<p>我的仓库里哪些标签用得最多？</p>
+</blockquote>
+<p><strong>获取元数据：</strong></p>
+<blockquote>
+<p>列出 &quot;Design Doc.md&quot; 里的所有标题和 frontmatter。</p>
+</blockquote>
+<p><strong>追加内容：</strong></p>
+<blockquote>
+<p>在我的日记笔记里添加一个新章节，写上这些待办事项。</p>
+</blockquote>
+<p>为获得最佳体验，请在 Omx 菜单中切换到 <strong>Assistant</strong> 工作流预设。此模式专为与 Obsidian、浏览器和 Office 等应用交互而设计。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="可用工具">可用工具<a href="#可用工具" class="hash-link" aria-label="可用工具的直接链接" title="可用工具的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类别</th><th>Omx 可以做什么</th></tr></thead><tbody><tr><td><strong>  读取</strong></td><td>读取笔记内容、获取当前活动笔记、列出已打开的标签页</td></tr><tr><td><strong>写入</strong></td><td>创建、修改、追加、重命名和删除笔记</td></tr><tr><td><strong>导航</strong></td><td>打开笔记（可指定行号）、列出文件夹中的笔记</td></tr><tr><td><strong>元数据</strong></td><td>Frontmatter、标题、内部链接、标签、嵌入内容、章节</td></tr><tr><td><strong>图谱</strong></td><td>反向链接、链接解析、全仓库标签统计</td></tr><tr><td><strong>仓库</strong></td><td>仓库名称、路径、文件夹树、文件数量</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="工作原理">工作原理<a href="#工作原理" class="hash-link" aria-label="工作原理的直接链接" title="工作原理的直接链接" translate="no">​</a></h2>
+<p>插件在后台运行两个服务：</p>
+<ul>
+<li class=""><strong>OmniContext 服务器</strong> -- 与 CLI 和桌面应用相同的服务器，作为子进程自动启动。负责 AI 聊天、模型路由和所有核心功能。</li>
+<li class=""><strong>MCP IDE 服务器</strong> -- 一个本地 WebSocket 服务器，通过模型上下文协议（MCP）将你的仓库暴露给 OmniContext。它提供上面列出的仓库相关工具，并实时广播你当前的光标选区。</li>
+</ul>
+<p>两者都在你打开面板时启动，关闭插件时停止。一切都在你的本地机器上运行。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="故障排除">故障排除<a href="#故障排除" class="hash-link" aria-label="故障排除的直接链接" title="故障排除的直接链接" translate="no">​</a></h2>
+<p><strong>面板显示 &quot;Failed to start&quot;：</strong>
+确保 OmniContext CLI 已安装且可访问。在终端中运行 <code>omx --version</code> 来验证。如果你使用 nvm 等版本管理器安装的 Node.js，插件可能找不到正确的二进制文件 -- 尝试在终端中运行一次 <code>omx</code> 来生成可执行文件信息。</p>
+<p><strong>面板一直停在 &quot;Starting server...&quot;：</strong>
+服务器有 60 秒超时。如果在这段时间内未启动，请在终端中手动运行 <code>omx --serve</code> 检查错误。常见原因：端口冲突、缺少 API 密钥或配置文件损坏。</p>
+<p><strong>工具不起作用：</strong>
+关闭并重新打开面板以重启连接。如果仍然不行，在 Obsidian 设置中禁用并重新启用插件。</p>
+<p><strong>插件未出现在 Community plugins 中：</strong>
+确保文件夹结构正确：<code>&lt;vault&gt;/.obsidian/plugins/omni-context/main.js</code>。该插件仅支持桌面端，不会出现在 Obsidian 移动版中。</p>
+<p><strong>使用多个仓库：</strong>
+Obsidian 插件是按仓库安装的，因此你需要在每个仓库中单独安装插件。或者，你可以创建符号链接，从每个仓库的插件目录指向一个共享副本。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/bluenoah1991/omni-context-cli-landing/tree/main/markdown/obsidian-plugin.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/office-addin"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Office 扩展</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/figma-plugin"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Figma 扩展</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#步骤-1安装-omnicontext-cli" class="table-of-contents__link toc-highlight">步骤 1：安装 OmniContext CLI</a></li><li><a href="#步骤-2安装插件" class="table-of-contents__link toc-highlight">步骤 2：安装插件</a></li><li><a href="#步骤-3启用插件" class="table-of-contents__link toc-highlight">步骤 3：启用插件</a></li><li><a href="#步骤-4打开面板" class="table-of-contents__link toc-highlight">步骤 4：打开面板</a></li><li><a href="#步骤-5选择模型" class="table-of-contents__link toc-highlight">步骤 5：选择模型</a></li><li><a href="#使用方法" class="table-of-contents__link toc-highlight">使用方法</a></li><li><a href="#可用工具" class="table-of-contents__link toc-highlight">可用工具</a></li><li><a href="#工作原理" class="table-of-contents__link toc-highlight">工作原理</a></li><li><a href="#故障排除" class="table-of-contents__link toc-highlight">故障排除</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 OmniContext CLI. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

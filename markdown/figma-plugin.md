@@ -2,7 +2,7 @@
 slug: /tutorial/figma-plugin
 title: Figma Plugin
 sidebar_label: Figma Plugin
-sidebar_position: 19
+sidebar_position: 20
 ---
 
 # Figma Plugin
