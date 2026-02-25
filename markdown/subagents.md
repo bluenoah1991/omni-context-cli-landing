@@ -80,6 +80,7 @@ Array of tools the agent can use:
 - `Edit` - Edit files
 - `Glob` - Find files by pattern
 - `Grep` - Search file contents
+- `WebFetch` - Fetch content from a URL
 - `WebSearch` - Search the web (Anthropic models only)
 - `SaveArtifact` - Save a generated image or file to disk
 

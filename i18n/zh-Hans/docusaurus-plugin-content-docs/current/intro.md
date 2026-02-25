@@ -67,6 +67,9 @@ Omx 支持 OpenAI、Anthropic、Gemini 和 OpenAI Responses API 格式。
 | `--acp` | 以 ACP 代理模式通过 stdio 运行（用于 Zed 等编辑器集成） |
 | `--tls-cert <path>` | TLS 证书文件路径 |
 | `--tls-key <path>` | TLS 私钥文件路径 |
+| `--lang <code>` | 设置界面语言（如 `en-US`、`zh-CN`） |
+| `--export-project <path>` | 将项目数据（会话、记忆）导出为 gzip 压缩包 |
+| `--import-project <path>` | 从 gzip 压缩包导入项目数据 |
 
 示例：
 
@@ -106,6 +109,15 @@ omx --scope project
 
 # 绑定到所有网络接口
 omx --serve --host 0.0.0.0
+
+# 设置界面语言为中文
+omx --lang zh-CN
+
+# 导出项目数据用于备份或迁移
+omx --export-project ./backup
+
+# 从压缩包导入项目数据
+omx --import-project ./backup.tar.gz
 ```
 
 ## 代理配置

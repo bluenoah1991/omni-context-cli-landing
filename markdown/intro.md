@@ -67,6 +67,9 @@ Press `Enter` after each field, and `Escape` to go back.
 | `--acp` | Run as ACP agent over stdio (for editor integrations like Zed) |
 | `--tls-cert <path>` | Path to TLS certificate file |
 | `--tls-key <path>` | Path to TLS private key file |
+| `--lang <code>` | Set UI language (e.g. `en-US`, `zh-CN`) |
+| `--export-project <path>` | Export project data (sessions, memory) to a gzip archive |
+| `--import-project <path>` | Import project data from a gzip archive |
 
 Examples:
 
@@ -106,6 +109,15 @@ omx --scope project
 
 # Bind to all network interfaces
 omx --serve --host 0.0.0.0
+
+# Set UI language to Chinese
+omx --lang zh-CN
+
+# Export project data for backup or transfer
+omx --export-project ./backup
+
+# Import project data from an archive
+omx --import-project ./backup.tar.gz
 ```
 
 ## Proxy Configuration
