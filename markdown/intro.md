@@ -68,6 +68,9 @@ Press `Enter` after each field, and `Escape` to go back.
 | `--tls-cert <path>` | Path to TLS certificate file |
 | `--tls-key <path>` | Path to TLS private key file |
 | `--lang <code>` | Set UI language (e.g. `en-US`, `zh-CN`) |
+| `--set-password [password]` | Set a password for web UI authentication |
+| `--clear-password` | Remove the password and disable web UI authentication |
+| `--install-daemon` | Install as a systemd service (Linux only) |
 | `--export-project <path>` | Export project data (sessions, memory) to a gzip archive |
 | `--import-project <path>` | Import project data from a gzip archive |
 
@@ -112,6 +115,12 @@ omx --serve --host 0.0.0.0
 
 # Set UI language to Chinese
 omx --lang zh-CN
+
+# Set a password for the web UI
+omx --set-password
+
+# Install as a background service on Linux
+sudo omx --install-daemon
 
 # Export project data for backup or transfer
 omx --export-project ./backup

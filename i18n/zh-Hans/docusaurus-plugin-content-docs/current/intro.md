@@ -68,6 +68,9 @@ Omx 支持 OpenAI、Anthropic、Gemini 和 OpenAI Responses API 格式。
 | `--tls-cert <path>` | TLS 证书文件路径 |
 | `--tls-key <path>` | TLS 私钥文件路径 |
 | `--lang <code>` | 设置界面语言（如 `en-US`、`zh-CN`） |
+| `--set-password [password]` | 为 Web UI 设置访问密码 |
+| `--clear-password` | 移除密码并禁用 Web UI 认证 |
+| `--install-daemon` | 安装为 systemd 服务（仅限 Linux） |
 | `--export-project <path>` | 将项目数据（会话、记忆）导出为 gzip 压缩包 |
 | `--import-project <path>` | 从 gzip 压缩包导入项目数据 |
 
@@ -112,6 +115,12 @@ omx --serve --host 0.0.0.0
 
 # 设置界面语言为中文
 omx --lang zh-CN
+
+# 为 Web UI 设置密码
+omx --set-password
+
+# 在 Linux 上安装为后台服务
+sudo omx --install-daemon
 
 # 导出项目数据用于备份或迁移
 omx --export-project ./backup

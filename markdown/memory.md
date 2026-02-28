@@ -29,13 +29,13 @@ At the end of each conversation (whether through automatic compaction or manual 
 **Creation**: When compaction occurs, Omx analyzes the conversation and extracts new insights. These become new key points with a score of 0.
 
 **Evaluation**: Each time compaction occurs, existing key points are evaluated:
-- **Helpful** (+1): The key point contributed to a good outcome
-- **Harmful** (-3): The key point led to a poor outcome
-- **Neutral** (-2): The key point was irrelevant
+- **Helpful** (+3): The key point contributed to a good outcome
+- **Harmful** (-6): The key point led to a poor outcome
+- **Neutral** (-1): The key point was irrelevant
 
 Unused key points naturally decay over time.
 
-**Removal**: Key points with scores at -5 or below are automatically removed, ensuring memory stays relevant.
+**Removal**: Key points with scores at -10 or below are automatically removed, ensuring memory stays relevant.
 
 ## Enabling Memory
 

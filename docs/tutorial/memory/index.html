@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Cross-Session Memory | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/memory"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Cross-Session Memory | OmniContext CLI"><meta data-rh="true" name="description" content="Memory is Omx&#x27;s implementation of Agentic Context Engineering (ACE) - a system for persistent memory that improves responses over time."><meta data-rh="true" property="og:description" content="Memory is Omx&#x27;s implementation of Agentic Context Engineering (ACE) - a system for persistent memory that improves responses over time."><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/memory"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/memory" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/memory" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/memory" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Cross-Session Memory","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/memory"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/assets/js/runtime~main.b6dafd6d.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/assets/js/runtime~main.f1308730.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/assets/js/main.d1226fc7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -28,12 +28,12 @@
 <p><strong>Creation</strong>: When compaction occurs, Omx analyzes the conversation and extracts new insights. These become new key points with a score of 0.</p>
 <p><strong>Evaluation</strong>: Each time compaction occurs, existing key points are evaluated:</p>
 <ul>
-<li class=""><strong>Helpful</strong> (+1): The key point contributed to a good outcome</li>
-<li class=""><strong>Harmful</strong> (-3): The key point led to a poor outcome</li>
-<li class=""><strong>Neutral</strong> (-2): The key point was irrelevant</li>
+<li class=""><strong>Helpful</strong> (+3): The key point contributed to a good outcome</li>
+<li class=""><strong>Harmful</strong> (-6): The key point led to a poor outcome</li>
+<li class=""><strong>Neutral</strong> (-1): The key point was irrelevant</li>
 </ul>
 <p>Unused key points naturally decay over time.</p>
-<p><strong>Removal</strong>: Key points with scores at -5 or below are automatically removed, ensuring memory stays relevant.</p>
+<p><strong>Removal</strong>: Key points with scores at -10 or below are automatically removed, ensuring memory stays relevant.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="enabling-memory">Enabling Memory<a href="#enabling-memory" class="hash-link" aria-label="Direct link to Enabling Memory" title="Direct link to Enabling Memory" translate="no">​</a></h2>
 <p>Memory is enabled by default. You can toggle it through the menu:</p>
 <ol>
