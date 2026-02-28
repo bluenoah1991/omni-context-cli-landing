@@ -2,7 +2,7 @@
 slug: /tutorial/office-addin
 title: Office 扩展
 sidebar_label: Office 扩展
-sidebar_position: 18
+sidebar_position: 19
 ---
 
 # Office 扩展

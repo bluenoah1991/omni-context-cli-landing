@@ -2,7 +2,7 @@
 slug: /tutorial/obsidian-plugin
 title: Obsidian Plugin
 sidebar_label: Obsidian Plugin
-sidebar_position: 19
+sidebar_position: 20
 ---
 
 # Obsidian Plugin

@@ -2,7 +2,7 @@
 slug: /tutorial/office-addin
 title: Office Add-in
 sidebar_label: Office Add-in
-sidebar_position: 18
+sidebar_position: 19
 ---
 
 # Office Add-in

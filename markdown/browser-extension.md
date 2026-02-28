@@ -2,7 +2,7 @@
 slug: /tutorial/browser-extension
 title: Browser Extension
 sidebar_label: Browser Extension
-sidebar_position: 17
+sidebar_position: 18
 ---
 
 # Browser Extension

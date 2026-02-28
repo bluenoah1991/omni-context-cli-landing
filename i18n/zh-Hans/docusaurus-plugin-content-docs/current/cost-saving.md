@@ -2,7 +2,7 @@
 slug: /tutorial/cost-saving
 title: 大模型省钱指南
 sidebar_label: 大模型省钱指南
-sidebar_position: 16
+sidebar_position: 17
 ---
 
 # 大模型省钱指南

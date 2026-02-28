@@ -2,7 +2,7 @@
 slug: /tutorial/figma-plugin
 title: Figma 扩展
 sidebar_label: Figma 扩展
-sidebar_position: 20
+sidebar_position: 21
 ---
 
 # Figma 扩展

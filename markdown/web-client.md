@@ -63,6 +63,47 @@ The web client provides a graphical interface with:
 - **Mobile Support** - Responsive design works on phones and tablets
 - **Appearance Settings** - Theme preferences saved to your config
 
+## Authentication
+
+Omx supports password-based authentication for the web UI. This is essential when exposing the server to a network or deploying on a public cloud.
+
+### Setting a Password
+
+Set a password using the CLI flag:
+
+```bash
+omx --set-password
+```
+
+You'll be prompted to enter a password interactively. You can also pass it directly:
+
+```bash
+omx --set-password my-secret-password
+```
+
+The password is hashed with `scrypt` and stored in `~/.omx/password`. The plain-text password is never saved.
+
+### How It Works
+
+Once a password is set, the web UI shows a login screen before granting access. Under the hood:
+
+1. You enter your password in the browser
+2. The server verifies it and issues a bearer token
+3. The token is stored in your browser's localStorage and sent with every request
+4. Tokens expire after 30 days
+
+### Rate Limiting
+
+To protect against brute-force attacks, the server locks out an IP after 5 failed login attempts. The lockout uses exponential backoff starting at 30 seconds.
+
+### Removing Authentication
+
+To disable authentication and remove the stored password:
+
+```bash
+omx --clear-password
+```
+
 ## VS Code Extension
 
 Omx provides a VS Code extension that embeds the web client directly in your editor.

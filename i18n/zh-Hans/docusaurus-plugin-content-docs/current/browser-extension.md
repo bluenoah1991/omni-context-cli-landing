@@ -2,7 +2,7 @@
 slug: /tutorial/browser-extension
 title: 浏览器扩展
 sidebar_label: 浏览器扩展
-sidebar_position: 17
+sidebar_position: 18
 ---
 
 # 浏览器扩展
