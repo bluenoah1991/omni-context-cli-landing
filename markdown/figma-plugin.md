@@ -36,7 +36,7 @@ Now load it into Figma:
 
 4. Open the **Figma desktop app**
 5. Go to **Plugins > Development > Import plugin from manifest...**
-6. Select the **manifest.json** file inside the **dist** folder
+6. Select the **manifest.json** file in the extracted folder
 
 The Figma plugin only works in the Figma desktop app. The web version of Figma does not support loading local development plugins.
 

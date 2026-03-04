@@ -48,7 +48,7 @@ Now load it into Chrome:
 
 4. Open `chrome://extensions/` in Chrome
 5. Turn on **Developer mode** in the top-right corner
-6. Click **Load unpacked** and select the **dist** folder from the unzipped package
+6. Click **Load unpacked** and select the extracted folder
 
 ![Chrome extensions page with Developer mode enabled and the Load unpacked button visible](/img/browser-extension/chrome-load-unpacked.png)
 
