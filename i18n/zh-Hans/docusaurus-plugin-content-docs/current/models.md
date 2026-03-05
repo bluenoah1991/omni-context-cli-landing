@@ -117,6 +117,17 @@ API URL: https://generativelanguage.googleapis.com/v1beta
 Context Size: 128
 ```
 
+#### Moonshot Kimi
+
+```
+Name: kimi-k2-0711-preview
+Nickname: Kimi K2
+Provider: openai
+API Key: your-kimi-key
+API URL: https://api.kimi.com/v1
+Context Size: 128
+```
+
 #### OpenAI Responses API
 
 ```
