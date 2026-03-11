@@ -71,6 +71,7 @@ The preferences submenu lets you toggle:
 - **Extended thinking** - Enable deeper reasoning for complex tasks
 - **IDE context** - Include context from your IDE
 - **Server compaction** - Let the server handle context compaction instead of the client
+- **Color theme** - Pick a terminal color scheme
 - **Streaming output** - Show responses as they generate
 
 Use arrow keys to navigate, Enter to select, and Escape to go back.
