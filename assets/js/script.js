@@ -53,7 +53,37 @@ if (mobileMenuBtn && mobileMenu) {
     });
 }
 
-var revealElements = document.querySelectorAll('.section-header, .tools-grid, .workflow-grid, .split-layout, .extend-grid, .protocols-grid, .integration-grid, .details-grid, .cta-section, .cost-explainer');
+var slideshowImages = document.querySelectorAll('.slideshow-track img');
+var slideshowDots = document.querySelectorAll('.slideshow-dot');
+var slideshowIndex = 0;
+var slideshowTimer = null;
+
+function showSlide(index) {
+    slideshowImages.forEach(function (img) { img.classList.remove('active'); });
+    slideshowDots.forEach(function (dot) { dot.classList.remove('active'); });
+    slideshowIndex = index;
+    if (slideshowImages[index]) slideshowImages[index].classList.add('active');
+    if (slideshowDots[index]) slideshowDots[index].classList.add('active');
+}
+
+function startSlideshow() {
+    if (slideshowImages.length < 2) return;
+    slideshowTimer = setInterval(function () {
+        showSlide((slideshowIndex + 1) % slideshowImages.length);
+    }, 4000);
+}
+
+slideshowDots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+        showSlide(i);
+        clearInterval(slideshowTimer);
+        startSlideshow();
+    });
+});
+
+startSlideshow();
+
+var revealElements = document.querySelectorAll('.section-header, .tools-grid, .workflow-grid, .split-layout, .extend-grid, .protocols-grid, .integration-grid, .details-grid, .cta-section, .cost-explainer, .slideshow-track');
 
 var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {

@@ -35,15 +35,21 @@ omx --serve --web --host 0.0.0.0
 - **Session management** - Switch sessions, rewind messages
 - **Model switching** - Change models mid-conversation
 
-## Color Themes
+## Theme Mode
 
-Set a color theme via the command line:
+Set the theme mode via the command line:
 
 ```bash
-omx --serve --web --theme crystal
+omx --serve --web --theme dark
+omx --serve --web --theme light
+omx --serve --web --theme auto
 ```
 
-Available presets: crystal, splash, horizon, neon, forest, indigo, rosette, retro, tangerine, emerald, earth, twilight, inferno, sunshine, blossom, cocoa, nautical.
+The default is `auto`, which follows your system preference.
+
+## Color Themes
+
+Color themes are configured through the preferences menu (press Escape, select **Change preferences**, then **Color theme**). 17 built-in presets are available: crystal, splash, horizon, neon, forest, indigo, rosette, retro, tangerine, emerald, earth, twilight, inferno, sunshine, blossom, cocoa, nautical.
 
 ## Authentication
 

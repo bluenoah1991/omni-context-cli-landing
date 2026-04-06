@@ -58,6 +58,9 @@ When invoked, the skill's instructions are injected into the current conversatio
 | Field | Type | Description |
 |-------|------|-------------|
 | `name` | string | Display name for the skill |
+| `description` | string | Short description shown in the command picker |
+| `user-invocable` | boolean | Whether the user can invoke this skill directly (default: true) |
+| `disable-model-invocation` | boolean | Prevent the model from invoking this skill via the Skill tool (default: false) |
 
 ## Claude Code Compatibility
 

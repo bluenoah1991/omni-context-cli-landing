@@ -24,8 +24,8 @@ sidebar_position: 5
 ---
 name: Review
 description: Review code changes for bugs and style issues
-allowedTools: [Read, Glob, Grep, Bash, BashOutput]
-displayFields: [filePath]
+allowBaseTools: [Read, Glob, Grep, Bash, BashOutput]
+display_fields: [filePath]
 parameters:
   properties:
     filePath:
@@ -49,9 +49,14 @@ Return a summary of findings with file paths and line numbers.
 |------|------|------|
 | `name` | string | 工具名称（变为 `Agent_Name`） |
 | `description` | string | 工具功能描述（展示给模型） |
-| `allowedTools` | string[] | 此 Agent 可使用的基础工具 |
-| `displayFields` | string[] | 在 UI 中显示的参数字段 |
+| `allowBaseTools` | boolean 或 string[] | 此 Agent 可使用的基础工具 |
+| `allowBuiltinAgents` | boolean 或 string[] | 允许内置智能体工具 |
+| `allowCustomAgents` | boolean 或 string[] | 允许自定义智能体工具 |
+| `allowMcpTools` | boolean 或 string[] | 允许 MCP 服务器工具 |
+| `allowRemoteTools` | boolean 或 string[] | 允许来自集成的远程工具 |
+| `display_fields` | string[] | 在 UI 中显示的参数字段 |
 | `parameters` | object | 工具输入参数的 JSON Schema |
+| `model` | string | 覆盖此 Agent 使用的模型 |
 
 ### 模板变量
 

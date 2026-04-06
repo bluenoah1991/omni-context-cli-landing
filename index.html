@@ -64,10 +64,9 @@
                 Waste nothing.
             </h1>
             <p class="hero-description">
-                Most AI coding tools bolt a chat onto an LLM and call it a day.
-                OmniContext CLI treats the context window as a scarce resource and engineers every layer
-                to use it well. Terminal-native, fully extensible, and it extends into
-                VS Code, Office, the browser, and your phone.
+                Every token matters. OmniContext CLI is engineered from the ground up to squeeze
+                maximum value out of every context window. Terminal-native, fully extensible,
+                and it extends into VS Code, Office, the browser, and your phone.
             </p>
             <div class="hero-actions">
                 <div class="install-command" id="installCmd">
@@ -85,6 +84,22 @@
         </div>
     </section>
 
+    <!-- ========== SLIDESHOW ========== -->
+    <section class="slideshow">
+        <div class="container">
+            <div class="slideshow-track">
+                <img src="static/screenshot-1.png" alt="OmniContext CLI terminal interface" class="active">
+                <img src="static/screenshot-2.png" alt="OmniContext CLI web client">
+                <img src="static/screenshot-3.png" alt="OmniContext CLI desktop app">
+            </div>
+            <div class="slideshow-dots">
+                <button class="slideshow-dot active" aria-label="Slide 1"></button>
+                <button class="slideshow-dot" aria-label="Slide 2"></button>
+                <button class="slideshow-dot" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== METRICS STRIP ========== -->
     <section class="metrics">
         <div class="container">
@@ -95,7 +110,7 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">11</span>
+                    <span class="metric-value">10</span>
                     <span class="metric-label">Built-in Tools</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -133,7 +148,7 @@
                         <span class="workflow-card-icon">&#9675;</span>
                         <h3>Programming <span class="workflow-badge">Default</span></h3>
                     </div>
-                    <p>Coding assistant with full tool access and MCP integration.
+                    <p>Coding assistant with base tools, agent tools, and MCP integration.
                         Concise output, minimal overhead. Reads OMX.md and CLAUDE.md
                         for project conventions.</p>
                     <div class="workflow-tools">
@@ -148,7 +163,7 @@
                         <span class="workflow-card-icon">&#9671;</span>
                         <h3>General</h3>
                     </div>
-                    <p>Personal assistant for Office docs, browser pages, and slides.
+                    <p>Personal assistant for documents, spreadsheets, and presentations.
                         Proactive with tools, conversational tone. Works with the app
                         you currently have open.</p>
                     <div class="workflow-tools">
@@ -182,8 +197,9 @@ You are a senior reviewer...</code></pre></div>
                 <h2 class="section-title">Base tools + agent tools</h2>
                 <p class="section-subtitle">
                     Base tools give the model direct file system and web access. Agent tools
-                    run as autonomous sub-agents on a cheaper model -- their intermediate work
-                    never enters your main context.
+                    run exploratory tasks on a cheaper model -- intermediate tool calls,
+                    file contents, and reasoning never enter your main context. You get a
+                    concise answer back; the scratch work stays off the books.
                 </p>
             </div>
 
@@ -293,8 +309,9 @@ You are a senior reviewer...</code></pre></div>
                 <h2 class="section-title">Four API protocols,<br>zero format conversion</h2>
                 <p class="section-subtitle">
                     Each LLM API protocol has its own dedicated request builder and stream handler.
-                    Prompt caching, extended thinking, and provider-specific features work exactly
-                    as the vendor designed them. No translation layer.
+                    Prompt caching, extended thinking, structured outputs, and every other
+                    provider-specific feature work exactly as the vendor designed them.
+                    Anthropic requests are not converted into OpenAI format or vice versa.
                 </p>
             </div>
 
@@ -345,30 +362,30 @@ You are a senior reviewer...</code></pre></div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="feather"></i></div>
                         <h3>Lean system prompts</h3>
-                        <p>Minimal, focused instructions instead of bloated frameworks.
-                            Your tokens go toward actual work, not prompt overhead.
-                            Workflow-scoped tool lists keep it even leaner.</p>
+                        <p>The built-in system prompts are short, focused, and free of
+                            boilerplate. Tool descriptions are minimal. Your context budget
+                            goes toward actual work, not framework overhead.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="split"></i></div>
-                        <h3>Agent sub-delegation</h3>
-                        <p>Agent tools run multi-step operations on a cheap model.
-                            Five rounds of file search become one call. The expensive
-                            model never does grunt work.</p>
+                        <h3>Agentic tools</h3>
+                        <p>Exploratory tasks run as agentic tools on a cheaper model.
+                            You get a concise answer back; the scratch work stays off
+                            the books. The expensive model never does grunt work.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="scissors"></i></div>
                         <h3>Context editing</h3>
-                        <p>Old tool call payloads and thinking blocks are automatically
-                            trimmed from history. At 80% capacity, the conversation is
-                            compacted and a fresh session picks up seamlessly.</p>
+                        <p>Older rounds accumulate tool call payloads and thinking blocks
+                            that are no longer relevant. Context editing replaces them with
+                            compact placeholders, so the model sees a clean, focused history.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="brain"></i></div>
                         <h3>Cross-session memory</h3>
-                        <p>Key insights survive compaction and carry into future sessions.
-                            The model doesn't re-learn your project patterns from scratch
-                            every time -- fewer discovery rounds, less wasted context.</p>
+                        <p>Good insights accumulate weight, stale knowledge decays naturally.
+                            Accumulated memories are injected automatically so the assistant
+                            knows your preferences and project context from the first message.</p>
                     </div>
                 </div>
             </div>
@@ -389,7 +406,7 @@ You are a senior reviewer...</code></pre></div>
                     <div class="provider-grid">
                         <div class="provider-tag">Zenmux</div>
                         <div class="provider-tag">DeepSeek</div>
-                        <div class="provider-tag">Kimi</div>
+                        <div class="provider-tag">Kimi for Coding</div>
                         <div class="provider-tag">OpenRouter</div>
                         <div class="provider-tag">Zhipu (GLM)</div>
                         <div class="provider-tag">MiniMax</div>
@@ -423,9 +440,9 @@ You are a senior reviewer...</code></pre></div>
                     <span class="section-label">Cross-Session Memory</span>
                     <h2 class="section-title">It learns as you work</h2>
                     <p class="section-subtitle">
-                        OmniContext CLI remembers your coding style, project patterns, and past
-                        mistakes across sessions. Key points are scored over time --
-                        helpful insights stick around, irrelevant ones decay.
+                        Memory extraction runs automatically when a conversation is compacted.
+                        The model reflects on the session, pulls out key points, and evaluates
+                        existing ones. Each point carries a score that shifts based on usefulness.
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
@@ -492,7 +509,8 @@ You are a senior reviewer...</code></pre></div>
                 <h2 class="section-title">Goes everywhere your work does</h2>
                 <p class="section-subtitle">
                     Terminal is home base, but OmniContext CLI extends into every tool you use.
-                    One AI, consistent context, zero context switching.
+                    The desktop app ties it all together as a lightweight server launcher
+                    that connects your IDE, browser, and Office apps to a single instance.
                 </p>
             </div>
 
@@ -510,7 +528,7 @@ You are a senior reviewer...</code></pre></div>
                         <span>Workspace management</span>
                         <span>Model config</span>
                         <span>System tray</span>
-                        <span>Connection hub</span>
+                        <span>Office install</span>
                     </div>
                 </div>
 
@@ -611,9 +629,10 @@ You are a senior reviewer...</code></pre></div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="bot"></i></div>
-                    <h3>Custom Agents</h3>
+                    <h3>Custom Agentic Tools</h3>
                     <p>Write a markdown file with a prompt template, parameter schema,
-                        and tool permissions. It becomes a callable tool instantly.</p>
+                        and tool permissions. It becomes a callable agentic tool instantly.
+                        Add OMX-AGENTS.md for global agent instructions.</p>
                     <div class="extend-path">~/.omx/agents/review.md</div>
                 </div>
                 <div class="extend-card">
@@ -647,8 +666,8 @@ You are a senior reviewer...</code></pre></div>
                 <div class="detail-item">
                     <i data-lucide="feather"></i>
                     <h3>Lean System Prompts</h3>
-                    <p>Minimal, focused instructions. Your tokens go toward actual work,
-                        not bloated framework overhead.</p>
+                    <p>Short, focused, and free of boilerplate. Your context budget goes
+                        toward actual work, not framework overhead.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="shield"></i>
@@ -659,8 +678,8 @@ You are a senior reviewer...</code></pre></div>
                 <div class="detail-item">
                     <i data-lucide="scissors"></i>
                     <h3>Context Editing</h3>
-                    <p>Automatically trims old tool call payloads and thinking blocks.
-                        Keeps token usage lean in long sessions.</p>
+                    <p>Replaces bulky tool inputs and outputs with compact placeholders
+                        and strips reasoning traces. The model sees a clean, focused history.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="archive"></i>
@@ -683,8 +702,8 @@ You are a senior reviewer...</code></pre></div>
                 <div class="detail-item">
                     <i data-lucide="database"></i>
                     <h3>Prompt Caching</h3>
-                    <p>Automatic cache control for Anthropic and Gemini. Custom TTL (5 min
-                        or 1 hour) keeps costs down.</p>
+                    <p>You choose the cache TTL: 5 minutes for quick iteration, 1 hour for
+                        long work sessions. Repeated context blocks are served from cache.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="palette"></i>

@@ -58,6 +58,9 @@ When reviewing or writing code in this project, follow these conventions:
 | 字段 | 类型 | 描述 |
 |------|------|------|
 | `name` | string | 技能的显示名称 |
+| `description` | string | 命令选择器中显示的简短描述 |
+| `user-invocable` | boolean | 用户是否可以直接调用此技能（默认：true） |
+| `disable-model-invocation` | boolean | 阻止模型通过 Skill 工具调用此技能（默认：false） |
 
 ## Claude Code 兼容性
 

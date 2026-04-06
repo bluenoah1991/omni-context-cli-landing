@@ -24,8 +24,8 @@ Each agent is a markdown file with YAML frontmatter and a Handlebars prompt temp
 ---
 name: Review
 description: Review code changes for bugs and style issues
-allowedTools: [Read, Glob, Grep, Bash, BashOutput]
-displayFields: [filePath]
+allowBaseTools: [Read, Glob, Grep, Bash, BashOutput]
+display_fields: [filePath]
 parameters:
   properties:
     filePath:
@@ -49,9 +49,14 @@ Return a summary of findings with file paths and line numbers.
 |-------|------|-------------|
 | `name` | string | Tool name (becomes `Agent_Name`) |
 | `description` | string | What the tool does (shown to the model) |
-| `allowedTools` | string[] | Which base tools this agent can use |
-| `displayFields` | string[] | Which parameter fields to show in the UI |
+| `allowBaseTools` | boolean or string[] | Which base tools this agent can use |
+| `allowBuiltinAgents` | boolean or string[] | Allow built-in agent tools |
+| `allowCustomAgents` | boolean or string[] | Allow custom agent tools |
+| `allowMcpTools` | boolean or string[] | Allow MCP server tools |
+| `allowRemoteTools` | boolean or string[] | Allow remote tools from integrations |
+| `display_fields` | string[] | Which parameter fields to show in the UI |
 | `parameters` | object | JSON Schema for the tool's input parameters |
+| `model` | string | Override the agent model for this agent |
 
 ### Template Variables
 

@@ -64,8 +64,7 @@
                 绝不浪费。
             </h1>
             <p class="hero-description">
-                大多数 AI 编程工具只是给 LLM 套了个聊天界面。
-                OmniContext CLI 将上下文窗口视为稀缺资源，每一层都为高效利用而设计。
+                每一个 token 都很重要。OmniContext CLI 从底层开始就为最大化利用上下文窗口而设计。
                 终端原生、完全可扩展，并延伸到 VS Code、Office、浏览器和手机。
             </p>
             <div class="hero-actions">
@@ -84,6 +83,22 @@
         </div>
     </section>
 
+    <!-- ========== SLIDESHOW ========== -->
+    <section class="slideshow">
+        <div class="container">
+            <div class="slideshow-track">
+                <img src="../static/screenshot-1.png" alt="OmniContext CLI 终端界面" class="active">
+                <img src="../static/screenshot-2.png" alt="OmniContext CLI Web 客户端">
+                <img src="../static/screenshot-3.png" alt="OmniContext CLI 桌面应用">
+            </div>
+            <div class="slideshow-dots">
+                <button class="slideshow-dot active" aria-label="幻灯片 1"></button>
+                <button class="slideshow-dot" aria-label="幻灯片 2"></button>
+                <button class="slideshow-dot" aria-label="幻灯片 3"></button>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== METRICS STRIP ========== -->
     <section class="metrics">
         <div class="container">
@@ -94,7 +109,7 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">11</span>
+                    <span class="metric-value">10</span>
                     <span class="metric-label">内置工具</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -131,7 +146,7 @@
                         <span class="workflow-card-icon">&#9675;</span>
                         <h3>Programming <span class="workflow-badge">默认</span></h3>
                     </div>
-                    <p>编程助手，完整工具访问和 MCP 集成。
+                    <p>编程助手，包含基础工具、Agent 工具和 MCP 集成。
                         简洁输出，最小开销。自动读取 OMX.md 和 CLAUDE.md
                         获取项目规范。</p>
                     <div class="workflow-tools">
@@ -146,8 +161,8 @@
                         <span class="workflow-card-icon">&#9671;</span>
                         <h3>General</h3>
                     </div>
-                    <p>个人助理，用于 Office 文档、浏览器页面和演示文稿。
-                        主动使用工具，对话式语调。操作你当前打开的应用。</p>
+                    <p>多功能个人助理，处理文档、表格和演示文稿。
+                        主动使用工具，匹配对话语气。操作你当前打开的应用。</p>
                     <div class="workflow-tools">
                         <span>基础工具</span>
                         <span>自定义 Agent</span>
@@ -178,8 +193,9 @@ You are a senior reviewer...</code></pre></div>
                 <span class="section-label">工具</span>
                 <h2 class="section-title">基础工具 + 智能体工具</h2>
                 <p class="section-subtitle">
-                    基础工具提供文件系统和网络访问。智能体工具以子智能体方式运行在廉价模型上——
-                    它们的中间过程不会进入你的主上下文。
+                    基础工具提供文件系统和网络访问。智能体式工具在更便宜的模型上运行探索性任务——
+                    中间工具调用、文件内容和推理过程不会进入主上下文。
+                    你只拿到一个简洁的结论，中间草稿完全不占空间。
                 </p>
             </div>
 
@@ -281,9 +297,9 @@ You are a senior reviewer...</code></pre></div>
                 <span class="section-label">原生多协议</span>
                 <h2 class="section-title">四种 API 协议，<br>零格式转换</h2>
                 <p class="section-subtitle">
-                    每种 LLM API 协议都有专属的请求构建器和流处理器。
-                    提示缓存、扩展思考和特定厂商功能完全按照供应商的设计运行。
-                    没有转换层。
+                    每种 LLM API 协议都有专用的请求构建器和流处理器。
+                    提示词缓存、扩展思考、结构化输出和每一个供应商专属特性都按原厂设计工作。
+                    不会把 Anthropic 请求转成 OpenAI 格式，也不会反过来。
                 </p>
             </div>
 
@@ -333,30 +349,30 @@ You are a senior reviewer...</code></pre></div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="feather"></i></div>
                         <h3>精简系统提示词</h3>
-                        <p>极简、聚焦的指令，而不是臃肿的框架。
-                            你的 Token 用于实际工作，不是提示词开销。
-                            工作流级工具列表让它更加精简。</p>
+                        <p>内置提示词短小、聚焦、没有模板废话。
+                            工具描述力求精简。你的上下文预算用在实际工作上，
+                            而不是框架开销。</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="split"></i></div>
-                        <h3>Agent 子委托</h3>
-                        <p>智能体工具在廉价模型上运行多步操作。
-                            五轮文件搜索变成一次调用。
+                        <h3>智能体式工具</h3>
+                        <p>探索性任务由智能体式工具在更便宜的模型上运行。
+                            你只拿到一个简洁的结论，中间草稿完全不占空间。
                             贵价模型永远不做苦力活。</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="scissors"></i></div>
                         <h3>上下文编辑</h3>
-                        <p>自动裁剪历史中旧的工具调用负载和思考块。
-                            上下文达到 80% 容量时自动压缩，
-                            新会话无缝衔接。</p>
+                        <p>随着对话增长，早期的工具调用负载和思考块变得不再相关。
+                            上下文编辑用紧凑的占位符替换庞大的工具输入输出，
+                            让模型看到干净、聚焦的历史。</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="brain"></i></div>
                         <h3>跨会话记忆</h3>
-                        <p>关键洞察在压缩后存活，并注入到后续会话中。
-                            模型不必每次从零开始学习你的项目模式——
-                            更少的探索轮次，更少的上下文浪费。</p>
+                        <p>好的见解不断积累权重，过时的知识自然衰减。
+                            积累的记忆自动注入，让助手从第一句话就了解
+                            你的偏好和项目背景。</p>
                     </div>
                 </div>
             </div>
@@ -377,7 +393,7 @@ You are a senior reviewer...</code></pre></div>
                     <div class="provider-grid">
                         <div class="provider-tag">Zenmux</div>
                         <div class="provider-tag">DeepSeek</div>
-                        <div class="provider-tag">Kimi</div>
+                        <div class="provider-tag">Kimi for Coding</div>
                         <div class="provider-tag">OpenRouter</div>
                         <div class="provider-tag">智谱 (GLM)</div>
                         <div class="provider-tag">MiniMax</div>
@@ -411,8 +427,8 @@ You are a senior reviewer...</code></pre></div>
                     <span class="section-label">跨会话记忆</span>
                     <h2 class="section-title">边用边学</h2>
                     <p class="section-subtitle">
-                        OmniContext CLI 记住你的编码风格、项目模式和历史错误。
-                        关键点会随时间评分——有用的洞察会留下，无关的自然衰减。
+                        记忆提取在对话压缩时自动触发。模型回顾当前会话，提炼关键要点，
+                        并评估已有的要点。每个要点的评分根据它在对话中的表现变动。
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
@@ -478,7 +494,8 @@ You are a senior reviewer...</code></pre></div>
                 <h2 class="section-title">随工作场景而行</h2>
                 <p class="section-subtitle">
                     终端是大本营，但 OmniContext CLI 延伸到你使用的每个工具。
-                    一个 AI，一致的上下文，零切换成本。
+                    桌面版把一切串联起来，将你的 IDE、浏览器和 Office 应用
+                    连接到同一个实例。
                 </p>
             </div>
 
@@ -495,7 +512,7 @@ You are a senior reviewer...</code></pre></div>
                         <span>工作区管理</span>
                         <span>模型配置</span>
                         <span>系统托盘</span>
-                        <span>连接中枢</span>
+                        <span>Office 安装</span>
                     </div>
                 </div>
 
@@ -594,9 +611,9 @@ You are a senior reviewer...</code></pre></div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="bot"></i></div>
-                    <h3>自定义 Agent</h3>
-                    <p>编写一个包含提示模板、参数 Schema 和工具权限的 Markdown 文件，
-                        它立即变成可调用的工具。</p>
+                    <h3>智能体式工具</h3>
+                    <p>写一个带提示词模板、参数定义和工具权限的 Markdown 文件，
+                        立刻成为可调用的智能体式工具。添加 OMX-AGENTS.md 作为全局 Agent 指令。</p>
                     <div class="extend-path">~/.omx/agents/review.md</div>
                 </div>
                 <div class="extend-card">
@@ -629,8 +646,8 @@ You are a senior reviewer...</code></pre></div>
                 <div class="detail-item">
                     <i data-lucide="feather"></i>
                     <h3>精简系统提示词</h3>
-                    <p>极简、聚焦的指令。你的 Token 用于实际工作，
-                        而不是臃肿的框架开销。</p>
+                    <p>内置提示词短小、聚焦、没有模板废话。
+                        你的上下文预算用在实际工作上，而不是框架开销。</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="shield"></i>
@@ -640,8 +657,8 @@ You are a senior reviewer...</code></pre></div>
                 <div class="detail-item">
                     <i data-lucide="scissors"></i>
                     <h3>上下文编辑</h3>
-                    <p>自动裁剪旧的工具调用负载和思考块。
-                        在长会话中保持 Token 使用精简。</p>
+                    <p>用紧凑的占位符替换庞大的工具输入输出，
+                        剥离推理痕迹，让模型看到干净、聚焦的历史。</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="archive"></i>
@@ -661,9 +678,9 @@ You are a senior reviewer...</code></pre></div>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="database"></i>
-                    <h3>提示缓存</h3>
-                    <p>Anthropic 和 Gemini 自动缓存控制。
-                        自定义 TTL（5 分钟或 1 小时）降低成本。</p>
+                    <h3>提示词缓存</h3>
+                    <p>你可以自主选择缓存 TTL：5 分钟适合快速迭代，
+                        1 小时适合长时间工作。重复的上下文块直接从缓存读取。</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="palette"></i>
@@ -711,7 +728,7 @@ You are a senior reviewer...</code></pre></div>
         <div class="container footer-content">
             <div class="footer-left">
                 <span class="logo"><img src="../assets/img/logo.svg" alt="" class="logo-icon">OmniContext CLI</span>
-                <span class="footer-tagline">zero-telemetry AI coding assistant</span>
+                <span class="footer-tagline">上下文优先、零遥测的编程助手</span>
             </div>
             <div class="footer-links">
                 <a href="../docs/zh-Hans/">文档</a>

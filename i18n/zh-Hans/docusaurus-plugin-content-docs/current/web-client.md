@@ -35,15 +35,21 @@ omx --serve --web --host 0.0.0.0
 - **会话管理** - 切换会话、回退消息
 - **模型切换** - 在对话中切换模型
 
-## 颜色主题
+## 主题模式
 
-通过命令行设置颜色主题：
+通过命令行设置主题模式：
 
 ```bash
-omx --serve --web --theme crystal
+omx --serve --web --theme dark
+omx --serve --web --theme light
+omx --serve --web --theme auto
 ```
 
-可用预设：crystal、splash、horizon、neon、forest、indigo、rosette、retro、tangerine、emerald、earth、twilight、inferno、sunshine、blossom、cocoa、nautical。
+默认为 `auto`，跟随系统偏好。
+
+## 颜色主题
+
+颜色主题通过偏好设置菜单配置（按 Escape，选择 **Change preferences**，然后选择 **Color theme**）。共 17 种内置预设：crystal、splash、horizon、neon、forest、indigo、rosette、retro、tangerine、emerald、earth、twilight、inferno、sunshine、blossom、cocoa、nautical。
 
 ## 认证
 

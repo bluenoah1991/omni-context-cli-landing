@@ -62,7 +62,7 @@ omx --add-provider openrouter --api-key sk-...
 | `--scope <scope>` | 配置保存范围：global（默认）、project 或 memory |
 | `--approve-write` | 写入工具执行前需要审批（Bash、Edit、Write） |
 | `--approve-all` | 所有工具执行前需要审批 |
-| `--theme <name>` | 设置 Web UI 颜色主题 |
+| `--theme <mode>` | 设置 Web UI 主题模式（light、dark、auto） |
 | `--install-vscode-extension` | 安装 VS Code 扩展 |
 | `--list-providers` | 列出可用模型供应商 |
 | `--add-provider <id>` | 从供应商添加模型（需要 `--api-key`） |

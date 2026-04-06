@@ -67,8 +67,10 @@ The preferences submenu lets you toggle:
 - **Completion notification** - Notify when response takes over a minute
 - **Context editing** - Trim old tool calls and thinking blocks to save tokens
 - **Cross-session memory** - Remember key points across sessions
+- **Diff view** - Show inline diffs when the model edits files
 - **Extended thinking** - Enable deeper reasoning for complex tasks
 - **IDE context** - Include context from your IDE
+- **Response language** - Choose the language for model responses (auto, English, Chinese)
 - **Server compaction** - Let the server handle context compaction instead of the client
 - **Color theme** - Pick a color scheme from 17 presets
 - **Streaming output** - Show responses as they generate

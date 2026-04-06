@@ -34,9 +34,9 @@ omx --remove-provider deepseek
 |--------|------|
 | **zenmux** | Zenmux 模型列表（Anthropic、Responses、Gemini、OpenAI 格式） |
 | **deepseek** | DeepSeek Chat、DeepSeek Reasoner |
-| **kimi** | Kimi K2 |
+| **moonshot** | Kimi for Coding: Kimi-2.5（Anthropic 和 OpenAI 格式） |
 | **openrouter** | OpenRouter 模型列表（OpenAI 和 Anthropic 格式） |
-| **zhipu** | GLM-5、GLM-4.7、GLM-4.7-Flash、GLM-4.7-FlashX |
+| **zhipu** | GLM-5.1、GLM-5、GLM-5-Turbo |
 | **minimax** | MiniMax-M2.7、MiniMax-M2.7-Highspeed |
 
 ## 手动添加模型
@@ -93,15 +93,15 @@ API URL: https://generativelanguage.googleapis.com/v1beta
 Context Size: 128
 ```
 
-#### Moonshot Kimi
+#### Kimi for Coding
 
 ```
-Name: kimi-k2-0711-preview
-Nickname: Kimi K2
-Provider: openai
+Name: kimi-for-coding
+Nickname: Kimi for Coding: Kimi-2.5
+Provider: anthropic
 API Key: your-kimi-key
-API URL: https://api.kimi.com/v1
-Context Size: 128
+API URL: https://api.kimi.com/coding/v1/messages
+Context Size: 200
 ```
 
 #### Ollama（本地）

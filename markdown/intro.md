@@ -62,7 +62,7 @@ omx --add-provider openrouter --api-key sk-...
 | `--scope <scope>` | Where to save config changes: global (default), project, or memory |
 | `--approve-write` | Require approval before write tools (Bash, Edit, Write) |
 | `--approve-all` | Require approval before all tools |
-| `--theme <name>` | Set color theme for web UI |
+| `--theme <mode>` | Set web UI theme mode (light, dark, auto) |
 | `--install-vscode-extension` | Install the VS Code extension |
 | `--list-providers` | List available model providers |
 | `--add-provider <id>` | Add models from a provider (requires `--api-key`) |
