@@ -1,171 +1,62 @@
 ---
-slug: /tutorial/subagents
-title: Custom SubAgents
-sidebar_label: Custom SubAgents
-sidebar_position: 7
+slug: /tutorial/custom-agents
+title: Custom Agents
+sidebar_label: Custom Agents
+sidebar_position: 5
 ---
 
-# Custom SubAgents
+# Custom Agents
 
-You can create your own SubAgents to extend Omx with specialized capabilities.
+Custom agents let you create new agent tools by writing a markdown file. Each agent becomes a callable tool that the model can invoke, running as a sub-agent with its own set of allowed tools.
 
-## Agent Location
+## Where to Store Agents
 
-Custom agents are stored in `~/.omx/agents/` (user-wide) or `.omx/agents/` in your project root (project-specific). Each agent is defined in a single `.md` file. Project-level agents take priority over user-level agents with the same name.
+| Location | Scope |
+|----------|-------|
+| `~/.omx/agents/` | Available in all projects |
+| `.omx/agents/` | Available in current project only |
 
-## Agent Structure
+## File Structure
 
-An agent file consists of two parts:
-
-1. **Frontmatter** - YAML metadata defining the agent's interface
-2. **Prompt Template** - Handlebars template for the agent's instructions
-
-### Example: Code Review Agent
-
-Create `~/.omx/agents/review.md`:
+Each agent is a markdown file with YAML frontmatter and a Handlebars prompt template:
 
 ```markdown
 ---
-name: review
-description: Review code changes and provide feedback on quality, bugs, and improvements.
-allowedTools: [Bash, Read, Grep]
+name: Review
+description: Review code changes for bugs and style issues
+allowedTools: [Read, Glob, Grep, Bash, BashOutput]
+displayFields: [filePath]
 parameters:
   properties:
-    target:
+    filePath:
       type: string
-      description: File or directory to review, or 'staged' for git staged changes
-    focus:
-      type: string
-      description: What to focus on - security, performance, style, or all
-  required: [target]
+      description: Path to the file or directory to review
+  required: [filePath]
 ---
 
-Review target: {{target}}
-Focus area: {{#if focus}}{{focus}}{{else}}all{{/if}}
+Review the code at {{filePath}} for:
+- Bugs and logic errors
+- Style inconsistencies
+- Performance issues
 
-{{#if (eq target "staged")}}
-First, run `git diff --cached` to get the staged changes.
-{{else}}
-Read the specified file or directory to understand the code.
-{{/if}}
-
-Analyze the code and provide feedback on:
-1. Code quality and readability
-2. Potential bugs or edge cases
-3. Performance considerations
-4. Security issues (if focus includes security)
-5. Suggested improvements
-
-Format your response as a structured review with sections for each category.
+Use grep to find patterns and read to examine specific files.
+Return a summary of findings with file paths and line numbers.
 ```
 
-## Frontmatter Reference
+### Frontmatter Fields
 
-### name
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Tool name (becomes `Agent_Name`) |
+| `description` | string | What the tool does (shown to the model) |
+| `allowedTools` | string[] | Which base tools this agent can use |
+| `displayFields` | string[] | Which parameter fields to show in the UI |
+| `parameters` | object | JSON Schema for the tool's input parameters |
 
-The agent's identifier. Used as `agent_name` in tool calls.
+### Template Variables
 
-### description
+The prompt body uses Handlebars syntax. All parameters defined in the schema are available as template variables. Use `{{#if param}}` for optional parameters.
 
-Brief description shown when listing available tools.
+## Global Agent Instructions
 
-### allowedTools
-
-Array of tools the agent can use:
-
-- `Bash` - Execute shell commands
-- `BashOutput` - Stream bash output
-- `Read` - Read file contents
-- `Write` - Write file contents
-- `Edit` - Edit files
-- `Glob` - Find files by pattern
-- `Grep` - Search file contents
-- `WebFetch` - Fetch content from a URL
-- `WebSearch` - Search the web (Anthropic models only)
-- `SaveArtifact` - Save a generated image or file to disk
-
-### model
-
-Override which model runs this agent. The value is matched against model names, so a partial match like `deepseek` works. If omitted, the agent model (or default model) is used.
-
-```yaml
-model: deepseek-chat
-```
-
-### parameters
-
-JSON Schema defining the agent's input parameters:
-
-```yaml
-parameters:
-  properties:
-    paramName:
-      type: string | number | boolean
-      description: Parameter description
-  required: [paramName]
-```
-
-## Prompt Template
-
-The prompt template uses [Handlebars](https://handlebarsjs.com/) syntax.
-
-### Variable Interpolation
-
-```handlebars
-{{variableName}}
-```
-
-### Conditionals
-
-```handlebars
-{{#if variable}}
-  Content when variable is truthy
-{{else}}
-  Content when variable is falsy
-{{/if}}
-```
-
-### Equality Check
-
-```handlebars
-{{#if (eq variable "value")}}
-  Content when variable equals "value"
-{{/if}}
-```
-
-## Agent Instructions
-
-You can provide global instructions for all agents via an `OMX-AGENTS.md` file. This works similarly to project instructions (`OMX.md`) but applies specifically to agent execution.
-
-### File Location
-
-The file is searched in order:
-
-1. `./OMX-AGENTS.md` - Project-specific agent instructions
-2. `~/.omx/OMX-AGENTS.md` - User-wide agent instructions
-
-The first file found is used. Instructions are injected into agent sessions before task execution.
-
-Skills are not available inside agent runs.
-
-### Example
-
-Create `OMX-AGENTS.md` in your project:
-
-```markdown
-# Agent Instructions
-
-- Always use verbose output for debugging
-- Prefer git commands over direct file operations
-- Check for .env files before running any commands
-```
-
-## Using Custom Agents
-
-Once created, your agent appears as `agent_name` in the available tools. The model can call it like any built-in agent.
-
-You can also explicitly request your agent:
-
-```
-Use the review agent to check the staged changes for security issues.
-```
+Create `OMX-AGENTS.md` in your project root to add instructions that apply to all agents. This file is automatically prepended to every agent's prompt.

@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Basic Usage
 
-This guide covers the essential shortcuts, commands, and menu options for working with Omx.
+This guide covers the essential shortcuts, commands, and menu options for working with omx.
 
 ## Keyboard Shortcuts
 
@@ -35,9 +35,9 @@ Type these commands directly in the chat:
 | /model | Switch to a different model |
 | /session | Load a previous session |
 | /git-commit | Generate a commit message for staged changes and commit |
-| /exit | Exit Omx |
+| /exit | Exit omx |
 
-When you start typing &#x60;/&#x60;, a picker appears with matching commands. Use arrow keys to navigate and Enter to select.
+When you start typing `/`, a picker appears with matching commands. Use arrow keys to navigate and Enter to select. Custom skills also appear in this picker.
 
 ## Menu
 
@@ -52,13 +52,12 @@ Press Escape to open the menu. From here you can:
 
 ### Workflow Presets
 
-Omx supports five workflow presets:
+omx ships with two workflow presets:
 
-- **Normal** - Basic tools with manual orchestration
-- **Specialist** (default) - Agentic tools that work autonomously. See [Specialist Mode](/tutorial/specialist-mode)
-- **Artist** - Visual-first responses with images when supported. See [Artist Mode](/tutorial/artist-mode)
-- **Explorer** - Research-first web search before answering. See [Explorer Mode](/tutorial/explorer-mode)
-- **Assistant** - A personal assistant for app integrations like browser, Office, and Figma
+- **Programming** (default) - Coding assistant with base tools, agent tools, and MCP integration. Concise output, minimal overhead. Reads OMX.md and CLAUDE.md automatically.
+- **General** - Personal assistant for documents, spreadsheets, and presentations. Proactive with tools, conversational tone.
+
+You can create custom workflows by adding markdown files to `~/.omx/workflows/` or `.omx/workflows/`. See [Workflows](/tutorial/workflows) for details.
 
 ### Preferences
 
@@ -71,7 +70,7 @@ The preferences submenu lets you toggle:
 - **Extended thinking** - Enable deeper reasoning for complex tasks
 - **IDE context** - Include context from your IDE
 - **Server compaction** - Let the server handle context compaction instead of the client
-- **Color theme** - Pick a terminal color scheme
+- **Color theme** - Pick a color scheme from 17 presets
 - **Streaming output** - Show responses as they generate
 
 Use arrow keys to navigate, Enter to select, and Escape to go back.

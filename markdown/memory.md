@@ -2,77 +2,45 @@
 slug: /tutorial/memory
 title: Cross-Session Memory
 sidebar_label: Cross-Session Memory
-sidebar_position: 11
+sidebar_position: 9
 ---
 
 # Cross-Session Memory
 
-Memory is Omx's implementation of **Agentic Context Engineering (ACE)** - a system for persistent memory that improves responses over time.
+omx can remember key insights across sessions. When a conversation is compacted, the model reflects on the session, pulls out key points, and evaluates existing ones.
 
 ## How It Works
 
-Traditional AI assistants start fresh every session. They don't remember your coding style preferences, project-specific patterns, mistakes made in previous sessions, or successful approaches that worked.
+Memory extraction runs automatically during compaction. Each memory point carries a score that shifts based on usefulness:
 
-Memory maintains a persistent set of **Key Points** - concise learnings extracted from your conversations. These key points are automatically injected into future conversations, helping Omx better understand and adapt to your workflow.
+| Rating | Score Change |
+|--------|-------------|
+| Helpful | +3 |
+| Neutral | -1 |
+| Harmful | -6 |
 
-## Reflection and Compaction
-
-At the end of each conversation (whether through automatic compaction or manual `/compact`), Omx reflects on the dialogue:
-
-1. Distill conversation into trajectories
-2. Extract new key points
-3. Evaluate existing key points
-4. Update scores
-
-### Key Point Lifecycle
-
-**Creation**: When compaction occurs, Omx analyzes the conversation and extracts new insights. These become new key points with a score of 0.
-
-**Evaluation**: Each time compaction occurs, existing key points are evaluated:
-- **Helpful** (+3): The key point contributed to a good outcome
-- **Harmful** (-6): The key point led to a poor outcome
-- **Neutral** (-1): The key point was irrelevant
-
-Unused key points naturally decay over time.
-
-**Removal**: Key points with scores at -10 or below are automatically removed, ensuring memory stays relevant.
+Points that drop below -10 are pruned. Good insights accumulate weight over multiple sessions. Bad advice is flushed quickly. Stale knowledge decays on its own.
 
 ## Enabling Memory
 
-Memory is enabled by default. You can toggle it through the menu:
+Toggle cross-session memory through the preferences menu:
 
 1. Press `Escape` to open the menu
-2. Select **Change your preferences**
-3. Select **Cross-session memory**
+2. Select **Change preferences**
+3. Toggle **Cross-session memory**
 
-Check with `/status` -- look for `Cross-session memory: √`.
+## Storage
 
-## What Gets Learned
+Each project maintains its own memory file at `.omx/memory.json`. The file is a JSON array of memory points, each with a content string and a numeric score.
 
-Memory captures:
-- Project structure
-- Coding preferences
-- Common patterns
-- Gotchas and caveats
-- Tool usage preferences
+Edit the file directly for full control -- add project-specific knowledge, remove incorrect entries, or adjust scores manually.
 
-## Data Storage
+## What Gets Remembered
 
-Memory is stored per-project at `~/.omx/projects/<encoded-path>/memory.json`, where `<encoded-path>` is the base64url encoding of the lowercased current working directory.
+The model decides what's worth remembering during compaction. Typical memory points include:
 
-```json
-{
-  "version": "1.0",
-  "keyPoints": [
-    {
-      "name": "kpt_001",
-      "text": "This project uses TypeScript strict mode...",
-      "score": 3
-    }
-  ]
-}
-```
-
-## Manual Management
-
-You can manually edit `memory.json` to remove unwanted key points, adjust scores, or add known information directly.
+- Project structure and conventions
+- Technology choices and configurations
+- Coding patterns specific to the codebase
+- Mistakes made and corrections applied
+- User preferences for code style

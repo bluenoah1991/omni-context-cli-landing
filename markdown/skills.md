@@ -1,157 +1,64 @@
 ---
 slug: /tutorial/skills
-title: Custom Skills
-sidebar_label: Custom Skills
-sidebar_position: 9
+title: Skills
+sidebar_label: Skills
+sidebar_position: 7
 ---
 
-# Custom Skills
+# Skills
 
-Skills are reusable instruction sets that extend Omx with specialized knowledge and workflows. Unlike agents (which execute tools autonomously), skills provide detailed instructions that the model follows within the current conversation.
+Skills are reusable instruction sets that inject domain-specific knowledge and workflows into the current conversation. They're invoked as slash commands and are compatible with the Claude Code skill format.
 
-## What Are Skills?
+## Where to Store Skills
 
-Skills are a way to teach Omx how to handle specific tasks. When you load a skill, its instructions become available to guide the model's behavior. This is useful for:
+| Location | Scope |
+|----------|-------|
+| `~/.omx/skills/` | Available in all projects |
+| `.omx/skills/` | Available in current project only |
 
-- Complex multi-step workflows
-- Domain-specific knowledge
-- Project-specific conventions
-- Reusable templates and patterns
+## File Structure
 
-## Skill Location
-
-Skills are stored in `~/.omx/skills/` (user-wide) or `.omx/skills/` in your project root (project-specific). Each skill lives in its own directory. Project-level skills take priority over user-level skills with the same name.
+Each skill is a directory containing a `SKILL.md` file:
 
 ```
 ~/.omx/skills/
-├── my-skill/
-│   ├── SKILL.md      # Required: skill definition
-│   └── templates/    # Optional: additional resources
-└── another-skill/
-    └── SKILL.md
+  code-style/
+    SKILL.md
+  review/
+    SKILL.md
 ```
 
-## Skill Structure
-
-A skill is defined in a `SKILL.md` file with frontmatter and instructions:
+The `SKILL.md` file contains the instructions that get injected into the conversation when the skill is invoked:
 
 ```markdown
 ---
-name: skill-name
-description: Brief description of what this skill does
+name: Code Style
 ---
 
-## Instructions
+When reviewing or writing code in this project, follow these conventions:
 
-Detailed instructions for the skill...
-
-## Example Usage
-
-Show how to use the skill...
-```
-
-### Frontmatter Fields
-
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Unique identifier for the skill |
-| `description` | Yes | Brief description shown in skill listings |
-
-## Creating a Skill
-
-Create `~/.omx/skills/code-style/SKILL.md`:
-
-```markdown
----
-name: code-style
-description: Project-specific coding conventions
----
-
-## Code Style Guidelines
-
-### TypeScript Conventions
-- Use `interface` for object shapes, `type` for unions
-- Always specify return types for public functions
-
-### Naming Conventions
-- Components: PascalCase
-- Hooks: camelCase with `use` prefix
-- Files: kebab-case
+- Use 2-space indentation
+- Prefer const over let
+- Use explicit return types on all exported functions
+- Write tests for all public APIs
 ```
 
 ## Using Skills
 
-### Loading a Skill
-
-Ask Omx to load a skill:
+Skills appear in the slash command picker. Type `/` and start typing the skill name:
 
 ```
-Load the api-design skill
+/code-style
 ```
 
-Or use the skill tool directly:
+When invoked, the skill's instructions are injected into the current conversation context. The model then follows those instructions for the rest of the session.
 
-```
-Use the skill tool to load code-style
-```
+## Frontmatter
 
-### Skill in Context
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Display name for the skill |
 
-Once loaded, the skill's instructions are available to the model. For example, after loading `api-design`:
+## Claude Code Compatibility
 
-```
-Design an API for user authentication
-```
-
-The model will follow the conventions defined in your skill.
-
-## Skills vs Agents vs Slash Commands
-
-| Feature | Purpose | Execution |
-|---------|---------|-----------|
-| **Skills** | Provide instructions/knowledge | Model follows instructions in context |
-| **Agents** | Execute autonomous tasks | Model delegates to sub-agent with tools |
-| **Slash Commands** | Quick prompt shortcuts | Expands to full prompt, model responds |
-
-Choose skills when you want to:
-- Establish conventions for the session
-- Provide domain knowledge
-- Guide behavior without automation
-
-Choose agents when you want to:
-- Automate multi-step tasks
-- Execute commands autonomously
-- Handle errors automatically
-
-## Progressive Context
-
-Skills use progressive disclosure. Only skill names and descriptions appear in the system prompt. When the model calls the skill tool, Omx returns the full instructions along with the skill's base directory path.
-
-Skills are available when the workflow preset is **Normal**. Other presets focus on agent workflows and do not include skills in the system prompt.
-
-Your skill can then reference additional files in its directory:
-
-```markdown
----
-name: templates
-description: Project templates and boilerplate
----
-
-## Available Templates
-
-Read files from this skill's base directory as needed:
-
-- `templates/component.tsx` - Standard component structure
-- `templates/test.ts` - Test file structure
-```
-
-The model can read these files using the standard read tool when needed, keeping context usage efficient.
-
-## Best Practices
-
-- Keep each skill focused on a single concern
-- Write specific, actionable instructions
-- Update skills as your project evolves
-- Share via version control or team wiki
-
-
+omx reads skills in the same format as Claude Code. If you already have skills set up for Claude Code, they work with omx automatically.

@@ -1,171 +1,62 @@
 ---
-slug: /tutorial/subagents
-title: 自定义子智能体
-sidebar_label: 自定义子智能体
-sidebar_position: 7
+slug: /tutorial/custom-agents
+title: 自定义 Agent
+sidebar_label: 自定义 Agent
+sidebar_position: 5
 ---
 
-# 自定义子智能体
+# 自定义 Agent
 
-你可以创建自己的子智能体来扩展 Omx 的专业能力。
+自定义 Agent 让你通过编写 Markdown 文件来创建新的智能体工具。每个 Agent 成为模型可调用的工具，以子智能体方式运行并拥有自己的工具权限。
 
-## 智能体位置
+## 存储位置
 
-自定义智能体存储在 `~/.omx/agents/`（用户级）或项目根目录下的 `.omx/agents/`（项目级）。每个智能体在一个 `.md` 文件中定义。项目级智能体在同名时优先于用户级智能体。
+| 位置 | 作用范围 |
+|------|---------|
+| `~/.omx/agents/` | 所有项目可用 |
+| `.omx/agents/` | 仅当前项目可用 |
 
-## 智能体结构
+## 文件结构
 
-智能体文件由两部分组成：
-
-1. **Frontmatter** - 定义智能体接口的 YAML 元数据
-2. **提示模板** - 智能体指令的 Handlebars 模板
-
-### 示例：代码审查智能体
-
-创建 `~/.omx/agents/review.md`：
+每个 Agent 是一个包含 YAML 前置信息和 Handlebars 提示模板的 Markdown 文件：
 
 ```markdown
 ---
-name: review
-description: 审查代码变更并提供关于质量、bug 和改进的反馈。
-allowedTools: [Bash, Read, Grep]
+name: Review
+description: Review code changes for bugs and style issues
+allowedTools: [Read, Glob, Grep, Bash, BashOutput]
+displayFields: [filePath]
 parameters:
   properties:
-    target:
+    filePath:
       type: string
-      description: 要审查的文件或目录，或 'staged' 表示 git 暂存的更改
-    focus:
-      type: string
-      description: 关注点 - security、performance、style 或 all
-  required: [target]
+      description: Path to the file or directory to review
+  required: [filePath]
 ---
 
-审查目标：{{target}}
-关注领域：{{#if focus}}{{focus}}{{else}}all{{/if}}
+Review the code at {{filePath}} for:
+- Bugs and logic errors
+- Style inconsistencies
+- Performance issues
 
-{{#if (eq target "staged")}}
-首先，运行 `git diff --cached` 获取暂存的更改。
-{{else}}
-读取指定的文件或目录以理解代码。
-{{/if}}
-
-分析代码并提供以下方面的反馈：
-1. 代码质量和可读性
-2. 潜在的 bug 或边界情况
-3. 性能考虑
-4. 安全问题（如果关注点包含 security）
-5. 改进建议
-
-将你的回复格式化为结构化的审查，每个类别一个章节。
+Use grep to find patterns and read to examine specific files.
+Return a summary of findings with file paths and line numbers.
 ```
 
-## Frontmatter 参考
+### 前置信息字段
 
-### name
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `name` | string | 工具名称（变为 `Agent_Name`） |
+| `description` | string | 工具功能描述（展示给模型） |
+| `allowedTools` | string[] | 此 Agent 可使用的基础工具 |
+| `displayFields` | string[] | 在 UI 中显示的参数字段 |
+| `parameters` | object | 工具输入参数的 JSON Schema |
 
-智能体的标识符。在工具调用中用作 `agent_name`。
+### 模板变量
 
-### description
+提示正文使用 Handlebars 语法。Schema 中定义的所有参数都可作为模板变量使用。可选参数使用 `{{#if param}}`。
 
-列出可用工具时显示的简短描述。
+## 全局 Agent 指令
 
-### allowedTools
-
-智能体可以使用的工具数组：
-
-- `Bash` - 执行 shell 命令
-- `BashOutput` - 流式 bash 输出
-- `Read` - 读取文件内容
-- `Write` - 写入文件内容
-- `Edit` - 编辑文件
-- `Glob` - 按模式查找文件
-- `Grep` - 搜索文件内容
-- `WebFetch` - 获取 URL 内容
-- `WebSearch` - 网络搜索（仅 Anthropic 模型）
-- `SaveArtifact` - 将生成的图片或文件保存到磁盘
-
-### model
-
-指定运行此智能体的模型。值会按模型名称模糊匹配，比如写 `deepseek` 就能匹配到。如果不指定，使用智能体模型（或默认模型）。
-
-```yaml
-model: deepseek-chat
-```
-
-### parameters
-
-定义智能体输入参数的 JSON Schema：
-
-```yaml
-parameters:
-  properties:
-    paramName:
-      type: string | number | boolean
-      description: 参数描述
-  required: [paramName]
-```
-
-## 提示模板
-
-提示模板使用 [Handlebars](https://handlebarsjs.com/) 语法。
-
-### 变量插值
-
-```handlebars
-{{variableName}}
-```
-
-### 条件
-
-```handlebars
-{{#if variable}}
-  variable 为真时的内容
-{{else}}
-  variable 为假时的内容
-{{/if}}
-```
-
-### 相等检查
-
-```handlebars
-{{#if (eq variable "value")}}
-  variable 等于 "value" 时的内容
-{{/if}}
-```
-
-## 智能体指令
-
-你可以通过 `OMX-AGENTS.md` 文件为所有智能体提供全局指令。这类似于项目指令（`OMX.md`），但专门用于智能体执行。
-
-### 文件位置
-
-按顺序搜索文件：
-
-1. `./OMX-AGENTS.md` - 项目专用智能体指令
-2. `~/.omx/OMX-AGENTS.md` - 用户全局智能体指令
-
-使用找到的第一个文件。指令会在任务执行前注入到智能体会话中。
-
-子智能体执行时不会加载 skills。
-
-### 示例
-
-在项目中创建 `OMX-AGENTS.md`：
-
-```markdown
-# 智能体指令
-
-- 始终使用详细输出以便调试
-- 优先使用 git 命令而非直接文件操作
-- 运行任何命令前检查 .env 文件
-```
-
-## 使用自定义智能体
-
-创建后，你的智能体会作为 `agent_name` 出现在可用工具中。模型可以像调用内置智能体一样调用它。
-
-你也可以明确请求你的智能体：
-
-```
-使用 review 智能体检查暂存的更改是否有安全问题。
-```
+在项目根目录创建 `OMX-AGENTS.md`，为所有 Agent 添加通用指令。该文件会自动添加到每个 Agent 的提示前面。

@@ -2,7 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 const config = {
   title: 'OmniContext CLI',
-  tagline: 'Agentic Tools for Developers',
+  tagline: 'Context-First AI Coding Assistant',
   url: 'https://bluenoah1991.github.io',
   baseUrl: '/omni-context-cli-landing/docs/',
   organizationName: 'bluenoah1991',

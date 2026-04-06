@@ -53,7 +53,7 @@ if (mobileMenuBtn && mobileMenu) {
     });
 }
 
-var revealElements = document.querySelectorAll('.section-header, .comparison-wide, .tools-grid, .presets-grid, .split-layout, .extend-grid, .protocols-grid, .integration-grid, .details-grid, .cta-section, .cost-explainer');
+var revealElements = document.querySelectorAll('.section-header, .tools-grid, .workflow-grid, .split-layout, .extend-grid, .protocols-grid, .integration-grid, .details-grid, .cta-section, .cost-explainer');
 
 var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {

@@ -1,17 +1,17 @@
 ---
 slug: /tutorial/ide-context
-title: IDE 上下文感知
-sidebar_label: IDE 上下文
+title: VS Code 扩展
+sidebar_label: VS Code 扩展
 sidebar_position: 10
 ---
 
-# IDE 上下文感知
+# VS Code 扩展
 
-Omx 可以与你的 IDE 集成，提供上下文感知的辅助。当连接时，Omx 会显示编辑器中当前活动的文件和选择内容。
+OmniContext VS Code 扩展将编辑器连接到 omx，提供文件上下文、诊断信息和差异视图。
 
-## 要求
+## 安装
 
-IDE 上下文功能需要安装 **OmniContext for VS Code** 扩展。可以通过以下命令安装：
+直接从 omx 安装扩展：
 
 ```bash
 omx --install-vscode-extension
@@ -19,41 +19,30 @@ omx --install-vscode-extension
 
 ## 工作原理
 
-当你在 VS Code 中使用 OmniContext 扩展时，它会自动：
+在偏好设置中启用 IDE 上下文后，omx 会接收编辑器状态信息：
 
-- 在后台启动本地 Omx 服务器
-- 监控你在编辑器中的活动文件和文本选择
-- 通过 MCP 暴露 IDE 工具，用于文件操作、诊断等
-- 将文件上下文附加到你的消息中，以提供更相关的响应
+- **活动文件** - 编辑器中当前打开的文件
+- **选区** - 选中的文本
+- **诊断信息** - VS Code 的错误和警告
 
-## 连接状态
+这些上下文会自动包含在对话中，omx 知道你在看什么，无需复制粘贴。
 
-当 Omx 连接到你的 IDE 时，你会看到：
+## MCP 工具
 
-- 状态栏显示 IDE 名称
-- 输入框旁边显示当前文件名和行号（例如：`@ file.ts:10-20`）
-- 选择的内容自动包含在消息上下文中
+VS Code 扩展提供 omx 可调用的 MCP 工具：
 
-## 可用的 IDE 工具
-
-OmniContext 扩展提供以下 MCP 工具：
-
-| 工具 | 说明 |
+| 工具 | 描述 |
 |------|------|
-| `mcp_ide_visual_studio_code_openFile` | 在编辑器中打开文件 |
-| `mcp_ide_visual_studio_code_openDiff` | 查看新旧内容的差异 |
-| `mcp_ide_visual_studio_code_getDiagnostics` | 获取 VS Code 的错误和警告 |
-| `mcp_ide_visual_studio_code_getOpenEditors` | 列出当前打开的编辑器标签页 |
-| `mcp_ide_visual_studio_code_closeAllDiffTabs` | 关闭所有 diff 编辑器标签页 |
-| `mcp_ide_visual_studio_code_getWorkspaceFolders` | 获取工作区文件夹路径 |
+| **openFile** | 在 VS Code 中打开文件并定位到特定行和列 |
+| **openDiff** | 显示比较新旧内容的差异视图 |
+| **getDiagnostics** | 获取 VS Code 的错误和警告 |
+| **getOpenEditors** | 列出当前打开的编辑器标签页 |
+| **getWorkspaceFolders** | 获取 VS Code 工作区文件夹 |
 
-## 配置
+## 启用 IDE 上下文
 
-IDE 上下文默认启用。你可以通过菜单（按 Escape 访问菜单）来开启或关闭此功能。
+通过偏好设置菜单切换：
 
-## 使用技巧
-
-- 在提问之前在编辑器中选择代码，以获得特定上下文的答案
-- 文件和行号显示帮助你跟踪正在引用的内容
-- 使用 diff 工具在应用更改之前预览变更
-- 诊断功能帮助自动识别代码中的错误
+1. 按 `Escape` 打开菜单
+2. 选择 **Change preferences**
+3. 切换 **IDE context**

@@ -1,17 +1,17 @@
 ---
 slug: /tutorial/ide-context
-title: IDE Context Awareness
-sidebar_label: IDE Context
+title: VS Code Extension
+sidebar_label: VS Code Extension
 sidebar_position: 10
 ---
 
-# IDE Context Awareness
+# VS Code Extension
 
-Omx can integrate with your IDE to provide context-aware assistance. When connected, Omx displays the currently active file and selection from your editor.
+The OmniContext VS Code extension connects your editor to omx, providing file context, diagnostics, and diff views.
 
-## Requirements
+## Installation
 
-IDE context requires the **OmniContext for VS Code** extension to be installed. You can install it via:
+Install the extension directly from omx:
 
 ```bash
 omx --install-vscode-extension
@@ -19,41 +19,30 @@ omx --install-vscode-extension
 
 ## How It Works
 
-When you use the OmniContext extension in VS Code, it automatically:
+When IDE context is enabled in preferences, omx receives information about your editor state:
 
-- Starts a local Omx server in the background
-- Monitors your active file and text selection in the editor
-- Exposes IDE tools via MCP for file operations, diagnostics, and more
-- Attaches file context to your messages for more relevant responses
+- **Active file** - The file currently open in the editor
+- **Selection** - Any selected text
+- **Diagnostics** - Errors and warnings from VS Code
 
-## Connection Status
+This context is automatically included in your conversations, so omx knows what you're looking at without you having to copy-paste.
 
-When Omx is connected to your IDE, you'll see:
+## MCP Tools
 
-- The IDE name displayed in the status bar
-- Current file name and line numbers shown next to your input (e.g., `@ file.ts:10-20`)
-- Selected text automatically included in your message context
-
-## Available IDE Tools
-
-The OmniContext extension provides these MCP tools:
+The VS Code extension provides MCP tools that omx can call:
 
 | Tool | Description |
 |------|-------------|
-| `mcp_ide_visual_studio_code_openFile` | Open a file in the editor |
-| `mcp_ide_visual_studio_code_openDiff` | View diffs between old and new content |
-| `mcp_ide_visual_studio_code_getDiagnostics` | Get errors and warnings from VS Code |
-| `mcp_ide_visual_studio_code_getOpenEditors` | List currently open editor tabs |
-| `mcp_ide_visual_studio_code_closeAllDiffTabs` | Close all diff editor tabs |
-| `mcp_ide_visual_studio_code_getWorkspaceFolders` | Get workspace folder paths |
+| **openFile** | Open a file in VS Code at a specific line and column |
+| **openDiff** | Show a diff view comparing old and new content |
+| **getDiagnostics** | Get errors and warnings from VS Code |
+| **getOpenEditors** | List currently open editor tabs |
+| **getWorkspaceFolders** | Get VS Code workspace folders |
 
-## Configuration
+## Enabling IDE Context
 
-IDE context is enabled by default. You can toggle it on/off through the menu (press Escape to access the menu).
+Toggle IDE context through the preferences menu:
 
-## Workflow Tips
-
-- Select code in your editor before asking questions for context-specific answers
-- The file and line number display helps you track what's being referenced
-- Use the diff tool to review changes before applying them
-- Diagnostics help identify errors in your code automatically
+1. Press `Escape` to open the menu
+2. Select **Change preferences**
+3. Toggle **IDE context**

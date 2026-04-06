@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # 快速开始
 
-Omx 是一个小巧、实用、零遥测的编程助手，在终端中运行。
+omx 是一个零遥测编程助手，运行在终端中，并扩展到 VS Code、Office、浏览器和手机。它将上下文窗口视为稀缺资源，每一层都为高效利用而设计。
 
 ## 安装
 
@@ -15,7 +15,7 @@ Omx 是一个小巧、实用、零遥测的编程助手，在终端中运行。
 npm install -g omni-context-cli
 ```
 
-## 快速入门
+## 快速上手
 
 进入你的项目目录并运行：
 
@@ -23,165 +23,84 @@ npm install -g omni-context-cli
 omx
 ```
 
-Omx 支持 OpenAI、Anthropic、Gemini 和 OpenAI Responses API 格式。
+omx 原生支持四种 API 协议：Anthropic、OpenAI、Gemini 和 OpenAI Responses API。
 
 ### 添加第一个模型
 
-首次运行时，你需要先添加一个模型才能开始对话：
+首次运行时需要添加模型：
 
 1. 按 `Escape` 打开菜单
 2. 选择 **Manage your model list**
 3. 选择 **Add a new model**
 4. 填写表单：
-   - **API Type**: 选择 `Anthropic`、`OpenAI`、`Gemini` 或 `OpenAI Responses API`
-   - **Model Name**: 模型标识符（如 `claude-sonnet-4-20250514`、`gpt-4o`）
-   - **API Key**: 你的 API 密钥
-   - **API URL**: API 基础地址（如 `https://api.anthropic.com`、`https://api.openai.com/v1`）
-   - **Context Size (K)**: 最大上下文窗口，以千为单位（如 `200` 表示 200K）
-   - **Nickname**: 在界面中显示的友好名称
+   - **API Type**：选择 `Anthropic`、`OpenAI`、`Gemini` 或 `OpenAI Responses API`
+   - **Model Name**：模型标识符（如 `claude-sonnet-4-20250514`、`gpt-4o`）
+   - **API Key**：你的 API Key
+   - **API URL**：API 基础端点（如 `https://api.anthropic.com`、`https://api.openai.com/v1`）
+   - **Context Size (K)**：最大上下文窗口，单位为千 Token（如 `200` 表示 200K）
+   - **Nickname**：在 UI 中显示的友好名称
 
-每个字段填写后按 `Enter` 确认，按 `Escape` 返回上一级。
+或者一条命令添加供应商的所有模型：
 
-## 命令行参数
+```bash
+omx --list-providers
+omx --add-provider openrouter --api-key sk-...
+```
 
-| 参数 | 说明 |
+## 命令行选项
+
+| 选项 | 描述 |
 |------|------|
-| `-c, --continue` | 继续上一次会话 |
-| `-d, --diagnostic` | 启用诊断模式，保存请求/响应的 JSON 数据 |
-| `-a, --cost-analysis` | 记录 token 用量到 CSV 文件，用于成本分析 |
-| `-s, --serve` | 以 HTTP 服务器模式启动（而非终端界面） |
+| `-c, --continue` | 继续上次会话 |
+| `-d, --diagnostic` | 启用诊断模式，保存请求/响应 JSON |
+| `-a, --cost-analysis` | 记录 Token 用量到 CSV |
+| `-s, --serve` | 以 HTTP 服务器模式启动 |
 | `-w, --web` | 在浏览器中打开 Web UI（需要 `--serve`） |
-| `-p, --port <port>` | 服务器模式的端口（默认: 5281） |
-| `-H, --host <host>` | 服务器模式绑定的主机地址（默认: localhost） |
-| `--workflow <preset>` | 覆盖工作流预设（normal、specialist、artist、explorer、assistant） |
-| `--scope <scope>` | 配置保存位置：global（默认）、project 或 memory |
-| `--approve-write` | 执行写入工具（Bash、Edit、Write）前需要确认 |
-| `--approve-all` | 执行所有工具前需要确认 |
+| `-p, --port <port>` | 服务器端口（默认：5281） |
+| `-H, --host <host>` | 服务器主机（默认：localhost） |
+| `--workflow <preset>` | 覆盖工作流预设（programming、general） |
+| `--scope <scope>` | 配置保存范围：global（默认）、project 或 memory |
+| `--approve-write` | 写入工具执行前需要审批（Bash、Edit、Write） |
+| `--approve-all` | 所有工具执行前需要审批 |
+| `--theme <name>` | 设置 Web UI 颜色主题 |
 | `--install-vscode-extension` | 安装 VS Code 扩展 |
-| `--list-providers` | 列出可用的模型提供商 |
-| `--add-provider <id>` | 添加提供商的所有模型（需要 `--api-key`） |
-| `--remove-provider <id>` | 移除提供商的所有模型 |
-| `--api-key <key>` | 用于 `--add-provider` 的 API 密钥 |
-| `--parent-pid <pid>` | 父进程退出时自动结束（需要 `--serve`） |
-| `--tls` | 为服务器模式启用 HTTPS |
-| `--acp` | 以 ACP 代理模式通过 stdio 运行（用于 Zed 等编辑器集成） |
+| `--list-providers` | 列出可用模型供应商 |
+| `--add-provider <id>` | 从供应商添加模型（需要 `--api-key`） |
+| `--remove-provider <id>` | 移除供应商的所有模型 |
+| `--api-key <key>` | 用于 `--add-provider` 的 API Key |
+| `--parent-pid <pid>` | 父进程退出时自动退出（需要 `--serve`） |
+| `--tls` | 启用 HTTPS |
+| `--acp` | 以 ACP 代理模式运行（用于 Zed 等编辑器集成） |
 | `--tls-cert <path>` | TLS 证书文件路径 |
 | `--tls-key <path>` | TLS 私钥文件路径 |
-| `--lang <code>` | 设置界面语言（如 `en-US`、`zh-CN`） |
-| `--set-password [password]` | 为 Web UI 设置访问密码 |
-| `--clear-password` | 移除密码并禁用 Web UI 认证 |
-| `--install-daemon` | 安装为 systemd 服务（仅限 Linux） |
-| `--export-project <path>` | 将项目数据（会话、记忆）导出为 gzip 压缩包 |
-| `--import-project <path>` | 从 gzip 压缩包导入项目数据 |
+| `--lang <code>` | 设置 UI 语言（如 `en-US`、`zh-CN`） |
+| `--set-password [password]` | 设置 Web UI 密码 |
+| `--clear-password` | 移除密码并禁用认证 |
+| `--install-daemon` | 安装为 systemd 服务（仅 Linux） |
+| `--export-project <path>` | 导出项目数据到 gzip 归档 |
+| `--import-project <path>` | 从 gzip 归档导入项目数据 |
 
 示例：
 
 ```bash
-# 开始新会话
+# 新建会话
 omx
 
-# 继续上次的对话
+# 继续上次会话
 omx --continue
 
 # 调试 API 调用
 omx --diagnostic
 
-# 追踪 token 成本
-omx --cost-analysis
-
-# 在浏览器中启动 Web UI
+# 在浏览器中打开 Web UI
 omx --serve --web
 
 # 安装 VS Code 扩展
 omx --install-vscode-extension
 
-# 执行文件修改工具前需要确认
+# 文件修改工具需要审批
 omx --approve-write
 
-# 执行所有工具前需要确认
-omx --approve-all
-
-# 以助手模式启动
-omx --workflow assistant
-
-# 以 ACP 代理模式运行（用于 Zed 编辑器集成）
-omx --acp
-
-# 仅将配置更改保存到当前项目
-omx --scope project
-
-# 绑定到所有网络接口
-omx --serve --host 0.0.0.0
-
-# 设置界面语言为中文
-omx --lang zh-CN
-
-# 为 Web UI 设置密码
-omx --set-password
-
-# 在 Linux 上安装为后台服务
-sudo omx --install-daemon
-
-# 导出项目数据用于备份或迁移
-omx --export-project ./backup
-
-# 从压缩包导入项目数据
-omx --import-project ./backup.tar.gz
+# 使用特定工作流
+omx --workflow general
 ```
-
-## 代理配置
-
-Omx 支持 HTTP 和 HTTPS 代理。你可以通过以下两种方式设置代理：
-
-**通过配置文件：** 在 `~/.omx/omx.json` 中设置 `proxy` 字段：
-
-```json
-{
-  "proxy": "http://proxy.example.com:8080"
-}
-```
-
-**通过环境变量：** 当配置文件中未设置代理时，Omx 会自动读取 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NO_PROXY` 环境变量。
-
-支持的 URL 格式：
-
-```
-http://proxy.example.com:8080
-https://proxy.example.com:8443
-```
-
-## 项目指令
-
-Omx 会在每次对话开始时自动加载项目指令。按以下顺序查找文件：
-
-1. 当前目录下的 `OMX.md`
-2. 当前目录下的 `CLAUDE.md`
-3. `~/.omx/OMX.md`（用户级兜底）
-
-找到的第一个文件会被使用。你可以在里面写任何希望 Omx 了解的项目信息，比如编码规范、架构说明、常用工具或仓库特定规则。
-
-```markdown
-# 项目指令
-
-- 使用 TypeScript 严格模式
-- 优先使用函数式组件和 hooks
-- 提交前运行 `npm test`
-```
-
-## 文档
-
-- [基本操作](./tutorial/basic-usage) - 快捷键、命令和菜单选项
-- [Web 客户端](./tutorial/web-client) - 浏览器界面和 VS Code 扩展
-- [浏览器扩展](./tutorial/browser-extension) - 从 Omx 控制你的浏览器
-- [Office 扩展](./tutorial/office-addin) - 操作 Excel、Word 和 PowerPoint
-- [Figma 扩展](./tutorial/figma-plugin) - 在 Figma 中用 AI 设计
-- [Zed 编辑器](./tutorial/zed-editor) - 通过 ACP 在 Zed 中使用 Omx
-- [专家模式](./tutorial/specialist-mode) - 高级智能体工具
-- [艺术家模式](./tutorial/artist-mode) - 以图像生成为主的视觉响应
-- [MCP 配置](./tutorial/mcp) - 通过 Model Context Protocol 连接外部工具
-- [自定义 SubAgents](./tutorial/subagents) - 创建自己的智能体
-- [自定义 Slash 命令](./tutorial/slash) - 添加自定义命令
-- [自定义 Skills](./tutorial/skills) - 可重用的指令集
-- [跨会话记忆](./tutorial/memory) - 跨会话的持久记忆
-- [模型管理](./tutorial/models) - 配置多个 LLM 提供商
-- [会话管理](./tutorial/sessions) - 保存和恢复对话

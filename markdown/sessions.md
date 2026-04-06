@@ -2,73 +2,57 @@
 slug: /tutorial/sessions
 title: Session Management
 sidebar_label: Session Management
-sidebar_position: 13
+sidebar_position: 11
 ---
 
 # Session Management
 
-Omx automatically saves your conversations and provides tools to navigate and restore sessions.
+omx automatically saves your conversation sessions and lets you resume, rewind, or switch between them.
 
 ## Automatic Saving
 
-Every conversation is automatically saved. Sessions are organized by project based on your current working directory.
+Sessions are saved automatically as you chat. Each session records the full conversation history, model used, and token usage.
 
-## Loading Previous Sessions
+## Loading a Session
 
-Use `/session` to browse and load previous sessions:
+Resume your last session from the command line:
+
+```bash
+omx --continue
+```
+
+Or load any previous session through the menu or slash command:
 
 ```
 /session
 ```
 
-Select a session from the list to restore the conversation history.
+This shows a list of recent sessions. Select one to continue where you left off.
 
 ## Rewinding
 
-Use `/rewind` to go back to a previous point in the current session:
+Made a mistake? Rewind to a previous message:
 
 ```
 /rewind
 ```
 
-This shows a list of your messages. Selecting one creates a new session from that point, preserving everything up to your selection.
-
-Use rewind when:
-- The conversation went in the wrong direction
-- You want to try a different approach
-- An error occurred and you want to retry
+This shows your recent messages. Select one to rewind to that point -- everything after it is discarded.
 
 ## Compaction
 
-When the context window fills up, Omx can compress the conversation history.
+When your conversation context reaches 80% of the model's limit, omx automatically compacts the session:
 
-### Automatic Compaction
+1. The conversation is summarized
+2. Key memory points are extracted
+3. A fresh session starts with the summary injected
 
-When token usage exceeds 80% of the model's context size, Omx compacts the conversation and starts a fresh session with a summary.
-
-### Manual Compaction
-
-Use `/compact` to manually trigger compaction:
+You can also trigger compaction manually:
 
 ```
 /compact
 ```
 
-This is useful when:
-- You want to reduce context before a complex task
-- The conversation has accumulated irrelevant content
-- You're approaching the context limit
+### Server Compaction
 
-### Compaction Configuration
-
-Omx supports context editing to reduce token usage. When enabled, it automatically trims tool call payloads and thinking blocks in older messages on every request. Toggle it through the `contextEditing` setting.
-
-## Starting Fresh
-
-Use `/clear` to start a completely new session:
-
-```
-/clear
-```
-
-This clears the terminal and creates a new empty session. The previous session is saved and can be restored with `/session`.
+By default, compaction happens on the client side. If you prefer, enable **Server compaction** in preferences to let the server handle it instead.
