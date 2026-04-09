@@ -64,4 +64,4 @@ The prompt body uses Handlebars syntax. All parameters defined in the schema are
 
 ## Global Agent Instructions
 
-Create `OMX-AGENTS.md` in your project root to add instructions that apply to all agents. This file is automatically prepended to every agent's prompt.
+Create `AGENTS.md` in your project root to add instructions that apply to all agents. This file is automatically prepended to every agent's prompt. If it doesn't exist, omx falls back to `OMX.md`, then `CLAUDE.md`.

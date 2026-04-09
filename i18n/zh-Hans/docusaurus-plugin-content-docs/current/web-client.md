@@ -31,6 +31,7 @@ omx --serve --web --host 0.0.0.0
 - **语法高亮** - 代码块支持语言特定高亮
 - **文件附件** - 拖放文件到聊天中
 - **Markdown** - 完整的 GitHub 风格 Markdown 支持
+- **自定义状态栏** - 通过 `statusCommand` 在聊天底部显示一行 shell 输出
 - **颜色主题** - 17 种内置颜色预设，支持亮色和暗色模式
 - **会话管理** - 切换会话、回退消息
 - **模型切换** - 在对话中切换模型
@@ -50,6 +51,16 @@ omx --serve --web --theme auto
 ## 颜色主题
 
 颜色主题通过偏好设置菜单配置（按 Escape，选择 **Change preferences**，然后选择 **Color theme**）。共 17 种内置预设：crystal、splash、horizon、neon、forest、indigo、rosette、retro、tangerine、emerald、earth、twilight、inferno、sunshine、blossom、cocoa、nautical。
+
+## 自定义状态栏
+
+在 `omx.json` 中设置 `statusCommand`，即可在 TUI 和 Web 客户端底部显示一行 shell 输出。适合展示当前分支、构建状态或其他简短的工作区信号。
+
+```json
+{
+  "statusCommand": "git branch --show-current"
+}
+```
 
 ## 认证
 

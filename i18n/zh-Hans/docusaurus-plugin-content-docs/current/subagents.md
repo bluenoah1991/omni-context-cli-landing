@@ -64,4 +64,4 @@ Return a summary of findings with file paths and line numbers.
 
 ## 全局 Agent 指令
 
-在项目根目录创建 `OMX-AGENTS.md`，为所有 Agent 添加通用指令。该文件会自动添加到每个 Agent 的提示前面。
+在项目根目录创建 `AGENTS.md`，为所有 Agent 添加通用指令。该文件会自动添加到每个 Agent 的提示前面。如果不存在，omx 会依次回退到 `OMX.md` 和 `CLAUDE.md`。

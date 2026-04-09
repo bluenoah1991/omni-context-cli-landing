@@ -51,6 +51,16 @@ The default is `auto`, which follows your system preference.
 
 Color themes are configured through the preferences menu (press Escape, select **Change preferences**, then **Color theme**). 17 built-in presets are available: crystal, splash, horizon, neon, forest, indigo, rosette, retro, tangerine, emerald, earth, twilight, inferno, sunshine, blossom, cocoa, nautical.
 
+## Custom Status Line
+
+Set `statusCommand` in `omx.json` to render one line of shell output in the footer of the TUI and web client. This is useful for branch name, build state, or any short workspace signal.
+
+```json
+{
+  "statusCommand": "git branch --show-current"
+}
+```
+
 ## Authentication
 
 Set a password for the web UI:
