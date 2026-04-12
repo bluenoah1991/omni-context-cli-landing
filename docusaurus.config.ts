@@ -53,7 +53,7 @@ const config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/bluenoah1991/omni-context-cli',
+          href: 'https://github.com/bluenoah1991/omni-context-cli-landing',
           label: 'GitHub',
           position: 'right',
         },
