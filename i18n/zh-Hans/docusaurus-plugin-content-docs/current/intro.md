@@ -48,6 +48,20 @@ OmniContext CLI 内置两个工作流：
 
 如果你使用桌面应用，它还会额外安装一个给 Chrome 侧边栏使用的 **Browser** 工作流。
 
+## 关键项目文件
+
+有几类文件会直接影响 OmniContext CLI 在仓库中的行为：
+
+- `OMX.md` - 主助手的项目指令
+- `CLAUDE.md` - 当 `OMX.md` 缺失时的回退项目指令
+- `AGENTS.md` - 内置和自定义 Agent 的专用指令
+- `.omx/workflows/` - 项目级自定义工作流
+- `.omx/agents/` - 项目级自定义 Agent
+- `.omx/skills/` - 项目级技能
+- `.omx/mcp.json` - 项目级 MCP 服务器
+
+完整的文件布局和配置范围见 [项目文件与配置](/tutorial/project-files)。
+
 ## 命令行选项
 
 | 选项 | 描述 |

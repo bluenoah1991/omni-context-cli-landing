@@ -2,7 +2,7 @@
 slug: /tutorial/workflows
 title: Workflows
 sidebar_label: Workflows
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Workflows
@@ -39,6 +39,8 @@ and practical fixes. Keep the final answer concise.
 ```
 
 The YAML frontmatter defines the tool filter. The markdown body becomes the system prompt.
+
+Built-in workflows always load first and cannot be overridden by a custom file with the same ID. For custom additions, project-local workflows in `.omx/workflows/` take precedence over user-wide ones in `~/.omx/workflows/`.
 
 ### Frontmatter Options
 

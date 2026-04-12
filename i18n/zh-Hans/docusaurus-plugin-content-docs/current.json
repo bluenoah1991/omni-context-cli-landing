@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.defaultSidebar.category.Core": {
+    "message": "核心",
+    "description": "The label for category 'Core' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Customization": {
+    "message": "扩展与定制",
+    "description": "The label for category 'Customization' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Sessions & Memory": {
+    "message": "会话与记忆",
+    "description": "The label for category 'Sessions & Memory' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Integrations": {
+    "message": "集成",
+    "description": "The label for category 'Integrations' in sidebar 'defaultSidebar'"
+  }
+}

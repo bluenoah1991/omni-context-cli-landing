@@ -22,10 +22,10 @@
             </div>
             <div class="nav-right">
                 <a href="zh-Hans/" class="nav-lang">zh-CN</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/bluenoah1991/omni-context-cli" class="nav-link-icon" target="_blank" aria-label="GitHub">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta" target="_blank">Download</a>
+                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">Install</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
                 <i data-lucide="menu"></i>
@@ -37,7 +37,7 @@
             <a href="#integrations" class="mobile-menu-link">Integrations</a>
             <a href="docs/" class="mobile-menu-link">Docs</a>
             <a href="zh-Hans/" class="mobile-menu-link">zh-CN</a>
-            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link" target="_blank">Download</a>
+            <a href="https://www.npmjs.com/package/omni-context-cli" class="mobile-menu-link" target="_blank">Install</a>
         </div>
     </nav>
 
@@ -99,7 +99,7 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">10</span>
+                    <span class="metric-value">11</span>
                     <span class="metric-label">Base Tools</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -265,6 +265,13 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-info">
                         <h4>Grep</h4>
                         <p>Search file contents with regex and return file paths plus line numbers.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="monitor-play"></i></div>
+                    <div class="tool-info">
+                        <h4>Visual</h4>
+                        <p>Render a self-contained inline HTML visual in the web UI for charts, diagrams, and quick explainers.</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -434,7 +441,7 @@ You are a careful reviewer...</code></pre></div>
                             <i data-lucide="folder-open"></i>
                             <div>
                                 <strong>Per-project storage</strong>
-                                <span>Every project keeps its own memory file at <code>.omx/memory.json</code>.</span>
+                                <span>Every project keeps its own memory file in <code>~/.omx/projects/&lt;project-id&gt;/memory.json</code>.</span>
                             </div>
                         </div>
                     </div>
@@ -453,7 +460,7 @@ You are a careful reviewer...</code></pre></div>
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score positive">+2</span>
                             </div>
-                            <code>"The web client footer shows statusCommand output from omx.json."</code>
+                            <code>"The web client header shows statusCommand output from ~/.omx/projects/&lt;project-id&gt;/omx.json."</code>
                         </div>
                         <div class="memory-card fading">
                             <div class="memory-header">
@@ -485,13 +492,14 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="app-window"></i></div>
                         <div>
                             <h3>Desktop App</h3>
-                            <p>Workspace management, model setup, memo and reminder tools, and one-click server launch.</p>
+                            <p>Workspace management, model setup, approval modes, LAN access, and one-click server launch for the rest of the stack.</p>
                         </div>
                     </div>
                     <div class="integration-features">
                         <span>Workspaces</span>
                         <span>Model config</span>
-                        <span>Memos</span>
+                        <span>Approval modes</span>
+                        <span>LAN access</span>
                         <span>Server launch</span>
                     </div>
                 </div>
@@ -542,7 +550,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web Client</h3>
-                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, and a custom status line.</p>
+                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, and a custom status line in the header.</p>
                         </div>
                     </div>
                 </div>
@@ -574,25 +582,25 @@ You are a careful reviewer...</code></pre></div>
                     <div class="extend-icon"><i data-lucide="settings"></i></div>
                     <h3>Custom Workflows</h3>
                     <p>Define your own system prompt and whitelist exactly the tools you want available.</p>
-                    <div class="extend-path">~/.OmniContext CLI/workflows/my-flow.md</div>
+                    <div class="extend-path">~/.omx/workflows/my-flow.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="bot"></i></div>
                     <h3>Custom Agentic Tools</h3>
                     <p>Write a markdown prompt template plus schema and tool permissions, then call it like any other agent tool.</p>
-                    <div class="extend-path">~/.OmniContext CLI/agents/review.md</div>
+                    <div class="extend-path">~/.omx/agents/review.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="book-open"></i></div>
                     <h3>Skills</h3>
                     <p>Load reusable prompt instructions as slash commands or through the Skill tool. Claude Code skills work too.</p>
-                    <div class="extend-path">~/.OmniContext CLI/skills/review/SKILL.md</div>
+                    <div class="extend-path">~/.omx/skills/review/SKILL.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="plug"></i></div>
                     <h3>MCP Servers</h3>
                     <p>Connect external tools and data sources over stdio or HTTP, with Claude MCP configs picked up automatically.</p>
-                    <div class="extend-path">~/.OmniContext CLI/mcp.json</div>
+                    <div class="extend-path">~/.omx/mcp.json</div>
                 </div>
             </div>
         </div>
@@ -671,7 +679,7 @@ You are a careful reviewer...</code></pre></div>
                         <i data-lucide="book-open"></i>
                         Documentation
                     </a>
-                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">
+                    <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">
                         <i data-lucide="github"></i>
                         GitHub
                     </a>

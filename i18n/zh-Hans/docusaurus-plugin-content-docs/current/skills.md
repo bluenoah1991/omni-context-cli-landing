@@ -2,7 +2,7 @@
 slug: /tutorial/skills
 title: 技能
 sidebar_label: 技能
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # 技能

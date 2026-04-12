@@ -48,6 +48,20 @@ OmniContext CLI ships with two built-in workflows:
 
 If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar.
 
+## Project Files That Matter
+
+A few files shape how OmniContext CLI behaves in a repo:
+
+- `OMX.md` - main project instructions for the assistant
+- `CLAUDE.md` - fallback project instructions if `OMX.md` is missing
+- `AGENTS.md` - agent-specific instructions for built-in and custom agents
+- `.omx/workflows/` - project-local custom workflows
+- `.omx/agents/` - project-local custom agents
+- `.omx/skills/` - project-local skills
+- `.omx/mcp.json` - project-local MCP servers
+
+For the full config and file layout, see [Project Files & Config](/tutorial/project-files).
+
 ## Command Line Options
 
 | Option | Description |

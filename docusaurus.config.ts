@@ -8,10 +8,12 @@ const config = {
   organizationName: 'bluenoah1991',
   projectName: 'omni-context-cli-landing',
   onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'warn',
 
   markdown: {
     format: 'md',
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
   i18n: {
@@ -26,6 +28,7 @@ const config = {
         docs: {
           path: 'markdown',
           routeBasePath: '/',
+          sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/bluenoah1991/omni-context-cli-landing/tree/main/',
         },
         theme: {
@@ -50,7 +53,7 @@ const config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/bluenoah1991/omni-context-cli-landing',
+          href: 'https://github.com/bluenoah1991/omni-context-cli',
           label: 'GitHub',
           position: 'right',
         },

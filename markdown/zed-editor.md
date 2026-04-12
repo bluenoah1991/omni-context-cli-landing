@@ -2,7 +2,7 @@
 slug: /tutorial/zed-editor
 title: Zed Editor
 sidebar_label: Zed Editor
-sidebar_position: 17
+sidebar_position: 19
 ---
 
 # Zed Editor

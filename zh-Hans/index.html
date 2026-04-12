@@ -22,10 +22,10 @@
             </div>
             <div class="nav-right">
                 <a href="../" class="nav-lang">English</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/bluenoah1991/omni-context-cli" class="nav-link-icon" target="_blank" aria-label="GitHub">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta" target="_blank">下载</a>
+                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">安装</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
                 <i data-lucide="menu"></i>
@@ -37,7 +37,7 @@
             <a href="#integrations" class="mobile-menu-link">集成</a>
             <a href="../docs/zh-Hans/" class="mobile-menu-link">文档</a>
             <a href="../" class="mobile-menu-link">English</a>
-            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link" target="_blank">下载</a>
+            <a href="https://www.npmjs.com/package/omni-context-cli" class="mobile-menu-link" target="_blank">安装</a>
         </div>
     </nav>
 
@@ -98,7 +98,7 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">10</span>
+                    <span class="metric-value">11</span>
                     <span class="metric-label">基础工具</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -267,6 +267,13 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="monitor-play"></i></div>
+                    <div class="tool-info">
+                        <h4>Visual</h4>
+                        <p>在 Web UI 中渲染自包含的内联 HTML 视觉块，适合图表、示意图和快速说明。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
                     <div class="tool-info">
                         <h4>WebSearch</h4>
@@ -432,7 +439,7 @@ You are a careful reviewer...</code></pre></div>
                             <i data-lucide="folder-open"></i>
                             <div>
                                 <strong>按项目存储</strong>
-                                <span>每个项目都有自己的 <code>.omx/memory.json</code> 文件。</span>
+                                <span>每个项目都会把记忆存放在 <code>~/.omx/projects/&lt;project-id&gt;/memory.json</code> 里。</span>
                             </div>
                         </div>
                     </div>
@@ -451,7 +458,7 @@ You are a careful reviewer...</code></pre></div>
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score positive">+2</span>
                             </div>
-                            <code>"The web client footer shows statusCommand output from omx.json."</code>
+                            <code>"The web client header shows statusCommand output from ~/.omx/projects/&lt;project-id&gt;/omx.json."</code>
                         </div>
                         <div class="memory-card fading">
                             <div class="memory-header">
@@ -483,13 +490,14 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="app-window"></i></div>
                         <div>
                             <h3>桌面应用</h3>
-                            <p>工作区管理、模型配置、备忘和提醒工具，以及一键启动共享服务。</p>
+                            <p>工作区管理、模型配置、审批模式、局域网访问，以及为整套集成一键启动共享服务。</p>
                         </div>
                     </div>
                     <div class="integration-features">
                         <span>工作区</span>
                         <span>模型配置</span>
-                        <span>备忘录</span>
+                        <span>审批模式</span>
+                        <span>局域网访问</span>
                         <span>服务启动</span>
                     </div>
                 </div>
@@ -540,7 +548,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web 客户端</h3>
-                            <p>在浏览器里使用 OmniContext CLI，支持附件、 Mermaid、LaTeX、markdown 渲染和自定义状态栏。</p>
+                            <p>在浏览器里使用 OmniContext CLI，支持附件、Mermaid、LaTeX、markdown 渲染和页头自定义状态栏。</p>
                         </div>
                     </div>
                 </div>
@@ -572,25 +580,25 @@ You are a careful reviewer...</code></pre></div>
                     <div class="extend-icon"><i data-lucide="settings"></i></div>
                     <h3>自定义工作流</h3>
                     <p>定义你自己的系统提示词，并且精确白名单化可用工具。</p>
-                    <div class="extend-path">~/.OmniContext CLI/workflows/my-flow.md</div>
+                    <div class="extend-path">~/.omx/workflows/my-flow.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="bot"></i></div>
                     <h3>自定义智能体工具</h3>
                     <p>写一个 markdown 提示模板，再加 schema 和工具权限，就能像内置 Agent 一样调用。</p>
-                    <div class="extend-path">~/.OmniContext CLI/agents/review.md</div>
+                    <div class="extend-path">~/.omx/agents/review.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="book-open"></i></div>
                     <h3>技能</h3>
                     <p>把可复用的提示指令做成斜杠命令，或者通过 Skill 工具加载。Claude Code 技能也能直接用。</p>
-                    <div class="extend-path">~/.OmniContext CLI/skills/review/SKILL.md</div>
+                    <div class="extend-path">~/.omx/skills/review/SKILL.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="plug"></i></div>
                     <h3>MCP 服务器</h3>
                     <p>通过 stdio 或 HTTP 接外部工具和数据源，也会自动读取 Claude 的 MCP 配置。</p>
-                    <div class="extend-path">~/.OmniContext CLI/mcp.json</div>
+                    <div class="extend-path">~/.omx/mcp.json</div>
                 </div>
             </div>
         </div>
@@ -669,7 +677,7 @@ You are a careful reviewer...</code></pre></div>
                         <i data-lucide="book-open"></i>
                         文档
                     </a>
-                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">
+                    <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">
                         <i data-lucide="github"></i>
                         GitHub
                     </a>

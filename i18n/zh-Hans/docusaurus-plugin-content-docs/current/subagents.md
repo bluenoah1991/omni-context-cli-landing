@@ -2,7 +2,7 @@
 slug: /tutorial/custom-agents
 title: 自定义 Agent
 sidebar_label: 自定义 Agent
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 # 自定义 Agent
@@ -80,8 +80,10 @@ Limit the review to {{directory}}.
 
 OmniContext CLI 在构造 Agent 提示词时，会按这个顺序查找项目指令：
 
-1. `AGENTS.md`
-2. `OMX.md`
-3. `CLAUDE.md`
+1. 当前项目里的 `AGENTS.md`
+2. `~/.omx/AGENTS.md`
+3. 当前项目里的 `OMX.md`
+4. 当前项目里的 `CLAUDE.md`
+5. `~/.omx/OMX.md`
 
 这样你就能把项目规则同时共享给内置 Agent 和你自己写的 Agent。

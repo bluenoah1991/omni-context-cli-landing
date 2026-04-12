@@ -2,7 +2,7 @@
 slug: /tutorial/browser-extension
 title: Chrome Extension
 sidebar_label: Chrome Extension
-sidebar_position: 15
+sidebar_position: 17
 ---
 
 # Chrome Extension

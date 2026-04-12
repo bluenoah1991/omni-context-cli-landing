@@ -68,13 +68,16 @@ The preferences menu lets you toggle or change:
 - **Cache duration** - `5m` for faster iteration or `1h` for longer cached prompts
 - **Completion notification** - desktop notifications for slower replies
 - **Context editing** - trim bulky old tool calls and reasoning blocks
-- **Cross-session memory** - keep useful project knowledge between sessions
 - **Diff view** - show inline diffs when OmniContext CLI edits files
+- **Cross-session memory** - keep useful project knowledge between sessions
 - **Extended thinking** - enable deeper reasoning for harder tasks
 - **IDE context** - include context from your editor
-- **Response language** - force replies to English or Simplified Chinese, or leave it on auto
 - **Server compaction** - let the server handle compaction instead of the client
-- **Color theme** - pick one of the built-in palettes
 - **Streaming output** - render replies token by token as they arrive
+
+From the main menu, you can also switch:
+
+- **Response language** - force replies to English or Simplified Chinese, or leave it on auto
+- **Color theme** - pick one of the built-in palettes
 
 Use arrow keys to move, `Enter` to confirm, and `Escape` to go back.

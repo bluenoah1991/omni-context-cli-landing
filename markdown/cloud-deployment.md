@@ -2,7 +2,7 @@
 slug: /tutorial/cloud-deployment
 title: Cloud Deployment
 sidebar_label: Cloud Deployment
-sidebar_position: 14
+sidebar_position: 16
 ---
 
 # Cloud Deployment

@@ -2,7 +2,7 @@
 slug: /tutorial/web-client
 title: Web Client
 sidebar_label: Web Client
-sidebar_position: 12
+sidebar_position: 14
 ---
 
 # Web Client
@@ -32,6 +32,7 @@ omx --serve --web --host 0.0.0.0
 - **File attachments** with drag and drop
 - **GitHub-flavored markdown** rendering
 - **Custom status line** via `statusCommand`
+- **Inline visuals** through the `Visual` tool in the web UI
 - **Color themes** shared with the rest of OmniContext CLI
 - **Session management** including rewind and switching
 - **Model switching** mid-conversation
@@ -54,7 +55,7 @@ The palette itself is controlled separately from light or dark mode. Change it f
 
 ## Custom Status Line
 
-Set `statusCommand` in `omx.json` to render one line of shell output in the footer of both the terminal UI and web client.
+Set `statusCommand` in `~/.omx/omx.json` or `~/.omx/projects/<project-id>/omx.json` to render one line of shell output in the terminal UI and in the web client's header.
 
 ```json
 {

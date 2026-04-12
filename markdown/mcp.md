@@ -2,7 +2,7 @@
 slug: /tutorial/mcp
 title: MCP Configuration
 sidebar_label: MCP Configuration
-sidebar_position: 6
+sidebar_position: 9
 ---
 
 # MCP Configuration
@@ -15,10 +15,10 @@ The built-in Programming and General workflows already allow MCP tools, so you u
 
 OmniContext CLI reads MCP definitions from these locations:
 
+- `~/.claude.json`
+- `.mcp.json`
 - `~/.omx/mcp.json`
 - `.omx/mcp.json`
-- `~/.claude/claude_desktop_config.json`
-- `.claude/mcp.json`
 
 ## Configuration File
 

@@ -2,7 +2,7 @@
 slug: /tutorial/zed-editor
 title: Zed 编辑器
 sidebar_label: Zed 编辑器
-sidebar_position: 17
+sidebar_position: 19
 ---
 
 # Zed 编辑器

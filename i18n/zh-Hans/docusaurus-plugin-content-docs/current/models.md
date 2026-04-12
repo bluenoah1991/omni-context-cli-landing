@@ -2,7 +2,7 @@
 slug: /tutorial/models
 title: 模型管理
 sidebar_label: 模型管理
-sidebar_position: 8
+sidebar_position: 3
 ---
 
 # 模型管理

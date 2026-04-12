@@ -2,7 +2,7 @@
 slug: /tutorial/mcp
 title: MCP 配置
 sidebar_label: MCP 配置
-sidebar_position: 6
+sidebar_position: 9
 ---
 
 # MCP 配置
@@ -15,10 +15,10 @@ OmniContext CLI 支持 [Model Context Protocol](https://modelcontextprotocol.io)
 
 OmniContext CLI 会从这些位置读取 MCP 定义：
 
+- `~/.claude.json`
+- `.mcp.json`
 - `~/.omx/mcp.json`
 - `.omx/mcp.json`
-- `~/.claude/claude_desktop_config.json`
-- `.claude/mcp.json`
 
 ## 配置文件
 

@@ -2,7 +2,7 @@
 slug: /tutorial/sessions
 title: Session Management
 sidebar_label: Session Management
-sidebar_position: 11
+sidebar_position: 10
 ---
 
 # Session Management
@@ -54,6 +54,18 @@ You can also compact manually:
 ### Server Compaction
 
 By default, compaction happens on the client side. If you prefer, enable **Server compaction** in preferences and let the server handle it instead.
+
+## Storage Model
+
+OmniContext CLI stores session state outside the repo, under `~/.omx/projects/<project-id>/`.
+
+That project directory can hold:
+
+- session history
+- project-scoped config
+- cross-session memory
+
+This keeps your working state local while still letting you commit shared instructions like `OMX.md`, `AGENTS.md`, or `.omx/workflows/`.
 
 ## Project Backup
 

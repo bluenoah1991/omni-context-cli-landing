@@ -2,7 +2,7 @@
 slug: /tutorial/workflows
 title: 工作流
 sidebar_label: 工作流
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # 工作流
@@ -39,6 +39,8 @@ and practical fixes. Keep the final answer concise.
 ```
 
 YAML frontmatter 用来定义工具过滤规则，markdown 正文会成为系统提示词。
+
+内置工作流总是最先加载，不能被同名自定义文件覆盖。对于自定义补充项，`.omx/workflows/` 里的项目级工作流优先于 `~/.omx/workflows/` 里的用户级工作流。
 
 ### 前置信息选项
 

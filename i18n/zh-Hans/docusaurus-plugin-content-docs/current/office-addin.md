@@ -2,7 +2,7 @@
 slug: /tutorial/office-addin
 title: Office 加载项
 sidebar_label: Office 加载项
-sidebar_position: 16
+sidebar_position: 18
 ---
 
 # Office 加载项

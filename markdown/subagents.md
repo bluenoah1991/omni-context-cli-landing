@@ -2,7 +2,7 @@
 slug: /tutorial/custom-agents
 title: Custom Agents
 sidebar_label: Custom Agents
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 # Custom Agents
@@ -80,8 +80,10 @@ Add an `AGENTS.md` file to your project root if you want instructions that apply
 
 When OmniContext CLI builds an agent prompt, it looks for instructions in this order:
 
-1. `AGENTS.md`
-2. `OMX.md`
-3. `CLAUDE.md`
+1. `AGENTS.md` in the current project
+2. `~/.omx/AGENTS.md`
+3. `OMX.md` in the current project
+4. `CLAUDE.md` in the current project
+5. `~/.omx/OMX.md`
 
 That makes it easy to share project rules across built-in agents and your own custom ones.

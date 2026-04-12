@@ -2,7 +2,7 @@
 slug: /tutorial/memory
 title: Cross-Session Memory
 sidebar_label: Cross-Session Memory
-sidebar_position: 9
+sidebar_position: 11
 ---
 
 # Cross-Session Memory
@@ -31,9 +31,9 @@ Toggle memory from the preferences menu:
 
 ## Storage
 
-Each project keeps its own memory file at `.omx/memory.json`.
+Each project keeps its own memory file at `~/.omx/projects/<project-id>/memory.json`.
 
-The file is a JSON array of memory entries, each with a content string and a score. You can edit it directly if you want full control.
+The file stores versioned key points with names, text, and scores. You can edit it directly if you want full control.
 
 ## What Gets Remembered
 

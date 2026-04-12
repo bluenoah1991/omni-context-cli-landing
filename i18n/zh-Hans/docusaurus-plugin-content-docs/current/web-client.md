@@ -2,7 +2,7 @@
 slug: /tutorial/web-client
 title: Web 客户端
 sidebar_label: Web 客户端
-sidebar_position: 12
+sidebar_position: 14
 ---
 
 # Web 客户端
@@ -32,6 +32,7 @@ omx --serve --web --host 0.0.0.0
 - **文件附件**，支持拖放
 - **GitHub 风格 markdown** 渲染
 - **自定义状态栏**，通过 `statusCommand` 注入
+- **内联视觉块**，通过 Web UI 里的 `Visual` 工具渲染
 - **颜色主题**，和 OmniContext CLI 其他界面共用
 - **会话管理**，支持回退和切换
 - **模型切换**，可在对话中途完成
@@ -54,7 +55,7 @@ omx --serve --web --theme auto
 
 ## 自定义状态栏
 
-在 `omx.json` 中设置 `statusCommand`，就可以在终端 UI 和 Web 客户端底部显示一行 shell 输出。
+在 `~/.omx/omx.json` 或 `~/.omx/projects/<project-id>/omx.json` 中设置 `statusCommand`，就可以在终端 UI 和 Web 客户端页头显示一行 shell 输出。
 
 ```json
 {

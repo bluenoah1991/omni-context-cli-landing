@@ -2,7 +2,7 @@
 slug: /tutorial/ide-context
 title: VS Code Extension
 sidebar_label: VS Code Extension
-sidebar_position: 10
+sidebar_position: 13
 ---
 
 # VS Code Extension
@@ -33,11 +33,12 @@ The extension exposes MCP tools that OmniContext CLI can call:
 
 | Tool | Description |
 |------|-------------|
-| **openFile** | Open a file in VS Code at a specific line and column |
-| **openDiff** | Show a diff view between old and new content |
-| **getDiagnostics** | Return current errors and warnings |
-| **getOpenEditors** | List open editor tabs |
-| **getWorkspaceFolders** | Return workspace folders |
+| **Mcp_ide_visual_studio_code_openFile** | Open a file in VS Code at a specific line and column |
+| **Mcp_ide_visual_studio_code_openDiff** | Show a diff view between old and new content |
+| **Mcp_ide_visual_studio_code_getDiagnostics** | Return current errors and warnings |
+| **Mcp_ide_visual_studio_code_getOpenEditors** | List open editor tabs |
+| **Mcp_ide_visual_studio_code_closeAllDiffTabs** | Close diff tabs created in VS Code |
+| **Mcp_ide_visual_studio_code_getWorkspaceFolders** | Return workspace folders |
 
 ## Enabling IDE Context
 
