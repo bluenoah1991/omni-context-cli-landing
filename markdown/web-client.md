@@ -32,7 +32,6 @@ omx --serve --web --host 0.0.0.0
 - **File attachments** with drag and drop
 - **GitHub-flavored markdown** rendering
 - **Custom status line** via `statusCommand`
-- **Inline visuals** through the `Visual` tool in the web UI
 - **Color themes** shared with the rest of OmniContext CLI
 - **Session management** including rewind and switching
 - **Model switching** mid-conversation

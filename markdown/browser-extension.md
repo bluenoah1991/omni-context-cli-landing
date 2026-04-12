@@ -12,7 +12,7 @@ The OmniContext Chrome Extension adds an AI sidebar to any page and connects it 
 ## Installation
 
 1. start the desktop app, or run `omx --serve`
-2. in the desktop app, click **Open Folder** under Browser Extension
+2. make sure the browser extension folder is available locally
 3. in Chrome, open `chrome://extensions`
 4. enable **Developer Mode**
 5. click **Load unpacked** and choose the browser extension folder

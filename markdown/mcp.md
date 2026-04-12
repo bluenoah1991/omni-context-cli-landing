@@ -28,7 +28,6 @@ A minimal config looks like this:
 {
   "mcpServers": {
     "my-server": {
-      "type": "stdio",
       "command": "npx",
       "args": ["-y", "my-mcp-server"]
     }
@@ -40,13 +39,12 @@ A minimal config looks like this:
 
 ### Stdio (Local Process)
 
-Use `stdio` when OmniContext CLI should launch a local process and talk to it over standard input and output.
+Use a `command` when OmniContext CLI should launch a local process and talk to it over standard input and output.
 
 ```json
 {
   "mcpServers": {
     "filesystem": {
-      "type": "stdio",
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/dir"]
     }
@@ -54,15 +52,14 @@ Use `stdio` when OmniContext CLI should launch a local process and talk to it ov
 }
 ```
 
-### HTTP (Remote Server)
+### Streamable HTTP (Remote Server)
 
-Use `http` when the MCP server is already running somewhere else.
+Use a `url` when the MCP server is already running somewhere else.
 
 ```json
 {
   "mcpServers": {
     "remote-tools": {
-      "type": "http",
       "url": "http://localhost:8080/mcp"
     }
   }
@@ -81,13 +78,12 @@ This keeps them from colliding with built-in tools.
 
 ## Environment Variables
 
-For `stdio` servers, pass environment variables with `env`:
+For command-based servers, pass environment variables with `env`:
 
 ```json
 {
   "mcpServers": {
     "my-server": {
-      "type": "stdio",
       "command": "node",
       "args": ["server.js"],
       "env": {

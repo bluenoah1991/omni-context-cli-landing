@@ -28,7 +28,6 @@ OmniContext CLI 会从这些位置读取 MCP 定义：
 {
   "mcpServers": {
     "my-server": {
-      "type": "stdio",
       "command": "npx",
       "args": ["-y", "my-mcp-server"]
     }
@@ -40,13 +39,12 @@ OmniContext CLI 会从这些位置读取 MCP 定义：
 
 ### Stdio（本地进程）
 
-当你希望 OmniContext CLI 自己启动一个本地进程，并通过标准输入输出与它通信时，使用 `stdio`。
+当你希望 OmniContext CLI 自己启动一个本地进程，并通过标准输入输出与它通信时，配置 `command`。
 
 ```json
 {
   "mcpServers": {
     "filesystem": {
-      "type": "stdio",
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/dir"]
     }
@@ -54,15 +52,14 @@ OmniContext CLI 会从这些位置读取 MCP 定义：
 }
 ```
 
-### HTTP（远程服务器）
+### Streamable HTTP（远程服务器）
 
-当 MCP 服务器已经运行在别处时，使用 `http`。
+当 MCP 服务器已经运行在别处时，配置 `url`。
 
 ```json
 {
   "mcpServers": {
     "remote-tools": {
-      "type": "http",
       "url": "http://localhost:8080/mcp"
     }
   }
@@ -81,13 +78,12 @@ Mcp_servername_toolname
 
 ## 环境变量
 
-对于 `stdio` 服务器，可以用 `env` 传递环境变量：
+对于基于命令启动的服务器，可以用 `env` 传递环境变量：
 
 ```json
 {
   "mcpServers": {
     "my-server": {
-      "type": "stdio",
       "command": "node",
       "args": ["server.js"],
       "env": {

@@ -32,7 +32,6 @@ omx --serve --web --host 0.0.0.0
 - **文件附件**，支持拖放
 - **GitHub 风格 markdown** 渲染
 - **自定义状态栏**，通过 `statusCommand` 注入
-- **内联视觉块**，通过 Web UI 里的 `Visual` 工具渲染
 - **颜色主题**，和 OmniContext CLI 其他界面共用
 - **会话管理**，支持回退和切换
 - **模型切换**，可在对话中途完成

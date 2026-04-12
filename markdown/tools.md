@@ -22,7 +22,6 @@ These are called by the main model, so their inputs and outputs become part of t
 | **Write** | Write a file from scratch or fully replace it. Supports `createOnly` for safer file creation. |
 | **Glob** | Find files by pattern, with `.gitignore` support. |
 | **Grep** | Search file contents with regex and line numbers. |
-| **Visual** | Render a self-contained inline HTML visual in the web UI for charts, diagrams, and other lightweight explainers. |
 | **WebSearch** | Search the web for up-to-date info. |
 | **WebFetch** | Fetch a URL and turn the page into clean markdown. |
 | **Skill** | Load a reusable skill into the current conversation. |
