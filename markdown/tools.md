@@ -7,48 +7,61 @@ sidebar_position: 4
 
 # Tools
 
-omx has two categories of tools: base tools that the model calls directly, and agent tools that run as autonomous sub-agents on a cheaper model.
+OmniContext CLI has two tool layers: base tools that the main model calls directly, and agent tools that run as sub-agents on a secondary model.
 
 ## Base Tools
 
-These are called directly by the main model. Each tool call adds its input and output to your conversation context.
+These are called by the main model, so their inputs and outputs become part of the conversation history.
 
 | Tool | Description |
 |------|-------------|
-| **Bash** | Run shell commands. Great for builds, installs, CLI tools, and system tasks. Background tasks supported via BashOutput. |
-| **Read** | Read file contents with line numbers. Supports offset and limit for navigating large files. Also reads images and PDFs. |
-| **Edit** | Make surgical text replacements. Provide exact text to find and what to replace it with. |
-| **Write** | Write content to a file, creating parent directories as needed. Supports createOnly mode for safety. |
-| **Glob** | Find files by pattern. Standard glob syntax with gitignore support. Capped at 100 results. |
-| **Grep** | Search file contents using regex. Returns matches with file paths and line numbers. |
-| **WebSearch** | Search the web for up-to-date information. |
-| **WebFetch** | Fetch content from a URL and convert HTML to clean markdown. |
-| **Skill** | Load a skill to get detailed instructions for domain-specific tasks. |
+| **Bash** | Run shell commands for builds, installs, tests, and other terminal work. Supports background tasks. |
+| **BashOutput** | Check the output of a background Bash task by task ID. |
+| **Read** | Read files with line numbers. Supports offsets, limits, images, and PDFs. |
+| **Edit** | Make precise in-place text replacements. |
+| **Write** | Write a file from scratch or fully replace it. Supports `createOnly` for safer file creation. |
+| **Glob** | Find files by pattern, with `.gitignore` support. |
+| **Grep** | Search file contents with regex and line numbers. |
+| **WebSearch** | Search the web for up-to-date info. |
+| **WebFetch** | Fetch a URL and turn the page into clean markdown. |
+| **Skill** | Load a reusable skill into the current conversation. |
 
 ## Agent Tools
 
-Agent tools run as autonomous sub-agents on the agent model (a secondary, typically cheaper model). Their intermediate tool calls, file contents, and reasoning never enter your main context. You get a concise answer back; the scratch work stays off the books.
+Agent tools run on the agent model, which is usually a cheaper or faster secondary model. Their intermediate tool calls, file reads, and reasoning never enter your main context. You only get the final answer back.
 
 | Tool | Description |
 |------|-------------|
-| **Agent_Explore** | Survey project architecture. Maps directory layout, key files, and how the codebase is organized. |
-| **Agent_Glance** | Preview multiple files at once. Reads files and directories, returns a brief summary for each. |
-| **Agent_Search** | Search the codebase to answer a specific question. Returns targeted code segments from across the project. |
+| **Agent_Explore** | Map the project structure and explain how the codebase is organized. |
+| **Agent_Glance** | Preview multiple files and directories with short summaries. |
+| **Agent_Search** | Search across the codebase to answer a specific technical question. |
 
 ### How Agent Tools Work
 
-When the main model calls an agent tool like `Agent_Search("How does session persistence work?")`:
+When the main model calls something like `Agent_Search("How does session persistence work?")`:
 
-1. A sub-agent is spawned on the agent model
-2. The sub-agent has access to base tools (Glob, Grep, Read, Bash)
-3. It makes as many tool calls as needed to find the answer
-4. Only the final, concise result is returned to the main conversation
-5. All intermediate work is discarded
+1. OmniContext CLI starts a sub-agent on the agent model
+2. that sub-agent can call base tools like `Glob`, `Grep`, `Read`, and `Bash`
+3. it gathers whatever it needs to answer the question
+4. only the concise final result comes back to the main conversation
+5. the scratch work is discarded
 
-This means a single agent tool call might internally run 5-10 base tool calls, but your main context only grows by the size of the final answer.
+This is how OmniContext CLI keeps exploratory work out of your expensive context window.
 
 ### Agent Model
 
-The agent model is configured separately from your main model. Set it through the menu under **Manage your model list**. If not set, the main model is used for agent work too.
+The agent model is configured separately from your default model. If you don't set one, OmniContext CLI uses the current main model for agent work too.
 
-For cost efficiency, pair an expensive reasoning model (e.g. Claude Opus) as your main model with a cheap, fast model (e.g. GLM-4) as the agent model.
+A common setup is:
+
+- a stronger reasoning model as the main model
+- a faster, cheaper model as the agent model
+
+That keeps costs down without losing the quality of the final answer.
+
+### Tool Approval
+
+If you want a safety check before tools run:
+
+- use `omx --approve-write` to confirm `Bash`, `Edit`, and `Write`
+- use `omx --approve-all` to confirm every tool call

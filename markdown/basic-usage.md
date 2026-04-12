@@ -7,72 +7,74 @@ sidebar_position: 2
 
 # Basic Usage
 
-This guide covers the essential shortcuts, commands, and menu options for working with omx.
+This guide covers the shortcuts, commands, and menu paths you'll use most often in OmniContext CLI.
 
 ## Keyboard Shortcuts
 
 | Shortcut | Action |
 |----------|--------|
-| Escape | Open menu (when idle) / Interrupt generation (when loading) |
+| Escape | Open the menu when idle, or interrupt generation while a response is streaming |
 | Ctrl+C | Press twice to exit |
-| Ctrl+A | Move cursor to line start |
-| Ctrl+E | Move cursor to line end |
-| Ctrl+L | Clear input and attachments |
-| Shift+Enter | Insert newline |
-| Ctrl+J | Insert newline |
-| Up/Down | Move cursor in multi-line input or browse input history |
+| Ctrl+A | Move the cursor to the start of the line |
+| Ctrl+E | Move the cursor to the end of the line |
+| Ctrl+L | Clear the current input and attachments |
+| Shift+Enter | Insert a newline |
+| Ctrl+J | Insert a newline |
+| Up/Down | Move inside multi-line input or browse input history |
 
 ## Slash Commands
 
-Type these commands directly in the chat:
+Type these directly into the chat box:
 
 | Command | Description |
 |---------|-------------|
 | /clear | Start a fresh conversation |
-| /status | Show session, model and configuration status |
-| /compact | Manually compact context and start fresh |
-| /rewind | Rewind to a previous message |
-| /model | Switch to a different model |
+| /status | Show your session, model, workflow, and preference status |
+| /compact | Compact the current context manually |
+| /rewind | Rewind to an earlier message |
+| /model | Switch to another model |
 | /session | Load a previous session |
 | /git-commit | Generate a commit message for staged changes and commit |
-| /exit | Exit omx |
+| /exit | Exit OmniContext CLI |
 
-When you start typing `/`, a picker appears with matching commands. Use arrow keys to navigate and Enter to select. Custom skills also appear in this picker.
+When you type `/`, OmniContext CLI opens a picker with matching commands. Skills also show up here, so you can load reusable prompt instructions without leaving the keyboard.
 
 ## Menu
 
-Press Escape to open the menu. From here you can:
+Press `Escape` to open the menu. From there you can:
 
-- Switch to a different model
-- Load a previous session
-- Rewind to a previous message
-- Switch workflow preset
-- Manage your model list
-- Change preferences
+- switch models
+- load an older session
+- rewind to an earlier message
+- switch workflows
+- manage your model list
+- change preferences
 
 ### Workflow Presets
 
-omx ships with two workflow presets:
+OmniContext CLI includes two built-in workflows:
 
-- **Programming** (default) - Coding assistant with base tools, agent tools, and MCP integration. Concise output, minimal overhead. Reads OMX.md and CLAUDE.md automatically.
-- **General** - Personal assistant for documents, spreadsheets, and presentations. Proactive with tools, conversational tone.
+- **Programming** - the default coding workflow with base tools, built-in agent tools, custom agents, MCP, and remote tools
+- **General** - a broader assistant workflow for docs, spreadsheets, presentations, and day-to-day tasks
 
-You can create custom workflows by adding markdown files to `~/.omx/workflows/` or `.omx/workflows/`. See [Workflows](/tutorial/workflows) for details.
+If you're using the desktop app, it also installs a **Browser** workflow for the Chrome sidebar.
+
+Custom workflows live in `~/.omx/workflows/` or `.omx/workflows/`. See [Workflows](/tutorial/workflows) for the full format.
 
 ### Preferences
 
-The preferences submenu lets you toggle:
+The preferences menu lets you toggle or change:
 
-- **Cache duration** - How long prompt caching lasts (5 minutes or 1 hour)
-- **Completion notification** - Notify when response takes over a minute
-- **Context editing** - Trim old tool calls and thinking blocks to save tokens
-- **Cross-session memory** - Remember key points across sessions
-- **Diff view** - Show inline diffs when the model edits files
-- **Extended thinking** - Enable deeper reasoning for complex tasks
-- **IDE context** - Include context from your IDE
-- **Response language** - Choose the language for model responses (auto, English, Chinese)
-- **Server compaction** - Let the server handle context compaction instead of the client
-- **Color theme** - Pick a color scheme from 17 presets
-- **Streaming output** - Show responses as they generate
+- **Cache duration** - `5m` for faster iteration or `1h` for longer cached prompts
+- **Completion notification** - desktop notifications for slower replies
+- **Context editing** - trim bulky old tool calls and reasoning blocks
+- **Cross-session memory** - keep useful project knowledge between sessions
+- **Diff view** - show inline diffs when OmniContext CLI edits files
+- **Extended thinking** - enable deeper reasoning for harder tasks
+- **IDE context** - include context from your editor
+- **Response language** - force replies to English or Simplified Chinese, or leave it on auto
+- **Server compaction** - let the server handle compaction instead of the client
+- **Color theme** - pick one of the built-in palettes
+- **Streaming output** - render replies token by token as they arrive
 
-Use arrow keys to navigate, Enter to select, and Escape to go back.
+Use arrow keys to move, `Enter` to confirm, and `Escape` to go back.

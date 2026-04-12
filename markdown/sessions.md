@@ -7,47 +7,45 @@ sidebar_position: 11
 
 # Session Management
 
-omx automatically saves your conversation sessions and lets you resume, rewind, or switch between them.
+OmniContext CLI saves sessions automatically so you can resume work, rewind mistakes, and move project state between machines.
 
 ## Automatic Saving
 
-Sessions are saved automatically as you chat. Each session records the full conversation history, model used, and token usage.
+As you chat, OmniContext CLI keeps track of the conversation, the model you used, and the session state for the current project.
 
 ## Loading a Session
 
-Resume your last session from the command line:
+Resume the latest session from the command line:
 
 ```bash
 omx --continue
 ```
 
-Or load any previous session through the menu or slash command:
+Or load an older one from inside the app:
 
 ```
 /session
 ```
 
-This shows a list of recent sessions. Select one to continue where you left off.
-
 ## Rewinding
 
-Made a mistake? Rewind to a previous message:
+If you want to roll back to an earlier point:
 
 ```
 /rewind
 ```
 
-This shows your recent messages. Select one to rewind to that point -- everything after it is discarded.
+OmniContext CLI shows a list of earlier messages. Pick one, and everything after that point is discarded.
 
 ## Compaction
 
-When your conversation context reaches 80% of the model's limit, omx automatically compacts the session:
+When the conversation reaches roughly 80% of the model's context window, OmniContext CLI compacts it automatically:
 
-1. The conversation is summarized
-2. Key memory points are extracted
-3. A fresh session starts with the summary injected
+1. the session is summarized
+2. memory points are extracted
+3. a fresh session starts with the summary carried forward
 
-You can also trigger compaction manually:
+You can also compact manually:
 
 ```
 /compact
@@ -55,4 +53,18 @@ You can also trigger compaction manually:
 
 ### Server Compaction
 
-By default, compaction happens on the client side. If you prefer, enable **Server compaction** in preferences to let the server handle it instead.
+By default, compaction happens on the client side. If you prefer, enable **Server compaction** in preferences and let the server handle it instead.
+
+## Project Backup
+
+Export the current project's sessions and memory:
+
+```bash
+omx --export-project backup.tar.gz
+```
+
+Restore them later with:
+
+```bash
+omx --import-project backup.tar.gz
+```

@@ -7,35 +7,35 @@ sidebar_position: 16
 
 # Office 加载项
 
-OmniContext Office 加载项将 AI 助手带入 Word、Excel 和 PowerPoint。
+OmniContext Office 加载项可以把 OmniContext CLI 带进 Word、Excel 和 PowerPoint。
 
 ## 安装
 
-桌面应用会自动处理 Office 加载项的安装：
+桌面应用会帮你处理安装流程：
 
 1. 打开桌面应用
-2. 在**集成**区域，点击 Office Add-in 旁的**安装**按钮
+2. 在“集成”区域里，点击 Office Add-in 旁边的“Install”按钮
 3. 从桌面应用启动服务器
-4. 打开 Excel、Word 或 PowerPoint —— OmniContext 面板会出现在侧边栏
+4. 打开 Word、Excel 或 PowerPoint，找到 OmniContext 面板
 
-桌面应用会自动生成 Office 所需的 TLS 证书，并以 HTTPS 模式启动服务器。
+桌面应用会自动生成 Office 所需的证书，并用正确的 HTTPS 配置启动本地服务器。
 
-## 使用
+## 使用方式
 
-安装完成后，侧边栏会出现 OmniContext 面板，你可以：
+安装完成后，OmniContext 面板会出现在 Office 内部。你可以用它来：
 
-- **Excel** - 生成公式、创建预算、分析数据
-- **Word** - 起草内容、格式化文档、总结文本
-- **PowerPoint** - 设计幻灯片、创建演示文稿、添加内容
+- 在 Word 里起草和改写文档
+- 在 Excel 里生成公式、预算和分析内容
+- 在 PowerPoint 里整理和优化幻灯片
 
-加载项与本地 omx 服务器通信，可以读取和修改当前文档内容。
+加载项连接的是你本地的 OmniContext CLI 实例，所以它和终端工作流共享同一套模型、会话和记忆。
 
 ## 卸载
 
-在桌面应用的集成区域点击**卸载**即可移除加载项。
+如果要移除加载项，可以回到桌面应用里的“集成”区域，点击“Uninstall”按钮。
 
 ## 提示
 
-- 使用 General 工作流预设可获得最佳 Office 体验
-- 加载项与终端共享相同的模型和记忆
-- 桌面应用中的状态指示器显示加载项是否已安装以及服务器是否正在运行
+- 大多数 Office 场景下，**General** 工作流通常最合适
+- 桌面应用顶部的状态指示器会告诉你 Office 是否已安装并且可用
+- 因为它复用的是同一个 OmniContext CLI 实例，项目记忆在合适的时候也会继续生效

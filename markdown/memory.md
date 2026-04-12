@@ -7,11 +7,11 @@ sidebar_position: 9
 
 # Cross-Session Memory
 
-omx can remember key insights across sessions. When a conversation is compacted, the model reflects on the session, pulls out key points, and evaluates existing ones.
+OmniContext CLI can remember useful project knowledge across sessions. Memory is extracted when a conversation is compacted, then re-injected into later sessions automatically.
 
 ## How It Works
 
-Memory extraction runs automatically during compaction. Each memory point carries a score that shifts based on usefulness:
+Every memory point carries a score that changes based on whether it helped:
 
 | Rating | Score Change |
 |--------|-------------|
@@ -19,28 +19,28 @@ Memory extraction runs automatically during compaction. Each memory point carrie
 | Neutral | -1 |
 | Harmful | -6 |
 
-Points that drop below -10 are pruned. Good insights accumulate weight over multiple sessions. Bad advice is flushed quickly. Stale knowledge decays on its own.
+Points below `-10` are pruned. That gives useful memories a chance to build up over time while stale or bad guidance fades out naturally.
 
 ## Enabling Memory
 
-Toggle cross-session memory through the preferences menu:
+Toggle memory from the preferences menu:
 
-1. Press `Escape` to open the menu
-2. Select **Change preferences**
+1. Press `Escape`
+2. Choose **Change preferences**
 3. Toggle **Cross-session memory**
 
 ## Storage
 
-Each project maintains its own memory file at `.omx/memory.json`. The file is a JSON array of memory points, each with a content string and a numeric score.
+Each project keeps its own memory file at `.omx/memory.json`.
 
-Edit the file directly for full control -- add project-specific knowledge, remove incorrect entries, or adjust scores manually.
+The file is a JSON array of memory entries, each with a content string and a score. You can edit it directly if you want full control.
 
 ## What Gets Remembered
 
-The model decides what's worth remembering during compaction. Typical memory points include:
+The model decides what is worth keeping during compaction. Typical examples include:
 
-- Project structure and conventions
-- Technology choices and configurations
-- Coding patterns specific to the codebase
-- Mistakes made and corrections applied
-- User preferences for code style
+- project structure and conventions
+- technology choices and configs
+- codebase-specific patterns
+- repeated mistakes and their fixes
+- user preferences that matter across sessions

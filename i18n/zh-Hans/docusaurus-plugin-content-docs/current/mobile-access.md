@@ -7,43 +7,39 @@ sidebar_position: 13
 
 # 移动端访问
 
-通过启用网络访问的服务器模式，从手机或平板访问 omx。
+你可以把 Web 客户端暴露到本地网络，或者通过私有隧道，从手机或平板上使用 OmniContext CLI。
 
 ## 本地网络
 
-将主机绑定到所有接口：
+把服务器绑定到所有网卡：
 
 ```bash
 omx --serve --host 0.0.0.0
 ```
 
-然后在手机上打开 `http://<你的IP>:5281`。使用 `ipconfig`（Windows）或 `ifconfig`（macOS/Linux）查找本地 IP。
+然后在手机上打开 `http://<你的IP>:5281`。
+
+在 macOS 或 Linux 上，可以用 `ifconfig` 查本地 IP；在 Windows 上用 `ipconfig`。
 
 ## 通过 Tailscale 远程访问
 
-安全地从任何地方访问：
+如果你想在不同网络之间更安全地访问：
 
 1. 在电脑和手机上都安装 [Tailscale](https://tailscale.com)
-2. 启动 omx：
-
-```bash
-omx --serve --host 0.0.0.0
-```
-
+2. 运行 `omx --serve --host 0.0.0.0` 启动 OmniContext CLI
 3. 在手机上打开 `http://<tailscale-ip>:5281`
 
 ## 认证
 
-设置密码保护实例：
+在把服务暴露到本机之外之前，先设置一个密码：
 
 ```bash
 omx --set-password
 ```
 
-首次连接时会要求输入密码。
-
 ## 提示
 
-- Web UI 完全响应式，在手机屏幕上效果良好
-- 使用模型切换器选择适合快速移动交互的模型
-- 文件附件通过手机的文件选择器工作
+- Web 客户端是完全响应式的，在小屏幕上也很好用
+- 模型切换器很适合做快速的移动端查看
+- 文件附件可以直接通过手机的文件选择器上传
+- 如果你需要直接对公网开放，请看 [云端部署](/tutorial/cloud-deployment)

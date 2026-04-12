@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniContext CLI - Context-First AI Coding Assistant</title>
-    <meta name="description"
-        content="A zero-telemetry coding assistant that treats your context window as a scarce resource. Runs in your terminal and extends into VS Code, Office, the browser, and mobile.">
+    <title>OmniContext CLI - Context-First, Zero-Telemetry Coding Assistant</title>
+    <meta name="description" content="A context-first, zero-telemetry coding assistant for the terminal, with workflows, agent tools, cross-session memory, and integrations for VS Code, Office, the browser, and mobile.">
     <link rel="icon" href="favicon.ico">
     <link href="assets/fonts/inter.css" rel="stylesheet">
     <script src="assets/js/lucide.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body id="top">
-
     <nav id="navbar">
         <div class="container nav-content">
             <a href="#top" class="logo"><img src="assets/img/logo.svg" alt="" class="logo-icon">OmniContext CLI</a>
@@ -26,12 +22,10 @@
             </div>
             <div class="nav-right">
                 <a href="zh-Hans/" class="nav-lang">zh-CN</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank"
-                    aria-label="GitHub">
+                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank" aria-label="GitHub">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta"
-                    target="_blank">Download</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta" target="_blank">Download</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
                 <i data-lucide="menu"></i>
@@ -43,30 +37,28 @@
             <a href="#integrations" class="mobile-menu-link">Integrations</a>
             <a href="docs/" class="mobile-menu-link">Docs</a>
             <a href="zh-Hans/" class="mobile-menu-link">zh-CN</a>
-            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link"
-                target="_blank">Download</a>
+            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link" target="_blank">Download</a>
         </div>
     </nav>
 
-    <!-- ========== HERO ========== -->
     <section class="hero">
         <div class="container">
             <div class="hero-tags">
                 <span class="hero-tag">Context-first architecture</span>
-                <span class="hero-tag">Fully customizable workflows</span>
+                <span class="hero-tag">Custom workflows</span>
                 <span class="hero-tag">Native multi-protocol</span>
+                <span class="hero-tag">Agent tools</span>
                 <span class="hero-tag">Cross-session memory</span>
-                <span class="hero-tag">Office & browser integration</span>
                 <span class="hero-tag">Zero telemetry</span>
             </div>
             <h1>
                 <span class="gradient-text">Every token counts.</span><br>
-                Waste nothing.
+                Spend it on real work.
             </h1>
             <p class="hero-description">
-                Every token matters. OmniContext CLI is engineered from the ground up to squeeze
-                maximum value out of every context window. Terminal-native, fully extensible,
-                and it extends into VS Code, Office, the browser, and your phone.
+                OmniContext CLI is a context-first, zero-telemetry coding assistant for the terminal. It stays lean,
+                runs native protocol stacks for Anthropic, OpenAI, Gemini, and Responses API, and reaches
+                into VS Code, Office, the browser, and mobile when you need it.
             </p>
             <div class="hero-actions">
                 <div class="install-command" id="installCmd">
@@ -80,11 +72,9 @@
                     <i data-lucide="arrow-right"></i>
                 </a>
             </div>
-
         </div>
     </section>
 
-    <!-- ========== SLIDESHOW ========== -->
     <section class="slideshow">
         <div class="container">
             <div class="slideshow-track">
@@ -100,7 +90,6 @@
         </div>
     </section>
 
-    <!-- ========== METRICS STRIP ========== -->
     <section class="metrics">
         <div class="container">
             <div class="metrics-grid">
@@ -111,7 +100,7 @@
                 <div class="metric-divider"></div>
                 <div class="metric">
                     <span class="metric-value">10</span>
-                    <span class="metric-label">Built-in Tools</span>
+                    <span class="metric-label">Base Tools</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
@@ -127,49 +116,56 @@
         </div>
     </section>
 
-    <!-- ========== WORKFLOWS ========== -->
     <section class="section" id="architecture">
         <div class="container">
             <div class="section-header center">
-                <span class="section-label">Fully Customizable Workflows</span>
-                <h2 class="section-title">Your rules, your tools,<br>your workflow</h2>
+                <span class="section-label">Workflows</span>
+                <h2 class="section-title">Built-in workflows,<br>fully under your control</h2>
                 <p class="section-subtitle">
-                    A workflow is a single markdown file that controls everything --
-                    system prompt, available tools, and how OmniContext CLI behaves. Two built-in
-                    presets ship out of the box. Drop a file in
-                    <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg-elevated); padding: 2px 6px; border: 1px dashed var(--border);">~/.omx/workflows/</code>
-                    to create your own.
+                    A workflow is just markdown: tool access in frontmatter, behavior in the prompt body.
+                    OmniContext CLI ships with Programming and General out of the box, and the desktop app installs a Browser workflow for the Chrome sidebar.
                 </p>
             </div>
-
             <div class="workflow-grid">
                 <div class="workflow-card active">
                     <div class="workflow-card-header">
-                        <span class="workflow-card-icon">&#9675;</span>
+                        <span class="workflow-card-icon">○</span>
                         <h3>Programming <span class="workflow-badge">Default</span></h3>
                     </div>
-                    <p>Coding assistant with base tools, agent tools, and MCP integration.
-                        Concise output, minimal overhead. Reads OMX.md and CLAUDE.md
-                        for project conventions.</p>
+                    <p>The main coding workflow for terminal and editor use. Concise, tool-first, and built to work with project instructions like OMX.md and CLAUDE.md.</p>
                     <div class="workflow-tools">
                         <span>Base Tools</span>
                         <span>Agent Tools</span>
                         <span>Custom Agents</span>
                         <span>MCP</span>
+                        <span>Remote Tools</span>
                     </div>
                 </div>
                 <div class="workflow-card">
                     <div class="workflow-card-header">
-                        <span class="workflow-card-icon">&#9671;</span>
+                        <span class="workflow-card-icon">◇</span>
                         <h3>General</h3>
                     </div>
-                    <p>Personal assistant for documents, spreadsheets, and presentations.
-                        Proactive with tools, conversational tone. Works with the app
-                        you currently have open.</p>
+                    <p>A broader personal-assistant workflow for docs, spreadsheets, presentations, and day-to-day tasks. Clear, friendly, and proactive with tools.</p>
                     <div class="workflow-tools">
                         <span>Base Tools</span>
                         <span>Custom Agents</span>
                         <span>MCP</span>
+                        <span>Remote Tools</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">⬡</span>
+                        <h3>Browser</h3>
+                    </div>
+                    <p>Installed by the desktop app for the Chrome sidebar. Designed for tab control, page extraction, bookmarks, history, and screenshots.</p>
+                    <div class="workflow-tools">
+                        <span>Tabs</span>
+                        <span>Page Content</span>
+                        <span>Bookmarks</span>
+                        <span>History</span>
+                        <span>Screenshots</span>
                     </div>
                 </div>
                 <div class="workflow-card workflow-card-custom">
@@ -177,56 +173,48 @@
                         <span class="workflow-card-icon">+</span>
                         <h3>Custom</h3>
                     </div>
-                    <p>Drop a markdown file in <code>~/.omx/workflows/</code> and it
-                        becomes a selectable workflow. YAML frontmatter defines the tool
-                        whitelist; the body becomes the system prompt.</p>
-                    <div class="workflow-mini-code"><pre><code><span class="t-key">name:</span> Code Review
-<span class="t-key">tools:</span> [Read, Glob, Grep]
+                    <p>Drop a file into <code>~/.omx/workflows/</code> or <code>.omx/workflows/</code> and it becomes a selectable workflow. The file name becomes the workflow ID you use with <code>--workflow</code>.</p>
+                    <div class="workflow-mini-code"><pre><code><span class="t-key">name:</span> Review
+<span class="t-key">allowBaseTools:</span> [Read, Glob, Grep, Skill]
+<span class="t-key">allowBuiltinAgents:</span> true
 <span class="t-comment">---</span>
-You are a senior reviewer...</code></pre></div>
+You are a careful reviewer...</code></pre></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== TOOLS ========== -->
     <section class="section section-alt" id="tools">
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Tools</span>
-                <h2 class="section-title">Base tools + agent tools</h2>
+                <h2 class="section-title">Direct tools for action,<br>agent tools for exploration</h2>
                 <p class="section-subtitle">
-                    Base tools give the model direct file system and web access. Agent tools
-                    run exploratory tasks on a cheaper model -- intermediate tool calls,
-                    file contents, and reasoning never enter your main context. You get a
-                    concise answer back; the scratch work stays off the books.
+                    Base tools do the work in front of you. Agent tools do the scouting off to the side,
+                    using a secondary model so intermediate tool calls, file reads, and scratch reasoning never bloat your main context.
                 </p>
             </div>
-
             <div class="tools-grid">
                 <div class="tool-section-label">Agent Tools</div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="compass"></i></div>
                     <div class="tool-info">
                         <h4>Agent_Explore</h4>
-                        <p>Survey project architecture. Maps directory layout, key files, and how
-                            the codebase is organized.</p>
+                        <p>Map the project structure and explain how the codebase is organized.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="eye"></i></div>
                     <div class="tool-info">
                         <h4>Agent_Glance</h4>
-                        <p>Preview multiple files at once with brief summaries. Quickly understand
-                            what you're working with.</p>
+                        <p>Preview multiple files and directories with short summaries.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="search"></i></div>
                     <div class="tool-info">
                         <h4>Agent_Search</h4>
-                        <p>Search the codebase to answer a specific question. Returns targeted code
-                            segments from across the project.</p>
+                        <p>Search the codebase to answer a specific technical question.</p>
                     </div>
                 </div>
                 <div class="tool-section-label">Base Tools</div>
@@ -234,197 +222,182 @@ You are a senior reviewer...</code></pre></div>
                     <div class="tool-icon"><i data-lucide="terminal"></i></div>
                     <div class="tool-info">
                         <h4>Bash</h4>
-                        <p>Run shell commands. Great for builds, installs, CLI tools, and system tasks.</p>
+                        <p>Run shell commands for builds, tests, installs, and one-off system tasks.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="refresh-cw"></i></div>
+                    <div class="tool-info">
+                        <h4>BashOutput</h4>
+                        <p>Check the output of a background Bash task without blocking the main session.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="file-text"></i></div>
                     <div class="tool-info">
                         <h4>Read</h4>
-                        <p>Read file contents with line numbers. Supports offset and limit for
-                            navigating large files.</p>
+                        <p>Read files with line numbers, offsets, limits, and support for images or PDFs.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <div class="tool-info">
                         <h4>Edit</h4>
-                        <p>Make surgical text replacements. Provide exact text to find and what to
-                            replace it with.</p>
+                        <p>Make precise text replacements inside an existing file.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="file-plus"></i></div>
                     <div class="tool-info">
                         <h4>Write</h4>
-                        <p>Write content to a file, creating parent directories as needed. Great for
-                            new files and complete rewrites.</p>
+                        <p>Create a file or fully rewrite one, with optional create-only safety.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="folder-search"></i></div>
                     <div class="tool-info">
                         <h4>Glob</h4>
-                        <p>Find files by pattern. Standard glob syntax with gitignore support.</p>
+                        <p>Find files by pattern with `.gitignore` support built in.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="text-search"></i></div>
                     <div class="tool-info">
                         <h4>Grep</h4>
-                        <p>Search file contents using regex. Returns matches with file paths
-                            and line numbers.</p>
+                        <p>Search file contents with regex and return file paths plus line numbers.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
                     <div class="tool-info">
                         <h4>WebSearch</h4>
-                        <p>Search the web for up-to-date information and documentation.</p>
+                        <p>Search the web for current documentation and up-to-date information.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="link"></i></div>
                     <div class="tool-info">
                         <h4>WebFetch</h4>
-                        <p>Fetch content from a URL and convert HTML to clean markdown.</p>
+                        <p>Fetch a URL and convert the page into clean markdown.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="sparkles"></i></div>
                     <div class="tool-info">
                         <h4>Skill</h4>
-                        <p>Load a skill to get detailed instructions for domain-specific tasks.</p>
+                        <p>Load reusable skill instructions, including Claude Code-compatible skills.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== NATIVE PROTOCOLS ========== -->
     <section class="section section-alt">
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Native Multi-Protocol</span>
-                <h2 class="section-title">Four API protocols,<br>zero format conversion</h2>
+                <h2 class="section-title">Four API protocols,<br>no translation layer</h2>
                 <p class="section-subtitle">
-                    Each LLM API protocol has its own dedicated request builder and stream handler.
-                    Prompt caching, extended thinking, structured outputs, and every other
-                    provider-specific feature work exactly as the vendor designed them.
-                    Anthropic requests are not converted into OpenAI format or vice versa.
+                    Each protocol gets its own request builder and stream handler, so provider-specific behavior like prompt caching,
+                    extended thinking, structured outputs, and tool orchestration works the way the vendor intended.
                 </p>
             </div>
-
             <div class="protocols-grid">
                 <div class="protocol-card">
                     <div class="protocol-name">Anthropic</div>
-                    <div class="protocol-desc">Messages API with prompt caching, extended thinking,
-                        and streaming. Token-level cache control with custom TTL.</div>
+                    <div class="protocol-desc">Messages API with prompt caching, extended thinking, and streaming.</div>
                     <div class="protocol-tag">Claude Opus / Sonnet / Haiku</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">OpenAI</div>
-                    <div class="protocol-desc">Chat Completions API. Compatible with any endpoint
-                        that speaks the OpenAI format -- local models, Zhipu, MiniMax, and more.</div>
-                    <div class="protocol-tag">GPT-4o / GLM / MiniMax / DeepSeek</div>
+                    <div class="protocol-desc">Chat Completions for OpenAI-compatible endpoints, including local and hosted providers.</div>
+                    <div class="protocol-tag">GPT-4o / GLM / DeepSeek / MiniMax</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">Gemini</div>
-                    <div class="protocol-desc">Native generateContent API with Gemini-specific streaming.
-                        No OpenAI shim -- tools and function calling use Gemini's own schema.</div>
+                    <div class="protocol-desc">Native generateContent support with Gemini-style streaming and function calling.</div>
                     <div class="protocol-tag">Gemini Pro / Flash</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">Responses API</div>
-                    <div class="protocol-desc">OpenAI's newer Responses API with built-in tool orchestration.
-                        Separate path from Chat Completions, not a compatibility wrapper.</div>
-                    <div class="protocol-tag">GPT-4o / Codex</div>
+                    <div class="protocol-desc">OpenAI's Responses API with native tool orchestration on its own request path.</div>
+                    <div class="protocol-tag">GPT-4.1 / GPT-4o / Codex</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== COST OPTIMIZATION ========== -->
     <section class="section" id="cost-optimization">
         <div class="container">
             <div class="section-header center">
-                <span class="section-label">Cost Optimization</span>
-                <h2 class="section-title">Context-first design saves real money</h2>
+                <span class="section-label">Context Economy</span>
+                <h2 class="section-title">Built to stretch every context window</h2>
                 <p class="section-subtitle">
-                    Every API call resends your full conversation history. OmniContext CLI
-                    attacks cost from four angles -- keeping the context window lean, the
-                    rounds few, and the bills low.
+                    OmniContext CLI keeps context lean and costs down from every angle: smaller prompts, agent offloading,
+                    automatic compaction, reusable memory, and prompt caching when it helps.
                 </p>
             </div>
-
             <div class="cost-explainer">
                 <div class="cost-how">
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="feather"></i></div>
                         <h3>Lean system prompts</h3>
-                        <p>The built-in system prompts are short, focused, and free of
-                            boilerplate. Tool descriptions are minimal. Your context budget
-                            goes toward actual work, not framework overhead.</p>
+                        <p>Built-in prompts stay short and focused so tokens go to real work instead of framework noise.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="split"></i></div>
-                        <h3>Agentic tools</h3>
-                        <p>Exploratory tasks run as agentic tools on a cheaper model.
-                            You get a concise answer back; the scratch work stays off
-                            the books. The expensive model never does grunt work.</p>
+                        <h3>Agent tools</h3>
+                        <p>Exploratory work happens on a secondary model, and only the final answer comes back.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="scissors"></i></div>
                         <h3>Context editing</h3>
-                        <p>Older rounds accumulate tool call payloads and thinking blocks
-                            that are no longer relevant. Context editing replaces them with
-                            compact placeholders, so the model sees a clean, focused history.</p>
+                        <p>Old bulky tool payloads and reasoning traces are replaced with compact placeholders.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="brain"></i></div>
                         <h3>Cross-session memory</h3>
-                        <p>Good insights accumulate weight, stale knowledge decays naturally.
-                            Accumulated memories are injected automatically so the assistant
-                            knows your preferences and project context from the first message.</p>
+                        <p>Useful project knowledge survives across sessions, so you repeat less context by hand.</p>
+                    </div>
+                    <div class="cost-how-item">
+                        <div class="cost-how-icon"><i data-lucide="database"></i></div>
+                        <h3>Prompt caching</h3>
+                        <p>Pick a 5 minute or 1 hour cache window and let repeated context blocks stay cheap.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== MULTI-MODEL ========== -->
     <section class="section section-alt">
         <div class="container">
             <div class="split-layout reverse">
                 <div class="split-content">
                     <span class="section-label">Model Providers</span>
-                    <h2 class="section-title">One command to add<br>all your models</h2>
+                    <h2 class="section-title">Add a whole provider<br>with one command</h2>
                     <p class="section-subtitle">
-                        OmniContext CLI ships with built-in provider presets. Pick one,
-                        paste your API key, and every model from that service is ready.
+                        Built-in provider presets make first-run setup faster. Paste one API key and let OmniContext CLI import the matching models for you.
                     </p>
                     <div class="provider-grid">
                         <div class="provider-tag">Zenmux</div>
                         <div class="provider-tag">DeepSeek</div>
                         <div class="provider-tag">Kimi for Coding</div>
                         <div class="provider-tag">OpenRouter</div>
-                        <div class="provider-tag">Zhipu (GLM)</div>
+                        <div class="provider-tag">Zhipu</div>
                         <div class="provider-tag">MiniMax</div>
                     </div>
                 </div>
                 <div class="split-visual">
                     <div class="code-block">
                         <div class="code-header">Quick setup</div>
-                        <pre><code><span class="t-comment"># List available providers</span>
+                        <pre><code><span class="t-comment"># See built-in providers</span>
 <span class="prompt">$</span> omx --list-providers
 
-<span class="t-comment"># Add all models from a provider</span>
+<span class="t-comment"># Import all models from one provider</span>
 <span class="prompt">$</span> omx --add-provider zenmux --api-key zmx-...
-<span class="t-output">Added: Zenmux Anthropic (Claude Sonnet 4)</span>
-<span class="t-output">Added: Zenmux Gemini (Gemini 2.5 Flash)</span>
-<span class="t-output">...</span>
+<span class="t-output">Added 20+ models from Zenmux</span>
 
-<span class="t-comment"># Remove a provider</span>
+<span class="t-comment"># Remove them again if you want</span>
 <span class="prompt">$</span> omx --remove-provider zenmux</code></pre>
                     </div>
                 </div>
@@ -432,41 +405,36 @@ You are a senior reviewer...</code></pre></div>
         </div>
     </section>
 
-    <!-- ========== MEMORY ========== -->
     <section class="section">
         <div class="container">
             <div class="split-layout">
                 <div class="split-content">
                     <span class="section-label">Cross-Session Memory</span>
-                    <h2 class="section-title">It learns as you work</h2>
+                    <h2 class="section-title">It keeps the good stuff</h2>
                     <p class="section-subtitle">
-                        Memory extraction runs automatically when a conversation is compacted.
-                        The model reflects on the session, pulls out key points, and evaluates
-                        existing ones. Each point carries a score that shifts based on usefulness.
+                        Memory is extracted during compaction, scored over time, and re-injected automatically on the next session.
+                        Helpful points rise, stale ones decay, and bad advice gets flushed out quickly.
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
                             <i data-lucide="brain"></i>
                             <div>
                                 <strong>Automatic extraction</strong>
-                                <span>Key points are pulled from every conversation during compaction
-                                    and injected into future sessions</span>
+                                <span>Useful project facts are pulled from past conversations and carried forward.</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="trending-up"></i>
                             <div>
                                 <strong>Scored memory</strong>
-                                <span>Helpful points gain +3, neutral ones decay at -1, harmful ones
-                                    drop fast at -6. Below -10 gets pruned.</span>
+                                <span>Helpful memories gain +3, neutral ones drift at -1, harmful ones drop at -6.</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="folder-open"></i>
                             <div>
                                 <strong>Per-project storage</strong>
-                                <span>Each project has its own memory file at .omx/memory.json.
-                                    Edit it directly for full control.</span>
+                                <span>Every project keeps its own memory file at <code>.omx/memory.json</code>.</span>
                             </div>
                         </div>
                     </div>
@@ -478,22 +446,22 @@ You are a senior reviewer...</code></pre></div>
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score positive">+3</span>
                             </div>
-                            <code>"This project uses TypeScript strict mode with path aliases configured in tsconfig"</code>
+                            <code>"This repo uses OMX.md for project instructions and falls back to CLAUDE.md."</code>
                         </div>
                         <div class="memory-card">
                             <div class="memory-header">
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score positive">+2</span>
                             </div>
-                            <code>"API routes follow REST conventions in src/routes/ with Zod validation"</code>
+                            <code>"The web client footer shows statusCommand output from omx.json."</code>
                         </div>
                         <div class="memory-card fading">
                             <div class="memory-header">
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score negative">-8</span>
                             </div>
-                            <code>"Uses Webpack for bundling"</code>
-                            <span class="memory-status">Decaying -- will be pruned at -10</span>
+                            <code>"This project deploys through Webpack."</code>
+                            <span class="memory-status">Decaying — pruned at -10</span>
                         </div>
                     </div>
                 </div>
@@ -501,105 +469,89 @@ You are a senior reviewer...</code></pre></div>
         </div>
     </section>
 
-    <!-- ========== INTEGRATIONS ========== -->
     <section class="section section-alt" id="integrations">
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Integrations</span>
-                <h2 class="section-title">Goes everywhere your work does</h2>
+                <h2 class="section-title">One assistant,<br>everywhere you already work</h2>
                 <p class="section-subtitle">
-                    Terminal is home base, but OmniContext CLI extends into every tool you use.
-                    The desktop app ties it all together as a lightweight server launcher
-                    that connects your IDE, browser, and Office apps to a single instance.
+                    Terminal is the center of gravity, but OmniContext CLI extends into editors, browsers, Office apps, and mobile.
+                    The desktop app ties it together and launches the shared local server behind those integrations.
                 </p>
             </div>
-
             <div class="integration-grid">
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="app-window"></i></div>
                         <div>
                             <h3>Desktop App</h3>
-                            <p>Workspace management, model configuration, and one-click server launch
-                                that bridges all the integrations below.</p>
+                            <p>Workspace management, model setup, memo and reminder tools, and one-click server launch.</p>
                         </div>
                     </div>
                     <div class="integration-features">
-                        <span>Workspace management</span>
+                        <span>Workspaces</span>
                         <span>Model config</span>
-                        <span>System tray</span>
-                        <span>Office install</span>
+                        <span>Memos</span>
+                        <span>Server launch</span>
                     </div>
                 </div>
-
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="monitor"></i></div>
                         <div>
                             <h3>VS Code Extension</h3>
-                            <p>IDE integration with file context, diagnostics, and diff views.
-                                OmniContext CLI sees what you see in the editor.</p>
+                            <p>Send file context, selections, diagnostics, and diff views straight into the conversation.</p>
                         </div>
                     </div>
                     <div class="integration-features">
-                        <span>File awareness</span>
-                        <span>Selection context</span>
+                        <span>Active file</span>
+                        <span>Selection</span>
                         <span>Diagnostics</span>
-                        <span>Inline diffs</span>
+                        <span>Diff view</span>
                     </div>
                 </div>
-
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="chrome"></i></div>
                         <div>
                             <h3>Chrome Extension</h3>
-                            <p>Sidebar on any webpage. Summarize pages, extract data, and
-                                automate browser tasks.</p>
+                            <p>Use a sidebar on any page with tab control, page extraction, bookmarks, history, and screenshots.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="file-spreadsheet"></i></div>
                         <div>
                             <h3>Office Add-in</h3>
-                            <p>AI panel inside Word, Excel, and PowerPoint. Create budgets,
-                                format docs, and design slides.</p>
+                            <p>Bring OmniContext CLI into Word, Excel, and PowerPoint through the desktop app's Office integration.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="code"></i></div>
                         <div>
                             <h3>Zed Editor</h3>
-                            <p>External agent via Agent Client Protocol. Full tool access
-                                inside Zed's agent panel.</p>
+                            <p>Run OmniContext CLI as an ACP agent inside Zed and keep the same tool access you use in the terminal.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web Client</h3>
-                            <p>Browser UI with LaTeX, Mermaid diagrams, file attachments,
-                                drag-and-drop, and a custom status line.</p>
+                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, and a custom status line.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="integration-card">
                     <div class="integration-header">
                         <div class="integration-icon"><i data-lucide="smartphone"></i></div>
                         <div>
                             <h3>Mobile Access</h3>
-                            <p>Run <code>omx --serve</code> and connect from your phone.
-                                Code reviews from the couch.</p>
+                            <p>Run <code>omx --serve</code> and connect from your phone or tablet on your local network or over Tailscale.</p>
                         </div>
                     </div>
                 </div>
@@ -607,120 +559,101 @@ You are a senior reviewer...</code></pre></div>
         </div>
     </section>
 
-    <!-- ========== EXTENSIBILITY ========== -->
     <section class="section">
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Extensibility</span>
-                <h2 class="section-title">Everything is a markdown file<br>or JSON config</h2>
+                <h2 class="section-title">Markdown files in,<br>new capabilities out</h2>
                 <p class="section-subtitle">
-                    Custom workflows, agents, skills, and MCP servers.
-                    Build on top of OmniContext CLI without touching the core.
+                    Workflows, custom agents, skills, and MCP servers are all open-ended.
+                    OmniContext CLI is designed to be customized without touching the core.
                 </p>
             </div>
-
             <div class="extend-grid">
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="settings"></i></div>
                     <h3>Custom Workflows</h3>
-                    <p>Define your own system prompt and control which tools are available.
-                        YAML frontmatter + markdown body.</p>
-                    <div class="extend-path">~/.omx/workflows/my-flow.md</div>
+                    <p>Define your own system prompt and whitelist exactly the tools you want available.</p>
+                    <div class="extend-path">~/.OmniContext CLI/workflows/my-flow.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="bot"></i></div>
                     <h3>Custom Agentic Tools</h3>
-                    <p>Write a markdown file with a prompt template, parameter schema,
-                        and tool permissions. It becomes a callable agentic tool instantly.
-                        Add AGENTS.md for agent instructions, with OMX.md and CLAUDE.md as fallback.</p>
-                    <div class="extend-path">~/.omx/agents/review.md</div>
+                    <p>Write a markdown prompt template plus schema and tool permissions, then call it like any other agent tool.</p>
+                    <div class="extend-path">~/.OmniContext CLI/agents/review.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="book-open"></i></div>
                     <h3>Skills</h3>
-                    <p>Directory-based prompt capabilities invoked as slash commands.
-                        Inject instructions for domain-specific knowledge. Compatible
-                        with Claude Code skill format.</p>
-                    <div class="extend-path">~/.omx/skills/style/SKILL.md</div>
+                    <p>Load reusable prompt instructions as slash commands or through the Skill tool. Claude Code skills work too.</p>
+                    <div class="extend-path">~/.OmniContext CLI/skills/review/SKILL.md</div>
                 </div>
                 <div class="extend-card">
                     <div class="extend-icon"><i data-lucide="plug"></i></div>
                     <h3>MCP Servers</h3>
-                    <p>Connect external tools and data sources via Model Context Protocol.
-                        Stdio and HTTP transports supported. Also reads Claude's MCP config.</p>
-                    <div class="extend-path">~/.omx/mcp.json</div>
+                    <p>Connect external tools and data sources over stdio or HTTP, with Claude MCP configs picked up automatically.</p>
+                    <div class="extend-path">~/.OmniContext CLI/mcp.json</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FEATURES GRID ========== -->
     <section class="section section-alt">
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Built Right</span>
-                <h2 class="section-title">The details that matter</h2>
+                <h2 class="section-title">The quality-of-life details matter too</h2>
             </div>
-
             <div class="details-grid">
                 <div class="detail-item">
                     <i data-lucide="feather"></i>
                     <h3>Lean System Prompts</h3>
-                    <p>Short, focused, and free of boilerplate. Your context budget goes
-                        toward actual work, not framework overhead.</p>
+                    <p>Short prompts, minimal boilerplate, and more room for the problem you're actually solving.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="shield"></i>
                     <h3>Zero Telemetry</h3>
-                    <p>No usage tracking, no analytics, no data collection. Your code and
-                        conversations never leave your machine.</p>
+                    <p>No analytics, no usage tracking, and no product telemetry layer riding on your workflow.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="scissors"></i>
                     <h3>Context Editing</h3>
-                    <p>Replaces bulky tool inputs and outputs with compact placeholders
-                        and strips reasoning traces. The model sees a clean, focused history.</p>
+                    <p>Trim old tool payloads and reasoning traces so the active window stays clean.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="archive"></i>
                     <h3>Auto-Compaction</h3>
-                    <p>When context hits 80% capacity, the conversation is summarized,
-                        memories extracted, and a fresh session picks up seamlessly.</p>
+                    <p>When the window gets crowded, OmniContext CLI summarizes the session and carries the essentials forward.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="sparkles"></i>
                     <h3>Extended Thinking</h3>
-                    <p>Enable deeper reasoning for complex tasks. The model thinks
-                        step by step before responding.</p>
+                    <p>Turn on deeper reasoning for harder tasks when your current model supports it.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="file-check"></i>
                     <h3>CLAUDE.md Compatible</h3>
-                    <p>Already have a CLAUDE.md? OmniContext CLI reads it automatically,
-                        right alongside OMX.md. Zero-friction migration.</p>
+                    <p>Already have CLAUDE.md in your repo? OmniContext CLI reads it, and prefers OMX.md when you add one.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="database"></i>
                     <h3>Prompt Caching</h3>
-                    <p>You choose the cache TTL: 5 minutes for quick iteration, 1 hour for
-                        long work sessions. Repeated context blocks are served from cache.</p>
+                    <p>Choose between 5 minute and 1 hour cache windows for repeated prompt blocks.</p>
                 </div>
                 <div class="detail-item">
                     <i data-lucide="palette"></i>
                     <h3>Color Themes</h3>
-                    <p>17 built-in color presets for terminal and web UI. Crystal, Neon,
-                        Sunset, and more. Light and dark mode support.</p>
+                    <p>Built-in palettes like crystal, splash, neon, and forest work across the terminal and web client.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
     <section class="section">
         <div class="container">
             <div class="cta-section">
-                <h2>Start building with OmniContext CLI</h2>
-                <p>One command. Zero config. Bring your own API key.</p>
+                <h2>Install OmniContext CLI and get to work</h2>
+                <p>Bring your own API key. Keep the context window clean.</p>
                 <div class="cta-install">
                     <div class="install-command cta-cmd" id="installCmd2">
                         <code><span class="prompt">$</span> npm install -g omni-context-cli && omx</code>
@@ -730,9 +663,9 @@ You are a senior reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="cta-links">
-                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" target="_blank">
+                    <a href="https://www.npmjs.com/package/omni-context-cli" target="_blank">
                         <i data-lucide="download"></i>
-                        Download Desktop
+                        npm
                     </a>
                     <a href="docs/">
                         <i data-lucide="book-open"></i>
@@ -751,11 +684,11 @@ You are a senior reviewer...</code></pre></div>
         <div class="container footer-content">
             <div class="footer-left">
                 <span class="logo"><img src="assets/img/logo.svg" alt="" class="logo-icon">OmniContext CLI</span>
-                <span class="footer-tagline">zero-telemetry AI coding assistant</span>
+                <span class="footer-tagline">context-first, zero-telemetry coding assistant</span>
             </div>
             <div class="footer-links">
                 <a href="docs/">Docs</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">GitHub</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">GitHub</a>
                 <a href="https://www.npmjs.com/package/omni-context-cli" target="_blank">npm</a>
             </div>
         </div>
@@ -763,5 +696,4 @@ You are a senior reviewer...</code></pre></div>
 
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>

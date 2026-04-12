@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # 快速开始
 
-omx 是一个零遥测编程助手，运行在终端中，并扩展到 VS Code、Office、浏览器和手机。它将上下文窗口视为稀缺资源，每一层都为高效利用而设计。
+OmniContext CLI 是一个上下文优先、零遥测的助手，起点在终端，也能延伸到 VS Code、Office、浏览器和移动端。它原生支持 Anthropic、OpenAI、Gemini 和 OpenAI Responses API，并内置工作流、智能体工具和跨会话记忆。
 
 ## 安装
 
@@ -17,90 +17,87 @@ npm install -g omni-context-cli
 
 ## 快速上手
 
-进入你的项目目录并运行：
+打开项目目录并运行：
 
 ```bash
 omx
 ```
 
-omx 原生支持四种 API 协议：Anthropic、OpenAI、Gemini 和 OpenAI Responses API。
+首次启动时，可以从菜单里添加模型：
 
-### 添加第一个模型
-
-首次运行时需要添加模型：
-
-1. 按 `Escape` 打开菜单
+1. 按 `Escape`
 2. 选择 **Manage your model list**
 3. 选择 **Add a new model**
-4. 填写表单：
-   - **API Type**：选择 `Anthropic`、`OpenAI`、`Gemini` 或 `OpenAI Responses API`
-   - **Model Name**：模型标识符（如 `claude-sonnet-4-20250514`、`gpt-4o`）
-   - **API Key**：你的 API Key
-   - **API URL**：API 基础端点（如 `https://api.anthropic.com`、`https://api.openai.com/v1`）
-   - **Context Size (K)**：最大上下文窗口，单位为千 Token（如 `200` 表示 200K）
-   - **Nickname**：在 UI 中显示的友好名称
+4. 填写 provider、model name、API key、API URL、context size 和 nickname
 
-或者一条命令添加供应商的所有模型：
+如果你更想直接使用供应商预设：
 
 ```bash
 omx --list-providers
 omx --add-provider openrouter --api-key sk-...
 ```
 
+内置供应商预设包括 Zenmux、DeepSeek、Kimi for Coding、OpenRouter、Zhipu 和 MiniMax。
+
+## 内置工作流
+
+OmniContext CLI 内置两个工作流：
+
+- **Programming** - 默认的编程工作流，适合终端和编辑器场景
+- **General** - 更通用的助手工作流，适合文档、表格和日常任务
+
+如果你使用桌面应用，它还会额外安装一个给 Chrome 侧边栏使用的 **Browser** 工作流。
+
 ## 命令行选项
 
 | 选项 | 描述 |
 |------|------|
-| `-c, --continue` | 继续上次会话 |
-| `-d, --diagnostic` | 启用诊断模式，保存请求/响应 JSON |
-| `-a, --cost-analysis` | 记录 Token 用量到 CSV |
-| `-s, --serve` | 以 HTTP 服务器模式启动 |
-| `-w, --web` | 在浏览器中打开 Web UI（需要 `--serve`） |
-| `-p, --port <port>` | 服务器端口（默认：5281） |
-| `-H, --host <host>` | 服务器主机（默认：localhost） |
-| `--workflow <preset>` | 覆盖工作流预设（programming、general） |
-| `--scope <scope>` | 配置保存范围：global（默认）、project 或 memory |
-| `--approve-write` | 写入工具执行前需要审批（Bash、Edit、Write） |
-| `--approve-all` | 所有工具执行前需要审批 |
-| `--theme <mode>` | 设置 Web UI 主题模式（light、dark、auto） |
-| `--install-vscode-extension` | 安装 VS Code 扩展 |
-| `--list-providers` | 列出可用模型供应商 |
-| `--add-provider <id>` | 从供应商添加模型（需要 `--api-key`） |
-| `--remove-provider <id>` | 移除供应商的所有模型 |
-| `--api-key <key>` | 用于 `--add-provider` 的 API Key |
-| `--parent-pid <pid>` | 父进程退出时自动退出（需要 `--serve`） |
-| `--tls` | 启用 HTTPS |
-| `--acp` | 以 ACP 代理模式运行（用于 Zed 等编辑器集成） |
-| `--tls-cert <path>` | TLS 证书文件路径 |
-| `--tls-key <path>` | TLS 私钥文件路径 |
-| `--lang <code>` | 设置 UI 语言（如 `en-US`、`zh-CN`） |
-| `--set-password [password]` | 设置 Web UI 密码 |
-| `--clear-password` | 移除密码并禁用认证 |
-| `--install-daemon` | 安装为 systemd 服务（仅 Linux） |
-| `--export-project <path>` | 导出项目数据到 gzip 归档 |
-| `--import-project <path>` | 从 gzip 归档导入项目数据 |
+| `-c, --continue` | 继续上一次会话 |
+| `-d, --diagnostic` | 保存请求和响应数据用于调试 |
+| `-a, --cost-analysis` | 将 token 用量记录到 CSV |
+| `-s, --serve` | 以 HTTP 服务器模式启动 OmniContext CLI，而不是终端 UI |
+| `-w, --web` | 启动服务器后在浏览器中打开 Web 客户端 |
+| `-p, --port <port>` | 服务器模式使用的端口 |
+| `-H, --host <host>` | 服务器模式使用的主机 |
+| `--workflow <preset>` | 仅为当前启动覆盖工作流 |
+| `--scope <scope>` | 将配置变更保存到 `global`、`project` 或 `memory` |
+| `--approve-write` | 运行 Bash、Edit 和 Write 前先确认 |
+| `--approve-all` | 运行任何工具前都先确认 |
+| `--install-vscode-extension` | 安装内置的 VS Code 扩展 |
+| `--list-providers` | 列出内置模型供应商 |
+| `--add-provider <id>` | 添加某个供应商下的全部模型 |
+| `--remove-provider <id>` | 移除某个供应商下的全部模型 |
+| `--api-key <key>` | 与 `--add-provider` 搭配使用的 API key |
+| `--parent-pid <pid>` | 父进程退出时自动结束服务器模式 |
+| `--tls` | 与 `--tls-cert` 和 `--tls-key` 一起使用时，为服务器模式启用 HTTPS |
+| `--tls-cert <path>` | TLS 证书文件 |
+| `--tls-key <path>` | TLS 私钥文件 |
+| `--theme <mode>` | Web 客户端模式：`light`、`dark` 或 `auto` |
+| `--acp` | 以 ACP agent 的方式通过 stdio 运行，供 Zed 等编辑器集成使用 |
+| `--set-password [password]` | 为 Web 客户端设置密码 |
+| `--clear-password` | 清除 Web 客户端密码 |
+| `--install-daemon` | 在 Linux 上安装为 systemd 用户服务 |
+| `--export-project <path>` | 将项目会话和记忆导出为 gzip 压缩包 |
+| `--import-project <path>` | 从 gzip 压缩包导入项目会话和记忆 |
 
 示例：
 
 ```bash
-# 新建会话
+# 开始一个新会话
 omx
 
-# 继续上次会话
+# 接着上次继续
 omx --continue
 
-# 调试 API 调用
-omx --diagnostic
-
-# 在浏览器中打开 Web UI
+# 打开 Web 客户端
 omx --serve --web
 
-# 安装 VS Code 扩展
-omx --install-vscode-extension
-
-# 文件修改工具需要审批
-omx --approve-write
-
-# 使用特定工作流
+# 这次改用另一个工作流
 omx --workflow general
+
+# 一次性添加某个供应商的全部模型
+omx --add-provider zenmux --api-key zmx-...
+
+# 为 Web 客户端设置密码
+omx --set-password
 ```

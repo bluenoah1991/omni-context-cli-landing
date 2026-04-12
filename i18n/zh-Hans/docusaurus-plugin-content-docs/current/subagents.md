@@ -7,61 +7,81 @@ sidebar_position: 5
 
 # 自定义 Agent
 
-自定义 Agent 让你通过编写 Markdown 文件来创建新的智能体工具。每个 Agent 成为模型可调用的工具，以子智能体方式运行并拥有自己的工具权限。
+自定义 Agent 可以把一个 markdown 文件变成可调用工具。每个 Agent 都会以子智能体的方式运行，拥有自己的提示词、参数 schema 和工具权限。
 
-## 存储位置
+内置的 `Agent_Explore`、`Agent_Glance` 和 `Agent_Search` 本质上也是基于同样的思路。
+
+## 存放位置
 
 | 位置 | 作用范围 |
 |------|---------|
-| `~/.omx/agents/` | 所有项目可用 |
+| `~/.omx/agents/` | 所有项目都可用 |
 | `.omx/agents/` | 仅当前项目可用 |
 
 ## 文件结构
 
-每个 Agent 是一个包含 YAML 前置信息和 Handlebars 提示模板的 Markdown 文件：
+每个自定义 Agent 都是一个带 YAML frontmatter 和 Handlebars 提示模板的 markdown 文件：
 
 ```markdown
 ---
 name: Review
-description: Review code changes for bugs and style issues
+description: Review a file or directory for bugs and risky changes
 allowBaseTools: [Read, Glob, Grep, Bash, BashOutput]
-display_fields: [filePath]
+displayFields: [path]
 parameters:
   properties:
-    filePath:
+    path:
       type: string
-      description: Path to the file or directory to review
-  required: [filePath]
+      description: File or directory to review
+  required: [path]
 ---
 
-Review the code at {{filePath}} for:
-- Bugs and logic errors
-- Style inconsistencies
-- Performance issues
+Review the code at {{path}} for:
+- bugs and logic issues
+- risky edge cases
+- unnecessary complexity
 
-Use grep to find patterns and read to examine specific files.
-Return a summary of findings with file paths and line numbers.
+Use grep to find patterns and read to inspect the relevant files.
+Return a concise report with file paths and line numbers.
 ```
+
+上面这个 Agent 会变成一个名为 `Agent_Review` 的工具。
 
 ### 前置信息字段
 
 | 字段 | 类型 | 描述 |
 |------|------|------|
-| `name` | string | 工具名称（变为 `Agent_Name`） |
-| `description` | string | 工具功能描述（展示给模型） |
-| `allowBaseTools` | boolean 或 string[] | 此 Agent 可使用的基础工具 |
-| `allowBuiltinAgents` | boolean 或 string[] | 允许内置智能体工具 |
-| `allowCustomAgents` | boolean 或 string[] | 允许自定义智能体工具 |
-| `allowMcpTools` | boolean 或 string[] | 允许 MCP 服务器工具 |
-| `allowRemoteTools` | boolean 或 string[] | 允许来自集成的远程工具 |
-| `display_fields` | string[] | 在 UI 中显示的参数字段 |
-| `parameters` | object | 工具输入参数的 JSON Schema |
-| `model` | string | 覆盖此 Agent 使用的模型 |
+| `name` | string | 工具名称。OmniContext CLI 会将它暴露为 `Agent_<name>` |
+| `description` | string | 展示给模型的简短说明 |
+| `allowBaseTools` | boolean 或 string[] | 启用全部基础工具，或仅白名单中的工具 |
+| `allowBuiltinAgents` | boolean 或 string[] | 允许使用内置智能体工具 |
+| `allowCustomAgents` | boolean 或 string[] | 允许使用其他自定义 Agent |
+| `allowMcpTools` | boolean 或 string[] | 允许使用 MCP 工具 |
+| `allowRemoteTools` | boolean 或 string[] | 允许使用远程集成工具 |
+| `displayFields` | string[] | 工具调用预览中显示哪些输入字段 |
+| `parameters` | object | 描述输入参数的 JSON Schema |
+| `model` | string | 为当前 Agent 单独覆盖默认 agent model |
 
 ### 模板变量
 
-提示正文使用 Handlebars 语法。Schema 中定义的所有参数都可作为模板变量使用。可选参数使用 `{{#if param}}`。
+提示正文使用 Handlebars。`parameters.properties` 中定义的每个字段都可以直接作为模板变量使用。
+
+对于可选字段，使用普通的 Handlebars 写法：
+
+```handlebars
+{{#if directory}}
+Limit the review to {{directory}}.
+{{/if}}
+```
 
 ## 全局 Agent 指令
 
-在项目根目录创建 `AGENTS.md`，为所有 Agent 添加通用指令。该文件会自动添加到每个 Agent 的提示前面。如果不存在，omx 会依次回退到 `OMX.md` 和 `CLAUDE.md`。
+如果你希望给所有 Agent 统一补充规则，可以在项目根目录放一个 `AGENTS.md`。
+
+OmniContext CLI 在构造 Agent 提示词时，会按这个顺序查找项目指令：
+
+1. `AGENTS.md`
+2. `OMX.md`
+3. `CLAUDE.md`
+
+这样你就能把项目规则同时共享给内置 Agent 和你自己写的 Agent。

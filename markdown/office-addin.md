@@ -7,35 +7,35 @@ sidebar_position: 16
 
 # Office Add-in
 
-The OmniContext Office Add-in brings AI assistance into Word, Excel, and PowerPoint.
+The OmniContext Office Add-in brings OmniContext CLI into Word, Excel, and PowerPoint.
 
 ## Installation
 
-The desktop app handles Office Add-in setup automatically:
+The desktop app handles setup for you:
 
-1. Open the desktop app
-2. Under **Integrations**, click **Install** next to Office Add-in
-3. Start the server from the desktop app
-4. Open Excel, Word, or PowerPoint -- the OmniContext panel appears in the sidebar
+1. open the desktop app
+2. under **Integrations**, click **Install** next to Office Add-in
+3. start the server from the desktop app
+4. open Word, Excel, or PowerPoint and look for the OmniContext panel
 
-The desktop app generates the TLS certificates needed for Office and starts the server with HTTPS enabled.
+The desktop app generates the certificates Office needs and starts the local server with the right HTTPS setup.
 
 ## Usage
 
-Once installed, an OmniContext panel appears in the sidebar. You can:
+Once installed, the OmniContext panel appears inside Office. You can use it to:
 
-- **Excel** - Generate formulas, create budgets, analyze data
-- **Word** - Draft content, format documents, summarize text
-- **PowerPoint** - Design slides, create presentations, add content
+- draft and rework documents in Word
+- build formulas, budgets, and analysis in Excel
+- outline and refine slides in PowerPoint
 
-The add-in communicates with your local omx server. It has access to your current document context and can read and modify the active document.
+The add-in talks to your local OmniContext CLI instance, so it shares the same models, sessions, and memory as the terminal workflow.
 
 ## Uninstalling
 
-To remove the add-in, click **Uninstall** in the desktop app's Integrations section.
+To remove the add-in, click **Uninstall** from the same Integrations section in the desktop app.
 
 ## Tips
 
-- Use the General workflow preset for the best Office experience
-- The add-in works with the same models and memory as the terminal
-- The status indicator in the desktop app shows whether the add-in is installed and the server is running
+- the **General** workflow is usually the best fit for Office tasks
+- the desktop app status indicator shows whether Office is installed and ready
+- because it runs through the same OmniContext CLI instance, project memory still applies when it helps

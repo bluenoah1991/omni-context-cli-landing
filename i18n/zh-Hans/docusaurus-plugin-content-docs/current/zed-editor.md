@@ -7,11 +7,11 @@ sidebar_position: 17
 
 # Zed 编辑器
 
-omx 通过 Agent Client Protocol (ACP) 作为 Zed 的外部代理工作。
+OmniContext CLI 可以通过 ACP（Agent Client Protocol）在 Zed 中作为外部 agent 运行。
 
 ## 设置
 
-在 Zed 设置（`~/.config/zed/settings.json`）中添加 omx：
+把 OmniContext CLI 加进你的 Zed 配置文件：
 
 ```json
 {
@@ -24,10 +24,10 @@ omx 通过 Agent Client Protocol (ACP) 作为 Zed 的外部代理工作。
 }
 ```
 
-## 使用
+## 使用方式
 
-打开 Zed 的 Agent 面板并选择 omx 作为代理。你可以获得完整的工具访问——omx 可以像在终端中一样读取、编辑和搜索你的项目。
+打开 Zed 的 agent 面板，然后把 `omx` 选成当前 agent。之后 OmniContext CLI 就可以使用和终端中相同的工具、工作流以及模型配置。
 
-## 工作原理
+## 工作方式
 
-使用 `--acp` 启动时，omx 以 ACP 代理模式通过 stdio 运行，而不是启动 TUI。Zed 使用 Agent Client Protocol 与其通信，发送消息并接收工具调用和响应。
+当你用 `--acp` 启动 OmniContext CLI 时，它不会再进入终端 UI，而是通过 stdio 启动一个 ACP agent。Zed 会把消息发给这个 agent，再通过协议收回模型输出和工具调用结果。

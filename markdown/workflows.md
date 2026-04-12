@@ -7,54 +7,59 @@ sidebar_position: 3
 
 # Workflows
 
-A workflow controls everything about how omx behaves: the system prompt, which tools are available, and how the assistant interacts with you.
+A workflow controls how OmniContext CLI behaves: the system prompt, which tools are available, and the overall interaction style.
 
 ## Built-in Presets
 
-| Preset | Use Case | Description |
-|--------|----------|-------------|
-| **Programming** (default) | Terminal, VS Code | Coding assistant with base tools, agent tools, and MCP integration. Concise output, minimal overhead. |
-| **General** | Office, browser sidebar | Personal assistant for documents, spreadsheets, and presentations. Proactive with tools, conversational tone. |
+| Workflow | Use Case | Description |
+|----------|----------|-------------|
+| **Programming** | Terminal, VS Code | The default coding workflow. Includes base tools, built-in agent tools, custom agents, MCP, and remote tools. |
+| **General** | Desktop app, Office | A broader assistant workflow for docs, spreadsheets, presentations, and everyday tasks. |
 
-Switch workflows at startup with `omx --workflow general` or through the menu during a session.
+If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar, with tab, page, bookmark, history, and screenshot access.
+
+Switch workflows at startup with `omx --workflow general`, or switch during a session from the menu.
 
 ## Custom Workflows
 
-Create your own by dropping a markdown file in `~/.omx/workflows/` or `.omx/workflows/`. Each workflow is a markdown file with YAML frontmatter that defines the tool set and a body that becomes the system prompt:
+Create your own workflow by dropping a markdown file into `~/.omx/workflows/` or `.omx/workflows/`. The file name becomes the workflow ID you use with `--workflow`.
 
 ```markdown
 ---
-name: My Workflow
-allowBaseTools: true
+name: Review
+icon: "◈"
+allowBaseTools: [Read, Glob, Grep, WebFetch, Skill]
 allowBuiltinAgents: true
-allowCustomAgents: true
+allowCustomAgents: false
 allowMcpTools: true
-allowRemoteTools: true
+allowRemoteTools: false
 ---
-Your system prompt here. Template variables like {{OS_TYPE}},
-{{PLATFORM}}, {{ARCH}}, {{CWD}}, and {{TODAY}} are available.
+You are a careful reviewer. Focus on correctness, edge cases,
+and practical fixes. Keep the final answer concise.
 ```
+
+The YAML frontmatter defines the tool filter. The markdown body becomes the system prompt.
 
 ### Frontmatter Options
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `name` | string | Display name for the workflow |
-| `icon` | string | Single character icon shown in the UI |
-| `allowBaseTools` | boolean | Enable base tools (Bash, Read, Edit, Write, Glob, Grep, WebSearch, WebFetch, Skill) |
-| `allowBuiltinAgents` | boolean | Enable built-in agent tools (Agent_Explore, Agent_Glance, Agent_Search) |
-| `allowCustomAgents` | boolean | Enable custom agent tools from `~/.omx/agents/` |
-| `allowMcpTools` | boolean | Enable MCP server tools |
-| `allowRemoteTools` | boolean | Enable remote tools from integrations (VS Code, Chrome, Office) |
+| `name` | string | Display name shown in the UI |
+| `icon` | string | Single-character icon shown in the workflow picker |
+| `allowBaseTools` | boolean or string[] | Enable all base tools, or whitelist specific ones |
+| `allowBuiltinAgents` | boolean or string[] | Enable all built-in agent tools, or whitelist specific ones |
+| `allowCustomAgents` | boolean or string[] | Enable custom agents from `~/.omx/agents/` or `.omx/agents/` |
+| `allowMcpTools` | boolean or string[] | Enable MCP tools |
+| `allowRemoteTools` | boolean or string[] | Enable remote tools from integrations like VS Code, Chrome, and Office |
 
 ### Template Variables
 
-Use these in your system prompt body:
+Use these in the workflow body:
 
 | Variable | Value |
 |----------|-------|
-| `{{OS_TYPE}}` | Windows, macOS, or Linux |
+| `{{OS_TYPE}}` | `Windows`, `macOS`, or `Linux` |
 | `{{PLATFORM}}` | `win32`, `darwin`, or `linux` |
-| `{{ARCH}}` | `x64`, `arm64`, etc. |
+| `{{ARCH}}` | `x64`, `arm64`, and so on |
 | `{{CWD}}` | Current working directory |
 | `{{TODAY}}` | Today's date in ISO format |

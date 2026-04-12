@@ -7,11 +7,11 @@ sidebar_position: 10
 
 # VS Code Extension
 
-The OmniContext VS Code extension connects your editor to omx, providing file context, diagnostics, and diff views.
+The OmniContext VS Code extension connects your editor to OmniContext CLI, so the assistant can see the same files, selections, and diagnostics you're looking at.
 
 ## Installation
 
-Install the extension directly from omx:
+Install the bundled extension directly from OmniContext CLI:
 
 ```bash
 omx --install-vscode-extension
@@ -19,30 +19,30 @@ omx --install-vscode-extension
 
 ## How It Works
 
-When IDE context is enabled in preferences, omx receives information about your editor state:
+When **IDE context** is enabled in preferences, OmniContext CLI can receive:
 
-- **Active file** - The file currently open in the editor
-- **Selection** - Any selected text
-- **Diagnostics** - Errors and warnings from VS Code
+- the active file
+- the current selection
+- diagnostics from VS Code
 
-This context is automatically included in your conversations, so omx knows what you're looking at without you having to copy-paste.
+That context is attached automatically, which means less copy-paste and fewer "which file are we talking about?" turns.
 
 ## MCP Tools
 
-The VS Code extension provides MCP tools that omx can call:
+The extension exposes MCP tools that OmniContext CLI can call:
 
 | Tool | Description |
 |------|-------------|
 | **openFile** | Open a file in VS Code at a specific line and column |
-| **openDiff** | Show a diff view comparing old and new content |
-| **getDiagnostics** | Get errors and warnings from VS Code |
-| **getOpenEditors** | List currently open editor tabs |
-| **getWorkspaceFolders** | Get VS Code workspace folders |
+| **openDiff** | Show a diff view between old and new content |
+| **getDiagnostics** | Return current errors and warnings |
+| **getOpenEditors** | List open editor tabs |
+| **getWorkspaceFolders** | Return workspace folders |
 
 ## Enabling IDE Context
 
-Toggle IDE context through the preferences menu:
+Turn it on from the preferences menu:
 
-1. Press `Escape` to open the menu
-2. Select **Change preferences**
+1. Press `Escape`
+2. Choose **Change preferences**
 3. Toggle **IDE context**

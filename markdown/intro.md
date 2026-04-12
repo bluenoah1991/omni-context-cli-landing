@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Getting Started
 
-omx is a zero-telemetry coding assistant that runs in your terminal and extends into VS Code, Office, the browser, and mobile. It treats the context window as a scarce resource and engineers every layer to use it efficiently.
+OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, with custom workflows, agent tools, and cross-session memory built in.
 
 ## Installation
 
@@ -17,68 +17,68 @@ npm install -g omni-context-cli
 
 ## Quick Start
 
-Navigate to your project directory and run:
+Open a project and run:
 
 ```bash
 omx
 ```
 
-omx supports four API protocols natively: Anthropic, OpenAI, Gemini, and OpenAI Responses API.
+On first launch, add a model from the menu:
 
-### Adding Your First Model
+1. Press `Escape`
+2. Choose **Manage your model list**
+3. Choose **Add a new model**
+4. Fill in the provider, model name, API key, API URL, context size, and nickname
 
-On first run, you'll need to add a model:
-
-1. Press `Escape` to open the menu
-2. Select **Manage your model list**
-3. Select **Add a new model**
-4. Fill in the form:
-   - **API Type**: Choose `Anthropic`, `OpenAI`, `Gemini`, or `OpenAI Responses API`
-   - **Model Name**: The model identifier (e.g. `claude-sonnet-4-20250514`, `gpt-4o`)
-   - **API Key**: Your API key
-   - **API URL**: The base API endpoint (e.g. `https://api.anthropic.com`, `https://api.openai.com/v1`)
-   - **Context Size (K)**: Max context window in thousands (e.g. `200` for 200K)
-   - **Nickname**: A friendly name to display in the UI
-
-Or add all models from a provider in one command:
+If you'd rather start from a provider preset:
 
 ```bash
 omx --list-providers
 omx --add-provider openrouter --api-key sk-...
 ```
 
+Built-in provider presets include Zenmux, DeepSeek, Kimi for Coding, OpenRouter, Zhipu, and MiniMax.
+
+## Built-in Workflows
+
+OmniContext CLI ships with two built-in workflows:
+
+- **Programming** - the default coding workflow for terminal and editor use
+- **General** - a broader assistant workflow for documents, spreadsheets, and everyday tasks
+
+If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar.
+
 ## Command Line Options
 
 | Option | Description |
 |--------|-------------|
-| `-c, --continue` | Continue from your last session |
-| `-d, --diagnostic` | Enable diagnostic mode to save request/response JSON |
-| `-a, --cost-analysis` | Record token usage to CSV for cost analysis |
-| `-s, --serve` | Start as HTTP server instead of TUI |
-| `-w, --web` | Open web UI in browser (requires `--serve`) |
-| `-p, --port <port>` | Port for server mode (default: 5281) |
-| `-H, --host <host>` | Host for server mode (default: localhost) |
-| `--workflow <preset>` | Override workflow preset (programming, general) |
-| `--scope <scope>` | Where to save config changes: global (default), project, or memory |
-| `--approve-write` | Require approval before write tools (Bash, Edit, Write) |
-| `--approve-all` | Require approval before all tools |
-| `--theme <mode>` | Set web UI theme mode (light, dark, auto) |
-| `--install-vscode-extension` | Install the VS Code extension |
-| `--list-providers` | List available model providers |
-| `--add-provider <id>` | Add models from a provider (requires `--api-key`) |
-| `--remove-provider <id>` | Remove all models from a provider |
-| `--api-key <key>` | API key for `--add-provider` |
-| `--parent-pid <pid>` | Exit when the parent process dies (requires `--serve`) |
-| `--tls` | Enable HTTPS for server mode |
-| `--acp` | Run as ACP agent over stdio (for editor integrations like Zed) |
-| `--tls-cert <path>` | Path to TLS certificate file |
-| `--tls-key <path>` | Path to TLS private key file |
-| `--lang <code>` | Set UI language (e.g. `en-US`, `zh-CN`) |
-| `--set-password [password]` | Set a password for web UI authentication |
-| `--clear-password` | Remove the password and disable web UI authentication |
-| `--install-daemon` | Install as a systemd service (Linux only) |
-| `--export-project <path>` | Export project data (sessions, memory) to a gzip archive |
-| `--import-project <path>` | Import project data from a gzip archive |
+| `-c, --continue` | Continue your last session |
+| `-d, --diagnostic` | Save request and response payloads for debugging |
+| `-a, --cost-analysis` | Record token usage to CSV |
+| `-s, --serve` | Start OmniContext CLI as an HTTP server instead of the terminal UI |
+| `-w, --web` | Open the web client in your browser after starting the server |
+| `-p, --port <port>` | Port for server mode |
+| `-H, --host <host>` | Host for server mode |
+| `--workflow <preset>` | Override the workflow for this launch |
+| `--scope <scope>` | Save config changes to `global`, `project`, or `memory` |
+| `--approve-write` | Ask before running Bash, Edit, and Write |
+| `--approve-all` | Ask before running any tool |
+| `--install-vscode-extension` | Install the bundled VS Code extension |
+| `--list-providers` | List built-in model providers |
+| `--add-provider <id>` | Add every model from a provider |
+| `--remove-provider <id>` | Remove every model from a provider |
+| `--api-key <key>` | API key used with `--add-provider` |
+| `--parent-pid <pid>` | Exit server mode when the parent process dies |
+| `--tls` | Turn on HTTPS for server mode when used with `--tls-cert` and `--tls-key` |
+| `--tls-cert <path>` | TLS certificate file |
+| `--tls-key <path>` | TLS private key file |
+| `--theme <mode>` | Web client mode: `light`, `dark`, or `auto` |
+| `--acp` | Run as an ACP agent over stdio for editor integrations like Zed |
+| `--set-password [password]` | Set a password for the web client |
+| `--clear-password` | Remove the web client password |
+| `--install-daemon` | Install OmniContext CLI as a systemd user service on Linux |
+| `--export-project <path>` | Export project sessions and memory to a gzip archive |
+| `--import-project <path>` | Import project sessions and memory from a gzip archive |
 
 Examples:
 
@@ -86,21 +86,18 @@ Examples:
 # Start a new session
 omx
 
-# Resume where you left off
+# Pick up where you left off
 omx --continue
 
-# Debug API calls
-omx --diagnostic
-
-# Start web UI in browser
+# Open the web client
 omx --serve --web
 
-# Install VS Code extension
-omx --install-vscode-extension
-
-# Require approval for file-modifying tools
-omx --approve-write
-
-# Use a specific workflow
+# Use a different workflow for this run
 omx --workflow general
+
+# Add all models from a provider
+omx --add-provider zenmux --api-key zmx-...
+
+# Protect the web client with a password
+omx --set-password
 ```

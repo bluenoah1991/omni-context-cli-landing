@@ -7,11 +7,11 @@ sidebar_position: 17
 
 # Zed Editor
 
-omx works as an external agent in Zed via the Agent Client Protocol (ACP).
+OmniContext CLI can run inside Zed as an external agent over ACP (Agent Client Protocol).
 
 ## Setup
 
-Add omx to your Zed settings (`~/.config/zed/settings.json`):
+Add OmniContext CLI to your Zed settings file:
 
 ```json
 {
@@ -26,8 +26,8 @@ Add omx to your Zed settings (`~/.config/zed/settings.json`):
 
 ## Usage
 
-Open Zed's agent panel and select omx as the agent. You get full tool access -- omx can read, edit, and search your project just like in the terminal.
+Open Zed's agent panel and pick `omx` as the active agent. From there, OmniContext CLI can use the same tools, workflows, and model setup you already use in the terminal.
 
 ## How It Works
 
-When started with `--acp`, omx runs as an ACP agent over stdio instead of launching the TUI. Zed communicates with it using the Agent Client Protocol, sending messages and receiving tool calls and responses.
+When launched with `--acp`, OmniContext CLI skips the terminal UI and starts an ACP agent over stdio instead. Zed sends messages to that agent and receives model output and tool calls back through the protocol.

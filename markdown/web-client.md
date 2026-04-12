@@ -7,7 +7,7 @@ sidebar_position: 12
 
 # Web Client
 
-omx includes a browser-based UI with rich rendering support.
+OmniContext CLI includes a browser-based client for when you want the same assistant outside the terminal.
 
 ## Starting the Web Client
 
@@ -15,7 +15,7 @@ omx includes a browser-based UI with rich rendering support.
 omx --serve --web
 ```
 
-This starts the server and opens the web UI in your default browser.
+This starts the local server and opens the web client in your default browser.
 
 ### Custom Port and Host
 
@@ -26,18 +26,19 @@ omx --serve --web --host 0.0.0.0
 
 ## Features
 
-- **LaTeX rendering** - Mathematical expressions rendered with KaTeX
-- **Mermaid diagrams** - Flowcharts, sequence diagrams, and more
-- **Syntax highlighting** - Code blocks with language-specific highlighting
-- **File attachments** - Drag and drop files into the chat
-- **Markdown** - Full GitHub-flavored markdown support
-- **Color themes** - 17 built-in color presets with light and dark mode
-- **Session management** - Switch sessions, rewind messages
-- **Model switching** - Change models mid-conversation
+- **LaTeX rendering** for math
+- **Mermaid diagrams** for charts and flows
+- **Syntax highlighting** for code blocks
+- **File attachments** with drag and drop
+- **GitHub-flavored markdown** rendering
+- **Custom status line** via `statusCommand`
+- **Color themes** shared with the rest of OmniContext CLI
+- **Session management** including rewind and switching
+- **Model switching** mid-conversation
 
 ## Theme Mode
 
-Set the theme mode via the command line:
+Use `--theme` to control light or dark mode behavior:
 
 ```bash
 omx --serve --web --theme dark
@@ -45,15 +46,15 @@ omx --serve --web --theme light
 omx --serve --web --theme auto
 ```
 
-The default is `auto`, which follows your system preference.
+`auto` follows your system setting.
 
 ## Color Themes
 
-Color themes are configured through the preferences menu (press Escape, select **Change preferences**, then **Color theme**). 17 built-in presets are available: crystal, splash, horizon, neon, forest, indigo, rosette, retro, tangerine, emerald, earth, twilight, inferno, sunshine, blossom, cocoa, nautical.
+The palette itself is controlled separately from light or dark mode. Change it from the preferences menu under **Color theme**.
 
 ## Custom Status Line
 
-Set `statusCommand` in `omx.json` to render one line of shell output in the footer of the TUI and web client. This is useful for branch name, build state, or any short workspace signal.
+Set `statusCommand` in `omx.json` to render one line of shell output in the footer of both the terminal UI and web client.
 
 ```json
 {
@@ -63,13 +64,13 @@ Set `statusCommand` in `omx.json` to render one line of shell output in the foot
 
 ## Authentication
 
-Set a password for the web UI:
+Protect the web client with a password:
 
 ```bash
-omx --set-password mypassword
+omx --set-password
 ```
 
-Remove the password:
+Remove the password later with:
 
 ```bash
 omx --clear-password

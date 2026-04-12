@@ -7,11 +7,22 @@ sidebar_position: 6
 
 # MCP Configuration
 
-omx supports [Model Context Protocol](https://modelcontextprotocol.io) (MCP) for connecting external tools and data sources.
+OmniContext CLI supports [Model Context Protocol](https://modelcontextprotocol.io) (MCP) for connecting external tools and data sources.
+
+The built-in Programming and General workflows already allow MCP tools, so you usually just need to configure the servers.
+
+## Where OmniContext CLI Looks
+
+OmniContext CLI reads MCP definitions from these locations:
+
+- `~/.omx/mcp.json`
+- `.omx/mcp.json`
+- `~/.claude/claude_desktop_config.json`
+- `.claude/mcp.json`
 
 ## Configuration File
 
-Create `~/.omx/mcp.json` (global) or `.omx/mcp.json` (project) with your server definitions:
+A minimal config looks like this:
 
 ```json
 {
@@ -25,13 +36,11 @@ Create `~/.omx/mcp.json` (global) or `.omx/mcp.json` (project) with your server 
 }
 ```
 
-omx also reads Claude's MCP configuration from `~/.claude/claude_desktop_config.json` and `.claude/mcp.json` automatically.
-
 ## Server Types
 
 ### Stdio (Local Process)
 
-Launches a local process and communicates over stdin/stdout:
+Use `stdio` when OmniContext CLI should launch a local process and talk to it over standard input and output.
 
 ```json
 {
@@ -47,7 +56,7 @@ Launches a local process and communicates over stdin/stdout:
 
 ### HTTP (Remote Server)
 
-Connects to an HTTP-based MCP server:
+Use `http` when the MCP server is already running somewhere else.
 
 ```json
 {
@@ -62,11 +71,17 @@ Connects to an HTTP-based MCP server:
 
 ## Tool Naming
 
-MCP tools appear with a `Mcp_` prefix followed by the server name and tool name: `Mcp_servername_toolname`. This prevents naming conflicts with built-in tools.
+MCP tools are exposed with an `Mcp_` prefix, followed by the server name and tool name:
+
+```
+Mcp_servername_toolname
+```
+
+This keeps them from colliding with built-in tools.
 
 ## Environment Variables
 
-Pass environment variables to stdio servers using the `env` field:
+For `stdio` servers, pass environment variables with `env`:
 
 ```json
 {

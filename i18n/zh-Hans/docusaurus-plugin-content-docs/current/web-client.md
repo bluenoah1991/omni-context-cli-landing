@@ -7,7 +7,7 @@ sidebar_position: 12
 
 # Web 客户端
 
-omx 内置浏览器 UI，支持丰富的渲染功能。
+OmniContext CLI 自带一个浏览器客户端，适合你想在终端之外继续使用同一个助手的时候。
 
 ## 启动 Web 客户端
 
@@ -15,7 +15,7 @@ omx 内置浏览器 UI，支持丰富的渲染功能。
 omx --serve --web
 ```
 
-启动服务器并在默认浏览器中打开 Web UI。
+这会启动本地服务器，并在默认浏览器中打开 Web 客户端。
 
 ### 自定义端口和主机
 
@@ -26,19 +26,19 @@ omx --serve --web --host 0.0.0.0
 
 ## 功能
 
-- **LaTeX 渲染** - 使用 KaTeX 渲染数学表达式
-- **Mermaid 图表** - 流程图、时序图等
-- **语法高亮** - 代码块支持语言特定高亮
-- **文件附件** - 拖放文件到聊天中
-- **Markdown** - 完整的 GitHub 风格 Markdown 支持
-- **自定义状态栏** - 通过 `statusCommand` 在聊天底部显示一行 shell 输出
-- **颜色主题** - 17 种内置颜色预设，支持亮色和暗色模式
-- **会话管理** - 切换会话、回退消息
-- **模型切换** - 在对话中切换模型
+- **LaTeX 渲染**，适合数学公式
+- **Mermaid 图表**，适合流程图和时序图
+- **语法高亮**，适合代码块
+- **文件附件**，支持拖放
+- **GitHub 风格 markdown** 渲染
+- **自定义状态栏**，通过 `statusCommand` 注入
+- **颜色主题**，和 OmniContext CLI 其他界面共用
+- **会话管理**，支持回退和切换
+- **模型切换**，可在对话中途完成
 
 ## 主题模式
 
-通过命令行设置主题模式：
+用 `--theme` 控制亮色或暗色模式：
 
 ```bash
 omx --serve --web --theme dark
@@ -46,15 +46,15 @@ omx --serve --web --theme light
 omx --serve --web --theme auto
 ```
 
-默认为 `auto`，跟随系统偏好。
+`auto` 会跟随系统设置。
 
 ## 颜色主题
 
-颜色主题通过偏好设置菜单配置（按 Escape，选择 **Change preferences**，然后选择 **Color theme**）。共 17 种内置预设：crystal、splash、horizon、neon、forest、indigo、rosette、retro、tangerine、emerald、earth、twilight、inferno、sunshine、blossom、cocoa、nautical。
+配色方案本身和亮色/暗色模式是分开的。你可以在偏好设置里的 **Color theme** 中切换。
 
 ## 自定义状态栏
 
-在 `omx.json` 中设置 `statusCommand`，即可在 TUI 和 Web 客户端底部显示一行 shell 输出。适合展示当前分支、构建状态或其他简短的工作区信号。
+在 `omx.json` 中设置 `statusCommand`，就可以在终端 UI 和 Web 客户端底部显示一行 shell 输出。
 
 ```json
 {
@@ -64,13 +64,13 @@ omx --serve --web --theme auto
 
 ## 认证
 
-设置 Web UI 密码：
+你可以用密码保护 Web 客户端：
 
 ```bash
-omx --set-password mypassword
+omx --set-password
 ```
 
-移除密码：
+之后如果想去掉密码：
 
 ```bash
 omx --clear-password

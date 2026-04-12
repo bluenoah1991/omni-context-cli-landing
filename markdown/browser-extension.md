@@ -7,28 +7,30 @@ sidebar_position: 15
 
 # Chrome Extension
 
-The OmniContext Chrome Extension adds an AI sidebar to any webpage, connecting to your running omx instance.
+The OmniContext Chrome Extension adds an AI sidebar to any page and connects it to your running OmniContext CLI instance.
 
 ## Installation
 
-1. Start the desktop app or run `omx --serve`
-2. In the desktop app, click **Open Folder** under Browser Extension to locate the extension files
-3. In Chrome, go to `chrome://extensions`, enable Developer Mode, and click **Load unpacked**
-4. Select the browser extension folder
+1. start the desktop app, or run `omx --serve`
+2. in the desktop app, click **Open Folder** under Browser Extension
+3. in Chrome, open `chrome://extensions`
+4. enable **Developer Mode**
+5. click **Load unpacked** and choose the browser extension folder
 
-The extension connects to your local omx server automatically.
+The desktop app also installs a **Browser** workflow, which is the best default workflow for the sidebar.
 
 ## Features
 
-- **Page context** - The extension can read the current page content
-- **Summarization** - Summarize articles, documentation, or any webpage
-- **Data extraction** - Pull structured data from web pages
-- **Browser automation** - Automate tasks in the browser through natural language
+- read the current page as text, HTML, or metadata
+- inspect and switch browser tabs
+- read bookmarks and recent history
+- capture screenshots of the active tab
+- automate browser tasks through natural-language instructions
 
 ## Usage
 
-Click the extension icon to open the sidebar panel. You can chat with omx while browsing -- it has access to the current page content and can interact with the browser.
+Open the side panel from the extension icon, then chat with OmniContext CLI while you browse. The Browser workflow is usually the right choice because it is set up for page and tab access.
 
 ## Connection
 
-The extension connects to your omx server (default: `http://localhost:5281`). Make sure omx is running in serve mode before using the extension.
+The extension talks to your local OmniContext CLI server, which defaults to `http://localhost:5281`. Make sure OmniContext CLI is already running in serve mode before you open the side panel.
