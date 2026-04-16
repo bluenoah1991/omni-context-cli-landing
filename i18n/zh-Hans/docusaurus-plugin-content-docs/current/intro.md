@@ -41,10 +41,12 @@ omx --add-provider openrouter --api-key sk-...
 
 ## 内置工作流
 
-OmniContext CLI 内置两个工作流：
+OmniContext CLI 内置四个工作流：
 
 - **Programming** - 默认的编程工作流，适合终端和编辑器场景
 - **General** - 更通用的助手工作流，适合文档、表格和日常任务
+- **Analytics** - 用量分析工作流，可直接查询本地请求日志数据库
+- **Recall** - 聊天历史搜索工作流，用于检索和回顾过去的会话
 
 如果你使用桌面应用，它还会额外安装一个给 Chrome 侧边栏使用的 **Browser** 工作流。
 
@@ -68,7 +70,6 @@ OmniContext CLI 内置两个工作流：
 |------|------|
 | `-c, --continue` | 继续上一次会话 |
 | `-d, --diagnostic` | 保存请求和响应数据用于调试 |
-| `-a, --cost-analysis` | 将 token 用量记录到 CSV |
 | `-s, --serve` | 以 HTTP 服务器模式启动 OmniContext CLI，而不是终端 UI |
 | `-w, --web` | 启动服务器后在浏览器中打开 Web 客户端 |
 | `-p, --port <port>` | 服务器模式使用的端口 |
@@ -93,6 +94,7 @@ OmniContext CLI 内置两个工作流：
 | `--install-daemon` | 在 Linux 上安装为 systemd 用户服务 |
 | `--export-project <path>` | 将项目会话和记忆导出为 gzip 压缩包 |
 | `--import-project <path>` | 从 gzip 压缩包导入项目会话和记忆 |
+| `--index-history` | 将所有已有会话索引到 recall 数据库以支持全文搜索 |
 
 示例：
 

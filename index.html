@@ -104,7 +104,7 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">3</span>
+                    <span class="metric-value">4</span>
                     <span class="metric-label">Agent Tools</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -123,7 +123,7 @@
                 <h2 class="section-title">Built-in workflows,<br>fully under your control</h2>
                 <p class="section-subtitle">
                     A workflow is just markdown: tool access in frontmatter, behavior in the prompt body.
-                    OmniContext CLI ships with Programming and General out of the box, and the desktop app installs a Browser workflow for the Chrome sidebar.
+                    OmniContext CLI ships with Programming, General, Analytics, and Recall out of the box. The desktop app also installs a Browser workflow for the Chrome sidebar.
                 </p>
             </div>
             <div class="workflow-grid">
@@ -149,9 +149,34 @@
                     <p>A broader personal-assistant workflow for docs, spreadsheets, presentations, and day-to-day tasks. Clear, friendly, and proactive with tools.</p>
                     <div class="workflow-tools">
                         <span>Base Tools</span>
+                        <span>Recall Agent</span>
                         <span>Custom Agents</span>
                         <span>MCP</span>
                         <span>Remote Tools</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">◆</span>
+                        <h3>Analytics</h3>
+                    </div>
+                    <p>A usage analytics workflow with direct access to the local request log database. Ask about token costs, model usage, cache hit rates, and latency trends.</p>
+                    <div class="workflow-tools">
+                        <span>AnalyticsQuery</span>
+                        <span>WebSearch</span>
+                        <span>Recall Agent</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">◈</span>
+                        <h3>Recall</h3>
+                    </div>
+                    <p>A chat history search workflow. Uses full-text search to dig through past sessions by keyword and pull up surrounding conversation context.</p>
+                    <div class="workflow-tools">
+                        <span>RecallSearch</span>
+                        <span>RecallRead</span>
+                        <span>WebSearch</span>
                     </div>
                 </div>
                 <div class="workflow-card">
@@ -215,6 +240,13 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-info">
                         <h4>Agent_Search</h4>
                         <p>Search the codebase to answer a specific technical question.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="history"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Recall</h4>
+                        <p>Search past chat sessions and summarize what happened around a topic.</p>
                     </div>
                 </div>
                 <div class="tool-section-label">Base Tools</div>

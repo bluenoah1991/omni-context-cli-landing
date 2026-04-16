@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">工具 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/tools"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="工具 | OmniContext CLI"><meta data-rh="true" name="description" content="OmniContext CLI 有两层工具体系：一层是主模型直接调用的基础工具，另一层是运行在辅助模型上的智能体工具。"><meta data-rh="true" property="og:description" content="OmniContext CLI 有两层工具体系：一层是主模型直接调用的基础工具，另一层是运行在辅助模型上的智能体工具。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/tools"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/tools" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"工具","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/tools"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.a13f0d1d.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.ac8f3497.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.a3b9aa95.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -88,7 +88,11 @@
 
 
 
-<table><thead><tr><th>工具</th><th>描述</th></tr></thead><tbody><tr><td><strong>Agent_Explore</strong></td><td>梳理项目结构，并解释代码库是如何组织的。</td></tr><tr><td><strong>Agent_Glance</strong></td><td>预览多个文件和目录，并给出简短摘要。</td></tr><tr><td><strong>Agent_Search</strong></td><td>针对某个技术问题，在整个代码库中搜索答案。</td></tr></tbody></table>
+
+
+
+
+<table><thead><tr><th>工具</th><th>描述</th></tr></thead><tbody><tr><td><strong>Agent_Explore</strong></td><td>梳理项目结构，并解释代码库是如何组织的。</td></tr><tr><td><strong>Agent_Glance</strong></td><td>预览多个文件和目录，并给出简短摘要。</td></tr><tr><td><strong>Agent_Search</strong></td><td>针对某个技术问题，在整个代码库中搜索答案。</td></tr><tr><td><strong>Agent_Recall</strong></td><td>搜索过去的聊天会话，并围绕某个主题总结发生了什么。</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="智能体工具是怎么工作的">智能体工具是怎么工作的<a href="#智能体工具是怎么工作的" class="hash-link" aria-label="智能体工具是怎么工作的的直接链接" title="智能体工具是怎么工作的的直接链接" translate="no">​</a></h3>
 <p>当主模型调用 <code>Agent_Search(&quot;How does session persistence work?&quot;)</code> 这样的工具时：</p>
 <ol>
@@ -101,7 +105,7 @@
 <p>这也是 OmniContext CLI 把探索性工作挡在昂贵上下文窗口之外的方式。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="agent-模型">Agent 模型<a href="#agent-模型" class="hash-link" aria-label="Agent 模型的直接链接" title="Agent 模型的直接链接" translate="no">​</a></h3>
 <p>Agent 模型与默认模型分开配置。如果你没有单独设置，OmniContext CLI 会直接使用当前主模型来做智能体任务。</p>
-<p>常见搭配是：</p>
+<p> 常见搭配是：</p>
 <ul>
 <li class="">主模型用更强的推理模型</li>
 <li class="">agent model 用更快、更便宜的模型</li>

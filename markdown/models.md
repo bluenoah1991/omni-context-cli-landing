@@ -38,6 +38,7 @@ Built-in provider presets:
 | **openrouter** | OpenRouter models in Anthropic and OpenAI-compatible formats |
 | **zhipu** | GLM-5.1, GLM-5, and GLM-5-Turbo |
 | **minimax** | MiniMax-M2.7 and MiniMax-M2.7-Highspeed |
+| **opencode-go** | GLM, Kimi K2.5, MiMo, Qwen, and MiniMax models through OpenCode Go |
 
 Depending on the provider, OmniContext CLI may add multiple variants for the same model, such as protocol-specific or longer-context options.
 

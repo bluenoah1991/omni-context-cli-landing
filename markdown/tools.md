@@ -35,6 +35,7 @@ Agent tools run on the agent model, which is usually a cheaper or faster seconda
 | **Agent_Explore** | Map the project structure and explain how the codebase is organized. |
 | **Agent_Glance** | Preview multiple files and directories with short summaries. |
 | **Agent_Search** | Search across the codebase to answer a specific technical question. |
+| **Agent_Recall** | Search past chat sessions and summarize what happened around a topic. |
 
 ### How Agent Tools Work
 

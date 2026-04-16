@@ -103,7 +103,7 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">3</span>
+                    <span class="metric-value">4</span>
                     <span class="metric-label">智能体工具</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -122,7 +122,7 @@
                 <h2 class="section-title">内置工作流先上手，<br>需要时再完全自定义</h2>
                 <p class="section-subtitle">
                     工作流本质上就是 markdown：frontmatter 控制工具权限，正文定义行为。
-                    OmniContext CLI 默认内置 Programming 和 General，桌面应用还会额外安装一个给 Chrome 侧边栏使用的 Browser 工作流。
+                    OmniContext CLI 默认内置 Programming、General、Analytics 和 Recall 四个工作流，桌面应用还会额外安装一个给 Chrome 侧边栏使用的 Browser 工作流。
                 </p>
             </div>
             <div class="workflow-grid">
@@ -148,9 +148,34 @@
                     <p>更通用的个人助理工作流，适合文档、表格、演示文稿和日常任务。风格清晰、友好，也会主动使用工具。</p>
                     <div class="workflow-tools">
                         <span>基础工具</span>
+                        <span>Recall Agent</span>
                         <span>自定义 Agent</span>
                         <span>MCP</span>
                         <span>远程工具</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">◆</span>
+                        <h3>Analytics</h3>
+                    </div>
+                    <p>用量分析工作流，可直接查询本地请求日志数据库。适合了解 token 开销、模型使用情况、缓存命中率和延迟趋势。</p>
+                    <div class="workflow-tools">
+                        <span>AnalyticsQuery</span>
+                        <span>WebSearch</span>
+                        <span>Recall Agent</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">◈</span>
+                        <h3>Recall</h3>
+                    </div>
+                    <p>聊天历史搜索工作流。通过全文检索在过去的会话中按关键词搜索，并提取相关的对话上下文。</p>
+                    <div class="workflow-tools">
+                        <span>RecallSearch</span>
+                        <span>RecallRead</span>
+                        <span>WebSearch</span>
                     </div>
                 </div>
                 <div class="workflow-card">
@@ -214,6 +239,13 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-info">
                         <h4>Agent_Search</h4>
                         <p>围绕某个技术问题，在整个代码库里搜索答案。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="history"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Recall</h4>
+                        <p>搜索过去的聊天会话，并围绕某个主题总结发生了什么。</p>
                     </div>
                 </div>
                 <div class="tool-section-label">基础工具</div>

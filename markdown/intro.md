@@ -41,10 +41,12 @@ Built-in provider presets include Zenmux, DeepSeek, Kimi for Coding, OpenRouter,
 
 ## Built-in Workflows
 
-OmniContext CLI ships with two built-in workflows:
+OmniContext CLI ships with four built-in workflows:
 
 - **Programming** - the default coding workflow for terminal and editor use
 - **General** - a broader assistant workflow for documents, spreadsheets, and everyday tasks
+- **Analytics** - a usage analytics workflow with direct access to the local request log database
+- **Recall** - a chat history search workflow for finding and reviewing past sessions
 
 If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar.
 
@@ -68,7 +70,6 @@ For the full config and file layout, see [Project Files & Config](/tutorial/proj
 |--------|-------------|
 | `-c, --continue` | Continue your last session |
 | `-d, --diagnostic` | Save request and response payloads for debugging |
-| `-a, --cost-analysis` | Record token usage to CSV |
 | `-s, --serve` | Start OmniContext CLI as an HTTP server instead of the terminal UI |
 | `-w, --web` | Open the web client in your browser after starting the server |
 | `-p, --port <port>` | Port for server mode |
@@ -93,6 +94,7 @@ For the full config and file layout, see [Project Files & Config](/tutorial/proj
 | `--install-daemon` | Install OmniContext CLI as a systemd user service on Linux |
 | `--export-project <path>` | Export project sessions and memory to a gzip archive |
 | `--import-project <path>` | Import project sessions and memory from a gzip archive |
+| `--index-history` | Index all existing sessions into the recall database for full-text search |
 
 Examples:
 

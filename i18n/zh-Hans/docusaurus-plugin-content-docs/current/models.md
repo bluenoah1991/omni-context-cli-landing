@@ -38,6 +38,7 @@ omx --remove-provider zenmux
 | **openrouter** | OpenRouter 上的 Anthropic 和 OpenAI 兼容模型 |
 | **zhipu** | GLM-5.1、GLM-5 和 GLM-5-Turbo |
 | **minimax** | MiniMax-M2.7 和 MiniMax-M2.7-Highspeed |
+| **opencode-go** | 通过 OpenCode Go 提供的 GLM、Kimi K2.5、MiMo、Qwen 和 MiniMax 模型 |
 
 根据不同供应商，OmniContext CLI 可能会为同一个模型导入多个变体，比如不同协议版本或更长上下文版本。
 

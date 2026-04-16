@@ -632,7 +632,7 @@ nav.scrolled {
 
 .workflow-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
@@ -1410,7 +1410,7 @@ footer {
     }
 
     .workflow-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .extend-grid {
@@ -1444,6 +1444,10 @@ footer {
         --gap-section: 64px;
         --gap-strip: 32px;
         --gap-header: 40px;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
     }
 
     .nav-right .nav-lang,

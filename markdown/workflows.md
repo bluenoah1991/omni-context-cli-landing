@@ -15,6 +15,8 @@ A workflow controls how OmniContext CLI behaves: the system prompt, which tools 
 |----------|----------|-------------|
 | **Programming** | Terminal, VS Code | The default coding workflow. Includes base tools, built-in agent tools, custom agents, MCP, and remote tools. |
 | **General** | Desktop app, Office | A broader assistant workflow for docs, spreadsheets, presentations, and everyday tasks. |
+| **Analytics** | Token costs, latency | A usage analytics workflow with direct SQL access to the local request log database. |
+| **Recall** | Chat history | A search workflow for finding and reviewing past sessions by keyword. |
 
 If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar, with tab, page, bookmark, history, and screenshot access.
 
