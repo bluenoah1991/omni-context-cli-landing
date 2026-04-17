@@ -48,7 +48,7 @@ OmniContext CLI ships with four built-in workflows:
 - **Analytics** - a usage analytics workflow with direct access to the local request log database
 - **Recall** - a chat history search workflow for finding and reviewing past sessions
 
-If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar.
+If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar and a **Memo** workflow for personal reminders and notifications.
 
 ## Project Files That Matter
 

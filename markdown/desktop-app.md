@@ -22,7 +22,8 @@ The desktop app is mainly a lightweight launcher and control panel for OmniConte
 - enable LAN access for phone or tablet use
 - open the bundled browser extension folder
 - install and remove the Office Add-in
-- install the Browser workflow automatically
+- install the Browser and Memo workflows automatically
+- run a built-in memo and reminder system with desktop notifications
 - bridge browser, Office, and other remote tools into the same OmniContext CLI instance
 
 ## Why Use It
@@ -53,6 +54,16 @@ On startup, the desktop app installs the **Browser** workflow into `~/.omx/workf
 
 That workflow is tuned for page reading, tab actions, bookmarks, history, screenshots, and browser-side remote tools, so it's usually the best default when you're using the Chrome sidebar.
 
+## Memo Workflow
+
+The desktop app also installs a **Memo** workflow and exposes it through tools like `Desktop_AddMemo`, `Desktop_ListMemos`, `Desktop_DeleteMemo`, and `Desktop_Notify`.
+
+You can use it to add quick memos, schedule reminders with priority levels (low, medium, high), and set recurring reminders (daily, weekly, biweekly, monthly, every three or six months, or yearly). Reminders surface as native desktop notifications when they come due.
+
+On macOS, memos are stored directly in **Apple Reminders** through a native Swift bridge, so they sync with the system Reminders app, your iPhone, and iPad. On other platforms, the desktop app falls back to a local JSON file in `~/.omx/`.
+
+The first time you add a reminder on macOS, the system prompts for access to Reminders. Approve it once and the desktop app handles the rest.
+
 ## Mobile Access
 
 The desktop app can expose the local server to your LAN, which makes it easier to open OmniContext CLI from a phone or tablet without setting up commands by hand.
@@ -65,3 +76,4 @@ If you need a safer cross-network setup, pair it with Tailscale.
 - use the terminal directly when you want the leanest workflow
 - if you're mainly doing docs, spreadsheets, or slides, the **General** workflow is usually the best fit
 - if you're in the browser side panel, switch to **Browser**
+- to manage personal reminders and to-dos, switch to **Memo**

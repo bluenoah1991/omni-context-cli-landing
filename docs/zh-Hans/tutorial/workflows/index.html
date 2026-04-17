@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">工作流 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/workflows"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="工作流 | OmniContext CLI"><meta data-rh="true" name="description" content="工作流决定 OmniContext CLI 的行为方式：系统提示词、可用工具，以及整体交互风格。"><meta data-rh="true" property="og:description" content="工作流决定 OmniContext CLI 的行为方式：系统提示词、可用工具，以及整体交互风格。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/workflows"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/workflows" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/workflows" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/workflows" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"工作流","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/workflows"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.ac8f3497.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.6d6aedd4.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.a3b9aa95.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,7 +45,11 @@
 
 
 <table><thead><tr><th>工作流</th><th>使用场景</th><th>描述</th></tr></thead><tbody><tr><td><strong>Programming</strong></td><td>终端、VS Code</td><td>默认的编程工作流。包含基础工具、内置智能体工具、自定义 Agent、MCP 和远程工具。</td></tr><tr><td><strong>General</strong></td><td>桌面应用、Office</td><td>更通用的助手工作流，适合文档、表格、演示文稿和日常任务。</td></tr><tr><td><strong>Analytics</strong></td><td>Token 开销、延迟</td><td>用量分析工作流，可直接用 SQL 查询本地请求日志数据库。</td></tr><tr><td><strong>Recall</strong></td><td>聊天历史</td><td>按关键词检索和回顾过去会话的搜索工作流。</td></tr></tbody></table>
-<p>如果你使用桌面应用，它还会额外安装一个给 Chrome 侧边栏使用的 <strong>Browser</strong> 工作流，带有标签页、页面、书签、历史记录和截图访问能力。</p>
+<p>如果你使用桌面应用，它还会额外安装两个工作流：</p>
+<ul>
+<li class=""><strong>Browser</strong> - 给 Chrome 侧边栏使用，带有标签页、页面、书签、历史记录和截图访问能力。</li>
+<li class=""><strong>Memo</strong> - 用于个人提醒和通知。在 macOS 上，备忘事项会通过原生桥接直接同步进系统的&quot;提醒事项&quot;；在其他平台上则回退到本地 JSON 文件存储。</li>
+</ul>
 <p>你可以在启动时通过 <code>omx --workflow general</code> 切换工作流，也可以在会话中通过菜单切换。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="自定义工作流">自定义工作流<a href="#自定义工作流" class="hash-link" aria-label="自定义工作流的直接链接" title="自定义工作流的直接链接" translate="no">​</a></h2>
 <p>把一个 markdown 文件放进 <code>~/.omx/workflows/</code> 或 <code>.omx/workflows/</code> 就能创建自己的工作流。文件名就是你在 <code>--workflow</code> 中使用的工作流 ID。</p>

@@ -18,7 +18,10 @@ A workflow controls how OmniContext CLI behaves: the system prompt, which tools 
 | **Analytics** | Token costs, latency | A usage analytics workflow with direct SQL access to the local request log database. |
 | **Recall** | Chat history | A search workflow for finding and reviewing past sessions by keyword. |
 
-If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar, with tab, page, bookmark, history, and screenshot access.
+If you use the desktop app, it also installs two more workflows:
+
+- **Browser** - for the Chrome sidebar, with tab, page, bookmark, history, and screenshot access.
+- **Memo** - for personal reminders and notifications. On macOS, memos sync straight into Apple Reminders through a native bridge; on other platforms they fall back to a local JSON file.
 
 Switch workflows at startup with `omx --workflow general`, or switch during a session from the menu.
 
