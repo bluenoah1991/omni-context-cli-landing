@@ -15,8 +15,8 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Sessions & Memory',
-      items: ['sessions', 'memory'],
+      label: 'Sessions, Memory & Navigation',
+      items: ['sessions', 'memory', 'landmarks'],
     },
     {
       type: 'category',

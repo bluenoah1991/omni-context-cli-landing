@@ -64,12 +64,14 @@ A simple config looks like this:
 {
   "workflowPreset": "programming",
   "responseLanguage": "en",
-  "statusCommand": "git branch --show-current",
-  "cacheTtl": "1h"
+  "colorTheme": "neon",
+  "cacheTtl": "1h",
+  "landmarkEnabled": true,
+  "memoryEnabled": true
 }
 ```
 
-Global config is the right place for defaults you want everywhere. Project scope is better for repo-specific choices like a preferred workflow, response language, or status line.
+Global config is the right place for defaults you want everywhere. Project scope is better for repo-specific choices like a preferred workflow, response language, color theme, or whether landmarks should stay on.
 
 ## Project Data
 
@@ -77,8 +79,12 @@ OmniContext CLI also keeps working state outside the repo under `~/.omx/projects
 
 That directory can include:
 
-- project-scoped config
+- project-scoped config in `omx.json`
 - session history and compaction state
 - cross-session memory in `memory.json`
+- landmark navigation data in `landmark.sqlite`
+- recall search data in `session-history.sqlite`
+
+For the full landmark model and tool flow, see [Landmark Navigation](/tutorial/landmarks).
 
 This split is intentional: you can commit shared rules like `OMX.md`, `AGENTS.md`, or `.omx/workflows/`, while keeping personal session data local.

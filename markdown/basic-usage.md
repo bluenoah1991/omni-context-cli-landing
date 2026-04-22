@@ -52,12 +52,15 @@ Press `Escape` to open the menu. From there you can:
 
 ### Workflow Presets
 
-OmniContext CLI includes two built-in workflows:
+OmniContext CLI includes five built-in workflows:
 
-- **Programming** - the default coding workflow with base tools, built-in agent tools, custom agents, MCP, and remote tools
+- **Programming** - the default coding workflow with built-in tools, built-in agent tools, custom agents, MCP, and remote tools
 - **General** - a broader assistant workflow for docs, spreadsheets, presentations, and day-to-day tasks
+- **Analytics** - inspect request logs for token usage, latency, cache hit rates, and model comparisons
+- **Memory** - browse, edit, and clean up saved cross-session key points
+- **Recall** - search earlier sessions and pull up the surrounding conversation
 
-If you're using the desktop app, it also installs a **Browser** workflow for the Chrome sidebar.
+If you're using the desktop app, it also installs **Browser** for the Chrome sidebar and **Memo** for reminders and notifications.
 
 Custom workflows live in `~/.omx/workflows/` or `.omx/workflows/`. See [Workflows](/tutorial/workflows) for the full format.
 
@@ -67,12 +70,13 @@ The preferences menu lets you toggle or change:
 
 - **Cache duration** - `5m` for faster iteration or `1h` for longer cached prompts
 - **Completion notification** - desktop notifications for slower replies
+- **Request logging** - store request metadata for the Analytics workflow
 - **Context editing** - trim bulky old tool calls and reasoning blocks
 - **Diff view** - show inline diffs when OmniContext CLI edits files
+- **Landmarks** - turn the landmark navigation system on or off for the current project
 - **Cross-session memory** - keep useful project knowledge between sessions
 - **Extended thinking** - enable deeper reasoning for harder tasks
 - **IDE context** - include context from your editor
-- **Server compaction** - let the server handle compaction instead of the client
 - **Streaming output** - render replies token by token as they arrive
 
 From the main menu, you can also switch:

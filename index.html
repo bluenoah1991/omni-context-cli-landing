@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniContext CLI - Context-First, Zero-Telemetry Coding Assistant</title>
-    <meta name="description" content="A context-first, zero-telemetry coding assistant for the terminal, with workflows, agent tools, cross-session memory, and integrations for VS Code, Office, the browser, and mobile.">
+    <meta name="description" content="A context-first, zero-telemetry coding assistant for the terminal, with workflows, agent tools, landmark navigation, cross-session memory, and integrations for VS Code, Office, the browser, and mobile.">
     <link rel="icon" href="favicon.ico">
     <link href="assets/fonts/inter.css" rel="stylesheet">
     <script src="assets/js/lucide.js"></script>
@@ -22,10 +22,10 @@
             </div>
             <div class="nav-right">
                 <a href="zh-Hans/" class="nav-lang">zh-CN</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/bluenoah1991/omni-context-cli" class="nav-link-icon" target="_blank" aria-label="GitHub">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta" target="_blank">Download</a>
+                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">Download</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
                 <i data-lucide="menu"></i>
@@ -37,7 +37,7 @@
             <a href="#integrations" class="mobile-menu-link">Integrations</a>
             <a href="docs/" class="mobile-menu-link">Docs</a>
             <a href="zh-Hans/" class="mobile-menu-link">zh-CN</a>
-            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link" target="_blank">Download</a>
+            <a href="https://www.npmjs.com/package/omni-context-cli" class="mobile-menu-link" target="_blank">Download</a>
         </div>
     </nav>
 
@@ -99,12 +99,12 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">10</span>
-                    <span class="metric-label">Base Tools</span>
+                    <span class="metric-value">20</span>
+                    <span class="metric-label">Built-in Tools</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">4</span>
+                    <span class="metric-value">6</span>
                     <span class="metric-label">Agent Tools</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -123,7 +123,7 @@
                 <h2 class="section-title">Built-in workflows,<br>fully under your control</h2>
                 <p class="section-subtitle">
                     A workflow is just markdown: tool access in frontmatter, behavior in the prompt body.
-                    OmniContext CLI ships with Programming, General, Analytics, and Recall out of the box. The desktop app also installs Browser for the Chrome sidebar and Memo for reminders and notifications.
+                    OmniContext CLI ships with Programming, General, Analytics, Memory, and Recall out of the box. The desktop app also installs Browser for the Chrome sidebar and Memo for reminders and notifications.
                 </p>
             </div>
             <div class="workflow-grid">
@@ -165,6 +165,19 @@
                         <span>AnalyticsQuery</span>
                         <span>WebSearch</span>
                         <span>Recall Agent</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">◇</span>
+                        <h3>Memory</h3>
+                    </div>
+                    <p>A memory management workflow for reviewing, editing, and cleaning up saved project key points before they drift into noise.</p>
+                    <div class="workflow-tools">
+                        <span>MemoryList</span>
+                        <span>MemoryUpdate</span>
+                        <span>MemoryDelete</span>
+                        <span>WebSearch</span>
                     </div>
                 </div>
                 <div class="workflow-card">
@@ -214,7 +227,7 @@
                     </div>
                     <p>Drop a file into <code>~/.omx/workflows/</code> or <code>.omx/workflows/</code> and it becomes a selectable workflow. The file name becomes the workflow ID you use with <code>--workflow</code>.</p>
                     <div class="workflow-mini-code"><pre><code><span class="t-key">name:</span> Review
-<span class="t-key">allowBaseTools:</span> [Read, Glob, Grep, Skill]
+<span class="t-key">allowBuiltinTools:</span> [Read, Glob, Grep, Skill]
 <span class="t-key">allowBuiltinAgents:</span> true
 <span class="t-comment">---</span>
 You are a careful reviewer...</code></pre></div>
@@ -263,7 +276,28 @@ You are a careful reviewer...</code></pre></div>
                         <p>Search past chat sessions and summarize what happened around a topic.</p>
                     </div>
                 </div>
-                <div class="tool-section-label">Base Tools</div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="bot"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Review</h4>
+                        <p>Review recent work in the current conversation with a fresh eye.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="search"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Deduce</h4>
+                        <p>Trace a bug or complex question through read-only exploration and return a fix proposal.</p>
+                    </div>
+                </div>
+                <div class="tool-section-label">Built-in Tools</div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="globe"></i></div>
+                    <div class="tool-info">
+                        <h4>AnalyticsQuery</h4>
+                        <p>Query the local request log database for usage, latency, cache, and cost analysis.</p>
+                    </div>
+                </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="terminal"></i></div>
                     <div class="tool-info">
@@ -279,24 +313,10 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
-                    <div class="tool-info">
-                        <h4>Read</h4>
-                        <p>Read files with line numbers, offsets, limits, and support for images or PDFs.</p>
-                    </div>
-                </div>
-                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <div class="tool-info">
                         <h4>Edit</h4>
                         <p>Make precise text replacements inside an existing file.</p>
-                    </div>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="file-plus"></i></div>
-                    <div class="tool-info">
-                        <h4>Write</h4>
-                        <p>Create a file or fully rewrite one, with optional create-only safety.</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -314,6 +334,76 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="compass"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkList</h4>
+                        <p>List saved landmark layers for quick codebase navigation.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="book-open"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkRead</h4>
+                        <p>Read a saved landmark layer with its pinned files, directories, and symbols.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="pencil"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkUpdate</h4>
+                        <p>Create or update a landmark layer so durable navigation knowledge survives across sessions.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-plus"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkDelete</h4>
+                        <p>Delete an outdated landmark layer and its saved pins.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="history"></i></div>
+                    <div class="tool-info">
+                        <h4>MemoryList</h4>
+                        <p>List saved cross-session memory points for the current project.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="brain"></i></div>
+                    <div class="tool-info">
+                        <h4>MemoryUpdate</h4>
+                        <p>Edit the text or score of existing memory points.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="brain"></i></div>
+                    <div class="tool-info">
+                        <h4>MemoryDelete</h4>
+                        <p>Delete outdated or noisy project memory points.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
+                    <div class="tool-info">
+                        <h4>Read</h4>
+                        <p>Read files with line numbers, offsets, limits, and support for images or PDFs.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="history"></i></div>
+                    <div class="tool-info">
+                        <h4>RecallSearch</h4>
+                        <p>Search indexed past sessions with full-text search.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
+                    <div class="tool-info">
+                        <h4>RecallRead</h4>
+                        <p>Read a past session around a specific recall search hit.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
                     <div class="tool-info">
                         <h4>WebSearch</h4>
@@ -325,6 +415,13 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-info">
                         <h4>WebFetch</h4>
                         <p>Fetch a URL and convert the page into clean markdown.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-plus"></i></div>
+                    <div class="tool-info">
+                        <h4>Write</h4>
+                        <p>Create a file or fully rewrite one, with optional create-only safety.</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -431,6 +528,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="provider-tag">OpenRouter</div>
                         <div class="provider-tag">Zhipu</div>
                         <div class="provider-tag">MiniMax</div>
+                        <div class="provider-tag">OpenCode Go</div>
                     </div>
                 </div>
                 <div class="split-visual">
@@ -459,7 +557,7 @@ You are a careful reviewer...</code></pre></div>
                     <h2 class="section-title">It keeps the good stuff</h2>
                     <p class="section-subtitle">
                         Memory is extracted during compaction, scored over time, and re-injected automatically on the next session.
-                        Helpful points rise, stale ones decay, and bad advice gets flushed out quickly.
+                        You can also open the Memory workflow to review, edit, or delete saved key points when they need cleanup.
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
@@ -473,7 +571,14 @@ You are a careful reviewer...</code></pre></div>
                             <i data-lucide="trending-up"></i>
                             <div>
                                 <strong>Scored memory</strong>
-                                <span>Helpful memories gain +3, neutral ones drift at -1, harmful ones drop at -6.</span>
+                                <span>Helpful memories gain +3, neutral ones drift at -1, harmful ones drop at -6, and points at -10 are pruned.</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="settings"></i>
+                            <div>
+                                <strong>Manual cleanup when needed</strong>
+                                <span>The Memory workflow gives you <code>MemoryList</code>, <code>MemoryUpdate</code>, and <code>MemoryDelete</code> for direct control.</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
@@ -499,7 +604,7 @@ You are a careful reviewer...</code></pre></div>
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score positive">+2</span>
                             </div>
-                            <code>"The web client header shows statusCommand output from ~/.omx/projects/&lt;project-id&gt;/omx.json."</code>
+                            <code>"The backend uses SQLite stores under ~/.omx/projects/&lt;project-id&gt;/ for project state."</code>
                         </div>
                         <div class="memory-card fading">
                             <div class="memory-header">
@@ -509,6 +614,66 @@ You are a careful reviewer...</code></pre></div>
                             <code>"This project deploys through Webpack."</code>
                             <span class="memory-status">Decaying — pruned at -10</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="split-layout reverse">
+                <div class="split-content">
+                    <span class="section-label">Landmark Navigation</span>
+                    <h2 class="section-title">Save the map,<br>not just the answer</h2>
+                    <p class="section-subtitle">
+                        Landmarks turn repeat codebase discoveries into reusable navigation layers. Instead of relearning where a subsystem lives,
+                        OmniContext CLI can save a named layer with the key files, directories, and symbols, then jump back to it in later sessions.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <i data-lucide="compass"></i>
+                            <div>
+                                <strong>Named layers</strong>
+                                <span>Group a feature, subsystem, or request flow into a reusable layer with its own scope and description.</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="book-open"></i>
+                            <div>
+                                <strong>Pinned code objects</strong>
+                                <span>Each layer stores pins for files, directories, and symbols, so navigation stays concrete instead of vague.</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="pencil"></i>
+                            <div>
+                                <strong>First-class tool flow</strong>
+                                <span>Use <code>LandmarkList</code>, <code>LandmarkRead</code>, <code>LandmarkUpdate</code>, and <code>LandmarkDelete</code> directly from the coding workflow.</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="folder-open"></i>
+                            <div>
+                                <strong>Per-project SQLite storage</strong>
+                                <span>Every project keeps its own navigation map in <code>~/.omx/projects/&lt;project-id&gt;/landmark.sqlite</code>.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="code-block">
+                        <div class="code-header">Landmark workflow</div>
+                        <pre><code><span class="t-comment"># See what maps already exist</span>
+<span class="prompt">$</span> LandmarkList
+<span class="t-output">Navigation Request Lifecycle - Traces how requests move through the app</span>
+
+<span class="t-comment"># Read one saved layer</span>
+<span class="prompt">$</span> LandmarkRead Navigation Request Lifecycle
+<span class="t-output">[symbol] source/services/chatOrchestrator.ts &gt; ChatOrchestrator - Main request flow</span>
+
+<span class="t-comment"># Save a better map once you understand the area</span>
+<span class="prompt">$</span> LandmarkUpdate Navigation Request Lifecycle ...</code></pre>
                     </div>
                 </div>
             </div>
@@ -563,7 +728,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="chrome"></i></div>
                         <div>
                             <h3>Chrome Extension</h3>
-                            <p>Use a sidebar on any page with tab control, page extraction, bookmarks, history, and screenshots.</p>
+                            <p>Use a sidebar on any page with tab control, page extraction, bookmarks, history, screenshots, and guarded page-side scripting.</p>
                         </div>
                     </div>
                 </div>
@@ -572,7 +737,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="file-spreadsheet"></i></div>
                         <div>
                             <h3>Office Add-in</h3>
-                            <p>Bring OmniContext CLI into Word, Excel, and PowerPoint through the desktop app's Office integration.</p>
+                            <p>Bring OmniContext CLI into Word, Excel, and PowerPoint through the desktop app's Office integration and shared local server.</p>
                         </div>
                     </div>
                 </div>
@@ -719,7 +884,7 @@ You are a careful reviewer...</code></pre></div>
                         <i data-lucide="book-open"></i>
                         Documentation
                     </a>
-                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">
+                    <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">
                         <i data-lucide="github"></i>
                         GitHub
                     </a>
@@ -736,7 +901,7 @@ You are a careful reviewer...</code></pre></div>
             </div>
             <div class="footer-links">
                 <a href="docs/">Docs</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">GitHub</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">GitHub</a>
                 <a href="https://www.npmjs.com/package/omni-context-cli" target="_blank">npm</a>
             </div>
         </div>

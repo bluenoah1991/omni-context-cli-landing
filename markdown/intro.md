@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Getting Started
 
-OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, with custom workflows, agent tools, and cross-session memory built in.
+OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, with custom workflows, built-in agent tools, landmark navigation, and cross-session memory.
 
 ## Installation
 
@@ -37,16 +37,19 @@ omx --list-providers
 omx --add-provider openrouter --api-key sk-...
 ```
 
-Built-in provider presets include Zenmux, DeepSeek, Kimi for Coding, OpenRouter, Zhipu, and MiniMax.
+Built-in provider presets include Zenmux, DeepSeek, Kimi for Coding, OpenRouter, Zhipu, MiniMax, and OpenCode Go.
 
 ## Built-in Workflows
 
-OmniContext CLI ships with four built-in workflows:
+OmniContext CLI ships with five built-in workflows:
 
 - **Programming** - the default coding workflow for terminal and editor use
-- **General** - a broader assistant workflow for documents, spreadsheets, and everyday tasks
+- **General** - a broader assistant workflow for documents, spreadsheets, presentations, and everyday tasks
 - **Analytics** - a usage analytics workflow with direct access to the local request log database
+- **Memory** - a key-point management workflow for reviewing, editing, and deleting saved project memory
 - **Recall** - a chat history search workflow for finding and reviewing past sessions
+
+Landmark navigation is a separate built-in system for saving reusable codebase maps. See [Landmark Navigation](/tutorial/landmarks) for the full workflow, tools, and storage model.
 
 If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar and a **Memo** workflow for personal reminders and notifications.
 
@@ -92,8 +95,8 @@ For the full config and file layout, see [Project Files & Config](/tutorial/proj
 | `--set-password [password]` | Set a password for the web client |
 | `--clear-password` | Remove the web client password |
 | `--install-daemon` | Install OmniContext CLI as a systemd user service on Linux |
-| `--export-project <path>` | Export project sessions and memory to a gzip archive |
-| `--import-project <path>` | Import project sessions and memory from a gzip archive |
+| `--export-project <path>` | Export project data to a gzip archive |
+| `--import-project <path>` | Import project data from a gzip archive |
 | `--index-history` | Index all existing sessions into the recall database for full-text search |
 
 Examples:
@@ -110,6 +113,9 @@ omx --serve --web
 
 # Use a different workflow for this run
 omx --workflow general
+
+# Open the memory workflow
+omx --workflow memory
 
 # Add all models from a provider
 omx --add-provider zenmux --api-key zmx-...

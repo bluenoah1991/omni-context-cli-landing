@@ -25,11 +25,27 @@ The desktop app also installs a **Browser** workflow, which is the best default 
 - inspect and switch browser tabs
 - read bookmarks and recent history
 - capture screenshots of the active tab
+- run page-side scripts when higher-level tools are not enough
 - automate browser tasks through natural-language instructions
+
+## Safety Limits
+
+Page-side scripting is intentionally limited.
+
+`ExecuteScript` cannot access sensitive browser data APIs such as:
+
+- `document.cookie`
+- `cookieStore`
+- `localStorage`
+- `sessionStorage`
+- `indexedDB`
+- `caches`
+
+That keeps the Browser workflow useful for page understanding and automation without turning it into a cookie or storage exfiltration tool.
 
 ## Usage
 
-Open the side panel from the extension icon, then chat with OmniContext CLI while you browse. The Browser workflow is usually the right choice because it is set up for page and tab access.
+Open the side panel from the extension icon, then chat with OmniContext CLI while you browse. The side panel is designed around the **Browser** workflow, so page and tab tools are ready to use right away.
 
 ## Connection
 

@@ -26,7 +26,7 @@ Each custom agent is a markdown file with YAML frontmatter and a Handlebars prom
 ---
 name: Review
 description: Review a file or directory for bugs and risky changes
-allowBaseTools: [Read, Glob, Grep, Bash, BashOutput]
+allowBuiltinTools: [Read, Glob, Grep, Bash, BashOutput]
 displayFields: [path]
 parameters:
   properties:
@@ -53,14 +53,16 @@ The agent above becomes a tool named `Agent_Review`.
 |-------|------|-------------|
 | `name` | string | Tool name. OmniContext CLI exposes it as `Agent_<name>` |
 | `description` | string | Short description shown to the model |
-| `allowBaseTools` | boolean or string[] | Enable all base tools or whitelist specific ones |
+| `allowBuiltinTools` | boolean or string[] | Enable built-in tools or whitelist specific ones |
+| `allowExternalTools` | boolean or string[] | Enable non-built-in tools if your setup provides them |
 | `allowBuiltinAgents` | boolean or string[] | Allow built-in agent tools |
-| `allowCustomAgents` | boolean or string[] | Allow other custom agents |
+| `allowExternalAgents` | boolean or string[] | Allow other custom agents |
 | `allowMcpTools` | boolean or string[] | Allow MCP tools |
 | `allowRemoteTools` | boolean or string[] | Allow remote integration tools |
 | `displayFields` | string[] | Which input fields should be shown in tool call previews |
 | `parameters` | object | JSON Schema describing the input arguments |
 | `model` | string | Override the default agent model for this agent |
+| `inheritContext` | boolean | Let the agent see the current conversation context |
 
 ### Template Variables
 

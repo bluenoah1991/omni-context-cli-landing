@@ -13,15 +13,16 @@ sidebar_position: 4
 
 | 工作流 | 使用场景 | 描述 |
 |--------|----------|------|
-| **Programming** | 终端、VS Code | 默认的编程工作流。包含基础工具、内置智能体工具、自定义 Agent、MCP 和远程工具。 |
-| **General** | 桌面应用、Office | 更通用的助手工作流，适合文档、表格、演示文稿和日常任务。 |
-| **Analytics** | Token 开销、延迟 | 用量分析工作流，可直接用 SQL 查询本地请求日志数据库。 |
+| **Programming** | 终端、VS Code | 默认的编程工作流。包含内置工具、内置智能体工具、自定义 Agent、MCP 和远程工具。 |
+| **General** | 桌面端、文档工作 | 更通用的助手工作流，适合文档、表格、演示文稿和日常任务。 |
+| **Analytics** | Token 开销、延迟 | 用量分析工作流，可直接查询本地请求日志数据库。 |
+| **Memory** | 要点清理 | 用于查看、编辑和删除跨会话记忆要点的工作流。 |
 | **Recall** | 聊天历史 | 按关键词检索和回顾过去会话的搜索工作流。 |
 
 如果你使用桌面应用，它还会额外安装两个工作流：
 
-- **Browser** - 给 Chrome 侧边栏使用，带有标签页、页面、书签、历史记录和截图访问能力。
-- **Memo** - 用于个人提醒和通知。在 macOS 上，备忘事项会通过原生桥接直接同步进系统的"提醒事项"；在其他平台上则回退到本地 JSON 文件存储。
+- **Browser** - 给 Chrome 侧边栏使用，带有标签页、页面、书签、历史记录、截图和页面脚本执行能力。
+- **Memo** - 用于个人提醒和通知。在 macOS 上，备忘事项会通过原生桥接直接同步进系统的“提醒事项”；在其他平台上则回退到本地 JSON 文件存储。
 
 你可以在启动时通过 `omx --workflow general` 切换工作流，也可以在会话中通过菜单切换。
 
@@ -33,9 +34,10 @@ sidebar_position: 4
 ---
 name: Review
 icon: "◈"
-allowBaseTools: [Read, Glob, Grep, WebFetch, Skill]
+allowBuiltinTools: [Read, Glob, Grep, WebFetch, Skill]
+allowExternalTools: false
 allowBuiltinAgents: true
-allowCustomAgents: false
+allowExternalAgents: false
 allowMcpTools: true
 allowRemoteTools: false
 ---
@@ -53,9 +55,10 @@ YAML frontmatter 用来定义工具过滤规则，markdown 正文会成为系统
 |------|------|------|
 | `name` | string | UI 中显示的名称 |
 | `icon` | string | 工作流选择器中显示的单字符图标 |
-| `allowBaseTools` | boolean 或 string[] | 启用全部基础工具，或仅白名单中的工具 |
-| `allowBuiltinAgents` | boolean 或 string[] | 启用全部内置智能体工具，或仅白名单中的工具 |
-| `allowCustomAgents` | boolean 或 string[] | 启用 `~/.omx/agents/` 或 `.omx/agents/` 中的自定义 Agent |
+| `allowBuiltinTools` | boolean 或 string[] | 启用内置工具，或只启用白名单里的工具 |
+| `allowExternalTools` | boolean 或 string[] | 如果你的环境提供了非内置工具，就允许使用它们 |
+| `allowBuiltinAgents` | boolean 或 string[] | 启用内置智能体工具，或只启用白名单里的工具 |
+| `allowExternalAgents` | boolean 或 string[] | 启用 `~/.omx/agents/` 或 `.omx/agents/` 中的自定义 Agent |
 | `allowMcpTools` | boolean 或 string[] | 启用 MCP 工具 |
 | `allowRemoteTools` | boolean 或 string[] | 启用来自 VS Code、Chrome、Office 等集成的远程工具 |
 

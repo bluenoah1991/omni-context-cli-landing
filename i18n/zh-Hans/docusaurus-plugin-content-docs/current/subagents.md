@@ -26,7 +26,7 @@ sidebar_position: 7
 ---
 name: Review
 description: Review a file or directory for bugs and risky changes
-allowBaseTools: [Read, Glob, Grep, Bash, BashOutput]
+allowBuiltinTools: [Read, Glob, Grep, Bash, BashOutput]
 displayFields: [path]
 parameters:
   properties:
@@ -53,14 +53,16 @@ Return a concise report with file paths and line numbers.
 |------|------|------|
 | `name` | string | 工具名称。OmniContext CLI 会将它暴露为 `Agent_<name>` |
 | `description` | string | 展示给模型的简短说明 |
-| `allowBaseTools` | boolean 或 string[] | 启用全部基础工具，或仅白名单中的工具 |
+| `allowBuiltinTools` | boolean 或 string[] | 启用内置工具，或只启用白名单中的工具 |
+| `allowExternalTools` | boolean 或 string[] | 如果你的环境提供了非内置工具，就允许使用它们 |
 | `allowBuiltinAgents` | boolean 或 string[] | 允许使用内置智能体工具 |
-| `allowCustomAgents` | boolean 或 string[] | 允许使用其他自定义 Agent |
+| `allowExternalAgents` | boolean 或 string[] | 允许使用其他自定义 Agent |
 | `allowMcpTools` | boolean 或 string[] | 允许使用 MCP 工具 |
 | `allowRemoteTools` | boolean 或 string[] | 允许使用远程集成工具 |
 | `displayFields` | string[] | 工具调用预览中显示哪些输入字段 |
 | `parameters` | object | 描述输入参数的 JSON Schema |
 | `model` | string | 为当前 Agent 单独覆盖默认 agent model |
+| `inheritContext` | boolean | 让 Agent 可以看到当前对话上下文 |
 
 ### 模板变量
 

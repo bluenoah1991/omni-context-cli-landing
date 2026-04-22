@@ -25,11 +25,27 @@ OmniContext Chrome 扩展会在任意网页上加一个 AI 侧边栏，并把它
 - 查看和切换浏览器标签页
 - 读取书签和最近历史记录
 - 截取当前活动标签页的截图
+- 当高层工具不够用时，执行页面侧脚本
 - 用自然语言自动化浏览器任务
+
+## 安全限制
+
+页面侧脚本能力是有意收紧的。
+
+`ExecuteScript` 不能访问下面这些敏感浏览器数据 API：
+
+- `document.cookie`
+- `cookieStore`
+- `localStorage`
+- `sessionStorage`
+- `indexedDB`
+- `caches`
+
+这样 Browser 工作流既能继续做页面理解和自动化，又不会变成读取 cookie 或浏览器存储的通道。
 
 ## 使用方式
 
-通过扩展图标打开侧边栏，然后一边浏览网页一边和 OmniContext CLI 对话。通常建议直接使用 Browser 工作流，因为它已经为页面和标签页访问做好了配置。
+通过扩展图标打开侧边栏，然后一边浏览网页一边和 OmniContext CLI 对话。这个侧边栏本来就是围绕 **Browser** 工作流设计的，所以页面和标签页相关工具打开后就能直接用。
 
 ## 连接方式
 

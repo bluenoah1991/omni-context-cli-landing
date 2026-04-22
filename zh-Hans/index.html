@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniContext CLI - 上下文优先、零遥测的编程助手</title>
-    <meta name="description" content="一个上下文优先、零遥测的终端编程助手，内置工作流、智能体工具和跨会话记忆，并支持 VS Code、Office、浏览器和移动端集成。">
+    <meta name="description" content="一个上下文优先、零遥测的终端编程助手，内置工作流、智能体工具、地标导航和跨会话记忆，并支持 VS Code、Office、浏览器和移动端集成。">
     <link rel="icon" href="../favicon.ico">
     <link href="../assets/fonts/inter.css" rel="stylesheet">
     <script src="../assets/js/lucide.js"></script>
@@ -22,10 +22,10 @@
             </div>
             <div class="nav-right">
                 <a href="../" class="nav-lang">English</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" class="nav-link-icon" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/bluenoah1991/omni-context-cli" class="nav-link-icon" target="_blank" aria-label="GitHub">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="nav-cta" target="_blank">下载</a>
+                <a href="https://www.npmjs.com/package/omni-context-cli" class="nav-cta" target="_blank">下载</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
                 <i data-lucide="menu"></i>
@@ -37,7 +37,7 @@
             <a href="#integrations" class="mobile-menu-link">集成</a>
             <a href="../docs/zh-Hans/" class="mobile-menu-link">文档</a>
             <a href="../" class="mobile-menu-link">English</a>
-            <a href="https://github.com/bluenoah1991/omni-context-cli-landing/releases" class="mobile-menu-link" target="_blank">下载</a>
+            <a href="https://www.npmjs.com/package/omni-context-cli" class="mobile-menu-link" target="_blank">下载</a>
         </div>
     </nav>
 
@@ -98,12 +98,12 @@
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">10</span>
-                    <span class="metric-label">基础工具</span>
+                    <span class="metric-value">20</span>
+                    <span class="metric-label">内置工具</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">4</span>
+                    <span class="metric-value">6</span>
                     <span class="metric-label">智能体工具</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -122,7 +122,7 @@
                 <h2 class="section-title">内置工作流先上手，<br>需要时再完全自定义</h2>
                 <p class="section-subtitle">
                     工作流本质上就是 markdown：frontmatter 控制工具权限，正文定义行为。
-                    OmniContext CLI 默认内置 Programming、General、Analytics 和 Recall 四个工作流，桌面应用还会额外安装给 Chrome 侧边栏使用的 Browser 工作流，以及用于提醒和通知的 Memo 工作流。
+                    OmniContext CLI 默认内置 Programming、General、Analytics、Memory 和 Recall 五个工作流，桌面应用还会额外安装给 Chrome 侧边栏使用的 Browser 工作流，以及用于提醒和通知的 Memo 工作流。
                 </p>
             </div>
             <div class="workflow-grid">
@@ -164,6 +164,19 @@
                         <span>AnalyticsQuery</span>
                         <span>WebSearch</span>
                         <span>Recall Agent</span>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-card-header">
+                        <span class="workflow-card-icon">◇</span>
+                        <h3>Memory</h3>
+                    </div>
+                    <p>用于管理项目记忆的工作流，适合定期查看、编辑和清理已经保存下来的关键要点，避免记忆逐渐变成噪音。</p>
+                    <div class="workflow-tools">
+                        <span>MemoryList</span>
+                        <span>MemoryUpdate</span>
+                        <span>MemoryDelete</span>
+                        <span>WebSearch</span>
                     </div>
                 </div>
                 <div class="workflow-card">
@@ -213,7 +226,7 @@
                     </div>
                     <p>把文件放进 <code>~/.omx/workflows/</code> 或 <code>.omx/workflows/</code>，它就会出现在工作流列表里。文件名本身就是你传给 <code>--workflow</code> 的工作流 ID。</p>
                     <div class="workflow-mini-code"><pre><code><span class="t-key">name:</span> Review
-<span class="t-key">allowBaseTools:</span> [Read, Glob, Grep, Skill]
+<span class="t-key">allowBuiltinTools:</span> [Read, Glob, Grep, Skill]
 <span class="t-key">allowBuiltinAgents:</span> true
 <span class="t-comment">---</span>
 You are a careful reviewer...</code></pre></div>
@@ -262,7 +275,28 @@ You are a careful reviewer...</code></pre></div>
                         <p>搜索过去的聊天会话，并围绕某个主题总结发生了什么。</p>
                     </div>
                 </div>
-                <div class="tool-section-label">基础工具</div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="bot"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Review</h4>
+                        <p>用新的视角复查当前对话里最近完成的工作。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="search"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Deduce</h4>
+                        <p>通过只读探索追查 bug 或复杂问题，并给出修复建议。</p>
+                    </div>
+                </div>
+                <div class="tool-section-label">内置工具</div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="globe"></i></div>
+                    <div class="tool-info">
+                        <h4>AnalyticsQuery</h4>
+                        <p>查询本地请求日志数据库，用于分析用量、延迟、缓存和成本。</p>
+                    </div>
+                </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="terminal"></i></div>
                     <div class="tool-info">
@@ -278,24 +312,10 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
-                    <div class="tool-info">
-                        <h4>Read</h4>
-                        <p>按行号读取文件，也支持 offset、limit、图片和 PDF。</p>
-                    </div>
-                </div>
-                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <div class="tool-info">
                         <h4>Edit</h4>
                         <p>对现有文件做精确的文本替换。</p>
-                    </div>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon"><i data-lucide="file-plus"></i></div>
-                    <div class="tool-info">
-                        <h4>Write</h4>
-                        <p>从头创建文件或整文件覆盖，也支持更安全的 create-only 模式。</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -313,6 +333,76 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="compass"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkList</h4>
+                        <p>列出已保存的地标 layer，方便快速定位代码结构。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="book-open"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkRead</h4>
+                        <p>读取某个地标 layer，包括它保存的文件、目录和符号。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="pencil"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkUpdate</h4>
+                        <p>创建或更新地标 layer，让稳定的导航知识可以跨会话保留。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-plus"></i></div>
+                    <div class="tool-info">
+                        <h4>LandmarkDelete</h4>
+                        <p>删除已经过时的地标 layer 和它保存的 pins。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="history"></i></div>
+                    <div class="tool-info">
+                        <h4>MemoryList</h4>
+                        <p>列出当前项目里已保存的跨会话记忆要点。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="brain"></i></div>
+                    <div class="tool-info">
+                        <h4>MemoryUpdate</h4>
+                        <p>修改已有记忆要点的文本或分数。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="brain"></i></div>
+                    <div class="tool-info">
+                        <h4>MemoryDelete</h4>
+                        <p>删除过时或噪音过大的项目记忆要点。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
+                    <div class="tool-info">
+                        <h4>Read</h4>
+                        <p>按行号读取文件，也支持 offset、limit、图片和 PDF。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="history"></i></div>
+                    <div class="tool-info">
+                        <h4>RecallSearch</h4>
+                        <p>用全文检索搜索已经索引的历史会话。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-text"></i></div>
+                    <div class="tool-info">
+                        <h4>RecallRead</h4>
+                        <p>读取某个 recall 搜索命中的过去会话上下文。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
                     <div class="tool-info">
                         <h4>WebSearch</h4>
@@ -324,6 +414,13 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-info">
                         <h4>WebFetch</h4>
                         <p>抓取 URL，并把页面转换成干净的 markdown。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="file-plus"></i></div>
+                    <div class="tool-info">
+                        <h4>Write</h4>
+                        <p>从头创建文件或整文件覆盖，也支持更安全的 create-only 模式。</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -429,6 +526,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="provider-tag">OpenRouter</div>
                         <div class="provider-tag">Zhipu</div>
                         <div class="provider-tag">MiniMax</div>
+                        <div class="provider-tag">OpenCode Go</div>
                     </div>
                 </div>
                 <div class="split-visual">
@@ -457,7 +555,7 @@ You are a careful reviewer...</code></pre></div>
                     <h2 class="section-title">把真正有用的内容留住</h2>
                     <p class="section-subtitle">
                         记忆会在压缩时被提取出来，随着时间打分，并在下一次会话里自动重新注入。
-                        有帮助的内容会升值，陈旧内容会衰减，错误建议会更快被清掉。
+                        你也可以随时打开 Memory 工作流，手动查看、编辑或删除已经保存的要点。
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
@@ -471,7 +569,14 @@ You are a careful reviewer...</code></pre></div>
                             <i data-lucide="trending-up"></i>
                             <div>
                                 <strong>分数机制</strong>
-                                <span>有帮助的记忆 +3，中性的 -1，有害的 -6。</span>
+                                <span>有帮助的记忆 +3，中性的 -1，有害的 -6，到 -10 就会被清除。</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="settings"></i>
+                            <div>
+                                <strong>需要时可手动清理</strong>
+                                <span>Memory 工作流会直接提供 <code>MemoryList</code>、<code>MemoryUpdate</code> 和 <code>MemoryDelete</code>。</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
@@ -497,7 +602,7 @@ You are a careful reviewer...</code></pre></div>
                                 <span class="memory-label">memory.json</span>
                                 <span class="memory-score positive">+2</span>
                             </div>
-                            <code>"The web client header shows statusCommand output from ~/.omx/projects/&lt;project-id&gt;/omx.json."</code>
+                            <code>"The backend uses SQLite stores under ~/.omx/projects/&lt;project-id&gt;/ for project state."</code>
                         </div>
                         <div class="memory-card fading">
                             <div class="memory-header">
@@ -507,6 +612,66 @@ You are a careful reviewer...</code></pre></div>
                             <code>"This project deploys through Webpack."</code>
                             <span class="memory-status">衰减中 — 到 -10 会被清除</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="split-layout reverse">
+                <div class="split-content">
+                    <span class="section-label">地标导航</span>
+                    <h2 class="section-title">保存地图，<br>不只保存答案</h2>
+                    <p class="section-subtitle">
+                        Landmarks 会把反复探索出来的代码结构整理成可复用的导航 layer。以后再遇到同一个子系统时，
+                        OmniContext CLI 可以直接回到那组关键文件、目录和符号，而不是再从头摸一遍。
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-list-item">
+                            <i data-lucide="compass"></i>
+                            <div>
+                                <strong>按概念建 layer</strong>
+                                <span>把某个功能、子系统或请求链路保存成一个独立 layer，范围和用途都清楚可读。</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="book-open"></i>
+                            <div>
+                                <strong>精确 pin 到代码对象</strong>
+                                <span>每个 layer 都可以 pin 到文件、目录和符号，导航会比普通笔记具体得多。</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="pencil"></i>
+                            <div>
+                                <strong>完整工具链</strong>
+                                <span>直接用 <code>LandmarkList</code>、<code>LandmarkRead</code>、<code>LandmarkUpdate</code> 和 <code>LandmarkDelete</code> 管理它。</span>
+                            </div>
+                        </div>
+                        <div class="feature-list-item">
+                            <i data-lucide="folder-open"></i>
+                            <div>
+                                <strong>按项目 SQLite 存储</strong>
+                                <span>每个项目都会把自己的导航地图保存在 <code>~/.omx/projects/&lt;project-id&gt;/landmark.sqlite</code>。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="code-block">
+                        <div class="code-header">Landmark workflow</div>
+                        <pre><code><span class="t-comment"># 先看当前已经有哪些地图</span>
+<span class="prompt">$</span> LandmarkList
+<span class="t-output">Navigation Request Lifecycle - Traces how requests move through the app</span>
+
+<span class="t-comment"># 读出其中一个 layer</span>
+<span class="prompt">$</span> LandmarkRead Navigation Request Lifecycle
+<span class="t-output">[symbol] source/services/chatOrchestrator.ts &gt; ChatOrchestrator - Main request flow</span>
+
+<span class="t-comment"># 真的摸清结构后，再把地图存下来</span>
+<span class="prompt">$</span> LandmarkUpdate Navigation Request Lifecycle ...</code></pre>
                     </div>
                 </div>
             </div>
@@ -561,7 +726,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="chrome"></i></div>
                         <div>
                             <h3>Chrome 扩展</h3>
-                            <p>在任意页面上使用侧边栏，支持标签页控制、页面提取、书签、历史记录和截图。</p>
+                            <p>在任意页面上使用侧边栏，支持标签页控制、页面提取、书签、历史记录、截图以及受限的页面脚本执行。</p>
                         </div>
                     </div>
                 </div>
@@ -570,7 +735,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="file-spreadsheet"></i></div>
                         <div>
                             <h3>Office 加载项</h3>
-                            <p>通过桌面应用把 OmniContext CLI 带进 Word、Excel 和 PowerPoint。</p>
+                            <p>通过桌面应用和共享本地服务，把 OmniContext CLI 带进 Word、Excel 和 PowerPoint。</p>
                         </div>
                     </div>
                 </div>
@@ -717,7 +882,7 @@ You are a careful reviewer...</code></pre></div>
                         <i data-lucide="book-open"></i>
                         文档
                     </a>
-                    <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">
+                    <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">
                         <i data-lucide="github"></i>
                         GitHub
                     </a>
@@ -734,7 +899,7 @@ You are a careful reviewer...</code></pre></div>
             </div>
             <div class="footer-links">
                 <a href="../docs/zh-Hans/">文档</a>
-                <a href="https://github.com/bluenoah1991/omni-context-cli-landing" target="_blank">GitHub</a>
+                <a href="https://github.com/bluenoah1991/omni-context-cli" target="_blank">GitHub</a>
                 <a href="https://www.npmjs.com/package/omni-context-cli" target="_blank">npm</a>
             </div>
         </div>

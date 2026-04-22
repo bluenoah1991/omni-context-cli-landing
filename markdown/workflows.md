@@ -13,14 +13,15 @@ A workflow controls how OmniContext CLI behaves: the system prompt, which tools 
 
 | Workflow | Use Case | Description |
 |----------|----------|-------------|
-| **Programming** | Terminal, VS Code | The default coding workflow. Includes base tools, built-in agent tools, custom agents, MCP, and remote tools. |
-| **General** | Desktop app, Office | A broader assistant workflow for docs, spreadsheets, presentations, and everyday tasks. |
-| **Analytics** | Token costs, latency | A usage analytics workflow with direct SQL access to the local request log database. |
+| **Programming** | Terminal, VS Code | The default coding workflow. Includes built-in tools, built-in agent tools, custom agents, MCP, and remote tools. |
+| **General** | Desktop, documents | A broader assistant workflow for docs, spreadsheets, presentations, and everyday tasks. |
+| **Analytics** | Token costs, latency | A usage analytics workflow with direct access to the local request log database. |
+| **Memory** | Key point cleanup | A workflow for browsing, editing, and deleting saved cross-session memory points. |
 | **Recall** | Chat history | A search workflow for finding and reviewing past sessions by keyword. |
 
 If you use the desktop app, it also installs two more workflows:
 
-- **Browser** - for the Chrome sidebar, with tab, page, bookmark, history, and screenshot access.
+- **Browser** - for the Chrome sidebar, with tab, page, bookmark, history, screenshot, and page-side scripting access.
 - **Memo** - for personal reminders and notifications. On macOS, memos sync straight into Apple Reminders through a native bridge; on other platforms they fall back to a local JSON file.
 
 Switch workflows at startup with `omx --workflow general`, or switch during a session from the menu.
@@ -33,9 +34,10 @@ Create your own workflow by dropping a markdown file into `~/.omx/workflows/` or
 ---
 name: Review
 icon: "◈"
-allowBaseTools: [Read, Glob, Grep, WebFetch, Skill]
+allowBuiltinTools: [Read, Glob, Grep, WebFetch, Skill]
+allowExternalTools: false
 allowBuiltinAgents: true
-allowCustomAgents: false
+allowExternalAgents: false
 allowMcpTools: true
 allowRemoteTools: false
 ---
@@ -53,9 +55,10 @@ Built-in workflows always load first and cannot be overridden by a custom file w
 |-------|------|-------------|
 | `name` | string | Display name shown in the UI |
 | `icon` | string | Single-character icon shown in the workflow picker |
-| `allowBaseTools` | boolean or string[] | Enable all base tools, or whitelist specific ones |
-| `allowBuiltinAgents` | boolean or string[] | Enable all built-in agent tools, or whitelist specific ones |
-| `allowCustomAgents` | boolean or string[] | Enable custom agents from `~/.omx/agents/` or `.omx/agents/` |
+| `allowBuiltinTools` | boolean or string[] | Enable built-in tools, or whitelist specific ones |
+| `allowExternalTools` | boolean or string[] | Enable non-built-in tools if your setup provides them |
+| `allowBuiltinAgents` | boolean or string[] | Enable built-in agent tools, or whitelist specific ones |
+| `allowExternalAgents` | boolean or string[] | Enable custom agents from `~/.omx/agents/` or `.omx/agents/` |
 | `allowMcpTools` | boolean or string[] | Enable MCP tools |
 | `allowRemoteTools` | boolean or string[] | Enable remote tools from integrations like VS Code, Chrome, and Office |
 

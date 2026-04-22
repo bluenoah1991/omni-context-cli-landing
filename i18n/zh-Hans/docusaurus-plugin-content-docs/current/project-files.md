@@ -64,12 +64,14 @@ OmniContext CLI 的应用配置存放在仓库外部：
 {
   "workflowPreset": "programming",
   "responseLanguage": "en",
-  "statusCommand": "git branch --show-current",
-  "cacheTtl": "1h"
+  "colorTheme": "neon",
+  "cacheTtl": "1h",
+  "landmarkEnabled": true,
+  "memoryEnabled": true
 }
 ```
 
-全局配置适合放你希望 everywhere 生效的默认值。项目作用域更适合保存某个仓库自己的偏好，比如默认工作流、回复语言或状态栏命令。
+全局配置适合放你希望处处生效的默认值。项目作用域更适合保存某个仓库自己的偏好，比如默认工作流、回复语言、颜色主题，或者是否启用 landmarks。
 
 ## 项目数据
 
@@ -77,8 +79,12 @@ OmniContext CLI 还会把运行中的状态放到 `~/.omx/projects/<project-id>/
 
 这个目录里可能包含：
 
-- 项目级配置
+- `omx.json` 里的项目级配置
 - 会话历史和压缩状态
-- 存在 `memory.json` 里的跨会话记忆
+- `memory.json` 里的跨会话记忆
+- `landmark.sqlite` 里的地标导航数据
+- `session-history.sqlite` 里的 recall 搜索数据
+
+如果你想看 landmarks 的完整数据模型和工具使用流程，可以继续读 [地标导航](/tutorial/landmarks)。
 
 这种拆分是有意为之的：你可以把 `OMX.md`、`AGENTS.md` 或 `.omx/workflows/` 这类共享规则提交到仓库里，同时把个人会话数据留在本地。

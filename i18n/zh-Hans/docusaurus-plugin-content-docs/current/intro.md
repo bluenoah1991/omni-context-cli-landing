@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # 快速开始
 
-OmniContext CLI 是一个上下文优先、零遥测的助手，起点在终端，也能延伸到 VS Code、Office、浏览器和移动端。它原生支持 Anthropic、OpenAI、Gemini 和 OpenAI Responses API，并内置工作流、智能体工具和跨会话记忆。
+OmniContext CLI 是一个上下文优先、零遥测的助手，起点在终端，也能延伸到 VS Code、Office、浏览器和移动端。它原生支持 Anthropic、OpenAI、Gemini 和 OpenAI Responses API，并内置工作流、智能体工具、地标导航和跨会话记忆。
 
 ## 安装
 
@@ -37,16 +37,19 @@ omx --list-providers
 omx --add-provider openrouter --api-key sk-...
 ```
 
-内置供应商预设包括 Zenmux、DeepSeek、Kimi for Coding、OpenRouter、Zhipu 和 MiniMax。
+内置供应商预设包括 Zenmux、DeepSeek、Kimi for Coding、OpenRouter、Zhipu、MiniMax 和 OpenCode Go。
 
 ## 内置工作流
 
-OmniContext CLI 内置四个工作流：
+OmniContext CLI 内置五个工作流：
 
 - **Programming** - 默认的编程工作流，适合终端和编辑器场景
-- **General** - 更通用的助手工作流，适合文档、表格和日常任务
+- **General** - 更通用的助手工作流，适合文档、表格、演示文稿和日常任务
 - **Analytics** - 用量分析工作流，可直接查询本地请求日志数据库
+- **Memory** - 用于查看、编辑和删除项目记忆要点的工作流
 - **Recall** - 聊天历史搜索工作流，用于检索和回顾过去的会话
+
+Landmark 导航是另一套独立的内置系统，用来保存可复用的代码库地图。完整说明见 [地标导航](/tutorial/landmarks)。
 
 如果你使用桌面应用，它还会额外安装一个给 Chrome 侧边栏使用的 **Browser** 工作流，以及用于个人提醒和通知的 **Memo** 工作流。
 
@@ -92,8 +95,8 @@ OmniContext CLI 内置四个工作流：
 | `--set-password [password]` | 为 Web 客户端设置密码 |
 | `--clear-password` | 清除 Web 客户端密码 |
 | `--install-daemon` | 在 Linux 上安装为 systemd 用户服务 |
-| `--export-project <path>` | 将项目会话和记忆导出为 gzip 压缩包 |
-| `--import-project <path>` | 从 gzip 压缩包导入项目会话和记忆 |
+| `--export-project <path>` | 将项目数据导出为 gzip 压缩包 |
+| `--import-project <path>` | 从 gzip 压缩包导入项目数据 |
 | `--index-history` | 将所有已有会话索引到 recall 数据库以支持全文搜索 |
 
 示例：
@@ -110,6 +113,9 @@ omx --serve --web
 
 # 这次改用另一个工作流
 omx --workflow general
+
+# 打开记忆工作流
+omx --workflow memory
 
 # 一次性添加某个供应商的全部模型
 omx --add-provider zenmux --api-key zmx-...
