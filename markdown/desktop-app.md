@@ -52,7 +52,7 @@ For Office in particular, the desktop app handles the local HTTPS and certificat
 
 On startup, the desktop app installs the **Browser** workflow into `~/.omx/workflows/`.
 
-That workflow is tuned for page reading, tab actions, bookmarks, history, screenshots, and browser-side remote tools, so it's usually the best default when you're using the Chrome sidebar.
+That workflow is tuned for page reading, tab actions, bookmarks, history, screenshots, and guarded page-side scripting, so it's usually the best default when you're using the Chrome sidebar.
 
 ## Memo Workflow
 

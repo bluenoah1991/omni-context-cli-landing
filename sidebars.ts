@@ -29,7 +29,6 @@ const sidebars: SidebarsConfig = {
         'cloud-deployment',
         'browser-extension',
         'office-addin',
-        'zed-editor',
       ],
     },
   ],

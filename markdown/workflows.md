@@ -21,7 +21,7 @@ A workflow controls how OmniContext CLI behaves: the system prompt, which tools 
 
 If you use the desktop app, it also installs two more workflows:
 
-- **Browser** - for the Chrome sidebar, with tab, page, bookmark, history, screenshot, and page-side scripting access.
+- **Browser** - for the Chrome sidebar, with tab, page, bookmark, history, screenshot, and guarded page-side scripting access.
 - **Memo** - for personal reminders and notifications. On macOS, memos sync straight into Apple Reminders through a native bridge; on other platforms they fall back to a local JSON file.
 
 Switch workflows at startup with `omx --workflow general`, or switch during a session from the menu.

@@ -91,7 +91,6 @@ For the full config and file layout, see [Project Files & Config](/tutorial/proj
 | `--tls-cert <path>` | TLS certificate file |
 | `--tls-key <path>` | TLS private key file |
 | `--theme <mode>` | Web client mode: `light`, `dark`, or `auto` |
-| `--acp` | Run as an ACP agent over stdio for editor integrations like Zed |
 | `--set-password [password]` | Set a password for the web client |
 | `--clear-password` | Remove the web client password |
 | `--install-daemon` | Install OmniContext CLI as a systemd user service on Linux |
