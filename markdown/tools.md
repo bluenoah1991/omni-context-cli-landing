@@ -25,8 +25,6 @@ These are called by the main model, so their inputs and outputs become part of t
 | **LandmarkList** | List saved landmark layers for the current project. |
 | **LandmarkRead** | Read a landmark layer with all of its pinned files, directories, and symbols. |
 | **LandmarkUpdate** | Create or update a landmark layer so useful navigation knowledge survives across sessions. |
-
-Landmarks are best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see [Landmark Navigation](/tutorial/landmarks).
 | **MemoryDelete** | Delete saved project memory points. |
 | **MemoryList** | List saved cross-session memory points for the current project. |
 | **MemoryUpdate** | Edit the text or score of existing memory points. |
@@ -37,6 +35,8 @@ Landmarks are best thought of as a separate navigation subsystem rather than a t
 | **WebFetch** | Fetch a URL and turn the page into clean markdown. |
 | **WebSearch** | Search the web for up-to-date info. |
 | **Write** | Write a file from scratch or fully replace it. Supports `createOnly` for safer file creation. |
+
+Landmarks are best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see [Landmark Navigation](/tutorial/landmarks).
 
 ## Agent Tools
 

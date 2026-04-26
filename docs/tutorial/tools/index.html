@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Tools | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Tools | OmniContext CLI"><meta data-rh="true" name="description" content="OmniContext CLI has two tool layers: built-in tools that the main model calls directly, and agent tools that run as sub-agents on a secondary model."><meta data-rh="true" property="og:description" content="OmniContext CLI has two tool layers: built-in tools that the main model calls directly, and agent tools that run as sub-agents on a secondary model."><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/tools" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tools","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/tools"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/assets/js/runtime~main.62a44dc6.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/assets/js/runtime~main.c68c8244.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/assets/js/main.6bdabd25.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -64,18 +64,48 @@
 
 
 
-<table><thead><tr><th>Tool</th><th>Description</th></tr></thead><tbody><tr><td><strong>AnalyticsQuery</strong></td><td>Query the local request log database for usage, latency, cache, and cost analysis.</td></tr><tr><td><strong>Bash</strong></td><td>Run shell commands for builds, installs, tests, and other terminal work. Supports background tasks.</td></tr><tr><td><strong>BashOutput</strong></td><td>Check the output of a background Bash task by task ID.</td></tr><tr><td><strong>Edit</strong></td><td>Make precise in-place text replacements.</td></tr><tr><td><strong>Glob</strong></td><td>Find files by pattern, with <code>.gitignore</code> support.</td></tr><tr><td><strong>Grep</strong></td><td>Search file contents with regex and line numbers.</td></tr><tr><td><strong>LandmarkDelete</strong></td><td>Delete a layer from the landmark navigation system.</td></tr><tr><td><strong>LandmarkList</strong></td><td>List saved landmark layers for the current project.</td></tr><tr><td><strong>LandmarkRead</strong></td><td>Read a landmark layer with all of its pinned files, directories, and symbols.</td></tr><tr><td><strong>LandmarkUpdate</strong></td><td>Create or update a landmark layer so useful navigation knowledge survives across sessions.</td></tr></tbody></table>
-<p>Landmarks are best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see <a class="" href="/omni-context-cli-landing/docs/tutorial/landmarks">Landmark Navigation</a>.
-| <strong>MemoryDelete</strong> | Delete saved project memory points. |
-| <strong>MemoryList</strong> | List saved cross-session memory points for the current project. |
-| <strong>MemoryUpdate</strong> | Edit the text or score of existing memory points. |
-| <strong>Read</strong> | Read files with line numbers. Supports offsets, limits, images, and PDFs. |
-| <strong>RecallRead</strong> | Read a past session around a specific recall search hit. |
-| <strong>RecallSearch</strong> | Search indexed past sessions with full-text search. |
-| <strong>Skill</strong> | Load a reusable skill into the current conversation. |
-| <strong>WebFetch</strong> | Fetch a URL and turn the page into clean markdown. |
-| <strong>WebSearch</strong> | Search the web for up-to-date info. |
-| <strong>Write</strong> | Write a file from scratch or fully replace it. Supports <code>createOnly</code> for safer file creation. |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tool</th><th>Description</th></tr></thead><tbody><tr><td><strong>AnalyticsQuery</strong></td><td>Query the local request log database for usage, latency, cache, and cost analysis.</td></tr><tr><td><strong>Bash</strong></td><td>Run shell commands for builds, installs, tests, and other terminal work. Supports background tasks.</td></tr><tr><td><strong>BashOutput</strong></td><td>Check the output of a background Bash task by task ID.</td></tr><tr><td><strong>Edit</strong></td><td>Make precise in-place text replacements.</td></tr><tr><td><strong>Glob</strong></td><td>Find files by pattern, with <code>.gitignore</code> support.</td></tr><tr><td><strong>Grep</strong></td><td>Search file contents with regex and line numbers.</td></tr><tr><td><strong>LandmarkDelete</strong></td><td>Delete a layer from the landmark navigation system.</td></tr><tr><td><strong>LandmarkList</strong></td><td>List saved landmark layers for the current project.</td></tr><tr><td><strong>LandmarkRead</strong></td><td>Read a landmark layer with all of its pinned files, directories, and symbols.</td></tr><tr><td><strong>LandmarkUpdate</strong></td><td>Create or update a landmark layer so useful navigation knowledge survives across sessions.</td></tr><tr><td><strong>MemoryDelete</strong></td><td>Delete saved project memory points.</td></tr><tr><td><strong>MemoryList</strong></td><td>List saved cross-session memory points for the current project.</td></tr><tr><td><strong>MemoryUpdate</strong></td><td>Edit the text or score of existing memory points.</td></tr><tr><td><strong>Read</strong></td><td>Read files with line numbers. Supports offsets, limits, images, and PDFs.</td></tr><tr><td><strong>RecallRead</strong></td><td>Read a past session around a specific recall search hit.</td></tr><tr><td><strong>RecallSearch</strong></td><td>Search indexed past sessions with full-text search.</td></tr><tr><td><strong>Skill</strong></td><td>Load a reusable skill into the current conversation.</td></tr><tr><td><strong>WebFetch</strong></td><td>Fetch a URL and turn the page into clean markdown.</td></tr><tr><td><strong>WebSearch</strong></td><td>Search the web for up-to-date info.</td></tr><tr><td><strong>Write</strong></td><td>Write a file from scratch or fully replace it. Supports <code>createOnly</code> for safer file creation.</td></tr></tbody></table>
+<p>Landmarks are best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see <a class="" href="/omni-context-cli-landing/docs/tutorial/landmarks">Landmark Navigation</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="agent-tools">Agent Tools<a href="#agent-tools" class="hash-link" aria-label="Direct link to Agent Tools" title="Direct link to Agent Tools" translate="no">​</a></h2>
 <p>Agent tools run on the agent model, which is usually a cheaper or faster secondary model. Their intermediate tool calls, file reads, and reasoning never enter your main context. You only get the final answer back.</p>
 
