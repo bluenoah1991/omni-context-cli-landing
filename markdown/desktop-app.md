@@ -22,7 +22,7 @@ The desktop app is mainly a lightweight launcher and control panel for OmniConte
 - enable LAN access for phone or tablet use
 - open the bundled browser extension folder
 - install and remove the Office Add-in
-- install the Browser and Memo workflows automatically
+- install the Browser, Memo, and Research workflows automatically
 - run a built-in memo and reminder system with desktop notifications
 - bridge browser, Office, and other remote tools into the same OmniContext CLI instance
 
@@ -64,6 +64,10 @@ On macOS, memos are stored directly in **Apple Reminders** through a native Swif
 
 The first time you add a reminder on macOS, the system prompts for access to Reminders. Approve it once and the desktop app handles the rest.
 
+## Research Workflow
+
+The desktop app also installs a **Research** workflow for PDF-heavy study and analysis. It exposes tools for splitting PDFs, chunk-based reading, document preview, and web search, so you can work through large documents without leaving the conversation.
+
 ## Mobile Access
 
 The desktop app can expose the local server to your LAN, which makes it easier to open OmniContext CLI from a phone or tablet without setting up commands by hand.
@@ -77,3 +81,4 @@ If you need a safer cross-network setup, pair it with Tailscale.
 - if you're mainly doing docs, spreadsheets, or slides, the **General** workflow is usually the best fit
 - if you're in the browser side panel, switch to **Browser**
 - to manage personal reminders and to-dos, switch to **Memo**
+- to work through large PDFs and documents, switch to **Research**

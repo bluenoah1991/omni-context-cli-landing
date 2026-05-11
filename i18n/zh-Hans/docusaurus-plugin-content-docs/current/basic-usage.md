@@ -60,7 +60,7 @@ OmniContext CLI 内置五个工作流：
 - **Memory** - 用来查看、编辑和清理跨会话记忆要点
 - **Recall** - 用于搜索更早的会话，并提取周围的对话上下文
 
-如果你使用桌面应用，它还会额外安装 **Browser** 工作流和用于提醒与通知的 **Memo** 工作流。
+如果你使用桌面应用，它还会额外安装 **Browser** 工作流、用于提醒与通知的 **Memo** 工作流，以及用于 PDF 研究和分析的 **Research** 工作流。
 
 自定义工作流放在 `~/.omx/workflows/` 或 `.omx/workflows/` 中。完整格式见 [工作流](/tutorial/workflows)。
 

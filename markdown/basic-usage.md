@@ -60,7 +60,7 @@ OmniContext CLI includes five built-in workflows:
 - **Memory** - browse, edit, and clean up saved cross-session key points
 - **Recall** - search earlier sessions and pull up the surrounding conversation
 
-If you're using the desktop app, it also installs **Browser** for the Chrome sidebar and **Memo** for reminders and notifications.
+If you're using the desktop app, it also installs **Browser** for the Chrome sidebar, **Memo** for reminders and notifications, and **Research** for PDF study and analysis.
 
 Custom workflows live in `~/.omx/workflows/` or `.omx/workflows/`. See [Workflows](/tutorial/workflows) for the full format.
 

@@ -19,10 +19,11 @@ A workflow controls how OmniContext CLI behaves: the system prompt, which tools 
 | **Memory** | Key point cleanup | A workflow for browsing, editing, and deleting saved cross-session memory points. |
 | **Recall** | Chat history | A search workflow for finding and reviewing past sessions by keyword. |
 
-If you use the desktop app, it also installs two more workflows:
+If you use the desktop app, it also installs three more workflows:
 
 - **Browser** - for the Chrome sidebar, with tab, page, bookmark, history, screenshot, and guarded page-side scripting access.
 - **Memo** - for personal reminders and notifications. On macOS, memos sync straight into Apple Reminders through a native bridge; on other platforms they fall back to a local JSON file.
+- **Research** - for PDF-heavy study and analysis, with PDF split, chunk reading, preview, and web search.
 
 Switch workflows at startup with `omx --workflow general`, or switch during a session from the menu.
 

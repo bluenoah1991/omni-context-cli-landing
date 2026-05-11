@@ -51,7 +51,7 @@ OmniContext CLI ships with five built-in workflows:
 
 Landmark navigation is a separate built-in system for saving reusable codebase maps. See [Landmark Navigation](/tutorial/landmarks) for the full workflow, tools, and storage model.
 
-If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar and a **Memo** workflow for personal reminders and notifications.
+If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar, a **Memo** workflow for personal reminders and notifications, and a **Research** workflow for PDF study and analysis.
 
 ## Project Files That Matter
 
