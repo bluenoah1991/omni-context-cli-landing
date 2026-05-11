@@ -16,6 +16,7 @@ These are called by the main model, so their inputs and outputs become part of t
 | Tool | Description |
 |------|-------------|
 | **AnalyticsQuery** | Query the local request log database for usage, latency, cache, and cost analysis. |
+| **ArtifactList** | List all model-generated artifacts produced in this session with their file paths. |
 | **Bash** | Run shell commands for builds, installs, tests, and other terminal work. Supports background tasks. |
 | **BashOutput** | Check the output of a background Bash task by task ID. |
 | **Edit** | Make precise in-place text replacements. |
