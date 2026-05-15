@@ -35,7 +35,7 @@ Built-in provider presets:
 | Provider ID | What It Adds |
 |-------------|--------------|
 | **zenmux** | Anthropic, Responses, Gemini, and OpenAI-format models available through Zenmux |
-| **deepseek** | DeepSeek Chat and DeepSeek Reasoner |
+| **deepseek** | DeepSeek-V4-Flash and DeepSeek-V4-Pro |
 | **moonshot** | Kimi for Coding in Anthropic and OpenAI-compatible formats |
 | **openrouter** | OpenRouter models in Anthropic and OpenAI-compatible formats |
 | **zhipu** | GLM-5.1, GLM-5, and GLM-5-Turbo |

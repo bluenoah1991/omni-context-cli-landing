@@ -35,7 +35,7 @@ omx --remove-provider zenmux
 | 供应商 ID | 会添加什么 |
 |-------------|-----------|
 | **zenmux** | 通过 Zenmux 提供的 Anthropic、Responses、Gemini 和 OpenAI 格式模型 |
-| **deepseek** | DeepSeek Chat 和 DeepSeek Reasoner |
+| **deepseek** | DeepSeek-V4-Flash 和 DeepSeek-V4-Pro |
 | **moonshot** | 以 Anthropic 和 OpenAI 兼容格式提供的 Kimi for Coding |
 | **openrouter** | OpenRouter 上的 Anthropic 和 OpenAI 兼容模型 |
 | **zhipu** | GLM-5.1、GLM-5 和 GLM-5-Turbo |

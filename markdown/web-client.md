@@ -29,7 +29,7 @@ omx --serve --web --host 0.0.0.0
 - **LaTeX rendering** for math
 - **Mermaid diagrams** for charts and flows
 - **Syntax highlighting** for code blocks
-- **File attachments** with drag and drop
+- **File attachments** with drag and drop, plus automatic image normalization for uploads
 - **GitHub-flavored markdown** rendering
 - **Custom status line** via `statusCommand`
 - **Color themes** shared with the rest of OmniContext CLI
