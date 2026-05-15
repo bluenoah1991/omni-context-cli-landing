@@ -22,10 +22,11 @@ These are called by the main model, so their inputs and outputs become part of t
 | **Edit** | Make precise in-place text replacements. |
 | **Glob** | Find files by pattern, with `.gitignore` support. |
 | **Grep** | Search file contents with regex and line numbers. |
-| **LandmarkDelete** | Delete a layer from the landmark navigation system. |
-| **LandmarkList** | List saved landmark layers for the current project. |
-| **LandmarkRead** | Read a landmark layer with all of its pinned files, directories, and symbols. |
-| **LandmarkUpdate** | Create or update a landmark layer so useful navigation knowledge survives across sessions. |
+| **AtlasDelete** | Delete a map from the atlas navigation system. |
+| **AtlasList** | List saved atlas maps for the current project. |
+| **AtlasRead** | Read an atlas map with all of its pinned files, directories, and symbols. |
+| **AtlasUpdate** | Create or update an atlas map so useful navigation knowledge survives across sessions. |
+| **ImageGen** | Generate images through Google Imagen or OpenAI Images and save them as session artifacts. |
 | **MemoryDelete** | Delete saved project memory points. |
 | **MemoryList** | List saved cross-session memory points for the current project. |
 | **MemoryUpdate** | Edit the text or score of existing memory points. |
@@ -37,7 +38,7 @@ These are called by the main model, so their inputs and outputs become part of t
 | **WebSearch** | Search the web for up-to-date info. |
 | **Write** | Write a file from scratch or fully replace it. Supports `createOnly` for safer file creation. |
 
-Landmarks are best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see [Landmark Navigation](/tutorial/landmarks).
+The atlas is best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see [Atlas Navigation](/tutorial/atlas).
 
 ## Agent Tools
 
@@ -51,6 +52,7 @@ Agent tools run on the agent model, which is usually a cheaper or faster seconda
 | **Agent_Recall** | Search past chat sessions and summarize what happened around a topic. |
 | **Agent_Review** | Review the recent work in the current conversation with a fresh eye. |
 | **Agent_Deduce** | Investigate a bug or complex question through read-only exploration and return a fix proposal. |
+| **Agent_Audit** | Audit a specific code area for correctness, architecture, data flow, and quality issues. |
 
 ### How Agent Tools Work
 

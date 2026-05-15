@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # 快速开始
 
-OmniContext CLI 是一个上下文优先、零遥测的助手，起点在终端，也能延伸到 VS Code、Office、浏览器和移动端。它原生支持 Anthropic、OpenAI、Gemini 和 OpenAI Responses API，并内置工作流、智能体工具、地标导航和跨会话记忆。
+OmniContext CLI 是一个上下文优先、零遥测的助手，起点在终端，也能延伸到 VS Code、Office、浏览器和移动端。它原生支持 Anthropic、OpenAI、Gemini 和 OpenAI Responses API，以及通过 Google Imagen 和 OpenAI Images 进行图像生成，并内置工作流、智能体工具、Atlas 导航和跨会话记忆。
 
 ## 安装
 
@@ -49,7 +49,7 @@ OmniContext CLI 内置五个工作流：
 - **Memory** - 用于查看、编辑和删除项目记忆要点的工作流
 - **Recall** - 聊天历史搜索工作流，用于检索和回顾过去的会话
 
-Landmark 导航是另一套独立的内置系统，用来保存可复用的代码库地图。完整说明见 [地标导航](/tutorial/landmarks)。
+Atlas 导航是另一套独立的内置系统，用来保存可复用的代码库地图。完整说明见 [Atlas 导航](/tutorial/atlas)。
 
 如果你使用桌面应用，它还会额外安装一个给 Chrome 侧边栏使用的 **Browser** 工作流、用于个人提醒和通知的 **Memo** 工作流，以及用于 PDF 研究和分析的 **Research** 工作流。
 

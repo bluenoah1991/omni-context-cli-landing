@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Getting Started
 
-OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, with custom workflows, built-in agent tools, landmark navigation, and cross-session memory.
+OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, plus image generation via Google Imagen and OpenAI Images, with custom workflows, built-in agent tools, atlas navigation, and cross-session memory.
 
 ## Installation
 
@@ -49,7 +49,7 @@ OmniContext CLI ships with five built-in workflows:
 - **Memory** - a key-point management workflow for reviewing, editing, and deleting saved project memory
 - **Recall** - a chat history search workflow for finding and reviewing past sessions
 
-Landmark navigation is a separate built-in system for saving reusable codebase maps. See [Landmark Navigation](/tutorial/landmarks) for the full workflow, tools, and storage model.
+Atlas navigation is a separate built-in system for saving reusable codebase maps. See [Atlas Navigation](/tutorial/atlas) for the full workflow, tools, and storage model.
 
 If you use the desktop app, it also installs a **Browser** workflow for the Chrome sidebar, a **Memo** workflow for personal reminders and notifications, and a **Research** workflow for PDF study and analysis.
 

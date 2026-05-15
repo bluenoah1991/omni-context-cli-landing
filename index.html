@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniContext CLI - Context-First, Zero-Telemetry Coding Assistant</title>
-    <meta name="description" content="A context-first, zero-telemetry coding assistant for the terminal, with workflows, agent tools, landmark navigation, cross-session memory, and integrations for VS Code, Office, the browser, and mobile.">
+    <meta name="description" content="A context-first, zero-telemetry coding assistant for the terminal, with workflows, agent tools, atlas navigation, cross-session memory, image generation, and integrations for VS Code, Office, the browser, and mobile.">
     <link rel="icon" href="favicon.ico">
     <link href="assets/fonts/inter.css" rel="stylesheet">
     <script src="assets/js/lucide.js"></script>
@@ -94,17 +94,17 @@
         <div class="container">
             <div class="metrics-grid">
                 <div class="metric">
-                    <span class="metric-value">4</span>
-                    <span class="metric-label">API Protocols</span>
+                    <span class="metric-value">6</span>
+                    <span class="metric-label">Protocol Stacks</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">21</span>
+                    <span class="metric-value">22</span>
                     <span class="metric-label">Built-in Tools</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">6</span>
+                    <span class="metric-value">7</span>
                     <span class="metric-label">Agent Tools</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -303,6 +303,13 @@ You are a careful reviewer...</code></pre></div>
                         <p>Trace a bug or complex question through read-only exploration and return a fix proposal.</p>
                     </div>
                 </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="shield-check"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Audit</h4>
+                        <p>Audit a specific code area for correctness, architecture, data flow, and quality issues.</p>
+                    </div>
+                </div>
                 <div class="tool-section-label">Built-in Tools</div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
@@ -356,29 +363,29 @@ You are a careful reviewer...</code></pre></div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="compass"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkList</h4>
-                        <p>List saved landmark layers for quick codebase navigation.</p>
+                        <h4>AtlasList</h4>
+                        <p>List saved atlas maps for quick codebase navigation.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="book-open"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkRead</h4>
-                        <p>Read a saved landmark layer with its pinned files, directories, and symbols.</p>
+                        <h4>AtlasRead</h4>
+                        <p>Read a saved atlas map with its pinned files, directories, and symbols.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkUpdate</h4>
-                        <p>Create or update a landmark layer so durable navigation knowledge survives across sessions.</p>
+                        <h4>AtlasUpdate</h4>
+                        <p>Create or update an atlas map so durable navigation knowledge survives across sessions.</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="file-plus"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkDelete</h4>
-                        <p>Delete an outdated landmark layer and its saved pins.</p>
+                        <h4>AtlasDelete</h4>
+                        <p>Delete an outdated atlas map and its saved points.</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -445,6 +452,13 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="image"></i></div>
+                    <div class="tool-info">
+                        <h4>ImageGen</h4>
+                        <p>Generate images through Google Imagen or OpenAI Images and save them as session artifacts.</p>
+                    </div>
+                </div>
+                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="sparkles"></i></div>
                     <div class="tool-info">
                         <h4>Skill</h4>
@@ -459,10 +473,11 @@ You are a careful reviewer...</code></pre></div>
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Native Multi-Protocol</span>
-                <h2 class="section-title">Four API protocols,<br>no translation layer</h2>
+                <h2 class="section-title">Six protocol stacks,<br>no translation layer</h2>
                 <p class="section-subtitle">
                     Each protocol gets its own request builder and stream handler, so provider-specific behavior like prompt caching,
                     extended thinking, structured outputs, and tool orchestration works the way the vendor intended.
+                    Image generation runs through Google Imagen and OpenAI Images on their native APIs.
                 </p>
             </div>
             <div class="protocols-grid">
@@ -485,6 +500,16 @@ You are a careful reviewer...</code></pre></div>
                     <div class="protocol-name">Responses API</div>
                     <div class="protocol-desc">OpenAI's Responses API with native tool orchestration on its own request path.</div>
                     <div class="protocol-tag">GPT-4.1 / GPT-4o / Codex</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">Google Imagen</div>
+                    <div class="protocol-desc">Generate images through Gemini's generateContent API with image output.</div>
+                    <div class="protocol-tag">Imagen 3 / Imagen 4</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">OpenAI Images</div>
+                    <div class="protocol-desc">Generate and edit images through OpenAI's native Images API.</div>
+                    <div class="protocol-tag">DALL·E 3</div>
                 </div>
             </div>
         </div>
@@ -644,56 +669,56 @@ You are a careful reviewer...</code></pre></div>
         <div class="container">
             <div class="split-layout reverse">
                 <div class="split-content">
-                    <span class="section-label">Landmark Navigation</span>
+                    <span class="section-label">Atlas Navigation</span>
                     <h2 class="section-title">Save the map,<br>not just the answer</h2>
                     <p class="section-subtitle">
-                        Landmarks turn repeat codebase discoveries into reusable navigation layers. Instead of relearning where a subsystem lives,
-                        OmniContext CLI can save a named layer with the key files, directories, and symbols, then jump back to it in later sessions.
+                        The atlas turns repeat codebase discoveries into reusable navigation maps. Instead of relearning where a subsystem lives,
+                        OmniContext CLI can save a named map with the key files, directories, and symbols, then jump back to it in later sessions.
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
                             <i data-lucide="compass"></i>
                             <div>
-                                <strong>Named layers</strong>
-                                <span>Group a feature, subsystem, or request flow into a reusable layer with its own scope and description.</span>
+                                <strong>Named maps</strong>
+                                <span>Group a feature, subsystem, or request flow into a reusable map with its own scope and description.</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="book-open"></i>
                             <div>
                                 <strong>Pinned code objects</strong>
-                                <span>Each layer stores pins for files, directories, and symbols, so navigation stays concrete instead of vague.</span>
+                                <span>Each map stores points for files, directories, and symbols, so navigation stays concrete instead of vague.</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="pencil"></i>
                             <div>
                                 <strong>First-class tool flow</strong>
-                                <span>Use <code>LandmarkList</code>, <code>LandmarkRead</code>, <code>LandmarkUpdate</code>, and <code>LandmarkDelete</code> directly from the coding workflow.</span>
+                                <span>Use <code>AtlasList</code>, <code>AtlasRead</code>, <code>AtlasUpdate</code>, and <code>AtlasDelete</code> directly from the coding workflow.</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="folder-open"></i>
                             <div>
                                 <strong>Per-project SQLite storage</strong>
-                                <span>Every project keeps its own navigation map in <code>~/.omx/projects/&lt;project-id&gt;/landmark.sqlite</code>.</span>
+                                <span>Every project keeps its own navigation map in <code>~/.omx/projects/&lt;project-id&gt;/atlas.sqlite</code>.</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="split-visual">
                     <div class="code-block">
-                        <div class="code-header">Landmark workflow</div>
+                        <div class="code-header">Atlas workflow</div>
                         <pre><code><span class="t-comment"># See what maps already exist</span>
-<span class="prompt">$</span> LandmarkList
+<span class="prompt">$</span> AtlasList
 <span class="t-output">Navigation Request Lifecycle - Traces how requests move through the app</span>
 
-<span class="t-comment"># Read one saved layer</span>
-<span class="prompt">$</span> LandmarkRead Navigation Request Lifecycle
+<span class="t-comment"># Read one saved map</span>
+<span class="prompt">$</span> AtlasRead Navigation Request Lifecycle
 <span class="t-output">[symbol] source/services/chatOrchestrator.ts &gt; ChatOrchestrator - Main request flow</span>
 
 <span class="t-comment"># Save a better map once you understand the area</span>
-<span class="prompt">$</span> LandmarkUpdate Navigation Request Lifecycle ...</code></pre>
+<span class="prompt">$</span> AtlasUpdate Navigation Request Lifecycle ...</code></pre>
                     </div>
                 </div>
             </div>

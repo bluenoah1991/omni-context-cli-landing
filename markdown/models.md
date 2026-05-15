@@ -17,6 +17,8 @@ OmniContext CLI supports multiple model providers and talks to each protocol nat
 | **OpenAI** | Chat Completions API for OpenAI-compatible endpoints |
 | **Gemini** | Native Gemini `generateContent` API with streaming and function calling |
 | **Responses API** | OpenAI Responses API with built-in tool orchestration |
+| **Google Imagen** | Gemini generateContent with image output for image generation |
+| **OpenAI Images** | OpenAI Images API (generations and edits) for image generation |
 
 ## Quick Add with Providers
 

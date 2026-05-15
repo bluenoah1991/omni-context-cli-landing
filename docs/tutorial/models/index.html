@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Model Management | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Model Management | OmniContext CLI"><meta data-rh="true" name="description" content="OmniContext CLI supports multiple model providers and talks to each protocol natively."><meta data-rh="true" property="og:description" content="OmniContext CLI supports multiple model providers and talks to each protocol natively."><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Model Management","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/assets/js/runtime~main.11ba94b4.js" defer="defer"></script>
-<script src="/omni-context-cli-landing/docs/assets/js/main.6bdabd25.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/assets/js/runtime~main.e95c6a2d.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/assets/js/main.44a1b855.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -39,7 +39,15 @@
 
 
 
-<table><thead><tr><th>Protocol</th><th>Description</th></tr></thead><tbody><tr><td><strong>Anthropic</strong></td><td>Messages API with prompt caching, extended thinking, and streaming</td></tr><tr><td><strong>OpenAI</strong></td><td>Chat Completions API for OpenAI-compatible endpoints</td></tr><tr><td><strong>Gemini</strong></td><td>Native Gemini <code>generateContent</code> API with streaming and function calling</td></tr><tr><td><strong>Responses API</strong></td><td>OpenAI Responses API with built-in tool orchestration</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Protocol</th><th>Description</th></tr></thead><tbody><tr><td><strong>Anthropic</strong></td><td>Messages API with prompt caching, extended thinking, and streaming</td></tr><tr><td><strong>OpenAI</strong></td><td>Chat Completions API for OpenAI-compatible endpoints</td></tr><tr><td><strong>Gemini</strong></td><td>Native Gemini <code>generateContent</code> API with streaming and function calling</td></tr><tr><td><strong>Responses API</strong></td><td>OpenAI Responses API with built-in tool orchestration</td></tr><tr><td><strong>Google Imagen</strong></td><td>Gemini generateContent with image output for image generation</td></tr><tr><td><strong>OpenAI Images</strong></td><td>OpenAI Images API (generations and edits) for image generation</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-add-with-providers">Quick Add with Providers<a href="#quick-add-with-providers" class="hash-link" aria-label="Direct link to Quick Add with Providers" title="Direct link to Quick Add with Providers" translate="no">​</a></h2>
 <p>You can import an entire provider in one shot:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">omx --list-providers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">omx --add-provider zenmux --api-key zmx-...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">omx --remove-provider zenmux</span><br></span></code></pre></div></div>

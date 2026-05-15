@@ -73,7 +73,7 @@ The preferences menu lets you toggle or change:
 - **Request logging** - store request metadata for the Analytics workflow
 - **Context editing** - trim bulky old tool calls and reasoning blocks
 - **Diff view** - show inline diffs when OmniContext CLI edits files
-- **Landmarks** - turn the landmark navigation system on or off for the current project
+- **Atlas** - turn the atlas navigation system on or off for the current project
 - **Cross-session memory** - keep useful project knowledge between sessions
 - **Extended thinking** - enable deeper reasoning for harder tasks
 - **IDE context** - include context from your editor

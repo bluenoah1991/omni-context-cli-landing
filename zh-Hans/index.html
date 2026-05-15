@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniContext CLI - 上下文优先、零遥测的编程助手</title>
-    <meta name="description" content="一个上下文优先、零遥测的终端编程助手，内置工作流、智能体工具、地标导航和跨会话记忆，并支持 VS Code、Office、浏览器和移动端集成。">
+    <meta name="description" content="一个上下文优先、零遥测的终端编程助手，内置工作流、智能体工具、Atlas 导航、跨会话记忆、图像生成，并支持 VS Code、Office、浏览器和移动端集成。">
     <link rel="icon" href="../favicon.ico">
     <link href="../assets/fonts/inter.css" rel="stylesheet">
     <script src="../assets/js/lucide.js"></script>
@@ -93,17 +93,17 @@
         <div class="container">
             <div class="metrics-grid">
                 <div class="metric">
-                    <span class="metric-value">4</span>
-                    <span class="metric-label">API 协议</span>
+                    <span class="metric-value">6</span>
+                    <span class="metric-label">协议栈</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">21</span>
+                    <span class="metric-value">22</span>
                     <span class="metric-label">内置工具</span>
                 </div>
                 <div class="metric-divider"></div>
                 <div class="metric">
-                    <span class="metric-value">6</span>
+                    <span class="metric-value">7</span>
                     <span class="metric-label">智能体工具</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -302,6 +302,13 @@ You are a careful reviewer...</code></pre></div>
                         <p>通过只读探索追查 bug 或复杂问题，并给出修复建议。</p>
                     </div>
                 </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="shield-check"></i></div>
+                    <div class="tool-info">
+                        <h4>Agent_Audit</h4>
+                        <p>对指定代码区域进行正确性、架构、数据流和质量审计，并给出结构化发现。</p>
+                    </div>
+                </div>
                 <div class="tool-section-label">内置工具</div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="globe"></i></div>
@@ -355,29 +362,29 @@ You are a careful reviewer...</code></pre></div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="compass"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkList</h4>
-                        <p>列出已保存的地标 layer，方便快速定位代码结构。</p>
+                        <h4>AtlasList</h4>
+                        <p>列出已保存的 Atlas 地图，方便快速定位代码结构。</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="book-open"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkRead</h4>
-                        <p>读取某个地标 layer，包括它保存的文件、目录和符号。</p>
+                        <h4>AtlasRead</h4>
+                        <p>读取某个 Atlas 地图，包括它保存的文件、目录和符号。</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="pencil"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkUpdate</h4>
-                        <p>创建或更新地标 layer，让稳定的导航知识可以跨会话保留。</p>
+                        <h4>AtlasUpdate</h4>
+                        <p>创建或更新 Atlas 地图，让稳定的导航知识可以跨会话保留。</p>
                     </div>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="file-plus"></i></div>
                     <div class="tool-info">
-                        <h4>LandmarkDelete</h4>
-                        <p>删除已经过时的地标 layer 和它保存的 pins。</p>
+                        <h4>AtlasDelete</h4>
+                        <p>删除已经过时的 Atlas 地图和它保存的 points。</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -444,6 +451,13 @@ You are a careful reviewer...</code></pre></div>
                     </div>
                 </div>
                 <div class="tool-card">
+                    <div class="tool-icon"><i data-lucide="image"></i></div>
+                    <div class="tool-info">
+                        <h4>ImageGen</h4>
+                        <p>通过 Google Imagen 或 OpenAI Images 生成图像，并保存为会话 artifact。</p>
+                    </div>
+                </div>
+                <div class="tool-card">
                     <div class="tool-icon"><i data-lucide="sparkles"></i></div>
                     <div class="tool-info">
                         <h4>Skill</h4>
@@ -458,10 +472,10 @@ You are a careful reviewer...</code></pre></div>
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">原生多协议</span>
-                <h2 class="section-title">四种 API 协议，<br>没有中间翻译层</h2>
+                <h2 class="section-title">六套协议栈，<br>没有中间翻译层</h2>
                 <p class="section-subtitle">
                     每一种协议都有自己的请求构建器和流处理器，所以提示词缓存、扩展思考、结构化输出、工具编排这些行为，
-                    都会按供应商原本设计的方式工作。
+                    都会按供应商原本设计的方式工作。图像生成通过 Google Imagen 和 OpenAI Images 的原生 API 完成。
                 </p>
             </div>
             <div class="protocols-grid">
@@ -484,6 +498,16 @@ You are a careful reviewer...</code></pre></div>
                     <div class="protocol-name">Responses API</div>
                     <div class="protocol-desc">OpenAI 的 Responses API，使用独立请求路径和原生工具编排能力。</div>
                     <div class="protocol-tag">GPT-4.1 / GPT-4o / Codex</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">Google Imagen</div>
+                    <div class="protocol-desc">通过 Gemini 的 generateContent API 生成图像，支持图片输出。</div>
+                    <div class="protocol-tag">Imagen 3 / Imagen 4</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">OpenAI Images</div>
+                    <div class="protocol-desc">通过 OpenAI 的原生 Images API 生成和编辑图像。</div>
+                    <div class="protocol-tag">DALL·E 3</div>
                 </div>
             </div>
         </div>
@@ -642,56 +666,56 @@ You are a careful reviewer...</code></pre></div>
         <div class="container">
             <div class="split-layout reverse">
                 <div class="split-content">
-                    <span class="section-label">地标导航</span>
+                    <span class="section-label">Atlas 导航</span>
                     <h2 class="section-title">保存地图，<br>不只保存答案</h2>
                     <p class="section-subtitle">
-                        Landmarks 会把反复探索出来的代码结构整理成可复用的导航 layer。以后再遇到同一个子系统时，
+                        Atlas 会把反复探索出来的代码结构整理成可复用的导航地图。以后再遇到同一个子系统时，
                         OmniContext CLI 可以直接回到那组关键文件、目录和符号，而不是再从头摸一遍。
                     </p>
                     <div class="feature-list">
                         <div class="feature-list-item">
                             <i data-lucide="compass"></i>
                             <div>
-                                <strong>按概念建 layer</strong>
-                                <span>把某个功能、子系统或请求链路保存成一个独立 layer，范围和用途都清楚可读。</span>
+                                <strong>按概念建地图</strong>
+                                <span>把某个功能、子系统或请求链路保存成一个独立地图，范围和用途都清楚可读。</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="book-open"></i>
                             <div>
-                                <strong>精确 pin 到代码对象</strong>
-                                <span>每个 layer 都可以 pin 到文件、目录和符号，导航会比普通笔记具体得多。</span>
+                                <strong>精确 point 到代码对象</strong>
+                                <span>每个地图都可以 point 到文件、目录和符号，导航会比普通笔记具体得多。</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="pencil"></i>
                             <div>
                                 <strong>完整工具链</strong>
-                                <span>直接用 <code>LandmarkList</code>、<code>LandmarkRead</code>、<code>LandmarkUpdate</code> 和 <code>LandmarkDelete</code> 管理它。</span>
+                                <span>直接用 <code>AtlasList</code>、<code>AtlasRead</code>、<code>AtlasUpdate</code> 和 <code>AtlasDelete</code> 管理它。</span>
                             </div>
                         </div>
                         <div class="feature-list-item">
                             <i data-lucide="folder-open"></i>
                             <div>
                                 <strong>按项目 SQLite 存储</strong>
-                                <span>每个项目都会把自己的导航地图保存在 <code>~/.omx/projects/&lt;project-id&gt;/landmark.sqlite</code>。</span>
+                                <span>每个项目都会把自己的导航地图保存在 <code>~/.omx/projects/&lt;project-id&gt;/atlas.sqlite</code>。</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="split-visual">
                     <div class="code-block">
-                        <div class="code-header">Landmark workflow</div>
+                        <div class="code-header">Atlas 工作流</div>
                         <pre><code><span class="t-comment"># 先看当前已经有哪些地图</span>
-<span class="prompt">$</span> LandmarkList
+<span class="prompt">$</span> AtlasList
 <span class="t-output">Navigation Request Lifecycle - Traces how requests move through the app</span>
 
-<span class="t-comment"># 读出其中一个 layer</span>
-<span class="prompt">$</span> LandmarkRead Navigation Request Lifecycle
+<span class="t-comment"># 读出其中一个地图</span>
+<span class="prompt">$</span> AtlasRead Navigation Request Lifecycle
 <span class="t-output">[symbol] source/services/chatOrchestrator.ts &gt; ChatOrchestrator - Main request flow</span>
 
 <span class="t-comment"># 真的摸清结构后，再把地图存下来</span>
-<span class="prompt">$</span> LandmarkUpdate Navigation Request Lifecycle ...</code></pre>
+<span class="prompt">$</span> AtlasUpdate Navigation Request Lifecycle ...</code></pre>
                     </div>
                 </div>
             </div>
