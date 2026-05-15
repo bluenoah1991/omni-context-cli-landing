@@ -87,3 +87,7 @@ If you want a safety check before tools run:
 - use `omx --approve-all` to confirm every tool call
 
 Agent tools, MCP tools, and remote tools do not ask for approval directly. Approval happens when they reach an underlying built-in tool that actually reads, writes, or executes something.
+
+### Parallel Execution
+
+OmniContext CLI can run multiple read-only or independent tools at the same time. When it detects that several tool calls don't depend on each other—like reading a few files in parallel or running independent searches—it dispatches them concurrently. Agent tools can also run in parallel when the tasks are independent. This keeps round-trip latency low when the model issues several tool calls at once.

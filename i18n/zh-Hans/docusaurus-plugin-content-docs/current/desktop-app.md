@@ -24,6 +24,7 @@ sidebar_position: 12
 - 安装和卸载 Office 加载项
 - 自动安装 Browser、Memo 和 Research 工作流
 - 提供内置的备忘与提醒系统，并通过桌面通知提示
+- 处理 PDF 拆分、分块阅读和预览，内置 PDF 工具链
 - 把浏览器、Office 等远程工具桥接到同一个 OmniContext CLI 实例
 
 ## 什么时候适合用

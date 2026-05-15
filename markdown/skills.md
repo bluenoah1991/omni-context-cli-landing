@@ -9,6 +9,19 @@ sidebar_position: 8
 
 Skills are reusable instruction packs. They inject domain-specific guidance into the current conversation, and OmniContext CLI can surface them as slash commands or load them through the `Skill` tool.
 
+## Built-in Skills
+
+OmniContext CLI ships with four skills:
+
+| Skill | Description |
+|-------|-------------|
+| **save-atlas** | Review the current session and save durable codebase navigation knowledge to the atlas. |
+| **cookbook** | Setup recipes for MCP servers, skills, agents, and workflows. |
+| **simplify** | Review changed code for quality, reuse, and efficiency, then fix issues. |
+| **audit** | Split a project into areas and run independent comprehensive audits on each. |
+
+Built-in skills work right away without any setup. Type `save-atlas` after a meaningful multi-file change to pin what you learned.
+
 ## Where to Store Skills
 
 | Location | Scope |
