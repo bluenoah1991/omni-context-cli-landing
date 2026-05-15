@@ -34,6 +34,14 @@ Type these directly into the chat box:
 | /rewind | Rewind to an earlier message |
 | /model | Switch to another model |
 | /session | Load a previous session |
+| /workflow | Switch to a different workflow preset |
+| /thinking | Toggle extended thinking on or off |
+| /atlas | Toggle atlas navigation on or off |
+| /memory | Toggle cross-session memory on or off |
+| /notification | Toggle completion notifications on or off |
+| /language | Switch the response language |
+| /cache | Switch the prompt cache duration |
+| /theme | Switch the color theme |
 | /git-commit | Generate a commit message for staged changes and commit |
 | /exit | Exit OmniContext CLI |
 

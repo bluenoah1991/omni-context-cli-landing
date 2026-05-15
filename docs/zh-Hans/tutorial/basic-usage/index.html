@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">基本用法 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/basic-usage"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="基本用法 | OmniContext CLI"><meta data-rh="true" name="description" content="这份指南介绍你在 OmniContext CLI 里最常用的快捷键、命令和菜单路径。"><meta data-rh="true" property="og:description" content="这份指南介绍你在 OmniContext CLI 里最常用的快捷键、命令和菜单路径。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/basic-usage"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/basic-usage" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/basic-usage" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/basic-usage" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"基本用法","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/basic-usage"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.c3354d6d.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.c01bb5e2.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.5ae1810e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -99,8 +99,40 @@
 
 
 
-<table><thead><tr><th>命令</th><th>描述</th></tr></thead><tbody><tr><td>/clear</td><td>开始一段全新的对话</td></tr><tr><td>/status</td><td>显示当前会话、模型、工作流和偏好状态</td></tr><tr><td>/compact</td><td>手动压缩当前上下文</td></tr><tr><td>/rewind</td><td>回退到更早的一条消息</td></tr><tr><td>/model</td><td>切换到其他模型</td></tr><tr><td>/session</td><td>加载之前的会话</td></tr><tr><td>/git-commit</td><td>为已暂存的变更生成提交信息并提交</td></tr><tr><td>/exit</td><td>退出 OmniContext CLI</td></tr></tbody></table>
-<p>当你输入 <code>/</code> 时，OmniContext CLI 会弹出一个匹配命令的选择器。技能也 会出现在这里，所以你可以不用离开键盘就加载可复用的提示指令。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>命令</th><th>描述</th></tr></thead><tbody><tr><td>/clear</td><td>开始一段全新的对话</td></tr><tr><td>/status</td><td>显示当前会话、模型、工作流和偏好状态</td></tr><tr><td>/compact</td><td>手动压缩当前上下文</td></tr><tr><td>/rewind</td><td>回退到更早的一条消息</td></tr><tr><td>/model</td><td>切换到其他模型</td></tr><tr><td>/session</td><td>加载之前的会话</td></tr><tr><td>/workflow</td><td>切换到另一个工作流预设</td></tr><tr><td>/thinking</td><td>开关扩展思考模式</td></tr><tr><td>/atlas</td><td>开关 Atlas 导航</td></tr><tr><td>/memory</td><td>开关跨会话记忆</td></tr><tr><td>/notification</td><td>开关完成通知</td></tr><tr><td>/language</td><td>切换回复语言</td></tr><tr><td>/cache</td><td>切换提示词缓存时长</td></tr><tr><td>/theme</td><td>切换颜色主题</td></tr><tr><td>/git-commit</td><td>为已暂存的变更生成提交信息并提交</td></tr><tr><td>/exit</td><td>退出 OmniContext CLI</td></tr></tbody></table>
+<p>当你输入 <code>/</code> 时，OmniContext CLI 会弹出一个匹配命令的选择器。技能也会出现在这里，所以你可以不用离开键盘就加载可复用的提示指令。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="菜单">菜单<a href="#菜单" class="hash-link" aria-label="菜单的直接链接" title="菜单的直接链接" translate="no">​</a></h2>
 <p>按 <code>Escape</code> 打开菜单。你可以在这里：</p>
 <ul>
@@ -120,7 +152,7 @@
 <li class=""><strong>Memory</strong> - 用来查看、编辑和清理跨会话记忆要点</li>
 <li class=""><strong>Recall</strong> - 用于搜索更早的会话，并提取周围的对话上下文</li>
 </ul>
-<p>如果你使用桌面应用，它还会额外安装 <strong>Browser</strong> 工作流、用于提醒与通知的 <strong>Memo</strong> 工作流，以及用于 PDF 研究和分析的 <strong>Research</strong> 工作流。</p>
+<p>如果你使用桌面应用，它还 会额外安装 <strong>Browser</strong> 工作流、用于提醒与通知的 <strong>Memo</strong> 工作流，以及用于 PDF 研究和分析的 <strong>Research</strong> 工作流。</p>
 <p>自定义工作流放在 <code>~/.omx/workflows/</code> 或 <code>.omx/workflows/</code> 中。完整格式见 <a class="" href="/omni-context-cli-landing/docs/zh-Hans/tutorial/workflows">工作流</a>。</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="偏好设置">偏好设置<a href="#偏好设置" class="hash-link" aria-label="偏好设置的直接链接" title="偏好设置的直接链接" translate="no">​</a></h3>
 <p>偏好设置菜单可以切换或调整：</p>

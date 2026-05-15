@@ -34,6 +34,14 @@ sidebar_position: 2
 | /rewind | 回退到更早的一条消息 |
 | /model | 切换到其他模型 |
 | /session | 加载之前的会话 |
+| /workflow | 切换到另一个工作流预设 |
+| /thinking | 开关扩展思考模式 |
+| /atlas | 开关 Atlas 导航 |
+| /memory | 开关跨会话记忆 |
+| /notification | 开关完成通知 |
+| /language | 切换回复语言 |
+| /cache | 切换提示词缓存时长 |
+| /theme | 切换颜色主题 |
 | /git-commit | 为已暂存的变更生成提交信息并提交 |
 | /exit | 退出 OmniContext CLI |
 
