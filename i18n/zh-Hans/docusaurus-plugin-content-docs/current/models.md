@@ -58,7 +58,7 @@ omx --remove-provider zenmux
 |------|------|
 | **Name** | 发送给 API 的模型标识符 |
 | **Nickname** | UI 中显示的友好名称 |
-| **Provider** | `openai`、`anthropic`、`gemini` 或 `responses` |
+| **Provider** | `openai`、`anthropic`、`gemini`、`responses`、`google-imagen` 或 `openai-imagen` |
 | **API Key** | 对应端点使用的 key |
 | **API URL** | API 基础地址或协议端点 |
 | **Context Size** | 最大上下文窗口，单位是千 token |
@@ -122,11 +122,35 @@ API URL: http://localhost:11434/v1
 Context Size: 32
 ```
 
+#### Google Imagen
+
+```
+Name: imagen-4.0-generate-001
+Nickname: Imagen 4
+Provider: google-imagen
+API Key: AIza...
+API URL: https://generativelanguage.googleapis.com/v1beta
+Context Size: 8
+```
+
+#### OpenAI Images
+
+```
+Name: dall-e-3
+Nickname: DALL·E 3
+Provider: openai-imagen
+API Key: sk-...
+API URL: https://api.openai.com/v1
+Context Size: 8
+```
+
 ## 默认模型和 Agent 模型
 
 **默认模型** 是新会话启动时 OmniContext CLI 使用的模型。
 
 **Agent 模型** 是给内置智能体工具、网页搜索和 `/git-commit` 生成使用的辅助模型。如果你没有单独设置，OmniContext CLI 会回退到默认模型。
+
+**图像生成模型** 需要在应用配置里单独设置。当你配置了 `google-imagen` 或 `openai-imagen` 模型，并将其设为 `defaultImageGenModelId` 之后，允许使用 `ImageGen` 工具的工作流就可以在聊天中直接生成图像。
 
 常见搭配是：
 

@@ -58,7 +58,7 @@ You can also add models through the menu:
 |-------|-------------|
 | **Name** | Model identifier sent to the API |
 | **Nickname** | Friendly name shown in the UI |
-| **Provider** | `openai`, `anthropic`, `gemini`, or `responses` |
+| **Provider** | `openai`, `anthropic`, `gemini`, `responses`, `google-imagen`, or `openai-imagen` |
 | **API Key** | The key for that endpoint |
 | **API URL** | Base API URL or protocol endpoint |
 | **Context Size** | Maximum context window in thousands of tokens |
@@ -122,11 +122,35 @@ API URL: http://localhost:11434/v1
 Context Size: 32
 ```
 
+#### Google Imagen
+
+```
+Name: imagen-4.0-generate-001
+Nickname: Imagen 4
+Provider: google-imagen
+API Key: AIza...
+API URL: https://generativelanguage.googleapis.com/v1beta
+Context Size: 8
+```
+
+#### OpenAI Images
+
+```
+Name: dall-e-3
+Nickname: DALL·E 3
+Provider: openai-imagen
+API Key: sk-...
+API URL: https://api.openai.com/v1
+Context Size: 8
+```
+
 ## Default Model and Agent Model
 
 **Default model** is what OmniContext CLI uses when a new session starts.
 
 **Agent model** is the secondary model used for built-in agent tools, web search, and `/git-commit` generation. If you don't set one, OmniContext CLI falls back to the default model.
+
+**Image generation model** is set separately through your app config. When a `google-imagen` or `openai-imagen` model is configured and set as `defaultImageGenModelId`, workflows that allow the `ImageGen` tool can generate images from chat.
 
 A common pattern is to pair:
 
