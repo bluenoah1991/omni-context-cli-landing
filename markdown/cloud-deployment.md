@@ -7,7 +7,7 @@ sidebar_position: 16
 
 # Cloud Deployment
 
-Run OmniContext CLI on a cloud VM when you want a shared, always-on instance for the web client, mobile access, or desktop integrations.
+Run OmniContext CLI on a cloud VM when you want a shared, always-on instance for the web client or mobile access. Local integrations such as the Chrome extension, Office add-in, and desktop remote tools default to a local server on `localhost:5281`.
 
 ## Basic Setup
 

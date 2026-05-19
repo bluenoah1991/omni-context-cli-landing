@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">模型管理 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="模型管理 | OmniContext CLI"><meta data-rh="true" name="description" content="OmniContext CLI 支持多个模型供应商，并且会以原生方式对接每一种协议。"><meta data-rh="true" property="og:description" content="OmniContext CLI 支持多个模型供应商，并且会以原生方式对接每一种协议。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"模型管理","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.5052d906.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.cf96f883.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.5ae1810e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -152,7 +152,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="默认模型和-agent-模型">默认模型和 Agent 模型<a href="#默认模型和-agent-模型" class="hash-link" aria-label="默认模型和 Agent 模型的直接链接" title="默认模型和 Agent 模型的直接链接" translate="no">​</a></h2>
 <p><strong>默认模型</strong> 是新会话启动时 OmniContext CLI 使用的模型。</p>
 <p><strong>Agent 模型</strong> 是给内置智能体工具、网页搜索和 <code>/git-commit</code> 生成使用的辅助模型。如果你没有单独设置，OmniContext CLI 会回退到默认模型。</p>
-<p><strong>图像生成模型</strong> 需要在应用配置里单独设置。当你配置了 <code>google-imagen</code> 或 <code>openai-imagen</code> 模型，并将其设为 <code>defaultImageGenModelId</code> 之后，允许使用 <code>ImageGen</code> 工具的工作流就可以在聊天中直接生成图像。</p>
+<p><strong>图像生成模型</strong> 可以在 Web 设置或应用配置里单独选择。只要配置了任意 <code>google-imagen</code> 或 <code>openai-imagen</code> 模型，允许使用 <code>ImageGen</code> 工具的工作流就可以在聊天中直接生成图像。<code>defaultImageGenModelId</code> 只是用来指定首选图像模型；没有设置时，OmniContext CLI 会使用第一个已配置的图像模型。</p>
 <p>常见搭配是：</p>
 <ul>
 <li class="">默认模型用更强的推理模型</li>

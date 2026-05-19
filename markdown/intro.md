@@ -75,6 +75,7 @@ For the full config and file layout, see [Project Files & Config](/tutorial/proj
 | `-d, --diagnostic` | Save request and response payloads for debugging |
 | `-s, --serve` | Start OmniContext CLI as an HTTP server instead of the terminal UI |
 | `-w, --web` | Open the web client in your browser after starting the server |
+| `-i, --image-workshop` | Open Image Workshop in your browser after starting the server |
 | `-p, --port <port>` | Port for server mode |
 | `-H, --host <host>` | Host for server mode |
 | `--workflow <preset>` | Override the workflow for this launch |

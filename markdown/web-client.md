@@ -17,6 +17,14 @@ omx --serve --web
 
 This starts the local server and opens the web client in your default browser.
 
+To open Image Workshop instead:
+
+```bash
+omx --serve --image-workshop
+```
+
+You can also open it manually at `http://localhost:5281/imageWorkshop` while the server is running.
+
 ### Custom Port and Host
 
 ```bash
@@ -35,6 +43,7 @@ omx --serve --web --host 0.0.0.0
 - **Color themes** shared with the rest of OmniContext CLI
 - **Session management** including rewind and switching
 - **Model switching** mid-conversation
+- **Image Workshop** for image generation, edits with reference images and masks, result sessions, and opening the artifacts folder
 
 ## Theme Mode
 

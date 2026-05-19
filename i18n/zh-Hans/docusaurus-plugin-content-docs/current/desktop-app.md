@@ -57,7 +57,7 @@ sidebar_position: 12
 
 ## Memo 工作流
 
-桌面应用还会顺手安装一个 **Memo** 工作流，并通过 `Desktop_AddMemo`、`Desktop_ListMemos`、`Desktop_DeleteMemo`、`Desktop_Notify` 等工具暴露能力。
+桌面应用还会顺手安装一个 **Memo** 工作流，并通过 `Remote_Desktop_ListMemos`、`Remote_Desktop_AddMemo`、`Remote_Desktop_DeleteMemo`、`Remote_Desktop_Notify` 等工具暴露能力。
 
 你可以用它快速添加备忘、设置带优先级（low、medium、high）的提醒，以及创建循环提醒（每天、每周、每两周、每月、每三个月、每半年或每年）。提醒到期时会以原生桌面通知的形式弹出。
 

@@ -17,6 +17,14 @@ omx --serve --web
 
 这会启动本地服务器，并在默认浏览器中打开 Web 客户端。
 
+如果要打开 Image Workshop：
+
+```bash
+omx --serve --image-workshop
+```
+
+服务器运行时，也可以手动打开 `http://localhost:5281/imageWorkshop`。
+
 ### 自定义端口和主机
 
 ```bash
@@ -35,6 +43,7 @@ omx --serve --web --host 0.0.0.0
 - **颜色主题**，和 OmniContext CLI 其他界面共用
 - **会话管理**，支持回退和切换
 - **模型切换**，可在对话中途完成
+- **Image Workshop**，支持图像生成、基于参考图和 mask 的编辑、结果会话，以及打开 artifacts 文件夹
 
 ## 主题模式
 

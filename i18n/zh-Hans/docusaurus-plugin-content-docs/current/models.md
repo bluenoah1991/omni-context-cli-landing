@@ -150,7 +150,7 @@ Context Size: 8
 
 **Agent 模型** 是给内置智能体工具、网页搜索和 `/git-commit` 生成使用的辅助模型。如果你没有单独设置，OmniContext CLI 会回退到默认模型。
 
-**图像生成模型** 需要在应用配置里单独设置。当你配置了 `google-imagen` 或 `openai-imagen` 模型，并将其设为 `defaultImageGenModelId` 之后，允许使用 `ImageGen` 工具的工作流就可以在聊天中直接生成图像。
+**图像生成模型** 可以在 Web 设置或应用配置里单独选择。只要配置了任意 `google-imagen` 或 `openai-imagen` 模型，允许使用 `ImageGen` 工具的工作流就可以在聊天中直接生成图像。`defaultImageGenModelId` 只是用来指定首选图像模型；没有设置时，OmniContext CLI 会使用第一个已配置的图像模型。
 
 常见搭配是：
 

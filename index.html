@@ -240,7 +240,8 @@
                         <h3>Custom</h3>
                     </div>
                     <p>Drop a file into <code>~/.omx/workflows/</code> or <code>.omx/workflows/</code> and it becomes a selectable workflow. The file name becomes the workflow ID you use with <code>--workflow</code>.</p>
-                    <div class="workflow-mini-code"><pre><code><span class="t-key">name:</span> Review
+                    <div class="workflow-mini-code"><pre><code><span class="t-comment">---</span>
+<span class="t-key">name:</span> Review
 <span class="t-key">allowBuiltinTools:</span> [Read, Glob, Grep, Skill]
 <span class="t-key">allowBuiltinAgents:</span> true
 <span class="t-comment">---</span>
@@ -257,7 +258,7 @@ You are a careful reviewer...</code></pre></div>
                 <h2 class="section-title">Direct tools for action,<br>agent tools for exploration</h2>
                 <p class="section-subtitle">
                     Base tools do the work in front of you. Agent tools do the scouting off to the side,
-                    using a secondary model so intermediate tool calls, file reads, and scratch reasoning never bloat your main context.
+                    usually on a dedicated agent model, so intermediate tool calls, file reads, and scratch work never bloat your main context.
                 </p>
             </div>
             <div class="tools-grid">
@@ -477,7 +478,7 @@ You are a careful reviewer...</code></pre></div>
                 <h2 class="section-title">Six protocol stacks,<br>no translation layer</h2>
                 <p class="section-subtitle">
                     Each protocol gets its own request builder and stream handler, so provider-specific behavior like prompt caching,
-                    extended thinking, structured outputs, and tool orchestration works the way the vendor intended.
+                    extended thinking, function calling, and tool orchestration works the way the vendor intended.
                     Image generation runs through Google Imagen and OpenAI Images on their native APIs.
                 </p>
             </div>
@@ -505,12 +506,12 @@ You are a careful reviewer...</code></pre></div>
                 <div class="protocol-card">
                     <div class="protocol-name">Google Imagen</div>
                     <div class="protocol-desc">Generate images through Gemini's generateContent API with image output.</div>
-                    <div class="protocol-tag">Imagen 3 / Imagen 4</div>
+                    <div class="protocol-tag">Imagen / Gemini image models</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">OpenAI Images</div>
                     <div class="protocol-desc">Generate and edit images through OpenAI's native Images API.</div>
-                    <div class="protocol-tag">DALL·E 3</div>
+                    <div class="protocol-tag">GPT Image / DALL·E</div>
                 </div>
             </div>
         </div>
@@ -536,7 +537,7 @@ You are a careful reviewer...</code></pre></div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="split"></i></div>
                         <h3>Agent tools</h3>
-                        <p>Exploratory work happens on a secondary model, and only the final answer comes back.</p>
+                        <p>Exploratory work usually happens on an agent model, and only the final answer comes back.</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="scissors"></i></div>
@@ -793,7 +794,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web Client</h3>
-                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, and a custom status line in the header.</p>
+                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, session controls, memory management, tool approval, and Image Workshop.</p>
                         </div>
                     </div>
                 </div>

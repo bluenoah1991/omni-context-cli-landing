@@ -150,7 +150,7 @@ Context Size: 8
 
 **Agent model** is the secondary model used for built-in agent tools, web search, and `/git-commit` generation. If you don't set one, OmniContext CLI falls back to the default model.
 
-**Image generation model** is set separately through your app config. When a `google-imagen` or `openai-imagen` model is configured and set as `defaultImageGenModelId`, workflows that allow the `ImageGen` tool can generate images from chat.
+**Image generation model** is chosen separately through the web settings or app config. If any `google-imagen` or `openai-imagen` model is configured, workflows that allow `ImageGen` can generate images from chat. `defaultImageGenModelId` only picks the preferred image model; when it is not set, OmniContext CLI uses the first configured image model.
 
 A common pattern is to pair:
 

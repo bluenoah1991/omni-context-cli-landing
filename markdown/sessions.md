@@ -51,10 +51,6 @@ You can also compact manually:
 /compact
 ```
 
-### Server Compaction
-
-By default, compaction happens on the client side. If you prefer, enable **Server compaction** in preferences and let the server handle it instead.
-
 ## Storage Model
 
 OmniContext CLI stores session state outside the repo, under `~/.omx/projects/<project-id>/`.
@@ -69,7 +65,7 @@ This keeps your working state local while still letting you commit shared instru
 
 ## Project Backup
 
-Export the current project's sessions and memory:
+Export the current project's JSON-backed sessions, memory, input history, and Image Workshop session metadata:
 
 ```bash
 omx --export-project backup.tar.gz
@@ -80,3 +76,5 @@ Restore them later with:
 ```bash
 omx --import-project backup.tar.gz
 ```
+
+This export does not include SQLite indexes such as `atlas.sqlite` or `session-history.sqlite`, or files under the `artifacts/` folder. Indexes can be rebuilt or recreated from the project data when needed.

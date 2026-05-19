@@ -7,7 +7,7 @@ sidebar_position: 16
 
 # 云端部署
 
-如果你希望 Web 客户端、移动端访问或桌面集成随时在线，可以把 OmniContext CLI 部署在云服务器上。
+如果你希望 Web 客户端或移动端访问随时在线，可以把 OmniContext CLI 部署在云服务器上。Chrome 扩展、Office 加载项和桌面端远程工具这类本地集成默认连接的是 `localhost:5281` 上的本地服务。
 
 ## 基本设置
 

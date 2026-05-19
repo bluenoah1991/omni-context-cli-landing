@@ -35,7 +35,7 @@ These are called by the main model, so their inputs and outputs become part of t
 | **RecallSearch** | Search indexed past sessions with full-text search. |
 | **Skill** | Load a reusable skill into the current conversation. |
 | **WebFetch** | Fetch a URL and turn the page into clean markdown. |
-| **WebSearch** | Search the web for up-to-date info. Hidden when no Anthropic, Responses, or Gemini model is configured. |
+| **WebSearch** | Search the web for up-to-date info. Available when the agent model pool includes an Anthropic, Responses, or Gemini model. |
 | **Write** | Write a file from scratch or fully replace it. Supports `createOnly` for safer file creation. |
 
 The atlas is best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see [Atlas Navigation](/tutorial/atlas).
@@ -86,7 +86,7 @@ If you want a safety check before tools run:
 - use `omx --approve-write` to confirm `Bash`, `Edit`, and `Write`
 - use `omx --approve-all` to confirm every tool call
 
-Agent tools, MCP tools, and remote tools do not ask for approval directly. Approval happens when they reach an underlying built-in tool that actually reads, writes, or executes something.
+`--approve-all` also asks before MCP and remote tool calls. Agent tools do not ask for approval directly, but any built-in tools they call still follow the approval mode.
 
 ### Parallel Execution
 

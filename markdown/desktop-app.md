@@ -57,7 +57,7 @@ That workflow is tuned for page reading, tab actions, bookmarks, history, screen
 
 ## Memo Workflow
 
-The desktop app also installs a **Memo** workflow and exposes it through tools like `Desktop_AddMemo`, `Desktop_ListMemos`, `Desktop_DeleteMemo`, and `Desktop_Notify`.
+The desktop app also installs a **Memo** workflow and exposes it through tools like `Remote_Desktop_ListMemos`, `Remote_Desktop_AddMemo`, `Remote_Desktop_DeleteMemo`, and `Remote_Desktop_Notify`.
 
 You can use it to add quick memos, schedule reminders with priority levels (low, medium, high), and set recurring reminders (daily, weekly, biweekly, monthly, every three or six months, or yearly). Reminders surface as native desktop notifications when they come due.
 

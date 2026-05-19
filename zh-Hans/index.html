@@ -239,7 +239,8 @@
                         <h3>Custom</h3>
                     </div>
                     <p>把文件放进 <code>~/.omx/workflows/</code> 或 <code>.omx/workflows/</code>，它就会出现在工作流列表里。文件名本身就是你传给 <code>--workflow</code> 的工作流 ID。</p>
-                    <div class="workflow-mini-code"><pre><code><span class="t-key">name:</span> Review
+                    <div class="workflow-mini-code"><pre><code><span class="t-comment">---</span>
+<span class="t-key">name:</span> Review
 <span class="t-key">allowBuiltinTools:</span> [Read, Glob, Grep, Skill]
 <span class="t-key">allowBuiltinAgents:</span> true
 <span class="t-comment">---</span>
@@ -255,8 +256,8 @@ You are a careful reviewer...</code></pre></div>
                 <span class="section-label">工具</span>
                 <h2 class="section-title">直接动手的工具，<br>和替你做探索的智能体</h2>
                 <p class="section-subtitle">
-                    基础工具负责直接执行动作。智能体工具则把探索性工作放到辅助模型上完成，
-                    中间的工具调用、文件读取和草稿推理不会挤占你的主上下文。
+                    基础工具负责直接执行动作。智能体工具通常会把探索性工作放到 agent 模型上完成，
+                    中间的工具调用、文件读取和草稿过程不会挤占你的主上下文。
                 </p>
             </div>
             <div class="tools-grid">
@@ -475,7 +476,7 @@ You are a careful reviewer...</code></pre></div>
                 <span class="section-label">原生多协议</span>
                 <h2 class="section-title">六套协议栈，<br>没有中间翻译层</h2>
                 <p class="section-subtitle">
-                    每一种协议都有自己的请求构建器和流处理器，所以提示词缓存、扩展思考、结构化输出、工具编排这些行为，
+                    每一种协议都有自己的请求构建器和流处理器，所以提示词缓存、扩展思考、函数调用、工具编排这些行为，
                     都会按供应商原本设计的方式工作。图像生成通过 Google Imagen 和 OpenAI Images 的原生 API 完成。
                 </p>
             </div>
@@ -503,12 +504,12 @@ You are a careful reviewer...</code></pre></div>
                 <div class="protocol-card">
                     <div class="protocol-name">Google Imagen</div>
                     <div class="protocol-desc">通过 Gemini 的 generateContent API 生成图像，支持图片输出。</div>
-                    <div class="protocol-tag">Imagen 3 / Imagen 4</div>
+                    <div class="protocol-tag">Imagen / Gemini 图像模型</div>
                 </div>
                 <div class="protocol-card">
                     <div class="protocol-name">OpenAI Images</div>
                     <div class="protocol-desc">通过 OpenAI 的原生 Images API 生成和编辑图像。</div>
-                    <div class="protocol-tag">DALL·E 3</div>
+                    <div class="protocol-tag">GPT Image / DALL·E</div>
                 </div>
             </div>
         </div>
@@ -533,7 +534,7 @@ You are a careful reviewer...</code></pre></div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="split"></i></div>
                         <h3>智能体工具</h3>
-                        <p>探索性工作会放到辅助模型上做，回到主对话里的只有最后结果。</p>
+                        <p>探索性工作通常会放到 agent 模型上做，回到主对话里的只有最后结果。</p>
                     </div>
                     <div class="cost-how-item">
                         <div class="cost-how-icon"><i data-lucide="scissors"></i></div>
@@ -790,7 +791,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web 客户端</h3>
-                            <p>在浏览器里使用 OmniContext CLI，支持附件、Mermaid、LaTeX、markdown 渲染和页头自定义状态栏。</p>
+                            <p>在浏览器里使用 OmniContext CLI，支持附件、Mermaid、LaTeX、markdown 渲染、会话控制、记忆管理、工具审批和 Image Workshop。</p>
                         </div>
                     </div>
                 </div>
