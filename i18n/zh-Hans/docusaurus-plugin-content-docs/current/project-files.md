@@ -42,9 +42,12 @@ OmniContext CLI 为主助手查找项目指令时，会按这个顺序检查：
 | `.omx/workflows/*.md` | 项目级自定义工作流 |
 | `.omx/agents/*.md` | 项目级自定义 Agent |
 | `.omx/skills/<name>/SKILL.md` | 项目级技能 |
+| `.omx/tools/*.js` 或 `.omx/tools/*.mjs` | 项目级外部工具 |
+| `.omx/model-prompts/*.md` | 项目级模型专用提示词补充 |
 | `.omx/mcp.json` | 项目级 MCP 服务器 |
+| `.omx/hooks.json` | 项目级 hooks |
 
-这些能力在 `~/.omx/` 下也都有对应的用户级位置，所以你可以把个人习惯和仓库共享配置分开管理。
+这些能力在 `~/.omx/` 下也都有对应的用户级位置，所以你可以把个人习惯和仓库共享配置分开管理。用户级 hooks 放在 `~/.omx/hooks/*.json`。
 
 ## 应用配置
 
@@ -72,6 +75,21 @@ OmniContext CLI 的应用配置存放在仓库外部：
 ```
 
 全局配置适合放你希望处处生效的默认值。项目作用域更适合保存某个仓库自己的偏好，比如默认工作流、回复语言、颜色主题，或者是否启用 atlas。
+
+## 模型提示词
+
+模型提示词是 Markdown 文件，用来给匹配的模型追加额外系统提示词。放在 `~/.omx/model-prompts/` 会对所有项目生效，放在 `.omx/model-prompts/` 则只对当前仓库生效。
+
+```markdown
+---
+name: GPT 5.5
+match: gpt-5.5
+---
+
+Extra system prompt text for matching model names.
+```
+
+`match` 会以不区分大小写的子串匹配方式和模型名称比较。
 
 ## 项目数据
 

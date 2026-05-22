@@ -51,6 +51,16 @@ You can also compact manually:
 /compact
 ```
 
+## Recall Indexing
+
+New sessions are indexed for recall search automatically when history is enabled. If you have older sessions that were saved before indexing, run:
+
+```bash
+omx --index-history
+```
+
+This rebuilds the full-text recall index for existing session history.
+
 ## Storage Model
 
 OmniContext CLI stores session state outside the repo, under `~/.omx/projects/<project-id>/`.

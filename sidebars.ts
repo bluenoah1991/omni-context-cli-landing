@@ -11,7 +11,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Customization',
-      items: ['subagents', 'skills', 'mcp'],
+      items: ['subagents', 'skills', 'mcp', 'external-tools', 'hooks', 'remote-tools-sdk'],
     },
     {
       type: 'category',

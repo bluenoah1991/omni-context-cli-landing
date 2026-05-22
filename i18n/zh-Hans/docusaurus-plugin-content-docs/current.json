@@ -15,6 +15,10 @@
     "message": "会话与记忆",
     "description": "The label for category 'Sessions & Memory' in sidebar 'defaultSidebar'"
   },
+  "sidebar.defaultSidebar.category.Sessions, Memory & Navigation": {
+    "message": "会话、记忆与导航",
+    "description": "The label for category 'Sessions, Memory & Navigation' in sidebar 'defaultSidebar'"
+  },
   "sidebar.defaultSidebar.category.Integrations": {
     "message": "集成",
     "description": "The label for category 'Integrations' in sidebar 'defaultSidebar'"

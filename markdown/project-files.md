@@ -42,9 +42,12 @@ These files live inside your repo and are great for team-shared customization:
 | `.omx/workflows/*.md` | Project-local custom workflows |
 | `.omx/agents/*.md` | Project-local custom agents |
 | `.omx/skills/<name>/SKILL.md` | Project-local skills |
+| `.omx/tools/*.js` or `.omx/tools/*.mjs` | Project-local external tools |
+| `.omx/model-prompts/*.md` | Project-local model-specific prompt additions |
 | `.omx/mcp.json` | Project-local MCP servers |
+| `.omx/hooks.json` | Project-local hooks |
 
-Each one also has a user-wide equivalent under `~/.omx/`, so you can keep personal tools and prompts separate from repo-specific ones.
+Each one also has a user-wide equivalent under `~/.omx/`, so you can keep personal tools and prompts separate from repo-specific ones. User-level hooks live in `~/.omx/hooks/*.json`.
 
 ## App Config
 
@@ -72,6 +75,21 @@ A simple config looks like this:
 ```
 
 Global config is the right place for defaults you want everywhere. Project scope is better for repo-specific choices like a preferred workflow, response language, color theme, or whether the atlas should stay on.
+
+## Model Prompts
+
+Model prompts are markdown files that append extra system prompt text for matching model names. Put them in `~/.omx/model-prompts/` for all projects or `.omx/model-prompts/` for one repo.
+
+```markdown
+---
+name: GPT 5.5
+match: gpt-5.5
+---
+
+Extra system prompt text for matching model names.
+```
+
+The `match` value uses case-insensitive substring matching against the model name.
 
 ## Project Data
 
