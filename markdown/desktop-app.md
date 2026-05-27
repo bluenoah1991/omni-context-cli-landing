@@ -25,6 +25,7 @@ The desktop app is mainly a lightweight launcher and control panel for OmniConte
 - install the Browser, Memo, and Research workflows automatically
 - run a built-in memo and reminder system with desktop notifications
 - handle PDF splitting, chunk reading, and preview through an embedded PDF toolchain
+- drive hook-driven desktop pets with activity feedback and packaged assets
 - bridge browser, Office, and other remote tools into the same OmniContext CLI instance
 
 ## Why Use It
