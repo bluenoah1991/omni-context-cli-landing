@@ -40,6 +40,7 @@ sidebar_position: 2
 | /memory | 开关跨会话记忆 |
 | /notification | 开关完成通知 |
 | /language | 切换回复语言 |
+| /work-language | 在发送给模型之前翻译用户消息 |
 | /cache | 切换提示词缓存时长 |
 | /theme | 切换颜色主题 |
 | /git-commit | 为已暂存的变更生成提交信息并提交 |

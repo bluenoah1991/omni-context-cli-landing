@@ -40,6 +40,7 @@ Type these directly into the chat box:
 | /memory | Toggle cross-session memory on or off |
 | /notification | Toggle completion notifications on or off |
 | /language | Switch the response language |
+| /work-language | Translate user messages before sending them to the model |
 | /cache | Switch the prompt cache duration |
 | /theme | Switch the color theme |
 | /git-commit | Generate a commit message for staged changes and commit |
