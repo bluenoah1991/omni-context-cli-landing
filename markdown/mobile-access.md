@@ -2,7 +2,7 @@
 slug: /tutorial/mobile-access
 title: Mobile Access
 sidebar_label: Mobile Access
-sidebar_position: 15
+sidebar_position: 16
 ---
 
 # Mobile Access
@@ -36,6 +36,10 @@ Set a password before you share the server outside your own machine:
 ```bash
 omx --set-password
 ```
+
+## Install as a PWA
+
+On iOS or Android, open the web client in your mobile browser, use the browser's **Add to Home Screen** (or install) action, and treat it like a lightweight app. You still need `omx --serve` running on your computer (or a reachable host).
 
 ## Tips
 

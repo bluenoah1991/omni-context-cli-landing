@@ -58,7 +58,7 @@
             </h1>
             <p class="hero-description">
                 OmniContext CLI 是一个上下文优先、零遥测的终端编程助手。它尽量保持轻量，原生支持 Anthropic、OpenAI、Gemini 和 Responses API，
-                通过 Google Imagen 和 OpenAI Images 生成图像，也能在需要时延伸到 VS Code、Office、浏览器和移动端。
+                通过 Google Imagen、OpenAI Images 和 xAI Images 生成图像，通过 Google Veo 和 xAI 生成视频，也能在需要时延伸到 VS Code、Office、浏览器和移动端。
             </p>
             <div class="hero-actions">
                 <div class="install-command" id="installCmd">
@@ -94,7 +94,7 @@
         <div class="container">
             <div class="metrics-grid">
                 <div class="metric">
-                    <span class="metric-value">6</span>
+                    <span class="metric-value">9</span>
                     <span class="metric-label">协议栈</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -132,7 +132,7 @@
                         <span class="workflow-card-icon">○</span>
                         <h3>Programming <span class="workflow-badge">默认</span></h3>
                     </div>
-                    <p>面向终端和编辑器场景的主力编程工作流。输出简洁、偏工具驱动，并且会读取 OMX.md 和 CLAUDE.md 这样的项目指令。</p>
+                    <p>面向终端和编辑器场景的主力编程工作流。输出简洁、偏工具驱动，并且会读取 OMX.md 和 CLAUDE.md 这样的项目指令。允许一个精选的基础工具子集，外加智能体、MCP 和远程工具。</p>
                     <div class="workflow-tools">
                         <span>基础工具</span>
                         <span>智能体工具</span>
@@ -456,7 +456,7 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-icon"><i data-lucide="image"></i></div>
                     <div class="tool-info">
                         <h4>ImageGen</h4>
-                        <p>通过 Google Imagen 或 OpenAI Images 生成图像，并保存为会话 artifact。</p>
+                        <p>通过 Google Imagen、OpenAI Images 或 xAI Images 生成图像，并保存为会话 artifact。</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -474,10 +474,10 @@ You are a careful reviewer...</code></pre></div>
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">原生多协议</span>
-                <h2 class="section-title">六套协议栈，<br>没有中间翻译层</h2>
+                <h2 class="section-title">九套 LLM、图像与视频协议，<br>没有中间翻译层</h2>
                 <p class="section-subtitle">
                     每一种协议都有自己的请求构建器和流处理器，所以提示词缓存、扩展思考、函数调用、工具编排这些行为，
-                    都会按供应商原本设计的方式工作。图像生成通过 Google Imagen 和 OpenAI Images 的原生 API 完成。
+                    都会按供应商原本设计的方式工作。聊天图像支持 Google Imagen、OpenAI Images 和 xAI Images；Image Workshop 还支持 Google Veo 和 xAI 进行视频生成。
                 </p>
             </div>
             <div class="protocols-grid">
@@ -510,6 +510,21 @@ You are a careful reviewer...</code></pre></div>
                     <div class="protocol-name">OpenAI Images</div>
                     <div class="protocol-desc">通过 OpenAI 的原生 Images API 生成和编辑图像。</div>
                     <div class="protocol-tag">GPT Image / DALL·E</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">xAI Images</div>
+                    <div class="protocol-desc">在聊天中通过 xAI 图像 API 生成图像。</div>
+                    <div class="protocol-tag">Grok 图像模型</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">Google Veo</div>
+                    <div class="protocol-desc">通过 Google 的 Veo 视频模型在 Image Workshop 中生成视频。</div>
+                    <div class="protocol-tag">Veo 视频模型</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">xAI Video</div>
+                    <div class="protocol-desc">在 Image Workshop 中通过图像或参考帧生成视频。</div>
+                    <div class="protocol-tag">xAI 视频模型</div>
                 </div>
             </div>
         </div>
@@ -792,7 +807,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web 客户端</h3>
-                            <p>在浏览器里使用 OmniContext CLI，支持附件、Mermaid、LaTeX、markdown 渲染、会话控制、记忆管理、工具审批和 Image Workshop。</p>
+                            <p>在浏览器中使用 OmniContext CLI，支持附件、Mermaid、LaTeX、markdown、会话与记忆、工具审批，以及带图像生成、视频生成、编辑与隐私模式的 Image Workshop；Web 端可安装为 PWA。</p>
                         </div>
                     </div>
                 </div>
@@ -903,6 +918,7 @@ You are a careful reviewer...</code></pre></div>
             </div>
         </div>
     </section>
+
 
     <section class="section">
         <div class="container">

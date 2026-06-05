@@ -59,7 +59,8 @@
             <p class="hero-description">
                 OmniContext CLI is a context-first, zero-telemetry coding assistant for the terminal. It stays lean,
                 runs native protocol stacks for Anthropic, OpenAI, Gemini, and Responses API, generates images
-                through Google Imagen and OpenAI Images, and reaches into VS Code, Office, the browser, and mobile when you need it.
+                through Google Imagen, OpenAI Images, and xAI Images, generates video through Google Veo and xAI,
+                and reaches into VS Code, Office, the browser, and mobile when you need it.
             </p>
             <div class="hero-actions">
                 <div class="install-command" id="installCmd">
@@ -95,7 +96,7 @@
         <div class="container">
             <div class="metrics-grid">
                 <div class="metric">
-                    <span class="metric-value">6</span>
+                    <span class="metric-value">9</span>
                     <span class="metric-label">Protocol Stacks</span>
                 </div>
                 <div class="metric-divider"></div>
@@ -133,10 +134,10 @@
                         <span class="workflow-card-icon">○</span>
                         <h3>Programming <span class="workflow-badge">Default</span></h3>
                     </div>
-                    <p>The main coding workflow for terminal and editor use. Concise, tool-first, and built to work with project instructions like OMX.md and CLAUDE.md.</p>
+                    <p>The main coding workflow for terminal and editor use. Concise, tool-first, and built to work with project instructions like OMX.md and CLAUDE.md. Allows a curated subset of built-in tools plus agents, MCP, and remote tools.</p>
                     <div class="workflow-tools">
-                        <span>Base Tools</span>
-                        <span>Agent Tools</span>
+                        <span>Built-in tools</span>
+                        <span>Agent tools</span>
                         <span>Custom Agents</span>
                         <span>MCP</span>
                         <span>Remote Tools</span>
@@ -149,7 +150,7 @@
                     </div>
                     <p>A broader personal-assistant workflow for docs, spreadsheets, presentations, and day-to-day tasks. Clear, friendly, and proactive with tools.</p>
                     <div class="workflow-tools">
-                        <span>Base Tools</span>
+                        <span>Built-in tools</span>
                         <span>Recall Agent</span>
                         <span>Custom Agents</span>
                         <span>MCP</span>
@@ -457,7 +458,7 @@ You are a careful reviewer...</code></pre></div>
                     <div class="tool-icon"><i data-lucide="image"></i></div>
                     <div class="tool-info">
                         <h4>ImageGen</h4>
-                        <p>Generate images through Google Imagen or OpenAI Images and save them as session artifacts.</p>
+                        <p>Generate images through Google Imagen, OpenAI Images, or xAI Images and save them as session artifacts.</p>
                     </div>
                 </div>
                 <div class="tool-card">
@@ -475,11 +476,11 @@ You are a careful reviewer...</code></pre></div>
         <div class="container">
             <div class="section-header center">
                 <span class="section-label">Native Multi-Protocol</span>
-                <h2 class="section-title">Six protocol stacks,<br>no translation layer</h2>
+                <h2 class="section-title">Nine LLM, image & video stacks,<br>no translation layer</h2>
                 <p class="section-subtitle">
                     Each protocol gets its own request builder and stream handler, so provider-specific behavior like prompt caching,
                     extended thinking, function calling, and tool orchestration works the way the vendor intended.
-                    Image generation runs through Google Imagen and OpenAI Images on their native APIs.
+                    Chat images use Google Imagen, OpenAI Images, and xAI Images. Image Workshop adds Google Veo and xAI for video generation.
                 </p>
             </div>
             <div class="protocols-grid">
@@ -512,6 +513,21 @@ You are a careful reviewer...</code></pre></div>
                     <div class="protocol-name">OpenAI Images</div>
                     <div class="protocol-desc">Generate and edit images through OpenAI's native Images API.</div>
                     <div class="protocol-tag">GPT Image / DALL·E</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">xAI Images</div>
+                    <div class="protocol-desc">Generate images in chat through the xAI image API.</div>
+                    <div class="protocol-tag">Grok image models</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">Google Veo</div>
+                    <div class="protocol-desc">Generate video through Google's Veo video model in Image Workshop.</div>
+                    <div class="protocol-tag">Veo video models</div>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-name">xAI Video</div>
+                    <div class="protocol-desc">Generate video from images or reference frames in Image Workshop.</div>
+                    <div class="protocol-tag">xAI video models</div>
                 </div>
             </div>
         </div>
@@ -795,7 +811,7 @@ You are a careful reviewer...</code></pre></div>
                         <div class="integration-icon"><i data-lucide="globe"></i></div>
                         <div>
                             <h3>Web Client</h3>
-                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, session controls, memory management, tool approval, and Image Workshop.</p>
+                            <p>Use OmniContext CLI in the browser with attachments, Mermaid, LaTeX, markdown rendering, session controls, memory management, tool approval, and Image Workshop for image generation, video generation, edits, and privacy mode. Install the web UI as a PWA on mobile.</p>
                         </div>
                     </div>
                 </div>
@@ -906,6 +922,7 @@ You are a careful reviewer...</code></pre></div>
             </div>
         </div>
     </section>
+
 
     <section class="section">
         <div class="container">

@@ -2,7 +2,7 @@
 slug: /tutorial/mobile-access
 title: 移动端访问
 sidebar_label: 移动端访问
-sidebar_position: 15
+sidebar_position: 16
 ---
 
 # 移动端访问
@@ -36,6 +36,10 @@ omx --serve --host 0.0.0.0
 ```bash
 omx --set-password
 ```
+
+## 安装为 PWA
+
+在 iOS 或 Android 上用手机浏览器打开 Web 客户端，通过浏览器的**添加到主屏幕**（或安装）操作，可以像轻量应用一样使用。电脑上仍需保持 `omx --serve`（或可达的主机）在运行。
 
 ## 提示
 

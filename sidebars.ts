@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
         'desktop-app',
         'ide-context',
         'web-client',
+        'image-workshop',
         'mobile-access',
         'cloud-deployment',
         'browser-extension',

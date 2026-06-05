@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Getting Started
 
-OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, plus image generation via Google Imagen and OpenAI Images, with custom workflows, built-in agent tools, atlas navigation, and cross-session memory.
+OmniContext CLI is a context-first, zero-telemetry assistant that starts in your terminal and reaches into VS Code, Office, the browser, and mobile. It supports Anthropic, OpenAI, Gemini, and the OpenAI Responses API, plus image generation via Google Imagen, OpenAI Images, and xAI Images, and video generation via Google Veo and xAI Video in Image Workshop, with custom workflows, built-in agent tools, atlas navigation, and cross-session memory.
 
 ## Installation
 
@@ -64,6 +64,7 @@ A few files shape how OmniContext CLI behaves in a repo:
 - `.omx/agents/` - project-local custom agents
 - `.omx/skills/` - project-local skills
 - `.omx/mcp.json` - project-local MCP servers
+- `.omx/tools/`, `.omx/model-prompts/`, `.omx/hooks.json` - external tools, model prompts, and hooks (see project files doc)
 
 For the full config and file layout, see [Project Files & Config](/tutorial/project-files).
 
@@ -76,8 +77,8 @@ For the full config and file layout, see [Project Files & Config](/tutorial/proj
 | `-s, --serve` | Start OmniContext CLI as an HTTP server instead of the terminal UI |
 | `-w, --web` | Open the web client in your browser after starting the server |
 | `-i, --image-workshop` | Open Image Workshop in your browser after starting the server |
-| `-p, --port <port>` | Port for server mode |
-| `-H, --host <host>` | Host for server mode |
+| `-p, --port <port>` | Port for server mode (default: 5281) |
+| `-H, --host <host>` | Host for server mode (default: localhost) |
 | `--workflow <preset>` | Override the workflow for this launch |
 | `--scope <scope>` | Save config changes to `global`, `project`, or `memory` |
 | `--approve-write` | Ask before running Bash, Edit, and Write |

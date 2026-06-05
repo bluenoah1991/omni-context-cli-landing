@@ -28,6 +28,8 @@ The desktop app is mainly a lightweight launcher and control panel for OmniConte
 - drive hook-driven desktop pets with activity feedback and packaged assets
 - bridge browser, Office, and other remote tools into the same OmniContext CLI instance
 
+The desktop app also lives in your **system tray** (menu bar on macOS, notification area on Windows and Linux) for quick access without opening the full window. From the tray you can start or stop the server, toggle LAN access, and see whether the server is running at a glance.
+
 ## Why Use It
 
 If you mostly work in the terminal, you may not need the desktop app every day.
@@ -69,6 +71,16 @@ The first time you add a reminder on macOS, the system prompts for access to Rem
 ## Research Workflow
 
 The desktop app also installs a **Research** workflow for PDF-heavy study and analysis. It exposes tools for splitting PDFs, chunk-based reading, document preview, and web search, so you can work through large documents without leaving the conversation.
+
+## Desktop Pets & Completion Notifications
+
+The desktop app can show a lightweight desktop pet that reacts to what OmniContext CLI is doing. Pets come with spritesheet animations for states like idle, running, jumping, waving, and failed. You can choose from several included pets (Dario is bundled by default), or set the active pet to `disabled` in the desktop config.
+
+Pets are driven by hooks, which means they respond to events like prompt submission, tool use, compaction, and session stop. Activity feedback shows up as animation changes plus bubble notifications tied to the current action—for example, a "writing" bubble while the model generates, or a "review" state after a response completes.
+
+The desktop config also controls completion notifications (`stopNotificationEnabled`). When enabled, a native notification fires at the end of each response so you know when the model is ready without keeping the terminal in focus.
+
+Pets, notifications, and hooks are all managed independently, so you can enable just the pieces you want.
 
 ## Mobile Access
 

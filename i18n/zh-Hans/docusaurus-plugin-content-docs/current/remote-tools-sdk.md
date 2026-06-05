@@ -2,7 +2,7 @@
 slug: /tutorial/remote-tools-sdk
 title: 远程工具与 SDK
 sidebar_label: 远程工具与 SDK
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # 远程工具与 SDK

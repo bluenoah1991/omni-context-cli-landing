@@ -13,7 +13,7 @@ A workflow controls how OmniContext CLI behaves: the system prompt, which tools 
 
 | Workflow | Use Case | Description |
 |----------|----------|-------------|
-| **Programming** | Terminal, VS Code | The default coding workflow. Includes built-in tools, built-in agent tools, custom agents, MCP, and remote tools. |
+| **Programming** | Terminal, VS Code | The default coding workflow. Allows a curated subset of built-in tools (file ops, search, atlas, skill, web), plus built-in agent tools, custom agents, MCP, and remote tools. |
 | **General** | Desktop, documents | A broader assistant workflow for docs, spreadsheets, presentations, and everyday tasks. |
 | **Analytics** | Token costs, latency | A usage analytics workflow with direct access to the local request log database. |
 | **Memory** | Key point cleanup | A workflow for browsing, editing, and deleting saved cross-session memory points. |

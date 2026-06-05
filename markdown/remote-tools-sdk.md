@@ -2,7 +2,7 @@
 slug: /tutorial/remote-tools-sdk
 title: Remote Tools & SDK
 sidebar_label: Remote Tools & SDK
-sidebar_position: 10
+sidebar_position: 12
 ---
 
 # Remote Tools & SDK

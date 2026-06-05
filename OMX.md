@@ -123,7 +123,7 @@ sidebar_position: 1  # Order in sidebar (1-12)
 **Code blocks:**
 - Use triple backticks with language identifier
 - Bash commands use `npm install -g omni-context-cli`
-- Tool names in lowercase: craft, sculpt, weave, etc.
+- Tool names match the product API (PascalCase), e.g. Read, Grep, Agent_Search, Skill
 
 **Translation sync:**
 - Chinese files must match English structure exactly

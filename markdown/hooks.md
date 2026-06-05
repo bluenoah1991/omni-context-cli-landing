@@ -2,7 +2,7 @@
 slug: /tutorial/hooks
 title: Hooks
 sidebar_label: Hooks
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 # Hooks
@@ -55,7 +55,7 @@ To block a blockable event, print a JSON object to stdout:
 {"block": true, "reason": "Bash is disabled for this repo."}
 ```
 
-Hook failures are ignored, and hook files are loaded at startup, so restart OmniContext CLI after changing them.
+Non-blocking hook handlers for the same event can run concurrently. Hook failures are ignored, and hook files are loaded at startup, so restart OmniContext CLI after changing them.
 
 ## HTTP Hooks
 

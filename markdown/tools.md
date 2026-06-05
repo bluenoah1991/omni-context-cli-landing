@@ -26,7 +26,7 @@ These are called by the main model, so their inputs and outputs become part of t
 | **AtlasList** | List saved atlas maps for the current project. |
 | **AtlasRead** | Read an atlas map with all of its pinned files, directories, and symbols. |
 | **AtlasUpdate** | Create or update an atlas map so useful navigation knowledge survives across sessions. |
-| **ImageGen** | Generate images through Google Imagen or OpenAI Images and save them as session artifacts. |
+| **ImageGen** | Generate images through Google Imagen, OpenAI Images, or xAI Images and save them as session artifacts (only when an image model is configured). |
 | **MemoryDelete** | Delete saved project memory points. |
 | **MemoryList** | List saved cross-session memory points for the current project. |
 | **MemoryUpdate** | Edit the text or score of existing memory points. |
@@ -39,6 +39,12 @@ These are called by the main model, so their inputs and outputs become part of t
 | **Write** | Write a file from scratch or fully replace it. Supports `createOnly` for safer file creation. |
 
 The atlas is best thought of as a separate navigation subsystem rather than a tiny add-on. If you want the bigger picture, see [Atlas Navigation](/tutorial/atlas).
+
+:::note Programming workflow whitelist
+
+The default **Programming** workflow only exposes a curated subset of built-in tools: `Bash`, `BashOutput`, `Edit`, `Glob`, `Grep`, `Read`, `Write`, `WebFetch`, `WebSearch`, `Skill`, and the four atlas tools. It does **not** include `MemoryList`/`MemoryUpdate`/`MemoryDelete`, `RecallSearch`/`RecallRead`, `ImageGen`, `ArtifactList`, or `AnalyticsQuery` by default. Custom workflows, the **General** preset, and the standalone **Memory**/**Recall**/**Analytics** workflows each choose their own tool set deliberately.
+
+:::
 
 ## Agent Tools
 

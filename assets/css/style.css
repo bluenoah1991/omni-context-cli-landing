@@ -1101,6 +1101,56 @@ nav.scrolled {
     line-height: 1.5;
 }
 
+/* ===== CLI GRID ===== */
+
+.cli-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cli-card {
+    background: var(--bg-card);
+    border: 1px dashed var(--border);
+    padding: 18px 20px;
+    transition: border-color 0.2s ease;
+}
+
+.cli-card:hover {
+    border-color: var(--border-hover);
+}
+
+.cli-card code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.cli-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.section-subtitle a {
+    color: var(--accent-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .cli-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== PROTOCOLS GRID ===== */
 
 .protocols-grid {

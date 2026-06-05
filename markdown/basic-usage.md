@@ -87,10 +87,15 @@ The preferences menu lets you toggle or change:
 - **Extended thinking** - enable deeper reasoning for harder tasks
 - **IDE context** - include context from your editor
 - **Streaming output** - render replies token by token as they arrive
+- **Session history** - save conversations to disk for recall and search
+- **Hooks** - enable or disable hook scripts that run on chat and tool events
 
 From the main menu, you can also switch:
 
 - **Response language** - force replies to English or Simplified Chinese, or leave it on auto
+- **Work language** - translate your messages before they are sent to the model (same idea as `/work-language`)
 - **Color theme** - pick one of the built-in palettes
+
+In the web client, you can also tune **response language**, **work language**, and optional **display translation** for assistant messages under settings.
 
 Use arrow keys to move, `Enter` to confirm, and `Escape` to go back.

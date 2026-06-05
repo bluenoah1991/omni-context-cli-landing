@@ -27,6 +27,17 @@ When **IDE context** is enabled in preferences, OmniContext CLI can receive:
 
 That context is attached automatically, which means less copy-paste and fewer "which file are we talking about?" turns.
 
+## VS Code UI
+
+The extension provides two ways to interact with OmniContext CLI inside the editor:
+
+- **Side panel** — click the OmniContext icon in the activity bar to open a chat panel docked to the sidebar
+- **Editor tab** — run the `OmniContext: Open in Editor` command to open the chat in a full editor tab
+
+Both surfaces connect to the same OmniContext CLI instance, so your sessions, models, and memory are shared.
+
+When the extension is active, it also broadcasts your **current selection** in real time. If IDE context is enabled, the assistant sees what you highlight as you move the cursor — no need to copy and paste file paths or code snippets.
+
 ## MCP Tools
 
 The extension exposes MCP tools that OmniContext CLI can call:

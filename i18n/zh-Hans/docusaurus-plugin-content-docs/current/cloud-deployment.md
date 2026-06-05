@@ -2,7 +2,7 @@
 slug: /tutorial/cloud-deployment
 title: 云端部署
 sidebar_label: 云端部署
-sidebar_position: 16
+sidebar_position: 17
 ---
 
 # 云端部署

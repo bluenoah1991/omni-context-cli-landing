@@ -2,7 +2,7 @@
 slug: /tutorial/browser-extension
 title: Chrome 扩展
 sidebar_label: Chrome 扩展
-sidebar_position: 17
+sidebar_position: 18
 ---
 
 # Chrome 扩展

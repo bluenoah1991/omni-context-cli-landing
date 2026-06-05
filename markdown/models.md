@@ -19,6 +19,11 @@ OmniContext CLI supports multiple model providers and talks to each protocol nat
 | **Responses API** | OpenAI Responses API with built-in tool orchestration |
 | **Google Imagen** | Gemini generateContent with image output for image generation |
 | **OpenAI Images** | OpenAI Images API (generations and edits) for image generation |
+| **xAI Images** | xAI image API for chat image generation |
+
+Image Workshop also supports video generation through Google Veo and xAI Video providers. These are configured the same way as other models but are available in the Workshop UI rather than through the chat `ImageGen` tool.
+
+Provider-specific **interceptors** adjust requests for particular sources without breaking native protocols—for example Anthropic next-gen and legacy models, **CPA proxy session affinity**, DeepSeek, Gemini legacy models, Kimi, MiniMax, OpenCode Go, generic OpenAI-compatible endpoints, xAI, Zhipu GLM, and Zenmux routing.
 
 ## Quick Add with Providers
 
@@ -58,7 +63,7 @@ You can also add models through the menu:
 |-------|-------------|
 | **Name** | Model identifier sent to the API |
 | **Nickname** | Friendly name shown in the UI |
-| **Provider** | `openai`, `anthropic`, `gemini`, `responses`, `google-imagen`, or `openai-imagen` |
+| **Provider** | `openai`, `anthropic`, `gemini`, `responses`, `google-imagen`, `openai-imagen`, `xai-image`, `google-video`, or `xai-video` |
 | **API Key** | The key for that endpoint |
 | **API URL** | Base API URL or protocol endpoint |
 | **Context Size** | Maximum context window in thousands of tokens |
@@ -144,13 +149,46 @@ API URL: https://api.openai.com/v1
 Context Size: 8
 ```
 
+#### xAI Images
+
+```text
+Name: grok-2-image
+Nickname: Grok Image
+Provider: xai-image
+API Key: xai-...
+API URL: https://api.x.ai/v1
+Context Size: 8
+```
+
+#### Google Veo
+
+```text
+Name: veo-3.1-generate-preview
+Nickname: Veo 3.1
+Provider: google-video
+API Key: AIza...
+API URL: https://generativelanguage.googleapis.com/v1beta
+Context Size: 8
+```
+
+#### xAI Video
+
+```text
+Name: grok-video
+Nickname: Grok Video
+Provider: xai-video
+API Key: xai-...
+API URL: https://api.x.ai/v1
+Context Size: 8
+```
+
 ## Default Model and Agent Model
 
 **Default model** is what OmniContext CLI uses when a new session starts.
 
 **Agent model** is the secondary model used for built-in agent tools, web search, and `/git-commit` generation. If you don't set one, OmniContext CLI falls back to the default model.
 
-**Image generation model** is chosen separately through the web settings or app config. If any `google-imagen` or `openai-imagen` model is configured, workflows that allow `ImageGen` can generate images from chat. `defaultImageGenModelId` only picks the preferred image model; when it is not set, OmniContext CLI uses the first configured image model.
+**Image generation model** is chosen separately through the web settings or app config (`defaultImageGenModelId`). Workflows that allow `ImageGen` only expose the tool when a usable image model is configured—set `defaultImageGenModelId` to a specific model id, or leave it unset to use the first configured `google-imagen`, `openai-imagen`, or `xai-image` entry. You can set `defaultImageGenModelId` to `disabled` to turn off chat image generation even if models exist in your list.
 
 A common pattern is to pair:
 
