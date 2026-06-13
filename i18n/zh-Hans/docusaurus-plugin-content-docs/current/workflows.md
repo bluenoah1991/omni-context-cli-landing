@@ -62,6 +62,7 @@ YAML frontmatter 用来定义工具过滤规则，markdown 正文会成为系统
 | `allowExternalAgents` | boolean 或 string[] | 启用 `~/.omx/agents/` 或 `.omx/agents/` 中的自定义 Agent |
 | `allowMcpTools` | boolean 或 string[] | 启用 MCP 工具 |
 | `allowRemoteTools` | boolean 或 string[] | 启用来自 VS Code、Chrome、Office 等集成的远程工具 |
+| `starterPrompts` | string[] | 可选的建议提示词列表，会以可点击的快捷按钮形式显示在终端和 Web 客户端的输入框上方 |
 
 ### 模板变量
 

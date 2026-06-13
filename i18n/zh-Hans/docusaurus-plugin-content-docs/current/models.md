@@ -40,12 +40,13 @@ omx --remove-provider zenmux
 | 供应商 ID | 会添加什么 |
 |-------------|-----------|
 | **zenmux** | 通过 Zenmux 提供的 Anthropic、Responses、Gemini 和 OpenAI 格式模型 |
+| **zenmux-expert** | 来自 Zenmux Expert 的精选顶级编程模型，覆盖 Anthropic、Responses 和 OpenAI 格式 |
 | **deepseek** | DeepSeek-V4-Flash 和 DeepSeek-V4-Pro |
 | **moonshot** | 以 Anthropic 和 OpenAI 兼容格式提供的 Kimi for Coding |
 | **openrouter** | OpenRouter 上的 Anthropic 和 OpenAI 兼容模型 |
-| **zhipu** | GLM-5.1、GLM-5 和 GLM-5-Turbo |
+| **zhipu** | GLM-5.2、GLM-5.1 和 GLM-5-Turbo |
 | **minimax** | MiniMax-M2.7 和 MiniMax-M2.7-Highspeed |
-| **opencode-go** | 通过 OpenCode Go 提供的 GLM、Kimi K2.5、MiMo、Qwen 和 MiniMax 模型 |
+| **opencode-go** | 通过 OpenCode Go 提供的 GLM、Kimi、MiMo、Qwen 和 MiniMax 模型 |
 
 根据不同供应商，OmniContext CLI 可能会为同一个模型导入多个变体，比如不同协议版本或更长上下文版本。
 

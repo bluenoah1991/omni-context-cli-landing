@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">模型管理 | OmniContext CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="模型管理 | OmniContext CLI"><meta data-rh="true" name="description" content="OmniContext CLI 支持多个模型供应商，并且会以原生方式对接每一种协议。"><meta data-rh="true" property="og:description" content="OmniContext CLI 支持多个模型供应商，并且会以原生方式对接每一种协议。"><link data-rh="true" rel="canonical" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="en"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://bluenoah1991.github.io/omni-context-cli-landing/docs/tutorial/models" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"模型管理","item":"https://bluenoah1991.github.io/omni-context-cli-landing/docs/zh-Hans/tutorial/models"}]}</script><link rel="stylesheet" href="/omni-context-cli-landing/docs/zh-Hans/assets/css/styles.4bc45b1d.css">
-<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.99f56cf4.js" defer="defer"></script>
+<script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/runtime~main.c65a1da8.js" defer="defer"></script>
 <script src="/omni-context-cli-landing/docs/zh-Hans/assets/js/main.e8eb01ae.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -95,9 +95,13 @@
 
 
 
-<table><thead><tr><th>供应商 ID</th><th>会添加什么</th></tr></thead><tbody><tr><td><strong>zenmux</strong></td><td>通过 Zenmux 提供的 Anthropic、Responses、Gemini 和 OpenAI 格式模型</td></tr><tr><td><strong>deepseek</strong></td><td>DeepSeek-V4-Flash 和 DeepSeek-V4-Pro</td></tr><tr><td><strong>moonshot</strong></td><td>以 Anthropic 和 OpenAI 兼容格式提供的 Kimi for Coding</td></tr><tr><td><strong>openrouter</strong></td><td>OpenRouter 上的 Anthropic 和 OpenAI 兼容模型</td></tr><tr><td><strong>zhipu</strong></td><td>GLM-5.1、GLM-5 和 GLM-5-Turbo</td></tr><tr><td><strong>minimax</strong></td><td>MiniMax-M2.7 和 MiniMax-M2.7-Highspeed</td></tr><tr><td><strong>opencode-go</strong></td><td>通过 OpenCode Go 提供的 GLM、Kimi K2.5、MiMo、Qwen 和 MiniMax 模型</td></tr></tbody></table>
-<p>根据不同供应商，OmniContext CLI 可能会为同一个模型导入多个变体，比如不同协议版本或更长上下文版本。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="手动添加模型">手动添加模型<a href="#  手动添加模型" class="hash-link" aria-label="手动添加模型的直接链接" title="手动添加模型的直接链接" translate="no">​</a></h2>
+
+
+
+
+<table><thead><tr><th>供应商 ID</th><th>会添加什么</th></tr></thead><tbody><tr><td><strong>zenmux</strong></td><td>通过 Zenmux 提供的 Anthropic、Responses、Gemini 和 OpenAI 格式模型</td></tr><tr><td><strong>zenmux-expert</strong></td><td>来自 Zenmux Expert 的精选顶级编程模型，覆盖 Anthropic、Responses 和 OpenAI 格式</td></tr><tr><td><strong>deepseek</strong></td><td>DeepSeek-V4-Flash 和 DeepSeek-V4-Pro</td></tr><tr><td><strong>moonshot</strong></td><td>以 Anthropic 和 OpenAI 兼容格式提供的 Kimi for Coding</td></tr><tr><td><strong>openrouter</strong></td><td>OpenRouter 上的 Anthropic 和 OpenAI 兼容模型</td></tr><tr><td><strong>zhipu</strong></td><td>GLM-5.2、GLM-5.1 和 GLM-5-Turbo</td></tr><tr><td><strong>minimax</strong></td><td>MiniMax-M2.7 和 MiniMax-M2.7-Highspeed</td></tr><tr><td><strong>opencode-go</strong></td><td>通过 OpenCode Go 提供的 GLM、Kimi、MiMo、Qwen 和 MiniMax 模型</td></tr></tbody></table>
+<p>根据不同供应商，OmniContext CLI 可能会为同一个模型导入多个变体，比 如不同协议版本或更长上下文版本。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="手动添加模型">手动添加模型<a href="#手动添加模型" class="hash-link" aria-label="手动添加模型的直接链接" title="手动添加模型的直接链接" translate="no">​</a></h2>
 <p>你也可以通过菜单来添加模型：</p>
 <ol>
 <li class="">按 <code>Escape</code></li>

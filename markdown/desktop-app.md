@@ -19,6 +19,7 @@ The desktop app is mainly a lightweight launcher and control panel for OmniConte
 - manage workspaces
 - help with model setup
 - switch approval modes
+- route model requests, Bash, and WebFetch through an HTTP or HTTPS proxy
 - enable LAN access for phone or tablet use
 - open the bundled browser extension folder
 - install and remove the Office Add-in
@@ -87,6 +88,20 @@ Pets, notifications, and hooks are all managed independently, so you can enable 
 The desktop app can expose the local server to your LAN, which makes it easier to open OmniContext CLI from a phone or tablet without setting up commands by hand.
 
 If you need a safer cross-network setup, pair it with Tailscale.
+
+## Proxy
+
+The desktop app has a proxy field for routing outbound traffic through an HTTP or HTTPS proxy. It covers model requests, Bash, and WebFetch, which is useful when your network can't reach an API endpoint directly.
+
+Leave the field blank to fall back to the `HTTP_PROXY` or `HTTPS_PROXY` environment variables automatically. If you change the proxy while the server is running, restart it so the new setting takes effect.
+
+You can set the same value directly in config without the desktop app:
+
+```json
+{
+  "proxy": "http://127.0.0.1:7890"
+}
+```
 
 ## Tips
 

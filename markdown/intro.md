@@ -37,7 +37,7 @@ omx --list-providers
 omx --add-provider openrouter --api-key sk-...
 ```
 
-Built-in provider presets include Zenmux, DeepSeek, Kimi for Coding, OpenRouter, Zhipu, MiniMax, and OpenCode Go.
+Built-in provider presets include Zenmux, Zenmux Expert, DeepSeek, Kimi for Coding, OpenRouter, Zhipu, MiniMax, and OpenCode Go.
 
 ## Built-in Workflows
 

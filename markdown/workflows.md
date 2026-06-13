@@ -62,6 +62,7 @@ Built-in workflows always load first and cannot be overridden by a custom file w
 | `allowExternalAgents` | boolean or string[] | Enable custom agents from `~/.omx/agents/` or `.omx/agents/` |
 | `allowMcpTools` | boolean or string[] | Enable MCP tools |
 | `allowRemoteTools` | boolean or string[] | Enable remote tools from integrations like VS Code, Chrome, and Office |
+| `starterPrompts` | string[] | Optional list of suggested prompts shown as clickable chips above the input in the terminal and web client |
 
 ### Template Variables
 

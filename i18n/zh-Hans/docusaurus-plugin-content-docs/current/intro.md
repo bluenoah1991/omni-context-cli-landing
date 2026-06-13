@@ -37,7 +37,7 @@ omx --list-providers
 omx --add-provider openrouter --api-key sk-...
 ```
 
-内置供应商预设包括 Zenmux、DeepSeek、Kimi for Coding、OpenRouter、Zhipu、MiniMax 和 OpenCode Go。
+内置供应商预设包括 Zenmux、Zenmux Expert、DeepSeek、Kimi for Coding、OpenRouter、Zhipu、MiniMax 和 OpenCode Go。
 
 ## 内置工作流
 
